@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bdrqq84a5qvp4"]
+
+[ext_resource type="Texture2D" uid="uid://j46g07gcmcl0" path="res://assets/graphics/UI/Exp.png" id="1_tukqa"]
+[ext_resource type="Texture2D" uid="uid://dp2r153q0yhr" path="res://assets/graphics/UI/空经验条.png" id="2_7mm3t"]
+[ext_resource type="Texture2D" uid="uid://yxufjgqs17fl" path="res://assets/graphics/UI/满经验条.png" id="3_ytbtx"]
+
+[node name="ExpBox" type="Control" unique_id=167156579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=1202667854]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 135.0
+offset_right = 192.0
+offset_bottom = 159.0
+texture = ExtResource("1_tukqa")
+
+[node name="ExpBar" type="TextureProgressBar" parent="." unique_id=1989652163]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 143.0
+offset_right = 155.0
+offset_bottom = 150.0
+texture_under = ExtResource("2_7mm3t")
+texture_progress = ExtResource("3_ytbtx")
+
+[node name="Exp" type="Label" parent="." unique_id=15567596]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 138.0
+offset_right = 181.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0.11978062, 0.10869344, 3.6098065e-08, 1)
+theme_override_font_sizes/font_size = 12

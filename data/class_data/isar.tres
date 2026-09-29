@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ClassData" format=3 uid="uid://cae6xpinabrdi"]
+
+[ext_resource type="Texture2D" uid="uid://cttwyvdeayn44" path="res://assets/graphics/Class Card/Isar.png" id="1_hol7c"]
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="2_wdv5d"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="3_xyfg7"]
+[ext_resource type="Resource" uid="uid://cadarkaff001" path="res://data/affinity/dark.tres" id="4_aff"]
+
+[resource]
+script = ExtResource("2_wdv5d")
+job_name = "暗之贤者"
+class_card = ExtResource("1_hol7c")
+rank_sword = 2
+rank_anima = 2
+rank_dark = 2
+rank_staff = 2
+affinity = ExtResource("4_aff")
+cap_str = 24
+cap_mag = 30
+cap_skl = 30
+cap_spd = 30
+cap_luk = 40
+cap_def_h = 22
+cap_res = 28
+cap_move = 6
+metadata/_custom_type_script = "uid://b7tgj14glu46f"

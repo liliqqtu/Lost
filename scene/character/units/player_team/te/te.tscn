@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://cxj0kcl55613h"]
+
+[ext_resource type="Script" uid="uid://cyf0vbtsb6q37" path="res://scene/character/units/player_team/te/te.gd" id="1_h247d"]
+[ext_resource type="SpriteFrames" uid="uid://c46oihd2725f3" path="res://data/battle_animation_tres/Te.tres" id="2_ja6hk"]
+[ext_resource type="Script" uid="uid://ki2tfb5awnwe" path="res://scripts/item.gd" id="2_t1lsn"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="2_wff78"]
+[ext_resource type="SpriteFrames" uid="uid://kaxa75drxet5" path="res://data/map_sprite_frames/Nomad_map_sprite.tres" id="3_fusbd"]
+[ext_resource type="Texture2D" uid="uid://c4o2gbtitd5ig" path="res://assets/graphics/Character Portrait/忒.png" id="4_gkwco"]
+[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="5_3bg2x"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="6_i81gk"]
+[ext_resource type="Resource" uid="uid://b8f1lost00001" path="res://data/skills/lost.tres" id="6_lost"]
+[ext_resource type="Resource" uid="uid://b8f1nomad0001" path="res://data/class_data/te.tres" id="6_nomad"]
+[ext_resource type="Resource" uid="uid://b8f1ironbow01" path="res://data/items/weapon_iron_bow.tres" id="7_bow"]
+[ext_resource type="Resource" uid="uid://b8f1potion001" path="res://data/items/consumable_potion.tres" id="8_potion"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71hhi"]
+shader = ExtResource("2_wff78")
+shader_parameter/grayscale = false
+shader_parameter/red_tint = false
+shader_parameter/remove_background = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwco"]
+atlas = ExtResource("4_gkwco")
+region = Rect2(64, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja6hk"]
+atlas = ExtResource("4_gkwco")
+region = Rect2(32, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bg2x"]
+atlas = ExtResource("4_gkwco")
+region = Rect2(0, 80, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja6hk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja6hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bg2x")
+}],
+"loop": 1,
+"name": &"De",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l533"]
+atlas = ExtResource("4_gkwco")
+region = Rect2(96, 64, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgc6n"]
+atlas = ExtResource("4_gkwco")
+region = Rect2(96, 48, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_memsa"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_6l533")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_sgc6n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Te" type="Node2D" unique_id=2028581135]
+script = ExtResource("1_h247d")
+move = 7
+inventory = Array[ExtResource("2_t1lsn")]([ExtResource("7_bow"), ExtResource("8_potion")])
+class_data = ExtResource("6_nomad")
+personal_skills = Array[ExtResource("6_i81gk")]([ExtResource("6_lost")])
+unit_name = "忒"
+has_convoy = true
+max_hp = 30
+hp = 30
+str = 6
+mag = 4
+skl = 12
+spd = 12
+def_h = 8
+res = 4
+luk = 11
+con = 7
+talk = "伊萨尔"
+battle_frames = ExtResource("2_ja6hk")
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=1848687586]
+material = SubResource("ShaderMaterial_71hhi")
+position = Vector2(8, 0)
+sprite_frames = ExtResource("3_fusbd")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="hp" type="ProgressBar" parent="." unique_id=1483115970]
+custom_maximum_size = Vector2(-1, 2)
+offset_top = 14.0
+offset_right = 16.0
+offset_bottom = 16.0
+show_percentage = false
+
+[node name="ClassCard" type="TextureRect" parent="." unique_id=912268264]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_3bg2x")
+
+[node name="SpeakingSprite2D" type="AnimatedSprite2D" parent="." unique_id=1942974532]
+visible = false
+position = Vector2(22, 44)
+sprite_frames = SubResource("SpriteFrames_ja6hk")
+animation = &"De"
+frame_progress = 0.9043792
+
+[node name="EyeSprite2D" type="AnimatedSprite2D" parent="." unique_id=1502715351]
+visible = false
+position = Vector2(30, 28)
+sprite_frames = SubResource("SpriteFrames_memsa")
+frame_progress = 0.40658984

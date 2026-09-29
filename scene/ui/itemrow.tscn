@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cxeysdmy7sp7k"]
+
+[ext_resource type="Script" uid="uid://bhwljylhh5si0" path="res://scene/ui/itemrow.gd" id="1_jjq1a"]
+
+[node name="itemrow" type="HBoxContainer" unique_id=1693196374]
+custom_maximum_size = Vector2(-1, 16)
+theme_override_constants/separation = 0
+script = ExtResource("1_jjq1a")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1873441562]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="." unique_id=1226268459]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="ItemDurability" type="Label" parent="." unique_id=2013355816]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10

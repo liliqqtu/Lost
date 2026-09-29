@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://pnhe6gwc8isv"]
+
+[ext_resource type="Texture2D" uid="uid://crx8mf5688a4j" path="res://assets/graphics/UI/物品栏.png" id="1_carrb"]
+
+[node name="ItemsBox" type="NinePatchRect" unique_id=468386647]
+custom_minimum_size = Vector2(48, 29)
+offset_right = 104.0
+offset_bottom = 93.0
+texture = ExtResource("1_carrb")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13

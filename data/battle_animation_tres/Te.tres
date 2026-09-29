@@ -1,0 +1,220 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c46oihd2725f3"]
+
+[ext_resource type="Texture2D" uid="uid://bg1irwg34m4jj" path="res://assets/battle_animations/Te/Bow/Bow_000.png" id="1_tgb8m"]
+[ext_resource type="Texture2D" uid="uid://bexynuad7bxdg" path="res://assets/battle_animations/Te/Bow/Bow_001.png" id="2_o26wb"]
+[ext_resource type="Texture2D" uid="uid://b22dmykcwdcob" path="res://assets/battle_animations/Te/Bow/Bow_002.png" id="3_7il0n"]
+[ext_resource type="Texture2D" uid="uid://yj5m4ffndlrc" path="res://assets/battle_animations/Te/Bow/Bow_003.png" id="4_vhevp"]
+[ext_resource type="Texture2D" uid="uid://dqx4iglteuk1i" path="res://assets/battle_animations/Te/Bow/Bow_004.png" id="5_48bwh"]
+[ext_resource type="Texture2D" uid="uid://bumhclvtw8ub2" path="res://assets/battle_animations/Te/Bow/Bow_005.png" id="6_up16w"]
+[ext_resource type="Texture2D" uid="uid://hvk31rdtphkf" path="res://assets/battle_animations/Te/Bow/Bow_006.png" id="7_4tcrl"]
+[ext_resource type="Texture2D" uid="uid://dlihqf42dodjw" path="res://assets/battle_animations/Te/Bow/Bow_007.png" id="8_fjg4t"]
+[ext_resource type="Texture2D" uid="uid://clh4aersn1oh7" path="res://assets/battle_animations/Te/Bow/Bow_008.png" id="9_4wtvk"]
+[ext_resource type="Texture2D" uid="uid://d3rjo6qmsgnaf" path="res://assets/battle_animations/Te/Bow/Bow_009.png" id="10_ucuai"]
+[ext_resource type="Texture2D" uid="uid://bmlqimiaw6edj" path="res://assets/battle_animations/Te/Bow/Bow_010.png" id="11_0enf0"]
+[ext_resource type="Texture2D" uid="uid://cmny5vdbhos4y" path="res://assets/battle_animations/Te/Bow/Bow_011.png" id="12_eww4f"]
+[ext_resource type="Texture2D" uid="uid://cntmbm3oqj21e" path="res://assets/battle_animations/Te/Bow/Bow_012.png" id="13_2q2nh"]
+[ext_resource type="Texture2D" uid="uid://c5hn11uxqxttt" path="res://assets/battle_animations/Te/Bow/Bow_013.png" id="14_vd3vt"]
+[ext_resource type="Texture2D" uid="uid://5kbxowo3ev5c" path="res://assets/battle_animations/Te/Bow/Bow_014.png" id="15_q5shi"]
+[ext_resource type="Texture2D" uid="uid://uh1mp3eyws44" path="res://assets/battle_animations/Te/Bow/Bow_015.png" id="16_lstap"]
+[ext_resource type="Texture2D" uid="uid://cbyj8qokfm70o" path="res://assets/battle_animations/Te/Bow/Bow_016.png" id="17_ux7ej"]
+[ext_resource type="Texture2D" uid="uid://i35cipsbiaj0" path="res://assets/battle_animations/Te/Bow/Bow_017.png" id="18_8a1fd"]
+[ext_resource type="Texture2D" uid="uid://884u0o07cseq" path="res://assets/battle_animations/Te/Bow/Bow_018.png" id="19_ecncp"]
+[ext_resource type="Texture2D" uid="uid://hwtq4235runj" path="res://assets/battle_animations/Te/Bow/Bow_019.png" id="20_o770p"]
+[ext_resource type="Texture2D" uid="uid://bxk7xy175x7he" path="res://assets/battle_animations/Te/Bow/Bow_020.png" id="21_0ykkg"]
+[ext_resource type="Texture2D" uid="uid://btyuramneq0kg" path="res://assets/battle_animations/Te/Bow/Bow_021.png" id="22_yitpc"]
+[ext_resource type="Texture2D" uid="uid://cxnh8quooehp1" path="res://assets/battle_animations/Te/Bow/Bow_022.png" id="23_tgb8m"]
+[ext_resource type="Texture2D" uid="uid://csuskbpp3m3na" path="res://assets/battle_animations/Te/Bow/Bow_023.png" id="24_o26wb"]
+[ext_resource type="Texture2D" uid="uid://ca4ux03llxior" path="res://assets/battle_animations/Te/Bow/Bow_024.png" id="25_7il0n"]
+[ext_resource type="Texture2D" uid="uid://cnwh5ebpoh761" path="res://assets/battle_animations/Te/Bow/Bow_025.png" id="26_vhevp"]
+[ext_resource type="Texture2D" uid="uid://dxfa7qtmjwh2" path="res://assets/battle_animations/Te/Bow/Bow_026.png" id="27_48bwh"]
+[ext_resource type="Texture2D" uid="uid://dgykjqhnd1ei1" path="res://assets/battle_animations/Te/Bow/Bow_027.png" id="28_up16w"]
+[ext_resource type="Texture2D" uid="uid://dhxfay6dfm3bu" path="res://assets/battle_animations/Te/Bow/Bow_028.png" id="29_4tcrl"]
+[ext_resource type="Texture2D" uid="uid://bw72gmu5qwrbk" path="res://assets/battle_animations/Te/Bow/Bow_029.png" id="30_fjg4t"]
+[ext_resource type="Texture2D" uid="uid://3htss65ihhqp" path="res://assets/battle_animations/Te/Bow/Bow_030.png" id="31_4wtvk"]
+[ext_resource type="Texture2D" uid="uid://dldk1vsv41u81" path="res://assets/battle_animations/Te/Bow/Bow_031.png" id="32_ucuai"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgb8m")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_o26wb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_7il0n")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_vhevp")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_48bwh")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_up16w")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_4tcrl")
+}, {
+"duration": 4.0,
+"texture": ExtResource("8_fjg4t")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_4wtvk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_ucuai")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_0enf0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_eww4f")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_2q2nh")
+}, {
+"duration": 20.0,
+"texture": ExtResource("14_vd3vt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_q5shi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lstap")
+}, {
+"duration": 4.0,
+"texture": ExtResource("17_ux7ej")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_8a1fd")
+}, {
+"duration": 4.0,
+"texture": ExtResource("19_ecncp")
+}, {
+"duration": 7.0,
+"texture": ExtResource("20_o770p")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_0ykkg")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_yitpc")
+}],
+"loop": 0,
+"name": &"bow",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgb8m")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_tgb8m")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_o26wb")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_7il0n")
+}, {
+"duration": 3.0,
+"texture": ExtResource("26_vhevp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_7il0n")
+}, {
+"duration": 8.0,
+"texture": ExtResource("1_tgb8m")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_o26wb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_7il0n")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_vhevp")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_48bwh")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_up16w")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_4tcrl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_48bwh")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_up16w")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_4tcrl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_fjg4t")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_48bwh")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_up16w")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_4tcrl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_2q2nh")
+}, {
+"duration": 20.0,
+"texture": ExtResource("14_vd3vt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_q5shi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lstap")
+}, {
+"duration": 4.0,
+"texture": ExtResource("17_ux7ej")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_8a1fd")
+}, {
+"duration": 4.0,
+"texture": ExtResource("19_ecncp")
+}, {
+"duration": 7.0,
+"texture": ExtResource("20_o770p")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_0ykkg")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_yitpc")
+}],
+"loop": 0,
+"name": &"bow_crit",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgb8m")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_4wtvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ucuai")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_4wtvk")
+}],
+"loop": 0,
+"name": &"bow_dodge",
+"speed": 60.0
+}]

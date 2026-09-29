@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Affinity" format=3 uid="uid://caanimaff001"]
+
+[ext_resource type="Script" path="res://scripts/affinity.gd" id="1_aff"]
+[ext_resource type="Texture2D" uid="uid://cdgnrvsvt550y" path="res://assets/graphics/UI/AffinityIcon/anim.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_aff")
+affinity_name = "理"
+icon = ExtResource("2_icon")
+hit_bonus = 10
+avoid_bonus = 0
+crit_bonus = 0

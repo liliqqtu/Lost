@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SupportPair" format=3 uid="uid://csuppairteis01"]
+
+[ext_resource type="Script" path="res://scripts/support_pair.gd" id="1_sp"]
+[ext_resource type="Resource" uid="uid://caffireaff001" path="res://data/affinity/fire.tres" id="2_fire"]
+[ext_resource type="Resource" uid="uid://cadarkaff001" path="res://data/affinity/dark.tres" id="3_dark"]
+[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="4_tecard"]
+[ext_resource type="Texture2D" uid="uid://cttwyvdeayn44" path="res://assets/graphics/Class Card/Isar.png" id="5_isacard"]
+
+[resource]
+script = ExtResource("1_sp")
+unit_a = "忒"
+unit_b = "伊萨尔"
+affinity_a = ExtResource("2_fire")
+affinity_b = ExtResource("3_dark")
+threshold_c = 1
+threshold_b = 2
+threshold_a = 3
+card_a = ExtResource("4_tecard")
+card_b = ExtResource("5_isacard")
+c_lines = [{
+"side": "right1",
+"speaker": "忒",
+"text": "1"
+}, {
+"side": "left1",
+"speaker": "伊萨尔",
+"text": "1"
+}]

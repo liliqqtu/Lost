@@ -1,0 +1,222 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cjfucaeqdw32o"]
+
+[ext_resource type="Texture2D" uid="uid://bcysx2mt4ae3l" path="res://assets/battle_animations/Isar/Magic/Magic_008.png" id="1_xa7vu"]
+[ext_resource type="Texture2D" uid="uid://04phy3pfaeor" path="res://assets/battle_animations/Isar/Magic/Magic_012.png" id="2_kevgn"]
+[ext_resource type="Texture2D" uid="uid://de4uy72prwqb2" path="res://assets/battle_animations/Isar/Magic/Magic_013.png" id="3_mrloa"]
+[ext_resource type="Texture2D" uid="uid://bxdphsqccy0c6" path="res://assets/battle_animations/Isar/Magic/Magic_014.png" id="4_gu8n3"]
+[ext_resource type="Texture2D" uid="uid://5mb8d8cs66r5" path="res://assets/battle_animations/Isar/Magic/Magic_015.png" id="5_nyii0"]
+[ext_resource type="Texture2D" uid="uid://cmjc5oe5bo2gl" path="res://assets/battle_animations/Isar/Magic/Magic_016.png" id="6_hgghe"]
+[ext_resource type="Texture2D" uid="uid://bfo8biy3yac4x" path="res://assets/battle_animations/Isar/Magic/Magic_017.png" id="7_b145s"]
+[ext_resource type="Texture2D" uid="uid://p12nyrc8xqqy" path="res://assets/battle_animations/Isar/Magic/Magic_018.png" id="8_hkuvl"]
+[ext_resource type="Texture2D" uid="uid://b14gx21ur4do" path="res://assets/battle_animations/Isar/Magic/Magic_019.png" id="9_45dfu"]
+[ext_resource type="Texture2D" uid="uid://dp6u613wdgh4d" path="res://assets/battle_animations/Isar/Magic/Magic_020.png" id="10_o6cm3"]
+[ext_resource type="Texture2D" uid="uid://b3qmcfux51p1k" path="res://assets/battle_animations/Isar/Magic/Magic_021.png" id="11_1v6sv"]
+[ext_resource type="Texture2D" uid="uid://cf7alnardk2d5" path="res://assets/battle_animations/Isar/Magic/Magic_022.png" id="12_im5uv"]
+[ext_resource type="Texture2D" uid="uid://38rci3cl5mx" path="res://assets/battle_animations/Isar/Magic/Magic_000.png" id="13_k72mu"]
+[ext_resource type="Texture2D" uid="uid://cr2gpdb1n34qu" path="res://assets/battle_animations/Isar/Magic/Magic_009.png" id="14_i8req"]
+[ext_resource type="Texture2D" uid="uid://csynd6s11weir" path="res://assets/battle_animations/Isar/Magic/Magic_011.png" id="15_yevmc"]
+[ext_resource type="Texture2D" uid="uid://dlq8em7gk6546" path="res://assets/battle_animations/Isar/Magic/Magic_010.png" id="16_8d272"]
+[ext_resource type="Texture2D" uid="uid://dtwlpc35b5y4m" path="res://assets/battle_animations/Isar/Magic/Magic_001.png" id="17_0irps"]
+[ext_resource type="Texture2D" uid="uid://bogmar8iqgyvv" path="res://assets/battle_animations/Isar/Magic/Magic_002.png" id="18_pcdfb"]
+[ext_resource type="Texture2D" uid="uid://xc1pob8berod" path="res://assets/battle_animations/Isar/Magic/Magic_003.png" id="19_d475o"]
+[ext_resource type="Texture2D" uid="uid://bcpwaihudkctq" path="res://assets/battle_animations/Isar/Magic/Magic_004.png" id="20_3ma0j"]
+[ext_resource type="Texture2D" uid="uid://b8kxuhkcux103" path="res://assets/battle_animations/Isar/Magic/Magic_005.png" id="21_tmkkx"]
+[ext_resource type="Texture2D" uid="uid://cyde8ttcvmob2" path="res://assets/battle_animations/Isar/Magic/Magic_006.png" id="22_7mdml"]
+[ext_resource type="Texture2D" uid="uid://4omdqoraf78y" path="res://assets/battle_animations/Isar/Magic/Magic_007.png" id="23_w5fsq"]
+[ext_resource type="Texture2D" uid="uid://ctma3lcdr4o3e" path="res://assets/battle_animations/Isar/Magic/Magic_023.png" id="24_8d272"]
+[ext_resource type="Texture2D" uid="uid://ejwhhqlh5ljx" path="res://assets/battle_animations/Isar/Magic/Magic_024.png" id="25_0irps"]
+[ext_resource type="Texture2D" uid="uid://wrrwdrqjrh4" path="res://assets/battle_animations/Isar/Magic/Magic_025.png" id="26_pcdfb"]
+[ext_resource type="Texture2D" uid="uid://dn5gyhd016t75" path="res://assets/battle_animations/Isar/Magic/Magic_026.png" id="27_d475o"]
+[ext_resource type="Texture2D" uid="uid://cxpdd0dfyju4b" path="res://assets/battle_animations/Isar/Magic/Magic_027.png" id="28_3ma0j"]
+[ext_resource type="Texture2D" uid="uid://c3d0q1t2n8tt5" path="res://assets/battle_animations/Isar/Magic/Magic_028.png" id="29_tmkkx"]
+[ext_resource type="Texture2D" uid="uid://c4viamtguiikq" path="res://assets/battle_animations/Isar/Magic/Magic_029.png" id="30_7mdml"]
+[ext_resource type="Texture2D" uid="uid://d2e61t1x1pv3y" path="res://assets/battle_animations/Isar/Magic/Magic_030.png" id="31_w5fsq"]
+[ext_resource type="Texture2D" uid="uid://dcuard8ldjtwt" path="res://assets/battle_animations/Isar/Magic/Magic_031.png" id="32_uxm78"]
+[ext_resource type="Texture2D" uid="uid://7s2dt5us8li7" path="res://assets/battle_animations/Isar/Magic/Magic_032.png" id="33_m6wi8"]
+[ext_resource type="Texture2D" uid="uid://bhue8q1t2ebe5" path="res://assets/battle_animations/Isar/Magic/Magic_033.png" id="34_nb0b6"]
+[ext_resource type="Texture2D" uid="uid://cydkij7oqsg4i" path="res://assets/battle_animations/Isar/Magic/Magic_034.png" id="35_k3xxb"]
+[ext_resource type="Texture2D" uid="uid://h41cq2beyyyj" path="res://assets/battle_animations/Isar/Magic/Magic_035.png" id="36_8on6y"]
+[ext_resource type="Texture2D" uid="uid://brlor8kbkcyeg" path="res://assets/battle_animations/Isar/Magic/Magic_036.png" id="37_elvy2"]
+[ext_resource type="Texture2D" uid="uid://v0ii6e0p8efe" path="res://assets/battle_animations/Isar/Magic/Magic_037.png" id="38_1j71o"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xa7vu")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_kevgn")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_mrloa")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_gu8n3")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_nyii0")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_hgghe")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_b145s")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_hkuvl")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_45dfu")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_o6cm3")
+}, {
+"duration": 8.0,
+"texture": ExtResource("11_1v6sv")
+}, {
+"duration": 6.0,
+"texture": ExtResource("12_im5uv")
+}, {
+"duration": 12.0,
+"texture": ExtResource("13_k72mu")
+}],
+"loop": 0,
+"name": &"magic_end",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_xa7vu")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_i8req")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yevmc")
+}, {
+"duration": 4.0,
+"texture": ExtResource("16_8d272")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_yevmc")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_xa7vu")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_i8req")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_8d272")
+}, {
+"duration": 4.0,
+"texture": ExtResource("15_yevmc")
+}],
+"loop": 1,
+"name": &"magic_loop",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_k72mu")
+}, {
+"duration": 4.0,
+"texture": ExtResource("17_0irps")
+}, {
+"duration": 8.0,
+"texture": ExtResource("18_pcdfb")
+}, {
+"duration": 7.0,
+"texture": ExtResource("19_d475o")
+}, {
+"duration": 8.0,
+"texture": ExtResource("20_3ma0j")
+}, {
+"duration": 11.0,
+"texture": ExtResource("21_tmkkx")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_7mdml")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_w5fsq")
+}],
+"loop": 0,
+"name": &"magic_start",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_k72mu")
+}, {
+"duration": 8.0,
+"texture": ExtResource("24_8d272")
+}, {
+"duration": 4.0,
+"texture": ExtResource("25_0irps")
+}, {
+"duration": 8.0,
+"texture": ExtResource("26_pcdfb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("27_d475o")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_3ma0j")
+}, {
+"duration": 8.0,
+"texture": ExtResource("29_tmkkx")
+}, {
+"duration": 4.0,
+"texture": ExtResource("30_7mdml")
+}, {
+"duration": 8.0,
+"texture": ExtResource("31_w5fsq")
+}, {
+"duration": 4.0,
+"texture": ExtResource("32_uxm78")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_3ma0j")
+}, {
+"duration": 8.0,
+"texture": ExtResource("33_m6wi8")
+}, {
+"duration": 4.0,
+"texture": ExtResource("34_nb0b6")
+}, {
+"duration": 8.0,
+"texture": ExtResource("35_k3xxb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("36_8on6y")
+}, {
+"duration": 14.0,
+"texture": ExtResource("37_elvy2")
+}, {
+"duration": 16.0,
+"texture": ExtResource("38_1j71o")
+}, {
+"duration": 8.0,
+"texture": ExtResource("18_pcdfb")
+}, {
+"duration": 7.0,
+"texture": ExtResource("19_d475o")
+}, {
+"duration": 8.0,
+"texture": ExtResource("20_3ma0j")
+}, {
+"duration": 11.0,
+"texture": ExtResource("21_tmkkx")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_7mdml")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_w5fsq")
+}],
+"loop": 0,
+"name": &"magic_start_crit",
+"speed": 60.0
+}]

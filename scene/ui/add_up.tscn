@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dps62cx3cp4s2"]
+
+[ext_resource type="Script" uid="uid://d2njm1cosidyi" path="res://scene/ui/add_up.gd" id="1_fid75"]
+[ext_resource type="Shader" uid="uid://dv5d6iqncbcdg" path="res://data/shader/highlight.gdshader" id="2_4o0de"]
+[ext_resource type="Texture2D" uid="uid://bxe4r3yltalmt" path="res://assets/graphics/UI/Upgrade_ Panel_UI.png" id="2_ilfi6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1frb"]
+resource_local_to_scene = true
+shader = ExtResource("2_4o0de")
+shader_parameter/flash_speed = 4.0
+shader_parameter/min_brightness = 1.0
+shader_parameter/max_brightness = 1.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memsa"]
+atlas = ExtResource("2_ilfi6")
+region = Rect2(100, 4, 44, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q2eb"]
+atlas = ExtResource("2_ilfi6")
+region = Rect2(0, 8, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilfi6"]
+atlas = ExtResource("2_ilfi6")
+region = Rect2(149, 1, 5, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1frb"]
+atlas = ExtResource("2_ilfi6")
+region = Rect2(209, 17, 7, 7)
+
+[node name="add_up" type="Control" unique_id=1256330008]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fid75")
+
+[node name="BG" type="TextureRect" parent="." unique_id=2042931351]
+material = SubResource("ShaderMaterial_l1frb")
+layout_mode = 0
+offset_left = -47.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 8.0
+texture = SubResource("AtlasTexture_memsa")
+
+[node name="Arrowt" type="Sprite2D" parent="." unique_id=1752757259]
+position = Vector2(5, 0)
+texture = SubResource("AtlasTexture_1q2eb")
+hframes = 6
+frame = 5
+
+[node name="1" type="TextureRect" parent="." unique_id=392596096]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 7.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_ilfi6")
+
+[node name="+" type="TextureRect" parent="." unique_id=1185810863]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_l1frb")

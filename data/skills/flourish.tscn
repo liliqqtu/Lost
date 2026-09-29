@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqboxktv6rqco"]
+
+[ext_resource type="Texture2D" uid="uid://b5jvpynstq8hj" path="res://assets/graphics/UI/skill/焕发.png" id="1_b0ggr"]
+
+[node name="Flourish" type="TextureRect" unique_id=1552767759]
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "焕发：某些行动后可以再次移动"
+texture = ExtResource("1_b0ggr")

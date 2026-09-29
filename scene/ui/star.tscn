@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cd2e5pptr581g"]
+
+[ext_resource type="Texture2D" uid="uid://bxe4r3yltalmt" path="res://assets/graphics/UI/Upgrade_ Panel_UI.png" id="1_wonyi"]
+[ext_resource type="Script" uid="uid://c7gh2s7aqjdfr" path="res://scene/ui/star.gd" id="2_6codr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wonyi"]
+atlas = ExtResource("1_wonyi")
+region = Rect2(0, 0, 21, 7)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=221029206]
+texture = SubResource("AtlasTexture_wonyi")
+hframes = 3
+frame = 2
+script = ExtResource("2_6codr")

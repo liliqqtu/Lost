@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://mri4ydlhiamc"]
+
+[ext_resource type="Script" uid="uid://cg4ysx6ijdg71" path="res://scene/ui/grade_up.gd" id="1_gu"]
+[ext_resource type="Texture2D" uid="uid://dvbq3lnnvtu0p" path="res://assets/graphics/UI/升级面板BG.png" id="2_1q2eb"]
+[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="2_af6y4"]
+[ext_resource type="Texture2D" uid="uid://chj74wejx6exc" path="res://assets/graphics/UI/升级面板汉字.png" id="2_n4kvm"]
+[ext_resource type="PackedScene" uid="uid://dps62cx3cp4s2" path="res://scene/ui/add_up.tscn" id="3_4irov"]
+
+[node name="GradeUp" type="Control" unique_id=1412145395]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gu")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1987644849]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 53.0
+offset_right = 138.0
+offset_bottom = 160.0
+texture = ExtResource("2_1q2eb")
+
+[node name="Add" type="VFlowContainer" parent="." unique_id=1289187320]
+custom_maximum_size = Vector2(-1, 48)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 93.0
+offset_right = 176.0
+offset_bottom = 157.0
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 16
+
+[node name="add_up" parent="Add" unique_id=1256330008 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up1" parent="Add" unique_id=655747674 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up2" parent="Add" unique_id=631506555 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up3" parent="Add" unique_id=647880514 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up4" parent="Add" unique_id=1232936969 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up5" parent="Add" unique_id=274741400 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up6" parent="Add" unique_id=1049819192 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="add_up7" parent="Add" unique_id=95363798 instance=ExtResource("3_4irov")]
+layout_mode = 2
+
+[node name="MG" type="TextureRect" parent="." unique_id=536354255]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 53.0
+offset_right = 138.0
+offset_bottom = 160.0
+texture = ExtResource("2_n4kvm")
+metadata/_edit_lock_ = true
+
+[node name="Card" type="TextureRect" parent="." unique_id=1047825871]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 84.0
+offset_right = 230.0
+offset_bottom = 156.0
+texture = ExtResource("2_af6y4")
+metadata/_edit_lock_ = true
+
+[node name="ClassName" type="Label" parent="." unique_id=479431213]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 56.0
+offset_right = 65.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(1, 0.96862745, 0.54901963, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "游牧民"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level" type="Label" parent="." unique_id=491967596]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 56.0
+offset_right = 117.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AbilityStats" type="VFlowContainer" parent="." unique_id=2109461276]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 88.0
+offset_right = 118.0
+offset_bottom = 152.0
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 0
+
+[node name="hp" type="Label" parent="AbilityStats" unique_id=511114832]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="str" type="Label" parent="AbilityStats" unique_id=947468115]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mag" type="Label" parent="AbilityStats" unique_id=1512343395]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skl" type="Label" parent="AbilityStats" unique_id=1836423964]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spd" type="Label" parent="AbilityStats" unique_id=188078033]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="luk" type="Label" parent="AbilityStats" unique_id=467193762]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="def_h" type="Label" parent="AbilityStats" unique_id=1770348087]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="res" type="Label" parent="AbilityStats" unique_id=293419187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1

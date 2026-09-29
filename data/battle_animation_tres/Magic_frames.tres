@@ -1,0 +1,109 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://y0bhqolok4ke"]
+
+[ext_resource type="Texture2D" uid="uid://lsqylmsthuye" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_001.png" id="1_03xdt"]
+[ext_resource type="Texture2D" uid="uid://dg6c7j7je4bl6" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_002.png" id="2_7qt3c"]
+[ext_resource type="Texture2D" uid="uid://bgajnxvr5rcti" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_003.png" id="3_6bmfi"]
+[ext_resource type="Texture2D" uid="uid://cqv2w7qnkxefy" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_004.png" id="4_1siy3"]
+[ext_resource type="Texture2D" uid="uid://d4jtek2n8uovj" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_005.png" id="5_eyyxj"]
+[ext_resource type="Texture2D" uid="uid://dn8ttn8aj46gk" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_006.png" id="6_0b0bd"]
+[ext_resource type="Texture2D" uid="uid://dya5lg1vs3ll4" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_007.png" id="7_801cr"]
+[ext_resource type="Texture2D" uid="uid://jxaaix0rh4de" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_008.png" id="8_bv7pj"]
+[ext_resource type="Texture2D" uid="uid://bo00mlflgdjd7" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_009.png" id="9_q5xor"]
+[ext_resource type="Texture2D" uid="uid://db5ahat3n64rf" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_010.png" id="10_8i0gy"]
+[ext_resource type="Texture2D" uid="uid://ckj8po3fxbdjs" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_011.png" id="11_rb2q3"]
+[ext_resource type="Texture2D" uid="uid://bg5jm3k2ted8c" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_012.png" id="12_nr362"]
+[ext_resource type="Texture2D" uid="uid://ca6s5legp45gg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_013.png" id="13_dr37r"]
+[ext_resource type="Texture2D" uid="uid://dpfraomwfwfk8" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_014.png" id="14_c8lny"]
+[ext_resource type="Texture2D" uid="uid://c13lvcn0eg25s" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_015.png" id="15_ku7kd"]
+[ext_resource type="Texture2D" uid="uid://vemvsi0qnjvg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_016.png" id="16_0uhhf"]
+[ext_resource type="Texture2D" uid="uid://cdd8xmohjedif" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_017.png" id="17_n0tld"]
+[ext_resource type="Texture2D" uid="uid://bek637ftqb7sg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_018.png" id="18_wpbpb"]
+[ext_resource type="Texture2D" uid="uid://qsrta4r871fw" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_019.png" id="19_gdfu5"]
+[ext_resource type="Texture2D" uid="uid://cgnubu42covut" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_020.png" id="20_fxu3b"]
+[ext_resource type="Texture2D" uid="uid://kl6ba37uo7cy" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_021.png" id="21_d8ggg"]
+[ext_resource type="Texture2D" uid="uid://chto03wpvytt4" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_022.png" id="22_b0m6a"]
+[ext_resource type="Texture2D" uid="uid://5rvxm4k4g8xa" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_023.png" id="23_hhdt5"]
+[ext_resource type="Texture2D" uid="uid://dh1jppjsmxnhg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_024.png" id="24_oj65y"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_03xdt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_7qt3c")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_6bmfi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_1siy3")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_eyyxj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_0b0bd")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_801cr")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_bv7pj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_q5xor")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_8i0gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rb2q3")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_nr362")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dr37r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c8lny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ku7kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0uhhf")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_n0tld")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_wpbpb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("19_gdfu5")
+}, {
+"duration": 2.0,
+"texture": ExtResource("20_fxu3b")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_d8ggg")
+}, {
+"duration": 2.0,
+"texture": ExtResource("22_b0m6a")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_hhdt5")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_oj65y")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_03xdt")
+}],
+"loop": 0,
+"name": &"fire",
+"speed": 60.0
+}]

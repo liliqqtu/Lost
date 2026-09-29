@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://c7cjfpvpw6ma5"]
+
+[ext_resource type="Script" uid="uid://qui1havaejgn" path="res://scene/ui/convoy.gd" id="1_wunnk"]
+[ext_resource type="Texture2D" uid="uid://btqalgrly0t45" path="res://assets/graphics/UI/Convoy_0.png" id="2_8kohv"]
+[ext_resource type="Texture2D" uid="uid://bts0wl0nymmfo" path="res://assets/graphics/UI/Convoy_1.png" id="3_bqhyi"]
+[ext_resource type="Shader" uid="uid://bfalpyosmbxqr" path="res://data/shader/ItemIconClass.gdshader" id="4_126ym"]
+[ext_resource type="Texture2D" uid="uid://c5la0gnsrvw7r" path="res://assets/graphics/UI/ItemIconClass/sword.png" id="5_l381w"]
+[ext_resource type="Texture2D" uid="uid://bmc57yqnfe7vt" path="res://assets/graphics/UI/ItemIconClass/axe.png" id="6_dk3pl"]
+[ext_resource type="Texture2D" uid="uid://bm5pod6q6y8us" path="res://assets/graphics/UI/ItemIconClass/lance.png" id="7_nydtt"]
+[ext_resource type="Texture2D" uid="uid://b2iwavra8jfwp" path="res://assets/graphics/UI/ItemIconClass/bow.png" id="8_adibv"]
+[ext_resource type="Texture2D" uid="uid://0betwvsnhtk6" path="res://assets/graphics/UI/ItemIconClass/staff.png" id="9_m6nbu"]
+[ext_resource type="Texture2D" uid="uid://qrde1ggfs0wn" path="res://assets/graphics/UI/ItemIconClass/anima.png" id="10_m8prb"]
+[ext_resource type="Texture2D" uid="uid://dncr8km3jxsfm" path="res://assets/graphics/UI/ItemIconClass/light.png" id="11_ki08d"]
+[ext_resource type="Texture2D" uid="uid://c4ugw2wvuj08o" path="res://assets/graphics/UI/ItemIconClass/dark.png" id="12_m7c5k"]
+[ext_resource type="Texture2D" uid="uid://77fnlsku68q0" path="res://assets/graphics/UI/ItemIconClass/item.png" id="13_rkr6b"]
+[ext_resource type="Shader" uid="uid://chxkbtythnky6" path="res://data/shader/ItemClassConvoy.gdshader" id="14_l48bn"]
+[ext_resource type="Texture2D" uid="uid://c03cipg5lj4p7" path="res://assets/graphics/UI/ItemIconClass/item_class_cursor.png" id="15_0o5d2"]
+[ext_resource type="PackedScene" uid="uid://hkvgn16en2gw" path="res://scene/ui/cursorhand.tscn" id="16_bgqk5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbwhc"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = false
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06cop"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgbcl"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jjwr"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw6cu"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fs8uv"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkngc"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72l7m"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iokeh"]
+shader = ExtResource("4_126ym")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfyuk"]
+shader = ExtResource("14_l48bn")
+shader_parameter/flash_speed = 3.0
+shader_parameter/min_brightness = 0.35
+shader_parameter/max_brightness = 1.0
+
+[node name="Convoy" type="Control" unique_id=362246116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wunnk")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1223973531]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 160.0
+texture = ExtResource("2_8kohv")
+metadata/_edit_lock_ = true
+
+[node name="MG" type="TextureRect" parent="." unique_id=762269052]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_bqhyi")
+metadata/_edit_lock_ = true
+
+[node name="MaxItems" type="Label" parent="MG" unique_id=2083562561]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 6.0
+offset_right = 239.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.81527483, 0.8023704, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentItems" type="Label" parent="MG" unique_id=1374793423]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 6.0
+offset_right = 208.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.81527483, 0.8023704, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ItemIconClass" type="HBoxContainer" parent="." unique_id=691570642]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 25.0
+offset_right = 236.0
+offset_bottom = 41.0
+theme_override_constants/separation = -4
+alignment = 2
+
+[node name="sword" type="TextureRect" parent="ItemIconClass" unique_id=1594883432]
+z_index = 1
+material = SubResource("ShaderMaterial_qbwhc")
+layout_mode = 2
+texture = ExtResource("5_l381w")
+
+[node name="axe" type="TextureRect" parent="ItemIconClass" unique_id=598521828]
+material = SubResource("ShaderMaterial_06cop")
+layout_mode = 2
+texture = ExtResource("6_dk3pl")
+
+[node name="lance" type="TextureRect" parent="ItemIconClass" unique_id=921945850]
+material = SubResource("ShaderMaterial_cgbcl")
+layout_mode = 2
+texture = ExtResource("7_nydtt")
+
+[node name="bow" type="TextureRect" parent="ItemIconClass" unique_id=766134128]
+material = SubResource("ShaderMaterial_6jjwr")
+layout_mode = 2
+texture = ExtResource("8_adibv")
+
+[node name="staff" type="TextureRect" parent="ItemIconClass" unique_id=370160460]
+material = SubResource("ShaderMaterial_jw6cu")
+layout_mode = 2
+texture = ExtResource("9_m6nbu")
+
+[node name="anima" type="TextureRect" parent="ItemIconClass" unique_id=531224244]
+material = SubResource("ShaderMaterial_fs8uv")
+layout_mode = 2
+texture = ExtResource("10_m8prb")
+
+[node name="light" type="TextureRect" parent="ItemIconClass" unique_id=1382090122]
+material = SubResource("ShaderMaterial_gkngc")
+layout_mode = 2
+texture = ExtResource("11_ki08d")
+
+[node name="dark" type="TextureRect" parent="ItemIconClass" unique_id=761797271]
+material = SubResource("ShaderMaterial_72l7m")
+layout_mode = 2
+texture = ExtResource("12_m7c5k")
+
+[node name="item" type="TextureRect" parent="ItemIconClass" unique_id=658146858]
+material = SubResource("ShaderMaterial_iokeh")
+layout_mode = 2
+texture = ExtResource("13_rkr6b")
+
+[node name="ItemIconClassCursor" type="TextureRect" parent="." unique_id=1646111628]
+z_index = 1
+material = SubResource("ShaderMaterial_kfyuk")
+layout_mode = 0
+offset_left = 124.0
+offset_top = 25.0
+offset_right = 140.0
+offset_bottom = 41.0
+texture = ExtResource("15_0o5d2")
+
+[node name="Cursor" parent="." unique_id=275649309 instance=ExtResource("16_bgqk5")]
+layout_mode = 0
+offset_top = 0.0
+offset_bottom = 16.0
+
+[node name="Bag" type="VBoxContainer" parent="." unique_id=1126859967]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 152.0
+
+[node name="ConvoyBag" type="VBoxContainer" parent="." unique_id=353831842]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 41.0
+offset_right = 235.0
+offset_bottom = 153.0
+
+[node name="PromptLabel" type="Label" parent="." unique_id=400335625]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 20.0
+offset_right = 123.0
+offset_bottom = 34.0
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 9
+text = "可以做些什么吗？"
+horizontal_alignment = 1
+vertical_alignment = 1

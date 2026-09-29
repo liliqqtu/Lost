@@ -1,0 +1,464 @@
+[gd_scene format=3 uid="uid://do580p4g2s6pu"]
+
+[ext_resource type="Script" uid="uid://df1cnqndv3y6r" path="res://scene/ui/battle_animation.gd" id="1_y0ncb"]
+[ext_resource type="Texture2D" uid="uid://ded3n37btmpk2" path="res://assets/graphics/Battle bg/草地.png" id="2_08d3c"]
+[ext_resource type="Texture2D" uid="uid://c2sotv3nxakeh" path="res://assets/graphics/Battle bg/草地地形.png" id="3_2bulg"]
+[ext_resource type="Shader" uid="uid://qeoaocgnntu7" path="res://data/shader/battle_animation.gdshader" id="4_jt41f"]
+[ext_resource type="SpriteFrames" uid="uid://cjfucaeqdw32o" path="res://data/battle_animation_tres/Isar.tres" id="5_4am2m"]
+[ext_resource type="SpriteFrames" uid="uid://c3oji4bmxra71" path="res://data/battle_animation_tres/Brigand_M_frames.tres" id="6_l1lng"]
+[ext_resource type="Shader" uid="uid://duqbxaw5jaxv1" path="res://data/shader/magic.gdshader" id="7_n85w1"]
+[ext_resource type="SpriteFrames" uid="uid://y0bhqolok4ke" path="res://data/battle_animation_tres/Magic_frames.tres" id="8_05pam"]
+[ext_resource type="Texture2D" uid="uid://cg6eqy4ghvh3q" path="res://assets/graphics/UI/battle screen.png" id="9_57uj0"]
+[ext_resource type="Texture2D" uid="uid://cd4254lvf51f2" path="res://assets/graphics/UI/空血条.png" id="10_c1gxk"]
+[ext_resource type="Texture2D" uid="uid://c74xvi8ibaxlg" path="res://assets/graphics/UI/满血条.png" id="11_fbpwc"]
+[ext_resource type="Texture2D" uid="uid://cwm2amesohk4s" path="res://assets/graphics/Item Icons/Swords/铁剑.png" id="12_pdojw"]
+[ext_resource type="Texture2D" uid="uid://uv30ytkravy7" path="res://assets/graphics/Item Icons/Axes/铁斧.png" id="13_tbetr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bg2x"]
+shader = ExtResource("4_jt41f")
+shader_parameter/enemy_palette = false
+shader_parameter/flash_amount = 0.0
+shader_parameter/remove_background = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h10f2"]
+shader = ExtResource("4_jt41f")
+shader_parameter/enemy_palette = false
+shader_parameter/flash_amount = 0.0
+shader_parameter/remove_background = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85uid"]
+shader = ExtResource("7_n85w1")
+shader_parameter/remove_background = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyyvi"]
+
+[sub_resource type="Animation" id="Animation_7p1hj"]
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_a3p6i"]
+length = 2.516668464587815
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.6833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnrk0"]
+_data = {
+&"axe": SubResource("Animation_7p1hj"),
+&"axe_crit": SubResource("Animation_a3p6i")
+}
+
+[sub_resource type="Animation" id="Animation_a54cs"]
+length = 0.800001708390005
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i74to"]
+_data = {
+&"fire": SubResource("Animation_a54cs")
+}
+
+[sub_resource type="Animation" id="Animation_jnrk0"]
+length = 1.1166683915721254
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3p6i"]
+_data = {
+&"sword": SubResource("Animation_jnrk0")
+}
+
+[sub_resource type="Animation" id="Animation_dyyvi"]
+length = 1.1666683941798286
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.0166667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4b10v"]
+length = 1.9166684332953767
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.4666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_impact"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4b10v"]
+_data = {
+&"bow": SubResource("Animation_dyyvi"),
+&"bow_crit": SubResource("Animation_4b10v")
+}
+
+[node name="BattleAnimation" type="Node2D" unique_id=421918766]
+script = ExtResource("1_y0ncb")
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=824893746]
+texture = ExtResource("2_08d3c")
+metadata/_edit_lock_ = true
+
+[node name="PlayerTerrain" type="Sprite2D" parent="." unique_id=678833559]
+position = Vector2(40, 22)
+texture = ExtResource("3_2bulg")
+metadata/_edit_lock_ = true
+
+[node name="EnemyTerrain" type="Sprite2D" parent="." unique_id=1376453942]
+position = Vector2(-40, 22)
+texture = ExtResource("3_2bulg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="PlayTreamAnimation" type="AnimatedSprite2D" parent="." unique_id=815879019]
+material = SubResource("ShaderMaterial_3bg2x")
+sprite_frames = ExtResource("5_4am2m")
+animation = &"magic_start_crit"
+frame = 22
+frame_progress = 1.0
+metadata/_edit_lock_ = true
+
+[node name="EnemyTreamAnimation" type="AnimatedSprite2D" parent="." unique_id=133287141]
+material = SubResource("ShaderMaterial_h10f2")
+sprite_frames = ExtResource("6_l1lng")
+animation = &"axe_critical"
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="MagicAnimation" type="AnimatedSprite2D" parent="." unique_id=1255692894]
+material = SubResource("ShaderMaterial_85uid")
+sprite_frames = ExtResource("8_05pam")
+animation = &"fire"
+frame = 24
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1272396142]
+libraries/ = SubResource("AnimationLibrary_dyyvi")
+libraries/Brigand_M = SubResource("AnimationLibrary_jnrk0")
+libraries/Magic = SubResource("AnimationLibrary_i74to")
+libraries/Ranger_M = SubResource("AnimationLibrary_a3p6i")
+libraries/Te = SubResource("AnimationLibrary_4b10v")
+
+[node name="BattleScreen" type="Sprite2D" parent="." unique_id=158778058]
+texture = ExtResource("9_57uj0")
+metadata/_edit_lock_ = true
+
+[node name="PlayerHIT" type="Label" parent="BattleScreen" unique_id=842229832]
+offset_left = 104.0
+offset_top = 30.0
+offset_right = 119.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "100
+"
+horizontal_alignment = 2
+
+[node name="PlayerName" type="Label" parent="BattleScreen" unique_id=861431886]
+custom_maximum_size = Vector2(-1, 16)
+offset_left = 66.0
+offset_top = -72.0
+offset_right = 120.0
+offset_bottom = -56.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "忒
+"
+horizontal_alignment = 1
+
+[node name="PlayerDMG" type="Label" parent="BattleScreen" unique_id=667922753]
+offset_left = 104.0
+offset_top = 38.0
+offset_right = 119.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "10
+"
+horizontal_alignment = 2
+
+[node name="PlayerCRT" type="Label" parent="BattleScreen" unique_id=483305625]
+offset_left = 104.0
+offset_top = 46.0
+offset_right = 119.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "10
+"
+horizontal_alignment = 2
+
+[node name="PlayerWeaponName" type="Label" parent="BattleScreen" unique_id=382352169]
+custom_maximum_size = Vector2(-1, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -39.0
+offset_right = -51.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "铁剑
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHP" type="Label" parent="BattleScreen" unique_id=675477861]
+offset_left = 9.0
+offset_top = 62.0
+offset_right = 19.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyMISS" type="Label" parent="BattleScreen" unique_id=230276069]
+visible = false
+offset_left = 38.0
+offset_top = -38.0
+offset_right = 70.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(0.9411765, 0.3254902, 0.44705883, 0.9843137)
+theme_override_colors/font_shadow_color = Color(0.80321616, 0.72430897, 0.25361592, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 12
+text = "MISS!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="BattleScreen" unique_id=397016336]
+offset_left = 26.0
+offset_top = 65.0
+offset_right = 106.0
+offset_bottom = 72.0
+max_value = 80.0
+texture_under = ExtResource("10_c1gxk")
+texture_progress = ExtResource("11_fbpwc")
+
+[node name="PlayerWeaponIcon" type="TextureRect" parent="BattleScreen" unique_id=408122367]
+offset_left = 2.0
+offset_top = 41.0
+offset_right = 18.0
+offset_bottom = 57.0
+texture = ExtResource("12_pdojw")
+
+[node name="EnemyName" type="Label" parent="BattleScreen" unique_id=1264861626]
+custom_maximum_size = Vector2(-1, 16)
+offset_left = -120.0
+offset_top = -72.0
+offset_right = -66.0
+offset_bottom = -56.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "山贼
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHIT" type="Label" parent="BattleScreen" unique_id=1818276788]
+offset_left = -96.0
+offset_top = 30.0
+offset_right = -81.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "100
+"
+horizontal_alignment = 2
+
+[node name="EnemyDMG" type="Label" parent="BattleScreen" unique_id=348577654]
+offset_left = -96.0
+offset_top = 38.0
+offset_right = -81.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "10
+"
+horizontal_alignment = 2
+
+[node name="EnemyCRT" type="Label" parent="BattleScreen" unique_id=431100364]
+offset_left = -96.0
+offset_top = 46.0
+offset_right = -81.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "10"
+horizontal_alignment = 2
+
+[node name="EnemyWeaponName" type="Label" parent="BattleScreen" unique_id=1018983576]
+custom_maximum_size = Vector2(-1, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -39.0
+offset_right = -129.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "铁斧
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHP" type="Label" parent="BattleScreen" unique_id=1161791182]
+offset_left = -111.0
+offset_top = 62.0
+offset_right = -101.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerMISS" type="Label" parent="BattleScreen" unique_id=1320955790]
+visible = false
+offset_left = -65.0
+offset_top = -37.0
+offset_right = -33.0
+offset_bottom = -3.0
+theme_override_colors/font_color = Color(0.9411765, 0.3254902, 0.44705883, 0.9843137)
+theme_override_colors/font_shadow_color = Color(0.80321616, 0.72430897, 0.25361592, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 12
+text = "MISS!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyWeaponIcon" type="TextureRect" parent="BattleScreen" unique_id=1047674731]
+offset_left = -77.0
+offset_top = 41.0
+offset_right = -61.0
+offset_bottom = 57.0
+texture = ExtResource("13_tbetr")
+
+[node name="EnemyHealthBar" type="TextureProgressBar" parent="BattleScreen" unique_id=1512278258]
+offset_left = -95.0
+offset_top = 65.0
+offset_right = -15.0
+offset_bottom = 72.0
+max_value = 80.0
+texture_under = ExtResource("10_c1gxk")
+texture_progress = ExtResource("11_fbpwc")

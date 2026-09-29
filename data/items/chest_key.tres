@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Key" format=3 uid="uid://bp3jgf6jxx341"]
+
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"chest_key"
+display_name = "宝箱钥匙"
+description = "开启对应宝箱的钥匙，用后即毁"
+key_id = "chest_1"

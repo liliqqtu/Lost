@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://bp3mkp8hwdl41"]
+
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_skill"]
+[ext_resource type="PackedScene" uid="uid://dqboxktv6rqco" path="res://data/skills/flourish.tscn" id="2_view"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_id = &"flourish"
+display_name = "焕发"
+description = "除攻击外的行动后可再次移动"
+view_scene = ExtResource("2_view")
+trigger = 1

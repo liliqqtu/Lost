@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c73b8favdp0fg"]
+
+[ext_resource type="Script" uid="uid://4hv8wcc7jmp3" path="res://scene/character/units/level_0/brigand.gd" id="1_g0vfb"]
+[ext_resource type="SpriteFrames" uid="uid://c3oji4bmxra71" path="res://data/battle_animation_tres/Brigand_M_frames.tres" id="2_1rlg1"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="2_ctso3"]
+[ext_resource type="SpriteFrames" uid="uid://gr6b4o81ph31" path="res://data/map_sprite_frames/Brigand_map_sprite.tres" id="3_5brye"]
+[ext_resource type="Resource" uid="uid://cbrigand0001" path="res://data/class_data/brigand.tres" id="4_class"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71hhi"]
+shader = ExtResource("2_ctso3")
+shader_parameter/grayscale = false
+shader_parameter/red_tint = false
+shader_parameter/remove_background = true
+
+[node name="Brigand" type="Node2D" unique_id=2028581135]
+script = ExtResource("1_g0vfb")
+class_data = ExtResource("4_class")
+team = 1
+con = 11
+battle_frames = ExtResource("2_1rlg1")
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=1848687586]
+material = SubResource("ShaderMaterial_71hhi")
+position = Vector2(8, 0)
+sprite_frames = ExtResource("3_5brye")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="hp" type="ProgressBar" parent="." unique_id=7071179]
+custom_maximum_size = Vector2(-1, 2)
+offset_top = 14.0
+offset_right = 16.0
+offset_bottom = 16.0
+show_percentage = false

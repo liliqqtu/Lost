@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://besigcaiiofn1"]
+
+[ext_resource type="Texture2D" uid="uid://bqqcwlhyctg37" path="res://assets/graphics/UI/Battle Preview.png" id="1_ktlwe"]
+[ext_resource type="Texture2D" uid="uid://cwm2amesohk4s" path="res://assets/graphics/Item Icons/Swords/铁剑.png" id="2_gn4vq"]
+[ext_resource type="Texture2D" uid="uid://uv30ytkravy7" path="res://assets/graphics/Item Icons/Axes/铁斧.png" id="3_po1hy"]
+[ext_resource type="Texture2D" uid="uid://cekdp28c2bfx4" path="res://assets/graphics/UI/Attackx2x4.png" id="4_jqvvr"]
+[ext_resource type="Script" uid="uid://n5cfoiayg6jm" path="res://assets/graphics/UI/Attackx2x4.gd" id="5_jdixm"]
+
+[node name="Battle Preview" type="TextureRect" unique_id=1779516943]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ktlwe")
+
+[node name="PowerAccuracyCriticalHit" type="Label" parent="." unique_id=1502587009]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 52.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 0.96862745, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 9
+text = "威力
+命中
+必杀"
+horizontal_alignment = 1
+
+[node name="HP" type="Label" parent="." unique_id=590527876]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 50.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(1, 0.96862745, 0.54901963, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerDPH" type="Label" parent="." unique_id=462163035]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 72.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "10
+10
+10
+10"
+horizontal_alignment = 1
+
+[node name="EnemyDPH" type="Label" parent="." unique_id=1763647378]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 25.0
+offset_right = 29.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "10
+10
+10
+10"
+horizontal_alignment = 1
+
+[node name="PlayerName" type="Label" parent="." unique_id=1630468152]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 73.0
+offset_bottom = 24.0
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 9
+text = "忒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerWeapon" type="TextureRect" parent="." unique_id=486386220]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 26.0
+offset_bottom = 24.0
+texture = ExtResource("2_gn4vq")
+
+[node name="EnemyWeapon" type="TextureRect" parent="." unique_id=956066497]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 88.0
+offset_right = 69.0
+offset_bottom = 104.0
+texture = ExtResource("3_po1hy")
+
+[node name="EnemyName" type="Label" parent="." unique_id=136142230]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 53.0
+offset_bottom = 103.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 9
+text = "强盗"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyWeaponName" type="Label" parent="." unique_id=1662356715]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 104.0
+offset_right = 71.0
+offset_bottom = 118.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+text = "铁斧"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=1713187939]
+position = Vector2(64, 48)
+texture = ExtResource("4_jqvvr")
+hframes = 2
+script = ExtResource("5_jdixm")

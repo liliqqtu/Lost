@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cx0lkcbo2loqh"]
+
+[ext_resource type="Script" uid="uid://b8uk3167wau5l" path="res://scene/character/units/unit.gd" id="1_cirfa"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="2_nlwee"]
+[ext_resource type="SpriteFrames" uid="uid://kaxa75drxet5" path="res://data/map_sprite_frames/Nomad_map_sprite.tres" id="3_71hhi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71hhi"]
+shader = ExtResource("2_nlwee")
+shader_parameter/grayscale = false
+
+[node name="Unit" type="Node2D" unique_id=2028581135]
+script = ExtResource("1_cirfa")
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=1848687586]
+material = SubResource("ShaderMaterial_71hhi")
+position = Vector2(8, 0)
+sprite_frames = ExtResource("3_71hhi")
+animation = &"idle"
+autoplay = "idle"

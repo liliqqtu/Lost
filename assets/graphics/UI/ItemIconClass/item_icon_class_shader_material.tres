@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c83rcl83hbkgb"]
+
+[ext_resource type="Shader" uid="uid://bfalpyosmbxqr" path="res://data/shader/ItemIconClass.gdshader" id="1_72l7m"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_72l7m")
+shader_parameter/dark = true
+shader_parameter/dark_amount = 0.55

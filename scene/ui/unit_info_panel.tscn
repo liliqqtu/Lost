@@ -1,0 +1,576 @@
+[gd_scene format=3 uid="uid://rbd2ehl2ehqc"]
+
+[ext_resource type="Texture2D" uid="uid://dsy4ygm5beqek" path="res://assets/graphics/UI/角色信息.png" id="1_nue8u"]
+[ext_resource type="Texture2D" uid="uid://dfmktw4fg4ljl" path="res://assets/graphics/UI/空能力值条.png" id="2_5d282"]
+[ext_resource type="Texture2D" uid="uid://8ajh3qccv0j4" path="res://assets/graphics/UI/角色物品.png" id="2_fsxi5"]
+[ext_resource type="Texture2D" uid="uid://d175nwc5g5jjs" path="res://assets/graphics/UI/武器&支援等级.png" id="3_0cpxh"]
+[ext_resource type="Texture2D" uid="uid://cm2wxpmt7s6h8" path="res://assets/graphics/UI/满能力值条.png" id="3_13eqi"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="5_ewa6l"]
+[ext_resource type="Texture2D" uid="uid://b2iwavra8jfwp" path="res://assets/graphics/UI/ItemIconClass/bow.png" id="5_xod08"]
+[ext_resource type="PackedScene" uid="uid://cxeysdmy7sp7k" path="res://scene/ui/itemrow.tscn" id="6_13eqi"]
+[ext_resource type="SpriteFrames" uid="uid://kaxa75drxet5" path="res://data/map_sprite_frames/Nomad_map_sprite.tres" id="6_685kj"]
+[ext_resource type="Texture2D" uid="uid://c2lt18axvpoia" path="res://assets/graphics/UI/空武器经验条.png" id="6_b0pj4"]
+[ext_resource type="Texture2D" uid="uid://c3kxfu68rk1iv" path="res://assets/graphics/UI/满武器经验条.png" id="7_hvlah"]
+[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="11_13eqi"]
+[ext_resource type="Texture2D" uid="uid://dtaqpfdd873pt" path="res://assets/graphics/UI/AffinityIcon/wind.png" id="12_c8cgo"]
+[ext_resource type="Script" uid="uid://cxcxv11gjylhu" path="res://scene/ui/unit_info_panel.gd" id="12_panel"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xod08"]
+shader = ExtResource("5_ewa6l")
+shader_parameter/grayscale = false
+shader_parameter/red_tint = false
+shader_parameter/remove_background = true
+
+[node name="UnitInfoPanel" type="Control" unique_id=1362810591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_panel")
+metadata/_edit_lock_ = true
+
+[node name="InfoData" type="TextureRect" parent="." unique_id=343659382]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_nue8u")
+metadata/_edit_lock_ = true
+
+[node name="VBoxData1Bar" type="VBoxContainer" parent="InfoData" unique_id=406390722]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 31.0
+offset_right = 166.0
+offset_bottom = 159.0
+theme_override_constants/separation = 11
+
+[node name="StrBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=23979911]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="MagBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=607077557]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="SklBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=1273932475]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="SpdBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=805671671]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="LukBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=1492191983]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="Def_HBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=1891341874]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="ResBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=1690671836]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="MoveBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar" unique_id=77867437]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 40.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="VBoxData1Bar2" type="VBoxContainer" parent="InfoData" unique_id=1586947544]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 31.0
+offset_right = 230.0
+offset_bottom = 159.0
+theme_override_constants/separation = 0
+
+[node name="ConBar" type="TextureProgressBar" parent="InfoData/VBoxData1Bar2" unique_id=1030822912]
+custom_minimum_size = Vector2(0, 5)
+custom_maximum_size = Vector2(-1, 5)
+layout_mode = 2
+max_value = 20.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 2
+texture_under = ExtResource("2_5d282")
+texture_progress = ExtResource("3_13eqi")
+
+[node name="VBoxData1" type="VBoxContainer" parent="InfoData" unique_id=1310547321]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 26.0
+offset_right = 155.0
+offset_bottom = 154.0
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Str" type="Label" parent="InfoData/VBoxData1" unique_id=1910517832]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Mag" type="Label" parent="InfoData/VBoxData1" unique_id=295342234]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Skl" type="Label" parent="InfoData/VBoxData1" unique_id=1975806893]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Spd" type="Label" parent="InfoData/VBoxData1" unique_id=947198764]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Luk" type="Label" parent="InfoData/VBoxData1" unique_id=1660349103]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Def_H" type="Label" parent="InfoData/VBoxData1" unique_id=1046948811]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Res" type="Label" parent="InfoData/VBoxData1" unique_id=1888685179]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="Move" type="Label" parent="InfoData/VBoxData1" unique_id=395920921]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxData2" type="VBoxContainer" parent="InfoData" unique_id=264864915]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 26.0
+offset_right = 220.0
+offset_bottom = 154.0
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Con" type="Label" parent="InfoData/VBoxData2" unique_id=2064591501]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "9"
+horizontal_alignment = 1
+
+[node name="Rescue" type="Label" parent="InfoData/VBoxData2" unique_id=5212247]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "15"
+horizontal_alignment = 1
+
+[node name="States" type="Label" parent="InfoData/VBoxData2" unique_id=7868832]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "- -"
+horizontal_alignment = 1
+
+[node name="Cmd" type="Label" parent="InfoData/VBoxData2" unique_id=72351513]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "1⭐"
+horizontal_alignment = 1
+
+[node name="Talk" type="Label" parent="InfoData/VBoxData2" unique_id=1133489036]
+custom_minimum_size = Vector2(40, 16)
+custom_maximum_size = Vector2(40, 16)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "- -
+"
+horizontal_alignment = 1
+
+[node name="Skill" type="HFlowContainer" parent="InfoData" unique_id=637449044]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 119.0
+offset_right = 228.0
+offset_bottom = 153.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 2
+
+[node name="Items" type="TextureRect" parent="." unique_id=863289823]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_fsxi5")
+metadata/_edit_lock_ = true
+
+[node name="VBoxItems" type="VBoxContainer" parent="Items" unique_id=1341430032]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 23.0
+offset_right = 228.0
+offset_bottom = 103.0
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="itemrow" parent="Items/VBoxItems" unique_id=1693196374 instance=ExtResource("6_13eqi")]
+layout_mode = 2
+
+[node name="itemrow2" parent="Items/VBoxItems" unique_id=793510028 instance=ExtResource("6_13eqi")]
+layout_mode = 2
+
+[node name="itemrow3" parent="Items/VBoxItems" unique_id=1261207650 instance=ExtResource("6_13eqi")]
+layout_mode = 2
+
+[node name="itemrow4" parent="Items/VBoxItems" unique_id=1974560734 instance=ExtResource("6_13eqi")]
+layout_mode = 2
+
+[node name="itemrow5" parent="Items/VBoxItems" unique_id=2079561210 instance=ExtResource("6_13eqi")]
+layout_mode = 2
+
+[node name="Weapon&SupportLevel" type="TextureRect" parent="." unique_id=889004812]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_0cpxh")
+metadata/_edit_lock_ = true
+
+[node name="WeaponXP" type="HFlowContainer" parent="Weapon&SupportLevel" unique_id=1622132850]
+custom_minimum_size = Vector2(65, 16)
+custom_maximum_size = Vector2(130, 32)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 26.0
+offset_right = 233.0
+offset_bottom = 58.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 0
+
+[node name="WeaponClass" type="HBoxContainer" parent="Weapon&SupportLevel/WeaponXP" unique_id=1337939601]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="Weapon&SupportLevel/WeaponXP/WeaponClass" unique_id=404083620]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("5_xod08")
+
+[node name="XP bar" type="TextureProgressBar" parent="Weapon&SupportLevel/WeaponXP/WeaponClass" unique_id=1421100456]
+layout_mode = 2
+texture_under = ExtResource("6_b0pj4")
+texture_progress = ExtResource("7_hvlah")
+
+[node name="WeaponLevel" type="HFlowContainer" parent="Weapon&SupportLevel" unique_id=468451401]
+custom_minimum_size = Vector2(65, 16)
+custom_maximum_size = Vector2(130, 32)
+layout_mode = 0
+offset_left = 138.0
+offset_top = 26.0
+offset_right = 221.0
+offset_bottom = 58.0
+theme_override_constants/h_separation = 53
+theme_override_constants/v_separation = 0
+
+[node name="Label" type="Label" parent="Weapon&SupportLevel/WeaponLevel" unique_id=1663012254]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 12
+text = "C"
+
+[node name="SupportLevel" type="VBoxContainer" parent="Weapon&SupportLevel" unique_id=438967620]
+custom_minimum_size = Vector2(0, 80)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 0
+offset_left = 121.0
+offset_top = 66.0
+offset_right = 213.0
+offset_bottom = 98.0
+theme_override_constants/separation = 0
+
+[node name="character" type="HBoxContainer" parent="Weapon&SupportLevel/SupportLevel" unique_id=327254756]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="Weapon&SupportLevel/SupportLevel/character" unique_id=1302133247]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Weapon&SupportLevel/SupportLevel/character" unique_id=10306980]
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="Weapon&SupportLevel/SupportLevel/character" unique_id=1633475240]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7764706, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.3529412, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 11
+
+[node name="ClassCard" type="TextureRect" parent="." unique_id=1759974002]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 88.0
+offset_bottom = 82.0
+texture = ExtResource("11_13eqi")
+metadata/_edit_lock_ = true
+
+[node name="BaseInfo" type="Control" parent="." unique_id=1904931213]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Name" type="Label" parent="BaseInfo" unique_id=240463553]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 82.0
+offset_right = 83.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "忒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LV" type="Label" parent="BaseInfo" unique_id=1002374799]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 121.0
+offset_right = 43.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="E" type="Label" parent="BaseInfo" unique_id=1959953036]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 121.0
+offset_right = 67.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP" type="Label" parent="BaseInfo" unique_id=468957155]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 137.0
+offset_right = 47.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MAXHP" type="Label" parent="BaseInfo" unique_id=1315619520]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 137.0
+offset_right = 70.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Class" type="Label" parent="BaseInfo" unique_id=177388058]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 104.0
+offset_right = 61.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.973744, 0.9686771, 0.96543163, 0.9843137)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "弓骑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AffinityIcon" type="TextureRect" parent="BaseInfo" unique_id=798805548]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 83.0
+offset_right = 93.0
+offset_bottom = 96.0
+texture = ExtResource("12_c8cgo")
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=264813783]
+material = SubResource("ShaderMaterial_xod08")
+position = Vector2(80, 125)
+sprite_frames = ExtResource("6_685kj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7913962

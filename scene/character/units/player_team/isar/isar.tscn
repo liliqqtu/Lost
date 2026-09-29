@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bf6qs4f42l1db"]
+
+[ext_resource type="Script" uid="uid://2ng2lqq7g4mt" path="res://scene/character/units/player_team/isar/isar.gd" id="1_2b1tr"]
+[ext_resource type="Script" uid="uid://ki2tfb5awnwe" path="res://scripts/item.gd" id="2_x3s12"]
+[ext_resource type="Resource" uid="uid://1tqsb36g6g2l" path="res://data/items/weapon_fire.tres" id="3_6gtc4"]
+[ext_resource type="Resource" uid="uid://cae6xpinabrdi" path="res://data/class_data/isar.tres" id="4_6gtc4"]
+[ext_resource type="SpriteFrames" uid="uid://cpiuujm6h5mio" path="res://data/map_sprite_frames/Sage_sprite_frames.tres" id="7_4a17m"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="9_o6tdu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71hhi"]
+shader = ExtResource("9_o6tdu")
+shader_parameter/grayscale = false
+shader_parameter/red_tint = false
+shader_parameter/remove_background = true
+
+[node name="Isar" type="Node2D" unique_id=2028581135]
+script = ExtResource("1_2b1tr")
+inventory = Array[ExtResource("2_x3s12")]([ExtResource("3_6gtc4")])
+class_data = ExtResource("4_6gtc4")
+unit_name = "伊萨尔"
+lv = 1
+max_hp = 30
+hp = 30
+str = 9
+mag = 14
+skl = 14
+spd = 13
+def_h = 10
+res = 14
+luk = 20
+con = 12
+talk = "忒"
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=1848687586]
+material = SubResource("ShaderMaterial_71hhi")
+position = Vector2(8, 0)
+sprite_frames = ExtResource("7_4a17m")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6652148
+
+[node name="hp" type="ProgressBar" parent="." unique_id=1483115970]
+custom_maximum_size = Vector2(-1, 2)
+offset_top = 14.0
+offset_right = 16.0
+offset_bottom = 16.0
+show_percentage = false

@@ -1,0 +1,69 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c8phv3enrtcq8"]
+
+[ext_resource type="Texture2D" uid="uid://bejlfgd1s5j8j" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_000.png" id="1_5vx4p"]
+[ext_resource type="Texture2D" uid="uid://dojeibh14rm2s" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_001.png" id="2_thw7d"]
+[ext_resource type="Texture2D" uid="uid://dv46ucnorhiv4" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_002.png" id="3_lqt2u"]
+[ext_resource type="Texture2D" uid="uid://ccfok56ai2xn" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_003.png" id="4_3ybjs"]
+[ext_resource type="Texture2D" uid="uid://bv8vyr3hlw3cl" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_004.png" id="5_teqsr"]
+[ext_resource type="Texture2D" uid="uid://dyc3drcpkuo8t" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_005.png" id="6_pag17"]
+[ext_resource type="Texture2D" uid="uid://dfa5gnr7d17ng" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_006.png" id="7_6y3fv"]
+[ext_resource type="Texture2D" uid="uid://d1evrqg4iapgs" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_007.png" id="8_d03xb"]
+[ext_resource type="Texture2D" uid="uid://xyj2qxom7feh" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_008.png" id="9_medfy"]
+[ext_resource type="Texture2D" uid="uid://cn2cunmxh5nbm" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_009.png" id="10_nm3o6"]
+[ext_resource type="Texture2D" uid="uid://bhrlejt8lp85w" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_010.png" id="11_4gfro"]
+[ext_resource type="Texture2D" uid="uid://c2tq1sqlr28tm" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_011.png" id="12_3u2pb"]
+[ext_resource type="Texture2D" uid="uid://d4no0u7ucguw5" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_012.png" id="13_6ka13"]
+[ext_resource type="Texture2D" uid="uid://cvfouh02pkllw" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_013.png" id="14_62jtq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5vx4p")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_thw7d")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_lqt2u")
+}, {
+"duration": 9.0,
+"texture": ExtResource("4_3ybjs")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_teqsr")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_pag17")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_6y3fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d03xb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_medfy")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_nm3o6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_4gfro")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_3u2pb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_6ka13")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_62jtq")
+}, {
+"duration": 5.0,
+"texture": ExtResource("1_5vx4p")
+}],
+"loop": 0,
+"name": &"sword",
+"speed": 60.0
+}]

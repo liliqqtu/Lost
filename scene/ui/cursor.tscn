@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2kohdrb8xqeu"]
+
+[ext_resource type="Texture2D" uid="uid://bslwsfh0jel7t" path="res://assets/graphics/UI/00.png" id="1_37uh6"]
+[ext_resource type="Script" uid="uid://cdohglosfg7yf" path="res://scene/ui/cursor.gd" id="1_hi8l7"]
+
+[node name="Cursor" type="Node2D" unique_id=1560125616]
+script = ExtResource("1_hi8l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=576543702]
+texture = ExtResource("1_37uh6")
+centered = false

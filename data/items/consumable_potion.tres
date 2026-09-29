@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Consumable" format=3 uid="uid://b8f1potion001"]
+
+[ext_resource type="Script" uid="uid://dinxw31x6h4t7" path="res://scripts/consumable.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bgx3une5red4k" path="res://assets/graphics/Item Icons/Item/伤药.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"potion"
+display_name = "伤药"
+description = "恢复 15 点 HP"
+icon = ExtResource("2_icon")
+heal_hp = 15
+durability = 5
+max_durability = 5

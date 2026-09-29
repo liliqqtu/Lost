@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://b8f1lost00001"]
+
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_skill"]
+[ext_resource type="PackedScene" uid="uid://cqwj0gyl4hym5" path="res://data/skills/lost.tscn" id="2_view"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_id = &"lost"
+display_name = "仿徨"
+description = "所有武器射程减一"
+view_scene = ExtResource("2_view")
+trigger = 0
+min_range_delta = -1
+max_range_delta = -1

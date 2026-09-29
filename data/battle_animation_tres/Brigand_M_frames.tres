@@ -1,0 +1,263 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c3oji4bmxra71"]
+
+[ext_resource type="Texture2D" uid="uid://dhx64qx7rinii" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_000.png" id="1_50sal"]
+[ext_resource type="Texture2D" uid="uid://6yo8xd4jc85k" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_001.png" id="2_q8ghp"]
+[ext_resource type="Texture2D" uid="uid://ctvewaov1l43l" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_002.png" id="3_enbci"]
+[ext_resource type="Texture2D" uid="uid://cyukf5hsg0fdx" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_003.png" id="4_a47pg"]
+[ext_resource type="Texture2D" uid="uid://ds3cp6o5f24if" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_004.png" id="5_6vuun"]
+[ext_resource type="Texture2D" uid="uid://ddhh1xrkppjm7" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_005.png" id="6_ioxon"]
+[ext_resource type="Texture2D" uid="uid://tyouykair0mb" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_006.png" id="7_4qn7r"]
+[ext_resource type="Texture2D" uid="uid://du3u7sxqu1bym" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_007.png" id="8_bpa38"]
+[ext_resource type="Texture2D" uid="uid://dy57a3gunntxx" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_008.png" id="9_pt4rx"]
+[ext_resource type="Texture2D" uid="uid://bjq8yd751iasn" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_009.png" id="10_6dylt"]
+[ext_resource type="Texture2D" uid="uid://qbdeooxkq8b" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_010.png" id="11_2rg2x"]
+[ext_resource type="Texture2D" uid="uid://jettvumdn4oq" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_011.png" id="12_l5fa6"]
+[ext_resource type="Texture2D" uid="uid://v78yq1fmacsy" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_012.png" id="13_kuppr"]
+[ext_resource type="Texture2D" uid="uid://2fjknv10y4cy" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_013.png" id="14_3kns2"]
+[ext_resource type="Texture2D" uid="uid://bgnk0bvk3qurl" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_014.png" id="15_bdbun"]
+[ext_resource type="Texture2D" uid="uid://cxbcw1d6fbeuo" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_015.png" id="16_tut00"]
+[ext_resource type="Texture2D" uid="uid://dt8c4l26joxpf" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_016.png" id="17_irl3u"]
+[ext_resource type="Texture2D" uid="uid://cjvfbww2lql65" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_017.png" id="18_fv1vo"]
+[ext_resource type="Texture2D" uid="uid://c5i1odfaec40u" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_018.png" id="19_jt304"]
+[ext_resource type="Texture2D" uid="uid://uh7s2wumo6wu" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_019.png" id="20_rryl4"]
+[ext_resource type="Texture2D" uid="uid://dy00sdixn8xyq" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_020.png" id="21_yjdc6"]
+[ext_resource type="Texture2D" uid="uid://dkd7m8m2k0cu4" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_021.png" id="22_6q7te"]
+[ext_resource type="Texture2D" uid="uid://bvml84feo8wp1" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_022.png" id="23_hjvpl"]
+[ext_resource type="Texture2D" uid="uid://dkwveev65iv4w" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_023.png" id="24_6i5pg"]
+[ext_resource type="Texture2D" uid="uid://ddfi3egmvokgr" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_024.png" id="25_6ukt8"]
+[ext_resource type="Texture2D" uid="uid://cwl5vro205au7" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_025.png" id="26_0jv7q"]
+[ext_resource type="Texture2D" uid="uid://b2kym1yhyw0bk" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_026.png" id="27_6rnlc"]
+[ext_resource type="Texture2D" uid="uid://c5bkq16vq278f" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_027.png" id="28_3g45c"]
+[ext_resource type="Texture2D" uid="uid://ddwc4uipacrph" path="res://assets/battle_animations/Brigand-Base[M]/Axe/Axe_028.png" id="29_7yohj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wmwu"]
+atlas = ExtResource("13_kuppr")
+region = Rect2(0, 0, 248, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkhsm"]
+atlas = ExtResource("14_3kns2")
+region = Rect2(0, 0, 248, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jv7q"]
+atlas = ExtResource("13_kuppr")
+region = Rect2(0, 0, 248, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rnlc"]
+atlas = ExtResource("14_3kns2")
+region = Rect2(0, 0, 248, 160)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_q8ghp")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_enbci")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_a47pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6vuun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ioxon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4qn7r")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_bpa38")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_pt4rx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_6dylt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2rg2x")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_l5fa6")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_3wmwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkhsm")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_bdbun")
+}, {
+"duration": 6.0,
+"texture": ExtResource("16_tut00")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_irl3u")
+}, {
+"duration": 6.0,
+"texture": ExtResource("18_fv1vo")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_jt304")
+}, {
+"duration": 6.0,
+"texture": ExtResource("20_rryl4")
+}, {
+"duration": 4.0,
+"texture": ExtResource("21_yjdc6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_6q7te")
+}, {
+"duration": 3.0,
+"texture": ExtResource("23_hjvpl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_6i5pg")
+}, {
+"duration": 3.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 6.0,
+"texture": ExtResource("25_6ukt8")
+}],
+"loop": 0,
+"name": &"axe",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_0jv7q")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_6rnlc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_0jv7q")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_6rnlc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_0jv7q")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_6rnlc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_0jv7q")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_6rnlc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_0jv7q")
+}, {
+"duration": 5.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_q8ghp")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_enbci")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_a47pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6vuun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ioxon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4qn7r")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_bpa38")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_pt4rx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_6dylt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2rg2x")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_l5fa6")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_0jv7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rnlc")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_bdbun")
+}, {
+"duration": 6.0,
+"texture": ExtResource("16_tut00")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_irl3u")
+}, {
+"duration": 6.0,
+"texture": ExtResource("18_fv1vo")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_jt304")
+}, {
+"duration": 6.0,
+"texture": ExtResource("20_rryl4")
+}, {
+"duration": 4.0,
+"texture": ExtResource("21_yjdc6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("22_6q7te")
+}, {
+"duration": 3.0,
+"texture": ExtResource("23_hjvpl")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_6i5pg")
+}, {
+"duration": 3.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 6.0,
+"texture": ExtResource("25_6ukt8")
+}],
+"loop": 0,
+"name": &"axe_critical",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_50sal")
+}, {
+"duration": 3.0,
+"texture": ExtResource("29_7yohj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3g45c")
+}, {
+"duration": 3.0,
+"texture": ExtResource("29_7yohj")
+}],
+"loop": 0,
+"name": &"axe_dodge",
+"speed": 60.0
+}]

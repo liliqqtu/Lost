@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ClassData" format=3 uid="uid://b8f1nomad0001"]
+
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
+[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="1_ydai7"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="3_nkukt"]
+[ext_resource type="Resource" uid="uid://bp3mkp8hwdl41" path="res://data/skills/flourish.tres" id="4_wki4m"]
+[ext_resource type="Resource" uid="uid://caffireaff001" path="res://data/affinity/fire.tres" id="6_aff"]
+
+[resource]
+script = ExtResource("1_class")
+job_name = "游牧民"
+class_card = ExtResource("1_ydai7")
+rank_bow = 2
+affinity = ExtResource("6_aff")
+growths_spd = 40
+cap_con = 15
+skills = Array[ExtResource("3_nkukt")]([ExtResource("4_wki4m")])
+mount_type = 1

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqwj0gyl4hym5"]
+
+[ext_resource type="Texture2D" uid="uid://cnigsgv0lt3t3" path="res://assets/graphics/UI/skill/仿徨.png" id="1_5d4av"]
+
+[node name="Lost" type="TextureRect" unique_id=1384946865]
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "仿徨：所有武器射程减一"
+texture = ExtResource("1_5d4av")

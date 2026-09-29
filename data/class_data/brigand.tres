@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ClassData" format=3 uid="uid://cbrigand0001"]
+
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
+[ext_resource type="Texture2D" uid="uid://bado3lsjjeowh" path="res://assets/graphics/Class Card/Brigand (M) Axe {IS}.png" id="2_card"]
+
+[resource]
+script = ExtResource("1_class")
+job_name = "山贼"
+class_card = ExtResource("2_card")
+rank_axe = 0
+cap_str = 25
+cap_mag = 15
+cap_skl = 15
+cap_spd = 15
+cap_luk = 15
+cap_def_h = 22
+cap_res = 15
+cap_con = 25
