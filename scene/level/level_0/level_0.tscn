@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c73b8favdp0fg" path="res://scene/character/units/level_0/brigand.tscn" id="6_fxowc"]
 [ext_resource type="PackedScene" uid="uid://d2kohdrb8xqeu" path="res://scene/ui/cursor.tscn" id="6_h10f2"]
 [ext_resource type="PackedScene" uid="uid://bf6qs4f42l1db" path="res://scene/character/units/player_team/isar/isar.tscn" id="7_7vhj7"]
-[ext_resource type="PackedScene" uid="uid://besigcaiiofn1" path="res://scene/ui/battle_preview.tscn" id="9_7ogla"]
 [ext_resource type="Texture2D" uid="uid://bnql5g5oaxrsq" path="res://assets/graphics/UI/{Lukiroh} Player Phase.png" id="11_h10f2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdiei"]
@@ -1501,8 +1500,6 @@ position = Vector2(32, 0)
 [node name="Cursor" parent="." unique_id=1560125616 instance=ExtResource("6_h10f2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1117540413]
-
-[node name="BattlePreview" parent="CanvasLayer" unique_id=1779516943 instance=ExtResource("9_7ogla")]
 
 [node name="Phase Switch Shadow" type="ColorRect" parent="CanvasLayer" unique_id=296634564]
 visible = false

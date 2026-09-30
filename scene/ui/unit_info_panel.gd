@@ -38,16 +38,6 @@ var current_unit: Unit = null
 	$InfoData/VBoxData1/Res,
 	$InfoData/VBoxData1/Move,
 ]
-#@onready var _max_stat_bars: Array[TextureProgressBar] = [
-	#$InfoData/VBoxData1Bar/MAXStrBar,
-	#$InfoData/VBoxData1Bar/MAXMagBar,
-	#$InfoData/VBoxData1Bar/MAXSklBar,
-	#$InfoData/VBoxData1Bar/MAXSpdBar,
-	#$InfoData/VBoxData1Bar/MAXLukBar,
-	#$InfoData/VBoxData1Bar/"MAXDef HBar",
-	#$InfoData/VBoxData1Bar/MAXResBar,
-	#$InfoData/VBoxData1Bar/MAXMoveBar,
-#]
 @onready var _stat_bars: Array[TextureProgressBar] = [
 	$InfoData/VBoxData1Bar/StrBar,
 	$InfoData/VBoxData1Bar/MagBar,
@@ -218,10 +208,10 @@ func _fill_items(unit: Unit) -> void:
 			row.clear()
 
 
-##武器&支援等级页：按 ClassData 可用武器类型逐行显示（升级系统）
+##武器&支援等级页：按 Unit rank_* 可用武器类型逐行显示（升级系统）
 ##WeaponXP/WeaponClass 行 = 类型图标 + 武器经验条（当前等级内的进度）
 ##WeaponLevel 行 = 对应武器等级字母 E..S（两个容器子节点一一对应）
-##魔法/杖暂无类型图标（图标隐藏，经验条与等级照常显示）；无职业数据整页留空
+##武器等级数据在 Unit 上（rank_* 上限 + weapon_xp 经验），ClassData 只存职业静态数据
 func _fill_weapon_page(unit: Unit) -> void:
 	for child in _weapon_xp_box.get_children():
 		_weapon_xp_box.remove_child(child)
@@ -229,20 +219,19 @@ func _fill_weapon_page(unit: Unit) -> void:
 	for child in _weapon_level_box.get_children():
 		_weapon_level_box.remove_child(child)
 		child.queue_free()
-	var cd: ClassData = unit.class_data
-	if cd == null:
-		return
 	for type in Weapon.WeaponType.values():
-		if not cd.can_use_weapon(type):
+		if not unit.can_use_weapon(type):
 			continue
-		##武器经验行：图标 + 当前等级内进度条（到职业上限/S 级直接填满）
+		##武器经验行：图标 + 当前等级内进度条
+		##rank = 当前等级（get_weapon_ex）；到等级上限或 S 级时条直接填满
 		var row: HBoxContainer = _weapon_class_template.duplicate()
 		row.visible = true
 		(row.get_node("Icon") as TextureRect).texture = WEAPON_TYPE_ICONS.get(type)
-		var rank: int = unit.get_weapon_rank(type)
+		var rank: int = unit.get_weapon_ex(type)
+		var cap: int = unit.get_weapon_rank(type)
 		var xp: int = unit.get_weapon_xp(type)
 		var bar: TextureProgressBar = row.get_node("XP bar")
-		if rank >= cd.get_weapon_rank(type) or rank >= Weapon.WeaponRank.S:
+		if rank >= Weapon.WeaponRank.S or rank >= cap:
 			bar.max_value = 1
 			bar.value = 1
 		else:
@@ -254,7 +243,7 @@ func _fill_weapon_page(unit: Unit) -> void:
 		##等级字母（与经验行一一对应）
 		var lv_label: Label = _weapon_level_template.duplicate()
 		lv_label.visible = true
-		lv_label.text = Weapon.rank_to_text(rank)
+		lv_label.text = Weapon.WeaponRank.find_key(rank)
 		_weapon_level_box.add_child(lv_label)
 
 

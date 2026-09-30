@@ -39,6 +39,34 @@ const HP_BAR_RED := 0.25
 @export var exp := 0
 ##"""等级上限（升级系统，GBA 未转职上限 20）：满级不再获得经验"""
 const LEVEL_CAP := 20
+##"""武器类型等级（升级系统）：决定职业可用的武器类型与等级上限（E..S）
+##单位实际等级 = min(武器经验等级, 职业上限)，UNUSABLE=不可用该类型"""
+## 剑武器等级
+@export var rank_sword: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_lance: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_axe: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_bow: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_anima: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_dark: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_light: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+@export var rank_staff: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+
+##"""武器类型 -> 人物等级上限（Weapon.WeaponRank，UNUSABLE=不可用）"""
+func get_weapon_rank(type: int) -> int:
+	match type:
+		Weapon.WeaponType.SWORD: return rank_sword
+		Weapon.WeaponType.LANCE: return rank_lance
+		Weapon.WeaponType.AXE: return rank_axe
+		Weapon.WeaponType.BOW: return rank_bow
+		Weapon.WeaponType.ANIMA: return rank_anima
+		Weapon.WeaponType.DARK: return rank_dark
+		Weapon.WeaponType.LIGHT: return rank_light
+		Weapon.WeaponType.STAFF: return rank_staff
+	return Weapon.WeaponRank.UNUSABLE
+
+##"""职业是否可用该武器类型"""
+func can_use_weapon(type: int) -> bool:
+	return get_weapon_rank(type) >= Weapon.WeaponRank.E
 ##"""武器经验（升级系统）：{武器类型(int): 累计经验}，惰性初始化到职业等级阈值
 ##只有玩家方结算（BattleCombat 判定），无职业数据的单位不积累"""
 @export var weapon_xp: Dictionary = {}
@@ -375,7 +403,7 @@ func equip_item(item: Item) -> bool:
 		if not can_equip(item):
 			##打印失败原因：职业等级限制导致装备被拒时立刻可见（避免静默失败难排查）
 			print("%s 无法装备 %s：职业不可用该武器类型，或武器等级不足（当前 %s）" % [
-				unit_name, item.display_name, Weapon.rank_to_text(get_weapon_rank(item.weapon_type))])
+				unit_name, item.display_name, Weapon.rank_to_text(get_weapon_ex(item.weapon_type))])
 			return false
 		current_weapon = item
 		return true
@@ -409,43 +437,45 @@ func break_current_weapon() -> bool:
 ##==================== 经验与武器等级（升级系统） ====================
 
 ##"""累计武器经验（惰性初始化）：可用类型从 E（经验 1）起步
-##职业 rank_* 是该类型的等级上限（升级系统），单位从 E 逐步积累到上限
+##rank_* 是该类型的等级上限（挂在 Unit 上，ClassData 只存职业静态数据），从 E 逐步积累到上限
 ##初始更高的单位（转职/预转职角色）可在 tscn 里直接预填 weapon_xp"""
 func get_weapon_xp(type: int) -> int:
-	if class_data == null or not class_data.can_use_weapon(type):
+	if  not can_use_weapon(type):
 		return 0
 	if not weapon_xp.has(type):
 		weapon_xp[type] = Weapon.WEXP_THRESHOLDS[Weapon.WeaponRank.E]
 	return weapon_xp[type]
 
 
-##"""当前武器等级 = min(武器经验等级, 职业上限)；-1=不可用"""
-func get_weapon_rank(type: int) -> int:
-	if class_data == null or not class_data.can_use_weapon(type):
+##"""当前武器等级 = min(武器经验等级, rank_* 上限)；-1=不可用"""
+func get_weapon_ex(type: int) -> int:
+	if not can_use_weapon(type):
 		return Weapon.WeaponRank.UNUSABLE
-	return mini(Weapon.wexp_to_rank(get_weapon_xp(type)), class_data.get_weapon_rank(type))
+	return mini(Weapon.wexp_to_rank(get_weapon_xp(type)), get_weapon_rank(type))
 
 
-##"""获得武器经验（每次命中的打击结算）：不可用的类型不积累，封顶在职业等级阈值"""
+##"""获得武器经验（每次命中的打击结算）：不可用的类型不积累，封顶在等级上限阈值
+##（get_weapon_rank = rank_* 上限；用 get_weapon_ex 会把封顶锁死在当前等级，经验永远不涨）"""
 func gain_weapon_exp(weapon: Weapon) -> void:
-	if weapon == null or class_data == null:
+	if weapon == null :
 		return
 	var type := weapon.weapon_type
-	if not class_data.can_use_weapon(type):
+	if not can_use_weapon(type):
 		return
-	var cap_xp := Weapon.WEXP_THRESHOLDS[class_data.get_weapon_rank(type)] as int
+	var cap_xp := Weapon.WEXP_THRESHOLDS[get_weapon_rank(type)] as int
 	weapon_xp[type] = mini(get_weapon_xp(type) + weapon.weapon_exp, cap_xp)
 
 
-##"""能否装备该武器：无职业数据不限制（敌人兜底）；有职业数据须类型可用且等级足够"""
+##"""能否装备该武器：类型可用且**当前**等级（get_weapon_ex）达到武器需求等级
+##无职业数据不限制（敌人兜底：_create_enemy 造的单位不设 rank_*，见 level.gd）"""
 func can_equip(weapon: Weapon) -> bool:
 	if weapon == null:
 		return false
 	if class_data == null:
 		return true
-	if not class_data.can_use_weapon(weapon.weapon_type):
+	if not can_use_weapon(weapon.weapon_type):
 		return false
-	return get_weapon_rank(weapon.weapon_type) >= weapon.required_rank
+	return get_weapon_ex(weapon.weapon_type) >= weapon.required_rank
 
 
 ##"""获得经验：满级（LEVEL_CAP）不再累积"""

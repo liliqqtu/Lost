@@ -16,7 +16,7 @@ extends Node2D
 
 ##单位场景与各 UI 剧本/场景（通用装配）
 const UNIT_SCENE := preload("res://scene/character/unit.tscn")
-const FORECAST_SCENE := preload("res://scripts/battle_forecast.gd")
+const FORECAST_SCENE := preload("res://scene/ui/battle_preview.tscn")
 const ACTION_MENU_SCRIPT := preload("res://scripts/action_menu.gd")
 const ITEM_MENU_SCRIPT := preload("res://scripts/item_menu.gd")
 const TRADE_MENU_SCRIPT := preload("res://scripts/trade_menu.gd")
@@ -94,10 +94,10 @@ func _setup_map_events() -> void:
 
 ##初始化战斗预览面板
 func _setup_battle_forecast() -> void:
-	var forecast := FORECAST_SCENE.new()
+	var forecast := FORECAST_SCENE.instantiate()
 	var ui_layer: CanvasLayer = $CanvasLayer
 	ui_layer.add_child(forecast)
-	forecast.setup(ui_layer.get_node("BattlePreview") as TextureRect)
+	forecast.setup()
 	battle_manager.set_forecast_panel(forecast)
 
 

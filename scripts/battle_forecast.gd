@@ -1,40 +1,28 @@
 extends Node
 ## 战斗预览面板
-class_name BattleForecast
 
 ##战斗预览面板：GBA 风格，布局节点在 level_0.tscn 的 CanvasLayer/Battle Preview 下用编辑器摆放
 ##直接读取 BattleCalculator.generate_battle_sequence() 的数据渲染，不重复计算
 ##HP 与 PowerAccuracyCriticalHit 是固定文字（HP 威力 命中 必杀），无需脚本更新
 
-##面板根节点（Battle Preview）
-var _panel: TextureRect
-
 ##换位时与屏幕左右边缘保留的间距
 const PANEL_MARGIN := 2.0
 
 ##玩家方节点
-var _player_name: Label
-var _player_dph: Label
-var _player_weapon: TextureRect
+@onready var _player_name: Label = $PlayerName
+@onready var _player_dph: Label = $PlayerDPH
+@onready var _player_weapon: TextureRect = $PlayerWeapon
 
 ##敌方节点
-var _enemy_name: Label
-var _enemy_dph: Label
-var _enemy_weapon: TextureRect
-var _enemy_weapon_name: Label
+@onready var _enemy_name: Label = $EnemyName
+@onready var _enemy_dph: Label = $EnemyDPH
+@onready var _enemy_weapon: TextureRect = $EnemyWeapon
+@onready var _enemy_weapon_name: Label = $EnemyWeaponName
 
 
 ##由外部传入面板根节点，按名称绑定子节点
-func setup(panel: TextureRect) -> void:
-	_panel = panel
-	_panel.visible = false
-	_player_name = panel.get_node("PlayerName") as Label
-	_player_dph = panel.get_node("PlayerDPH") as Label
-	_player_weapon = panel.get_node("PlayerWeapon") as TextureRect
-	_enemy_name = panel.get_node("EnemyName") as Label
-	_enemy_dph = panel.get_node("EnemyDPH") as Label
-	_enemy_weapon = panel.get_node("EnemyWeapon") as TextureRect
-	_enemy_weapon_name = panel.get_node("EnemyWeaponName") as Label
+func setup() -> void:
+	self.visible = false
 
 
 ##显示预览：attacker 为玩家操作单位，sequence 由 BattleCalculator 生成
@@ -52,23 +40,23 @@ func show_forecast(attacker: Unit, sequence: Array[Dictionary]) -> void:
 	set_enemy_dph(_get_first_strike(sequence, defender), defender, _has_double(sequence, defender))
 	set_enemy_weapon(defender)
 
-	_panel.visible = true
+	self.visible = true
 
 
 ##隐藏预览面板
 func hide_forecast() -> void:
-	_panel.visible = false
+	self.visible = false
 
 
 ##左右换位：攻击方在屏幕左半边时面板放右侧，右半边时放左侧，避免遮挡攻击范围内的其他目标
 ##面板在 CanvasLayer 下，其坐标系即屏幕坐标系，不受游戏相机影响，只改 X 即可
 func update_side(attacker: Unit, camera: Camera2D) -> void:
-	var view_width: float = _panel.get_viewport().get_visible_rect().size.x
+	var view_width: float = self.get_viewport().get_visible_rect().size.x
 	var screen_x: float = attacker.global_position.x - camera.get_screen_center_position().x + view_width * 0.5
 	if screen_x < view_width * 0.5:
-		_panel.position.x = view_width - _panel.size.x - PANEL_MARGIN
+		self.position.x = view_width - self.size.x - PANEL_MARGIN
 	else:
-		_panel.position.x = PANEL_MARGIN
+		self.position.x = PANEL_MARGIN
 
 
 ##玩家方名字

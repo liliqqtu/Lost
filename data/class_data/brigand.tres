@@ -7,7 +7,6 @@
 script = ExtResource("1_class")
 job_name = "山贼"
 class_card = ExtResource("2_card")
-rank_axe = 0
 cap_str = 25
 cap_mag = 15
 cap_skl = 15

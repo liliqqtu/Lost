@@ -10,34 +10,6 @@ class_name ClassData
 @export var class_card: Texture2D
 ##"""职业强度（升级系统，FE8 经验公式 Q）：普通职业=3，弱职业=2，单位无职业数据按 3"""
 @export var class_power := 3
-##"""武器类型等级（升级系统）：决定职业可用的武器类型与等级上限（E..S）
-##单位实际等级 = min(武器经验等级, 职业上限)，UNUSABLE=不可用该类型"""
-## 剑武器等级
-@export var rank_sword: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_lance: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_axe: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_bow: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_anima: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_dark: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_light: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-@export var rank_staff: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-
-##"""武器类型 -> 职业等级上限（Weapon.WeaponRank，UNUSABLE=不可用）"""
-func get_weapon_rank(type: int) -> int:
-	match type:
-		Weapon.WeaponType.SWORD: return rank_sword
-		Weapon.WeaponType.LANCE: return rank_lance
-		Weapon.WeaponType.AXE: return rank_axe
-		Weapon.WeaponType.BOW: return rank_bow
-		Weapon.WeaponType.ANIMA: return rank_anima
-		Weapon.WeaponType.DARK: return rank_dark
-		Weapon.WeaponType.LIGHT: return rank_light
-		Weapon.WeaponType.STAFF: return rank_staff
-	return Weapon.WeaponRank.UNUSABLE
-
-##"""职业是否可用该武器类型"""
-func can_use_weapon(type: int) -> bool:
-	return get_weapon_rank(type) >= Weapon.WeaponRank.E
 
 ## 属性（5G 支援系统）：人物面板 BaseInfo/AffinityIcon 显示其图标，数据资源在 data/affinity/
 ## 支援结算的属性贡献查支援表 SupportPair（scripts/support_pair.gd），两边应保持一致

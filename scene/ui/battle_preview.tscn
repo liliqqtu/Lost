@@ -2,14 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bqqcwlhyctg37" path="res://assets/graphics/UI/Battle Preview.png" id="1_ktlwe"]
 [ext_resource type="Texture2D" uid="uid://cwm2amesohk4s" path="res://assets/graphics/Item Icons/Swords/铁剑.png" id="2_gn4vq"]
+[ext_resource type="Script" uid="uid://1w3d0n5dg1fj" path="res://scripts/battle_forecast.gd" id="2_po1hy"]
 [ext_resource type="Texture2D" uid="uid://uv30ytkravy7" path="res://assets/graphics/Item Icons/Axes/铁斧.png" id="3_po1hy"]
 [ext_resource type="Texture2D" uid="uid://cekdp28c2bfx4" path="res://assets/graphics/UI/Attackx2x4.png" id="4_jqvvr"]
 [ext_resource type="Script" uid="uid://n5cfoiayg6jm" path="res://assets/graphics/UI/Attackx2x4.gd" id="5_jdixm"]
 
-[node name="Battle Preview" type="TextureRect" unique_id=1779516943]
+[node name="BattlePreview" type="TextureRect" unique_id=1779516943]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_ktlwe")
+script = ExtResource("2_po1hy")
 
 [node name="PowerAccuracyCriticalHit" type="Label" parent="." unique_id=1502587009]
 layout_mode = 0

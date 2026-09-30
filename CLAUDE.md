@@ -106,7 +106,7 @@ Lost (Godot Game Project)
 |   |- support_store.gd             # 支援系统全局数据（autoload 单例，5G：支援值/等级/章节积累/加成查询）
 |   |- support_pair.gd              # 支援表条目（Resource：双方名字/属性/门槛/肖像/C·B·A 对话，5G）
 |   |- affinity.gd                  # 属性资源（Resource：属性名/图标/命中·回避·必杀贡献，5G）
-|   |- class_data.gd                # 职业数据（职业名/职业卡/能力上限/成长率/职业强度 class_power/武器类型等级 rank_*/技能/骑乘类型/属性 affinity）
+|   |- class_data.gd                # 职业数据（职业名/职业卡/能力上限/成长率/职业强度 class_power/技能/骑乘类型/属性 affinity；武器等级 rank_* 已移至 Unit）
 |   |- key.gd                       # 钥匙（extends Item，key_id 与宝箱一一对应，5E）
 |   |- interactable.gd              # 地图可交互物（村庄门/宝箱，interactables 组，5E）
 |   |- map_event.gd                 # 地图事件（Resource：触发条件/trigger_turn/once/actions，5E）
@@ -286,19 +286,126 @@ DEPOSIT：左侧背包 ↑↓ 移动光标，Z 寄存物品，无 ←→ 操作
 - 人物面板支援列表：Weapon&SupportLevel/SupportLevel 动态生成行——icon=对方属性图标、Name=对方名字、Level=C/B/A（未建立"——"）；tscn 里的 character 节点作模板，_ready 时脱容器隐藏，填充时 duplicate（避免空槽占布局）。
 - 测试：tests/test_support.gd（headless：支援表查询/门槛与升级/加成距离与队伍判定/章节积累）；level_0._setup_units 预置 1 点支援值（测试用），忒与伊萨尔相邻第 1 回合即可触发"支援"升 C。
 
-升级系统&武器等级（5H，完成 2026-09-28）
-- 数据：Weapon 新增 required_rank（需求等级）与 weapon_exp（每次命中获得的武器经验，FE8 数据铁剑=1）；WeaponRank 枚举与 WEXP_THRESHOLDS（FE8：E=1/D=31/C=71/B=121/A=181/S=251）定义在 weapon.gd。ClassData 新增 class_power（FE8 经验公式职业强度，普通职业=3）、8 个 rank_*（职业可用武器类型与等级上限）、cap_hp。
-- Unit：weapon_xp 字典（{武器类型(int): 累计经验}；可用类型惰性初始化为 E=1，预转职角色可在 tscn 预填更高值）；get_weapon_xp/get_weapon_rank（=min(经验等级, 职业上限)）/gain_weapon_exp（封顶职业上限，不可用类型不积累）/can_equip/gain_exp（满级不获得）/level_up（应用掷骰结果）。equip_item 与 _own_inventory 默认装备都走 can_equip 限制；无职业数据的单位不限制（敌人兜底）。
+升级系统&武器等级（5H，完成 2026-09-28；武器等级数据已迁至 Unit，修复 2026-09-29）
+- 数据：Weapon 新增 required_rank（需求等级）与 weapon_exp（每次命中获得的武器经验，FE8 数据铁剑=1）；WeaponRank 枚举与 WEXP_THRESHOLDS（FE8：E=1/D=31/C=71/B=121/A=181/S=251）定义在 weapon.gd。ClassData 只存职业静态数据（class_power 职业强度/cap_*/growths_*/技能/骑乘/属性）。
+- Unit（武器等级数据归属，保持 ClassData 静态）：rank_* 8 字段（武器类型可用性与**等级上限**）+ weapon_xp 字典（{武器类型(int): 累计经验}，可用类型惰性初始化为 E=1，预转职角色可在 tscn 预填更高值）。**语义区分**：get_weapon_rank=等级上限（rank_*）；get_weapon_ex=当前等级（=min(经验等级, 上限)）。gain_weapon_exp 封顶在 get_weapon_rank（上限）——用 get_weapon_ex 会锁死在当前等级导致经验不涨；can_equip 按当前等级（get_weapon_ex）判定装备；无职业数据不限制（敌人兜底，_create_enemy 依赖此分支）。equip_item 与 _own_inventory 默认装备都走 can_equip。
 - 角色经验（BattleCalculator.calculate_exp_gain，FE8 原版公式；转职加成/BOSS/盗贼加成待这些系统实现后扩展）：造成伤害 = (31+敌Lv-己Lv)/己职业强度（下取整）；未命中或 0 伤 = 1；击杀 = 伤害经验 + max(0, 敌Lv×敌职业强度-己Lv×己职业强度+20)，封顶 100。只有玩家方（team 0）结算；参战双方都给（含敌方回合被打的防守方）；阵亡单位不结算。
 - 升级掷骰（BattleCalculator.roll_level_up，GBA 规则无保底）：八项能力按 ClassData 成长率% 独立掷骰 +1，到职业上限（cap_*）不再加，可能空升级。LEVEL_STAT_KEYS 顺序 = grade_up 场景 Add 子节点顺序 = HP/力/魔/技/速/幸/守/防。
 - 战后结算（BattleCombat._settle_exp）：经验逐段填充——填满 100 → battle_animation.show_level_up 加载 grade_up 场景播放加点动画 → 继续填余下经验（可连升多级）；满级（Unit.LEVEL_CAP=20）不再获得。
 - 武器经验（BattleCombat 战斗循环）：玩家单位每次命中的打击 +武器.weapon_exp（按用户规则：未命中不给；与 FE8 的未命中也给、击杀翻倍不同）；武器中途损坏照常结算（循环内先取引用再扣耐久）。
 - 演出：exp_box.tscn（ExpBar + Exp 数字）由 battle_animation.show_exp 动态加载并 tween 填充——**挂父节点（CanvasLayer）而非 battle_animation 自身**（本场景是居中的 Node2D，Control 子节点会被位移半屏）。grade_up 场景：填充职业/等级/职业卡/八项能力，Add 下 8 个 add_up 子节点对应加点的项依次播放（前一个快播完时开始下一个），播完自动隐藏无需输入；add_up.gd 改为受控播放（play()，可重复）。
-- 面板：Weapon&SupportLevel 页按 ClassData 可用武器类型逐行复制 WeaponXP/WeaponClass（类型图标+当前等级内进度条，到职业上限或 S 填满）与 WeaponLevel（等级字母 E..S，两容器子节点一一对应）；魔法/杖暂无类型图标（图标隐藏，条与等级照常显示）。职业配置：te=弓 C、isar=理 C/暗 E/杖 E、brigand=斧 E。
+- 面板：Weapon&SupportLevel 页按 Unit rank_* 可用武器类型逐行复制 WeaponXP/WeaponClass（类型图标+当前等级内进度条，当前等级=get_weapon_ex，到等级上限或 S 填满）与 WeaponLevel（等级字母 E..S，两容器子节点一一对应）；魔法/杖暂无类型图标（图标隐藏，条与等级照常显示）。单位配置：te=弓 C、isar=剑C/理C/暗C/杖C、brigand=斧 E（rank_* 在单位 tscn 上）。
 - 测试：tests/test_level_system.gd（6 场景：经验公式/武器经验阈值与等级文字/积累与封顶/装备限制/升级掷骰与应用/满级）。
 ## 待开发
-### 物品描述
-- 在某些信息面板，运输队，物品栏，人物信息面板，按下“R”键，显示物品描述，并可以按移动键上下左右切换。在人物属性面板，按下“R”键，相应显示人物属性信息 的描述，如职业描述，角色描述，人物力量，防御等描述。描述框
+### 信息查看系统
+
+- 目标：统一处理物品、人物属性、职业、技能、武器等级等信息的查看。
+- 交互方式：玩家在可查看的信息对象上按“R”键进入信息查看；进入后使用方向键切换可查看的信息，再按“R”或“X”退出。
+- 描述显示：复用 `res://scene/ui/talk.tscn` 中的 `Dialogue` 子节点作为文字描述框，不重复实现新的文字框。沃把它分离出来，作为独立场景保存起来：res://scene/ui/textbox.tscn。
+- 信息查看本身不修改游戏数据，也不负责具体 UI 面板的布局，仅负责“当前查看对象”和“信息切换”。
+
+#### InfoProvider
+
+- 为需要提供说明的 UI 控件提供统一接口。
+- 需要查看说明的 `Control` 子节点可挂载 `InfoProvider` 脚本。
+- `InfoProvider` 通过 Inspector 配置对应的描述信息。
+- 最初版本可以直接使用：
+  `@export_multiline var description: String`
+- 对外提供统一的 `get_info()` 接口，返回当前对象的说明。
+- 物品、人物属性、职业、技能、武器等级等不同类型的 UI 控件，只要实现/提供相同接口，即可被信息查看系统统一处理。
+- 不要求所有 Control 都继承 InfoProvider，只给实际需要查看说明的控件使用。
+
+#### InfoData
+
+- 如果后续描述信息从单一字符串扩展为“标题 + 描述 + 图标 + 多段文字”等结构，再创建 `InfoData : Resource`。
+- InfoData 用于保存可复用的信息描述资源。
+- 当前阶段不强制创建 Resource，先使用 `InfoProvider + description` 完成最小版本。
+
+#### InfoViewer
+
+- 创建独立的信息查看控制器，负责：
+  - 接收当前选中的 InfoProvider；
+  - 获取对应描述；
+  - 调用 `Dialogue` 显示描述；
+  - 根据方向键切换当前可查看的信息；
+  - 处理进入/退出信息查看状态。
+- InfoViewer 不负责物品、角色、职业等具体数据逻辑。
+- 不在 InfoViewer 中写大量 `if item / if character / if class` 的类型判断。
+- 当前界面负责提供“有哪些可查看对象”以及这些对象之间的导航关系。
+- InfoViewer 只处理通用的信息查看流程。
+
+#### 信息导航
+
+- 普通 UI 导航仍由当前面板负责。
+- 按 R 后进入信息查看模式，方向键根据当前面板的导航关系切换 InfoProvider。
+- 例如人物信息面板：
+  - 上/下：切换人物属性；
+  - 左/右：根据页面结构切换相关信息。
+- 运输队、物品栏、人物面板等可以分别提供自己的可查看对象列表。
+- 不同界面的导航规则不强行统一到 InfoViewer 中。
+
+#### 初期需要支持的信息
+
+- 物品：
+  - 运输队 ItemRow
+  - 物品菜单 ItemRow
+  - 人物信息面板中的物品
+- 人物：
+  - 角色名称
+  - 职业
+  - 等级
+  - 经验
+  - HP
+  - 力量
+  - 魔力
+  - 技巧
+  - 速度
+  - 幸运
+  - 守备
+  - 魔防
+  - 移动力
+  - 体格
+  - 救出
+  - 指挥
+  - 属性
+- 职业：
+  - 职业说明
+  - 职业相关能力/特性
+- 技能：
+  - 技能名称
+  - 技能说明
+- 武器：
+  - 武器类型
+  - 武器等级
+  - 武器经验
+  - 武器相关说明
+
+#### 推荐结构
+
+
+流程：
+
+当前 UI
+    ↓
+玩家移动光标
+    ↓
+当前 Control 提供 InfoProvider
+    ↓
+按 R
+    ↓
+InfoViewer.open(current_info_provider)
+    ↓
+获取 description
+    ↓
+复用 textbox.tscn 显示
+    ↓
+方向键切换 InfoProvider
+    ↓
+更新 Dialogue
+    ↓
+R 键 退出
+    ↓
+返回原 UI 状态
 ### 
 
 # 新增功能时，优先扩展已有类，没有已有类，再创建新的 Manager、Controller、Component、Resource 或 Scene 并不构成代码重复

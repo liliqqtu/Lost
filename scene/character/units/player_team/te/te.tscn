@@ -78,6 +78,7 @@ class_data = ExtResource("6_nomad")
 personal_skills = Array[ExtResource("6_i81gk")]([ExtResource("6_lost")])
 unit_name = "忒"
 has_convoy = true
+rank_bow = 2
 max_hp = 30
 hp = 30
 str = 6

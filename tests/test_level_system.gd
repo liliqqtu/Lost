@@ -63,15 +63,13 @@ func _run() -> void:
 	print("场景二 通过：武器经验阈值与等级文字")
 
 	# ===== 场景三：Unit 武器经验积累 =====
+	##武器等级上限在 Unit 上（rank_*），当前等级 = get_weapon_ex = min(经验等级, 上限)
 	var archer := _make_unit("弓手", 5)
-	var cd := ClassData.new()
-	cd.job_name = "弓骑"
-	cd.rank_bow = Weapon.WeaponRank.C
-	cd.rank_sword = Weapon.WeaponRank.E
-	archer.class_data = cd
-	##可用类型从 E（经验 1）起步，上限取职业等级
+	archer.rank_bow = Weapon.WeaponRank.C
+	archer.rank_sword = Weapon.WeaponRank.E
+	##可用类型从 E（经验 1）起步，上限取 rank_*
 	assert(archer.get_weapon_xp(Weapon.WeaponType.BOW) == 1, "[场景三] 弓起始经验 = E 阈值 1")
-	assert(archer.get_weapon_rank(Weapon.WeaponType.BOW) == Weapon.WeaponRank.E, "[场景三] 弓初始等级 = E")
+	assert(archer.get_weapon_ex(Weapon.WeaponType.BOW) == Weapon.WeaponRank.E, "[场景三] 弓初始等级 = E")
 	##积累：命中铁弓一次 +1
 	var bow := Weapon.new()
 	bow.weapon_type = Weapon.WeaponType.BOW
@@ -82,32 +80,31 @@ func _run() -> void:
 	for i in 29:
 		archer.gain_weapon_exp(bow)
 	assert(archer.get_weapon_xp(Weapon.WeaponType.BOW) == 31, "[场景三] 累计 31")
-	assert(archer.get_weapon_rank(Weapon.WeaponType.BOW) == Weapon.WeaponRank.D, "[场景三] 升到 D")
-	##封顶职业上限 C（71）
+	assert(archer.get_weapon_ex(Weapon.WeaponType.BOW) == Weapon.WeaponRank.D, "[场景三] 升到 D")
+	##封顶等级上限 C（71）
 	for i in 100:
 		archer.gain_weapon_exp(bow)
 	assert(archer.get_weapon_xp(Weapon.WeaponType.BOW) == 71, "[场景三] 经验封顶 C 阈值 71")
-	assert(archer.get_weapon_rank(Weapon.WeaponType.BOW) == Weapon.WeaponRank.C, "[场景三] 等级 = 职业上限 C")
-	##职业上限 E 的类型：封顶 1 不再增长
+	assert(archer.get_weapon_ex(Weapon.WeaponType.BOW) == Weapon.WeaponRank.C, "[场景三] 等级 = 上限 C")
+	##上限 E 的类型：封顶 1 不再增长
 	var sword := Weapon.new()
 	sword.weapon_type = Weapon.WeaponType.SWORD
 	sword.weapon_exp = 5
 	archer.gain_weapon_exp(sword)
-	assert(archer.get_weapon_xp(Weapon.WeaponType.SWORD) == 1, "[场景三] 剑封顶职业上限 E（1）")
+	assert(archer.get_weapon_xp(Weapon.WeaponType.SWORD) == 1, "[场景三] 剑封顶上限 E（1）")
 	##不可用类型（杖）不积累
 	var staff := Weapon.new()
 	staff.weapon_type = Weapon.WeaponType.STAFF
 	archer.gain_weapon_exp(staff)
 	assert(archer.get_weapon_xp(Weapon.WeaponType.STAFF) == 0, "[场景三] 不可用类型不积累")
-	assert(archer.get_weapon_rank(Weapon.WeaponType.STAFF) == Weapon.WeaponRank.UNUSABLE, "[场景三] 不可用等级 = -1")
+	assert(archer.get_weapon_ex(Weapon.WeaponType.STAFF) == Weapon.WeaponRank.UNUSABLE, "[场景三] 不可用等级 = -1")
 	print("场景三 通过：武器经验积累")
 
 	# ===== 场景四：装备限制 =====
 	var equiper := _make_unit("装备者", 5)
-	var cd2 := ClassData.new()
-	cd2.job_name = "游牧民"
-	cd2.rank_bow = Weapon.WeaponRank.C
-	equiper.class_data = cd2
+	##有职业数据才走 rank_* 限制（无职业数据=敌人兜底不限制）
+	equiper.class_data = ClassData.new()
+	equiper.rank_bow = Weapon.WeaponRank.C
 	##可用类型 + 等级足够：可装备
 	var iron_bow := Weapon.new()
 	iron_bow.weapon_type = Weapon.WeaponType.BOW

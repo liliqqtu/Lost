@@ -9,10 +9,6 @@
 script = ExtResource("2_wdv5d")
 job_name = "暗之贤者"
 class_card = ExtResource("1_hol7c")
-rank_sword = 2
-rank_anima = 2
-rank_dark = 2
-rank_staff = 2
 affinity = ExtResource("4_aff")
 cap_str = 24
 cap_mag = 30

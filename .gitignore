@@ -1,5 +1,5 @@
-# Godot 4+ specific ignores
-.godot/
 /android/
 .vscode/
-.workuddy/
+.workbuddy/
+.godot/
+*.md

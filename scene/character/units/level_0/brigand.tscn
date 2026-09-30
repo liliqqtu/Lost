@@ -16,6 +16,7 @@ shader_parameter/remove_background = true
 script = ExtResource("1_g0vfb")
 class_data = ExtResource("4_class")
 team = 1
+rank_axe = 0
 con = 11
 battle_frames = ExtResource("2_1rlg1")
 

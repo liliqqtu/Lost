@@ -10,7 +10,6 @@
 script = ExtResource("1_class")
 job_name = "游牧民"
 class_card = ExtResource("1_ydai7")
-rank_bow = 2
 affinity = ExtResource("6_aff")
 growths_spd = 40
 cap_con = 15

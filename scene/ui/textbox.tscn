@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://curigtc3u5gib"]
+
+[ext_resource type="Texture2D" uid="uid://bhblo8as1k2rg" path="res://assets/graphics/UI/Dialogue.png" id="1_j0ivf"]
+[ext_resource type="Texture2D" uid="uid://cqj2gg0t3uq3" path="res://assets/graphics/UI/Dialogue Arrow.png" id="2_tqdn3"]
+
+[node name="TextBox" type="NinePatchRect" unique_id=480522078]
+custom_minimum_size = Vector2(91, 48)
+custom_maximum_size = Vector2(224, 64)
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 80.0
+texture = ExtResource("1_j0ivf")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="DialogueArrow" type="TextureRect" parent="." unique_id=541509422]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_tqdn3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=967543397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1141900712]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(204, 51)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_shadow_color = Color(0.7411765, 0.7411765, 0.7411765, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2

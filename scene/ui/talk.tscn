@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cp43dv5l3pq8m"]
 
 [ext_resource type="Script" uid="uid://b15hjqwc5xyec" path="res://scene/ui/talk.gd" id="1_ma4xx"]
-[ext_resource type="Texture2D" uid="uid://bhblo8as1k2rg" path="res://assets/graphics/UI/Dialogue.png" id="2_wt1jm"]
-[ext_resource type="Texture2D" uid="uid://cqj2gg0t3uq3" path="res://assets/graphics/UI/Dialogue Arrow.png" id="3_fny2q"]
+[ext_resource type="PackedScene" uid="uid://curigtc3u5gib" path="res://scene/ui/textbox.tscn" id="2_1dua1"]
 [ext_resource type="Texture2D" uid="uid://bt6u3f2tqef4h" path="res://assets/graphics/UI/对话气泡.png" id="4_tqsn4"]
 
 [node name="Talk" type="Control" unique_id=824234868]
@@ -18,60 +17,8 @@ offset_right = 240.0
 offset_bottom = 160.0
 metadata/_edit_lock_ = true
 
-[node name="Dialogue" type="NinePatchRect" parent="." unique_id=1312311807]
-custom_minimum_size = Vector2(91, 48)
-custom_maximum_size = Vector2(224, 64)
-layout_mode = 1
-offset_left = 8.0
-offset_top = 16.0
-offset_right = 232.0
-offset_bottom = 80.0
-texture = ExtResource("2_wt1jm")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="DialogueArrow" type="TextureRect" parent="Dialogue" unique_id=1907571281]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("3_fny2q")
-
-[node name="MarginContainer" type="MarginContainer" parent="Dialogue" unique_id=1826465624]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 7
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 7
-
-[node name="Label" type="Label" parent="Dialogue/MarginContainer" unique_id=1689608035]
-custom_minimum_size = Vector2(16, 16)
-custom_maximum_size = Vector2(204, 51)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
-theme_override_colors/font_shadow_color = Color(0.7411765, 0.7411765, 0.7411765, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/font_size = 12
-autowrap_mode = 2
+[node name="Dialogue" parent="." unique_id=480522078 instance=ExtResource("2_1dua1")]
+layout_mode = 0
 
 [node name="Right2" type="TextureRect" parent="." unique_id=1817390558]
 visible = false
