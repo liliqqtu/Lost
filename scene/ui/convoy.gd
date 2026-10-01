@@ -35,6 +35,9 @@ const MODE_CURSOR_OFFSET_X := -14.0
 ## 当前打开面板的单位（运输队主人，默认=忒）
 var unit: Unit = null
 
+## 信息查看器（信息查看系统，Level 装配时注入；R 查看光标处物品说明）
+var info_viewer: Node = null
+
 ## 打开默认 进行模式选择 取出 / 寄存
 var _phase := Phase.MODE_SELECT
 var _mode_index := 0
@@ -148,14 +151,25 @@ func show_panel(p_unit: Unit) -> void:
 	_update_class_cursor()
 
 
-## 隐藏面板
+## 隐藏面板（信息查看中一并收起）
 func hide_panel() -> void:
+	if info_viewer != null and info_viewer.active:
+		info_viewer.close()
 	visible = false
 	unit = null
 
 
+## 注入信息查看器（Level 装配）
+func set_info_viewer(viewer: Node) -> void:
+	info_viewer = viewer
+
+
 ## 外部输入入口（由 BattleManager 转发）
 func handle_input(event: InputEvent) -> void:
+	## 信息查看中：输入全部转给 InfoViewer（R/X 退出、方向键切换物品）
+	if info_viewer != null and info_viewer.active:
+		info_viewer.handle_input(event)
+		return
 	if not event.is_pressed():
 		return
 	match _phase:
@@ -183,7 +197,7 @@ func _handle_mode_input(event: InputEvent) -> void:
 		closed.emit()
 
 
-## 取出模式：↑↓移动，←→切类，Z 取出，X 回模式
+## 取出模式：↑↓移动，←→切类，Z 取出，X 回模式，R 查看物品说明
 func _handle_take_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
 		_move_cursor(-1)
@@ -197,9 +211,11 @@ func _handle_take_input(event: InputEvent) -> void:
 		_take_item()
 	elif event.is_action_pressed("no"):
 		_enter_mode_select()
+	elif event.is_action_pressed("R"):
+		_open_info()
 
 
-## 寄存模式：↑↓移动背包光标，Z 寄存，X 回模式
+## 寄存模式：↑↓移动背包光标，Z 寄存，X 回模式，R 查看物品说明
 func _handle_deposit_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
 		_move_bag_cursor(-1)
@@ -209,6 +225,51 @@ func _handle_deposit_input(event: InputEvent) -> void:
 		_deposit_item()
 	elif event.is_action_pressed("no"):
 		_enter_mode_select()
+	elif event.is_action_pressed("R"):
+		_open_info()
+
+
+##==================== 信息查看（信息查看系统） ====================
+
+## R 查看当前光标处物品的说明
+## TAKE=仓库列表当前项 / DEPOSIT=背包当前项 / MODE_SELECT 无可查看对象
+func _open_info() -> void:
+	if info_viewer == null:
+		return
+	if _phase == Phase.TAKE and not _current_items.is_empty():
+		info_viewer.open(_list_rows[_cursor_index - _top_index], _nav_info)
+	elif _phase == Phase.DEPOSIT and unit != null and not unit.inventory.is_empty():
+		info_viewer.open(_bag_rows[_bag_index], _nav_info)
+
+
+## 信息查看导航（本面板的导航规则）：
+## 上下=当前列表内移动光标；取出模式的左右=切换物品类别
+func _nav_info(dir: Vector2i) -> ItemRow:
+	if dir.y != 0:
+		if _phase == Phase.TAKE:
+			_move_cursor(dir.y)
+			##_move_cursor 仅滚动窗口时刷新，这里统一刷新保证手光标跟随
+			_refresh_all()
+		elif _phase == Phase.DEPOSIT:
+			_move_bag_cursor(dir.y)
+		return _current_info_row()
+	elif dir.x != 0 and _phase == Phase.TAKE:
+		_switch_category(dir.x)
+		return _current_info_row()
+	return null
+
+
+## 当前信息查看的 ItemRow（列表为空返回 null）
+func _current_info_row() -> ItemRow:
+	if _phase == Phase.TAKE:
+		if _current_items.is_empty():
+			return null
+		return _list_rows[_cursor_index - _top_index]
+	if _phase == Phase.DEPOSIT:
+		if unit == null or unit.inventory.is_empty():
+			return null
+		return _bag_rows[_bag_index]
+	return null
 
 
 ## 进入取出模式

@@ -25,6 +25,8 @@ const INTERACTABLE_SCRIPT := preload("res://scripts/interactable.gd")
 const CONVOY_SCENE := preload("res://scene/ui/convoy.tscn")
 const BATTLE_ANIMATION_SCENE := preload("res://scene/ui/battle_animation.tscn")
 const UNIT_INFO_PANEL_SCENE := preload("res://scene/ui/unit_info_panel.tscn")
+##信息查看控制器（信息查看系统，代码构建）
+const INFO_VIEWER_SCRIPT := preload("res://scripts/info_viewer.gd")
 ##九宫格背景（行动菜单/物品栏共用，5F/UI 升级）
 const ITEMSBOX_SCENE := preload("res://scene/ui/itemsbox.tscn")
 
@@ -66,6 +68,7 @@ func _ready() -> void:
 	_setup_convoy()
 	_setup_battle_animation()
 	_setup_unit_info_panel()
+	_setup_info_viewer()
 	_setup_talk()
 	_setup_interactables()
 	_setup_map_events()
@@ -153,6 +156,15 @@ func _setup_unit_info_panel() -> void:
 	$CanvasLayer.add_child(info_panel)
 	info_panel.visible = false
 	battle_manager.set_unit_info_panel(info_panel)
+
+
+##初始化信息查看器（信息查看系统）：挂 CanvasLayer（文字框最上层），
+##经 BattleManager 分发给物品菜单/运输队/人物面板（须在各面板创建之后调用）
+func _setup_info_viewer() -> void:
+	var viewer := INFO_VIEWER_SCRIPT.new()
+	viewer.name = "InfoViewer"
+	$CanvasLayer.add_child(viewer)
+	battle_manager.set_info_viewer(viewer)
 
 
 ##构建行动菜单面板（5F/UI 升级）：itemsbox 九宫格背景（宽 48，高度随选项数动态调整）

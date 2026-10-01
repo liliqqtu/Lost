@@ -9,6 +9,8 @@
 [resource]
 script = ExtResource("1_class")
 job_name = "游牧民"
+job_info = "在草原上驰骋弓的牧民，移动力优秀"
+info = "迷茫之人，心处仿徨"
 class_card = ExtResource("1_ydai7")
 affinity = ExtResource("6_aff")
 growths_spd = 40

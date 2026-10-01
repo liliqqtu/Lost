@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhblo8as1k2rg" path="res://assets/graphics/UI/Dialogue.png" id="1_j0ivf"]
 [ext_resource type="Texture2D" uid="uid://cqj2gg0t3uq3" path="res://assets/graphics/UI/Dialogue Arrow.png" id="2_tqdn3"]
+[ext_resource type="Script" path="res://scene/ui/textbox.gd" id="3_script"]
 
 [node name="TextBox" type="NinePatchRect" unique_id=480522078]
 custom_minimum_size = Vector2(91, 48)
@@ -15,6 +16,7 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+script = ExtResource("3_script")
 
 [node name="DialogueArrow" type="TextureRect" parent="." unique_id=541509422]
 layout_mode = 1

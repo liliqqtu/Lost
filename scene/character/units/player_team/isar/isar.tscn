@@ -18,6 +18,7 @@ script = ExtResource("1_2b1tr")
 inventory = Array[ExtResource("2_x3s12")]([ExtResource("3_6gtc4")])
 class_data = ExtResource("4_6gtc4")
 unit_name = "伊萨尔"
+info = "一位知识渊博的贤者，人们尊称他为“诗人”"
 lv = 1
 rank_sword = 2
 rank_anima = 2

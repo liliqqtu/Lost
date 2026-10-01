@@ -10,7 +10,7 @@ const STAT_LABEL_NAMES := ["Str", "Mag", "Skl", "Spd", "Luk", "Def H", "Res", "M
 ##能力条的绝对满刻度
 const BAR_MAX_VALUE := 40
 
-##武器类型 -> 武器&支援等级页的类型图标（魔法/杖暂无图标，隐藏）
+##武器类型 -> 武器等级页的类型图标（魔法/杖暂无图标，隐藏）
 const WEAPON_TYPE_ICONS := {
 	Weapon.WeaponType.SWORD: preload("res://assets/graphics/UI/ItemIconClass/sword.png"),
 	Weapon.WeaponType.LANCE: preload("res://assets/graphics/UI/ItemIconClass/lance.png"),
@@ -22,11 +22,71 @@ const WEAPON_TYPE_ICONS := {
 	Weapon.WeaponType.STAFF: preload("res://assets/graphics/UI/ItemIconClass/staff.png"),
 }
 
+##武器类型 -> 中文名（信息查看用）
+const WEAPON_TYPE_NAMES := {
+	Weapon.WeaponType.SWORD: "剑",
+	Weapon.WeaponType.LANCE: "枪",
+	Weapon.WeaponType.AXE: "斧",
+	Weapon.WeaponType.BOW: "弓",
+	Weapon.WeaponType.ANIMA: "理（魔法）",
+	Weapon.WeaponType.DARK: "暗（魔法）",
+	Weapon.WeaponType.LIGHT: "光（魔法）",
+	Weapon.WeaponType.STAFF: "杖",
+}
+
+##武器类型说明（信息查看用：三角相克等）
+const WEAPON_TYPE_INFO := {
+	Weapon.WeaponType.SWORD: "物理武器。克制斧，被枪克制。",
+	Weapon.WeaponType.LANCE: "物理武器。克制剑，被斧克制。",
+	Weapon.WeaponType.AXE: "物理武器。克制枪，被剑克制。",
+	Weapon.WeaponType.BOW: "物理武器。基础射程 2，近距离无法反击。",
+	Weapon.WeaponType.ANIMA: "魔法。克制光，被暗克制。",
+	Weapon.WeaponType.DARK: "魔法。克制理，被光克制。",
+	Weapon.WeaponType.LIGHT: "魔法。克制暗，被理克制。",
+	Weapon.WeaponType.STAFF: "辅助武器（治疗等，效果未实现）。",
+}
+
+##静态信息提供者节点路径（tscn 中挂在对应 Label/图标下、名为 Info 的 InfoProvider 子节点）
+##顺序即角色页导航顺序：名称/等级/经验/生命/属性 → 力..移 → 体格/救出/状态/指挥/对话
+##（职业为动态说明，导航时插在名称之后；技能说明动态追加在最后）
+const STATIC_INFO_PATHS := [
+	"BaseInfo/Class/Info",
+	"BaseInfo/Name/Info",
+	"BaseInfo/LV/Info",
+	"BaseInfo/E/Info",
+	"BaseInfo/HP/Info",
+	"BaseInfo/AffinityIcon/Info",
+	"InfoData/VBoxData1/Str/Info",
+	"InfoData/VBoxData1/Mag/Info",
+	"InfoData/VBoxData1/Skl/Info",
+	"InfoData/VBoxData1/Spd/Info",
+	"InfoData/VBoxData1/Luk/Info",
+	"InfoData/VBoxData1/Def_H/Info",
+	"InfoData/VBoxData1/Res/Info",
+	"InfoData/VBoxData1/Move/Info",
+	"InfoData/VBoxData2/Con/Info",
+	"InfoData/VBoxData2/Rescue/Info",
+	"InfoData/VBoxData2/States/Info",
+	"InfoData/VBoxData2/Cmd/Info",
+	"InfoData/VBoxData2/Talk/Info",
+]
+
 ##当前显示的页：0 角色信息 1 物品 2 武器&支援等级
 var _page_index := 0
 var _pages: Array[Control] = []
 ##当前显示的单位（上下键切换同队伍单位用）
 var current_unit: Unit = null
+
+##信息查看器（信息查看系统，Level 装配时注入；R 查看当前页条目说明）
+var info_viewer: Node = null
+##信息查看：当前条目索引（按页面维护，R 打开时从该条目起）
+var _info_index := 0
+##静态信息提供者（tscn 中挂在各 Label 下的 Info 子节点，_ready 收集）
+var _static_providers: Array = []
+##技能说明（动态：随当前单位的技能列表变化，追加在角色页末尾）
+var _skill_providers: Array = []
+##武器类型说明（动态：随当前单位 rank_* 变化，武器&支援页按此导航）
+var _weapon_providers: Array = []
 
 @onready var _stat_labels: Array[Label] = [
 	$InfoData/VBoxData1/Str,
@@ -58,7 +118,9 @@ var current_unit: Unit = null
 @onready var _skill_flow: HFlowContainer = $InfoData/Skill
 
 @onready var _name_label: Label = $BaseInfo/Name
+@onready var _name_info : Control = $BaseInfo/Name/Info
 @onready var _class_label: Label = $BaseInfo/Class
+@onready var _class_info : Control =  $BaseInfo/Class/Info
 @onready var _lv_label: Label = $BaseInfo/LV
 @onready var _exp_label: Label = $BaseInfo/E
 @onready var _hp_label: Label = $BaseInfo/HP
@@ -88,6 +150,14 @@ var current_unit: Unit = null
 func _ready() -> void:
 	_pages = [$InfoData, $Items, $"Weapon&SupportLevel"]
 	visible = false
+	##收集静态信息提供者（tscn 中挂在各 Label 下的 Info 子节点，缺节点自动跳过）
+	for path in STATIC_INFO_PATHS:
+		var node := get_node_or_null(path)
+		if node != null:
+			_static_providers.append(node)
+		else :
+			print(path)
+
 	##支援行模板脱离容器并隐藏（避免空槽占布局；填充时 duplicate 生成真实行）
 	_support_row_template.get_parent().remove_child(_support_row_template)
 	_support_row_template.visible = false
@@ -109,11 +179,20 @@ func show_panel(unit: Unit, keep_page := false) -> void:
 		_page_index = 0
 	_apply_page()
 	visible = true
+	##信息查看条目从头开始
+	_info_index = 0
 
 
-##关闭面板
+##关闭面板（信息查看中一并收起）
 func hide_panel() -> void:
+	if info_viewer != null and info_viewer.active:
+		info_viewer.close()
 	visible = false
+
+
+##注入信息查看器（Level 装配）
+func set_info_viewer(viewer: Node) -> void:
+	info_viewer = viewer
 
 
 ##切页：dir -1 上一页 / 1 下一页，索引回绕
@@ -132,6 +211,7 @@ func _apply_page() -> void:
 func _fill(unit: Unit) -> void:
 	#基本信息
 	_name_label.text = unit.unit_name
+	_name_info.description = unit.info
 	_lv_label.text = str(unit.lv)
 	_exp_label.text = str(unit.exp % 100)
 	_hp_label.text = str(unit.hp)
@@ -141,6 +221,7 @@ func _fill(unit: Unit) -> void:
 	var cd: ClassData = unit.class_data
 	if cd != null:
 		_class_label.text = cd.job_name
+		_class_info.description = cd.job_info
 		_class_card.texture = cd.class_card
 	else:
 		_class_label.text = "——"
@@ -170,11 +251,11 @@ func _fill(unit: Unit) -> void:
 	_fill_weapon_page(unit)
 	_fill_support_list(unit)
 
-
-##技能栏：合并职业技能 + 个人技能，按 Skill.view_scene 实例化（无 view_scene 跳过）
+##技能栏：合并职业技能 + 个人技能，按 Skill.view_scene 实例化（无 view_scene 只进信息查看）
 func _fill_skills(unit: Unit) -> void:
 	for child in _skill_flow.get_children():
 		child.queue_free()
+	_skill_providers.clear()
 	if unit.class_data == null and unit.personal_skills.is_empty():
 		return
 	var skills: Array[Skill] = []
@@ -182,9 +263,14 @@ func _fill_skills(unit: Unit) -> void:
 		skills.append_array(unit.class_data.skills)
 	skills.append_array(unit.personal_skills)
 	for skill in skills:
-		if skill == null or skill.view_scene == null:
+		if skill == null:
 			continue
-		_skill_flow.add_child(skill.view_scene.instantiate())
+		if skill.view_scene != null:
+			_skill_flow.add_child(skill.view_scene.instantiate())
+		##信息查看：技能名称 + 说明
+		var provider := InfoProvider.new()
+		provider.description = "技能：%s\n%s" % [skill.display_name, skill.description]
+		_skill_providers.append(provider)
 
 
 ##地图立绘：复制单位的地图精灵帧并播放选中动画
@@ -219,6 +305,7 @@ func _fill_weapon_page(unit: Unit) -> void:
 	for child in _weapon_level_box.get_children():
 		_weapon_level_box.remove_child(child)
 		child.queue_free()
+	_weapon_providers.clear()
 	for type in Weapon.WeaponType.values():
 		if not unit.can_use_weapon(type):
 			continue
@@ -245,6 +332,16 @@ func _fill_weapon_page(unit: Unit) -> void:
 		lv_label.visible = true
 		lv_label.text = Weapon.WeaponRank.find_key(rank)
 		_weapon_level_box.add_child(lv_label)
+		##信息查看：武器类型/等级/经验/相克说明
+		var provider := InfoProvider.new()
+		provider.description = "%s  等级 %s（上限 %s）\n武器经验 %d\n%s" % [
+			WEAPON_TYPE_NAMES.get(type, "武器"),
+			Weapon.rank_to_text(rank),
+			Weapon.rank_to_text(cap),
+			xp,
+			WEAPON_TYPE_INFO.get(type, ""),
+		]
+		_weapon_providers.append(provider)
 
 
 ##属性图标（5G）：ClassData.affinity，普通敌人无属性留空
@@ -282,3 +379,64 @@ func _get_cap(unit: Unit, key: String) -> int:
 		"con":
 			return 20
 	return unit.get("max_" + key)
+
+
+##==================== 信息查看（信息查看系统） ====================
+
+##信息查看输入（由 BattleUnitCommands.handle_unit_info_input 最先调用）
+##返回 true 表示已消费（查看中或刚打开），外层面板输入（切页/切单位/关面板）不再处理
+func handle_info_input(event: InputEvent) -> bool:
+	if info_viewer == null:
+		return false
+	if info_viewer.active:
+		info_viewer.handle_input(event)
+		return true
+	if event.is_action_pressed("R"):
+		var providers := _page_providers(_page_index)
+		if providers.is_empty():
+			return false
+		_info_index = clampi(_info_index, 0, providers.size() - 1)
+		if info_viewer.open(providers[_info_index], _nav_info):
+			return true
+	return false
+
+
+##信息查看导航（本面板的导航规则，InfoViewer 只透传方向）：
+##上下=当前页内切换条目；左右=切换页面并跳到该页第一个条目（目标页为空不切换）
+func _nav_info(dir: Vector2i) -> Node:
+	var providers := _page_providers(_page_index)
+	if dir.y != 0 and not providers.is_empty():
+		_info_index = wrapi(_info_index + dir.y, 0, providers.size())
+		return providers[_info_index]
+	if dir.x != 0:
+		var next_page := wrapi(_page_index + dir.x, 0, _pages.size())
+		var next_list := _page_providers(next_page)
+		if next_list.is_empty():
+			return null
+		_page_index = next_page
+		_apply_page()
+		_info_index = 0
+		return next_list[0]
+	return null
+
+
+##当前页的可查看对象列表（顺序即上下键导航顺序）
+##角色页：名称→职业(动态)→等级→经验→生命→属性→八项能力→体格/救出/状态/指挥/对话→技能(动态)
+##物品页：背包内的 ItemRow（自带 get_info）；武器&支援页：各可用武器类型（动态）
+func _page_providers(page: int) -> Array:
+	match page:
+		0:
+			var list: Array = []
+			if not _static_providers.is_empty():
+				list = _static_providers
+			list.append_array(_skill_providers)
+			return list
+		1:
+			var item_list: Array = []
+			for row in _item_rows:
+				if row.visible:
+					item_list.append(row)
+			return item_list
+		2:
+			return _weapon_providers
+	return []

@@ -6,6 +6,8 @@ class_name ClassData
 
 ## 职业名（人物面板显示，如 弓骑/山贼）
 @export var job_name := ""
+## 职业描述
+@export var job_info := ""
 ## 职业卡图（人物面板左上角）
 @export var class_card: Texture2D
 ##"""职业强度（升级系统，FE8 经验公式 Q）：普通职业=3，弱职业=2，单位无职业数据按 3"""

@@ -53,6 +53,16 @@ func set_trade_menu(menu: Node) -> void:
 		trade_menu.closed.connect(_on_trade_closed)
 
 
+##设置信息查看器（信息查看系统）：分发给物品菜单/运输队/人物面板（各自实现 set_info_viewer）
+func set_info_viewer(viewer: Node) -> void:
+	if item_menu != null and item_menu.has_method("set_info_viewer"):
+		item_menu.set_info_viewer(viewer)
+	if convoy_panel != null and convoy_panel.has_method("set_info_viewer"):
+		convoy_panel.set_info_viewer(viewer)
+	if unit_info_panel != null and unit_info_panel.has_method("set_info_viewer"):
+		unit_info_panel.set_info_viewer(viewer)
+
+
 ##显示行动菜单（5E：探测脚下瓦片村庄/宝箱 + 邻接对话目标；5A：攻击也作为动态附加项；5G：邻接支援目标）
 ##动态项顺序：攻击 → 访问 → 开启 → 对话 → 支援 → 救援 → 放下 → 交接 → 交换；固定项：物品 / 待机 / 运输队
 ##注意："攻击"由 _menu_attack_ready 单独传给 action_menu.open，不放进 extras
@@ -295,7 +305,11 @@ func reset_forecast_cache() -> void:
 ##==================== 人物信息面板（阶段五 5B） ====================
 
 ##处理人物信息面板输入：R/取消键关闭，左右键切页，上下键切换同队伍单位
+##信息查看（R）优先：查看中或刚打开时由面板消费输入（切页/切单位暂停）
 func handle_unit_info_input(event: InputEvent) -> void:
+	if unit_info_panel != null and unit_info_panel.has_method("handle_info_input") \
+			and unit_info_panel.handle_info_input(event):
+		return
 	if event.is_action_pressed("R") or event.is_action_pressed("no"):
 		unit_info_panel.hide_panel()
 		bm.state = BattleManager.State.CURSOR

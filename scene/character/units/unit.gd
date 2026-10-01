@@ -27,8 +27,10 @@ const HP_BAR_RED := 0.25
 ##个人技能（区别于职业技能——例如"仿徨"是"忒"独有，不属于弓骑/游牧民职业）
 @export var personal_skills: Array[Skill] = []
 
-
+## 人物名字
 @export var unit_name := ""
+## 人物描述
+@export var info := ""
 ## 队伍 0是玩家 1是敌方 2是友军
 @export var team := 0
 ## 是否携带运输队（主角忒等特定角色）

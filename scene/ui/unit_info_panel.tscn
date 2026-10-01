@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="11_13eqi"]
 [ext_resource type="Texture2D" uid="uid://dtaqpfdd873pt" path="res://assets/graphics/UI/AffinityIcon/wind.png" id="12_c8cgo"]
 [ext_resource type="Script" uid="uid://cxcxv11gjylhu" path="res://scene/ui/unit_info_panel.gd" id="12_panel"]
+[ext_resource type="Script" uid="uid://cu163dal4qwan" path="res://scripts/info_provider.gd" id="13_infoprovider"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xod08"]
 shader = ExtResource("5_ewa6l")
@@ -174,6 +175,12 @@ theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Str" unique_id=700000106]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "力量
+影响物理武器的伤害。"
+
 [node name="Mag" type="Label" parent="InfoData/VBoxData1" unique_id=295342234]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -185,6 +192,12 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Mag" unique_id=700000107]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "魔力
+影响魔法武器的伤害。"
 
 [node name="Skl" type="Label" parent="InfoData/VBoxData1" unique_id=1975806893]
 custom_minimum_size = Vector2(40, 16)
@@ -198,6 +211,12 @@ theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Skl" unique_id=700000108]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "技巧
+影响命中与必杀。"
+
 [node name="Spd" type="Label" parent="InfoData/VBoxData1" unique_id=947198764]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -209,6 +228,13 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Spd" unique_id=700000109]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "速度
+影响回避与攻速，
+攻速高出对方 4 点可追击。"
 
 [node name="Luk" type="Label" parent="InfoData/VBoxData1" unique_id=1660349103]
 custom_minimum_size = Vector2(40, 16)
@@ -222,6 +248,12 @@ theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Luk" unique_id=700000110]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "幸运
+影响回避与必杀回避。"
+
 [node name="Def_H" type="Label" parent="InfoData/VBoxData1" unique_id=1046948811]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -233,6 +265,12 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Def_H" unique_id=700000111]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "守备
+减轻物理攻击的伤害。"
 
 [node name="Res" type="Label" parent="InfoData/VBoxData1" unique_id=1888685179]
 custom_minimum_size = Vector2(40, 16)
@@ -246,6 +284,12 @@ theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Res" unique_id=700000112]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "魔防
+减轻魔法攻击的伤害。"
+
 [node name="Move" type="Label" parent="InfoData/VBoxData1" unique_id=395920921]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -257,6 +301,12 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData1/Move" unique_id=700000113]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "移动力
+一回合内可移动的格数。"
 
 [node name="VBoxData2" type="VBoxContainer" parent="InfoData" unique_id=264864915]
 layout_mode = 0
@@ -279,6 +329,13 @@ theme_override_font_sizes/font_size = 10
 text = "9"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData2/Con" unique_id=700000114]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "体格
+影响攻速；体格越大越难被
+其他单位救起。"
+
 [node name="Rescue" type="Label" parent="InfoData/VBoxData2" unique_id=5212247]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -290,6 +347,13 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "15"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData2/Rescue" unique_id=700000115]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "救出
+救援力，不小于友军体格时
+才能救起对方。"
 
 [node name="States" type="Label" parent="InfoData/VBoxData2" unique_id=7868832]
 custom_minimum_size = Vector2(40, 16)
@@ -303,6 +367,12 @@ theme_override_font_sizes/font_size = 10
 text = "- -"
 horizontal_alignment = 1
 
+[node name="Info" type="Control" parent="InfoData/VBoxData2/States" unique_id=700000116]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "状态
+异常状态（未实现）。"
+
 [node name="Cmd" type="Label" parent="InfoData/VBoxData2" unique_id=72351513]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
@@ -314,6 +384,13 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "1⭐"
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData2/Cmd" unique_id=700000117]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "指挥
+周围友军获得的命中/回避
+加成（未实现）。"
 
 [node name="Talk" type="Label" parent="InfoData/VBoxData2" unique_id=1133489036]
 custom_minimum_size = Vector2(40, 16)
@@ -327,6 +404,13 @@ theme_override_font_sizes/font_size = 10
 text = "- -
 "
 horizontal_alignment = 1
+
+[node name="Info" type="Control" parent="InfoData/VBoxData2/Talk" unique_id=700000118]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "对话
+当前可与该角色触发剧情
+对话的对象。"
 
 [node name="Skill" type="HFlowContainer" parent="InfoData" unique_id=637449044]
 layout_mode = 0
@@ -484,6 +568,12 @@ text = "忒"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Info" type="Control" parent="BaseInfo/Name" unique_id=700000101]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "名称
+角色的名字。"
+
 [node name="LV" type="Label" parent="BaseInfo" unique_id=1002374799]
 layout_mode = 0
 offset_left = 22.0
@@ -498,6 +588,12 @@ theme_override_font_sizes/font_size = 10
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Info" type="Control" parent="BaseInfo/LV" unique_id=700000102]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "等级
+角色当前的等级，满级为 20。"
 
 [node name="E" type="Label" parent="BaseInfo" unique_id=1959953036]
 layout_mode = 0
@@ -514,6 +610,12 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Info" type="Control" parent="BaseInfo/E" unique_id=700000103]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "经验
+战斗后积累，累计到 100 升一级。"
+
 [node name="HP" type="Label" parent="BaseInfo" unique_id=468957155]
 layout_mode = 0
 offset_left = 20.0
@@ -528,6 +630,13 @@ theme_override_font_sizes/font_size = 10
 text = "30"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Info" type="Control" parent="BaseInfo/HP" unique_id=700000104]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "生命
+角色的生命值，归零则退场。
+最大生命值随升级成长。"
 
 [node name="MAXHP" type="Label" parent="BaseInfo" unique_id=1315619520]
 layout_mode = 0
@@ -559,6 +668,14 @@ text = "弓骑"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Info" type="Control" parent="BaseInfo/Class" unique_id=1351742119]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_infoprovider")
+description = "角色职业描述"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
+
 [node name="AffinityIcon" type="TextureRect" parent="BaseInfo" unique_id=798805548]
 layout_mode = 0
 offset_left = 80.0
@@ -567,10 +684,17 @@ offset_right = 93.0
 offset_bottom = 96.0
 texture = ExtResource("12_c8cgo")
 
+[node name="Info" type="Control" parent="BaseInfo/AffinityIcon" unique_id=700000105]
+anchors_preset = 0
+script = ExtResource("13_infoprovider")
+description = "属性
+影响支援的相性与加成
+（命中/回避/必杀）。"
+
 [node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=264813783]
 material = SubResource("ShaderMaterial_xod08")
 position = Vector2(80, 125)
 sprite_frames = ExtResource("6_685kj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.7913962
+frame_progress = 0.791396

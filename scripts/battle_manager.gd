@@ -146,6 +146,10 @@ func set_item_menu(menu: Node) -> void:
 func set_trade_menu(menu: Node) -> void:
 	commands.set_trade_menu(menu)
 
+##设置信息查看器（信息查看系统）：分发给物品菜单/运输队/人物面板
+func set_info_viewer(viewer: Node) -> void:
+	commands.set_info_viewer(viewer)
+
 ##设置对话场景（阶段五 5E 重构）
 func set_talk_scene(scene: Node) -> void:
 	interaction.talk_scene = scene

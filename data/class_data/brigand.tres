@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
 [ext_resource type="Texture2D" uid="uid://bado3lsjjeowh" path="res://assets/graphics/Class Card/Brigand (M) Axe {IS}.png" id="2_card"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="3_i36cp"]
 
 [resource]
 script = ExtResource("1_class")
 job_name = "山贼"
+job_info = "用斧作战的【山之暴汉】，力量强大，擅长山中作战"
 class_card = ExtResource("2_card")
 cap_str = 25
 cap_mag = 15

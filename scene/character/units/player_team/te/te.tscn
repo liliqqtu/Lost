@@ -77,6 +77,7 @@ inventory = Array[ExtResource("2_t1lsn")]([ExtResource("7_bow"), ExtResource("8_
 class_data = ExtResource("6_nomad")
 personal_skills = Array[ExtResource("6_i81gk")]([ExtResource("6_lost")])
 unit_name = "忒"
+info = "迷茫之人，心处仿徨"
 has_convoy = true
 rank_bow = 2
 max_hp = 30

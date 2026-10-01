@@ -94,7 +94,9 @@ Lost (Godot Game Project)
 |   |- battle_phases.gd            # 回合切换/敌方回合/地图事件调度
 |   |- enemy_ai.gd                 # 敌方 AI 决策器（纯函数、无状态）
 |   |- action_menu.gd              # 行动菜单（动态项+固定项，itemsbox 背景+手光标）
-|   |- item_menu.gd                # 物品菜单（使用消耗品/换装，itemsbox 背景+手光标，宽度按内容自适应）
+|   |- item_menu.gd                # 物品菜单（使用消耗品/换装，itemsbox 背景+手光标，宽度按内容自适应；R 信息查看）
+|   |- info_provider.gd            # 信息提供者（挂在需要说明的 Control 下的 Info 子节点；@export_multiline description + get_info() 统一接口）
+|   |- info_viewer.gd              # 信息查看控制器（通用流程：进入/方向切换/R·X 退出，复用 textbox.tscn 显示；导航规则归各面板）
 |   |- trade_menu.gd               # 交换界面（5F：双方物品栏+class card，FE GBA 拾取/交换/转移规则）
 |   |- pathfinder.gd                # 路径查找
 |   |- range_drawer.gd              # 范围绘制
@@ -125,6 +127,7 @@ Lost (Godot Game Project)
 |   |   |- unit_info_panel.gd / .tscn   # 人物信息面板（三页：角色信息/物品/武器&支援等级）
 |   |   |- convoy.gd / convoy.tscn  # 运输队面板（取出/寄存，纯键盘）
 |   |   |- talk.gd / talk.tscn      # 对话场景（BG背景CG + Dialogue九宫格框 + 四肖像槽+气泡）
+|   |   |- textbox.gd / textbox.tscn  # 通用文字框（从 Dialogue 分离的独立场景；信息查看系统显示描述用，talk.tscn 实例它作正文框）
 |   |   |- itemrow.gd / itemrow.tscn  # 物品行视图组件（图标+名称+耐久，背包/运输队共用）
 |   |   |- grade_up.gd / grade_up.tscn  # 升级场景（升级加点动画；人物转职后也调用此场景，但先不开发人物转职功能）
 |   |   |- add_up.gd / add_up.tscn  # 单项加点动画（星星螺旋+箭头，受控播放：由 grade_up 调 play()）
@@ -296,117 +299,21 @@ DEPOSIT：左侧背包 ↑↓ 移动光标，Z 寄存物品，无 ←→ 操作
 - 演出：exp_box.tscn（ExpBar + Exp 数字）由 battle_animation.show_exp 动态加载并 tween 填充——**挂父节点（CanvasLayer）而非 battle_animation 自身**（本场景是居中的 Node2D，Control 子节点会被位移半屏）。grade_up 场景：填充职业/等级/职业卡/八项能力，Add 下 8 个 add_up 子节点对应加点的项依次播放（前一个快播完时开始下一个），播完自动隐藏无需输入；add_up.gd 改为受控播放（play()，可重复）。
 - 面板：Weapon&SupportLevel 页按 Unit rank_* 可用武器类型逐行复制 WeaponXP/WeaponClass（类型图标+当前等级内进度条，当前等级=get_weapon_ex，到等级上限或 S 填满）与 WeaponLevel（等级字母 E..S，两容器子节点一一对应）；魔法/杖暂无类型图标（图标隐藏，条与等级照常显示）。单位配置：te=弓 C、isar=剑C/理C/暗C/杖C、brigand=斧 E（rank_* 在单位 tscn 上）。
 - 测试：tests/test_level_system.gd（6 场景：经验公式/武器经验阈值与等级文字/积累与封顶/装备限制/升级掷骰与应用/满级）。
+
+信息查看系统（完成 2026-09-30；InfoData 结构化资源按规划暂不实现）
+- 目标：统一物品/人物属性/职业/技能/武器等级的信息查看。玩家在可查看对象上按 R 进入，方向键切换，R/X 退出；查看不修改游戏数据，InfoViewer 也不做 if item / if character 的类型判断——一切对象只认 get_info() 接口。
+- InfoProvider（scripts/info_provider.gd，extends Control）：挂在需要说明的 Control 下的子节点（tscn 里给 Label/TextureRect 加名为 Info 的 InfoProvider 子节点，Inspector 填 @export_multiline description）。静态说明走此路；动态说明由面板运行时 InfoProvider.new() 赋 description，或控件自身实现 get_info()（ItemRow：返回物品 description，为空退回显示名，各物品 .tres 的 description 待填）。
+- 文字框复用：scene/ui/textbox.tscn（已从 talk.tscn 的 Dialogue 分离，talk.tscn 实例它作正文框）+ 新增 textbox.gd：show_text 按完整文字测量自适应尺寸（min 91×48 / max 224×64、左缘 8、下边界 156），整段立即显示不逐字（浏览信息无逐字需求）；箭头常隐藏。注意 TextBox._ready 不隐藏自身（talk 实例可见性由 talk 根节点控制）。
+- InfoViewer（scripts/info_viewer.gd，extends Node）：通用流程控制器。open(provider, nav) 进入——nav 是面板提供的方向回调 func(dir: Vector2i) -> provider（上=(0,-1) 下=(0,1) 左=(-1,0) 右=(1,0)，返回 null 保持当前）；handle_input 处理方向切换与 R/X 退出；close 收起文字框。输入由各面板在 BattleManager 对应状态下转发，BM 状态机零改动。
+- 各界面集成（"有哪些可查看对象"与导航关系归各面板）：
+  - 物品菜单（ItemMenu）：R 查看选中物品，上下=背包内切换。
+  - 运输队（ConvoyPanel）：R 查看光标处物品（取出=仓库列表/寄存=背包），上下=列表内切换，取出模式左右=切类别；模式选择界面无可查看对象。
+  - 人物面板（UnitInfoPanel）：R 查看当前页条目。角色页顺序 名称→职业(动态：职业名/骑乘/强度)→等级→经验→生命→属性→力/魔/技/速/幸/守/防/移→体格/救出/状态/指挥/对话→技能(动态：名称+说明)；物品页=背包 ItemRow；武器&支援页=各可用武器类型(动态：等级/上限/武器经验/相克说明)。上下=页内切换，左右=切页并跳到该页第一条（目标页为空不切换）。查看中切页由 _nav_info 驱动 cycle 逻辑（_apply_page），上下不再切换单位。
+  - 静态说明配置在 unit_info_panel.tscn 各 Label 下的 Info 子节点（Inspector 直接改文案）；unit_info_panel.gd 用 STATIC_INFO_PATHS 收集（缺节点自动跳过）。
+- 装配：Level._setup_info_viewer()（在各面板创建之后）创建 InfoViewer 挂 CanvasLayer，BattleManager.set_info_viewer(viewer) → commands.set_info_viewer 分发给 item_menu/convoy_panel/unit_info_panel（has_method 兜底，旧测试的最小面板不受影响）。handle_unit_info_input 最先调用面板 handle_info_input，返回 true（查看中/刚打开）则不再处理切页/切单位/关面板。
 ## 待开发
-### 信息查看系统
 
-- 目标：统一处理物品、人物属性、职业、技能、武器等级等信息的查看。
-- 交互方式：玩家在可查看的信息对象上按“R”键进入信息查看；进入后使用方向键切换可查看的信息，再按“R”或“X”退出。
-- 描述显示：复用 `res://scene/ui/talk.tscn` 中的 `Dialogue` 子节点作为文字描述框，不重复实现新的文字框。沃把它分离出来，作为独立场景保存起来：res://scene/ui/textbox.tscn。
-- 信息查看本身不修改游戏数据，也不负责具体 UI 面板的布局，仅负责“当前查看对象”和“信息切换”。
-
-#### InfoProvider
-
-- 为需要提供说明的 UI 控件提供统一接口。
-- 需要查看说明的 `Control` 子节点可挂载 `InfoProvider` 脚本。
-- `InfoProvider` 通过 Inspector 配置对应的描述信息。
-- 最初版本可以直接使用：
-  `@export_multiline var description: String`
-- 对外提供统一的 `get_info()` 接口，返回当前对象的说明。
-- 物品、人物属性、职业、技能、武器等级等不同类型的 UI 控件，只要实现/提供相同接口，即可被信息查看系统统一处理。
-- 不要求所有 Control 都继承 InfoProvider，只给实际需要查看说明的控件使用。
-
-#### InfoData
-
-- 如果后续描述信息从单一字符串扩展为“标题 + 描述 + 图标 + 多段文字”等结构，再创建 `InfoData : Resource`。
-- InfoData 用于保存可复用的信息描述资源。
-- 当前阶段不强制创建 Resource，先使用 `InfoProvider + description` 完成最小版本。
-
-#### InfoViewer
-
-- 创建独立的信息查看控制器，负责：
-  - 接收当前选中的 InfoProvider；
-  - 获取对应描述；
-  - 调用 `Dialogue` 显示描述；
-  - 根据方向键切换当前可查看的信息；
-  - 处理进入/退出信息查看状态。
-- InfoViewer 不负责物品、角色、职业等具体数据逻辑。
-- 不在 InfoViewer 中写大量 `if item / if character / if class` 的类型判断。
-- 当前界面负责提供“有哪些可查看对象”以及这些对象之间的导航关系。
-- InfoViewer 只处理通用的信息查看流程。
-
-#### 信息导航
-
-- 普通 UI 导航仍由当前面板负责。
-- 按 R 后进入信息查看模式，方向键根据当前面板的导航关系切换 InfoProvider。
-- 例如人物信息面板：
-  - 上/下：切换人物属性；
-  - 左/右：根据页面结构切换相关信息。
-- 运输队、物品栏、人物面板等可以分别提供自己的可查看对象列表。
-- 不同界面的导航规则不强行统一到 InfoViewer 中。
-
-#### 初期需要支持的信息
-
-- 物品：
-  - 运输队 ItemRow
-  - 物品菜单 ItemRow
-  - 人物信息面板中的物品
-- 人物：
-  - 角色名称
-  - 职业
-  - 等级
-  - 经验
-  - HP
-  - 力量
-  - 魔力
-  - 技巧
-  - 速度
-  - 幸运
-  - 守备
-  - 魔防
-  - 移动力
-  - 体格
-  - 救出
-  - 指挥
-  - 属性
-- 职业：
-  - 职业说明
-  - 职业相关能力/特性
-- 技能：
-  - 技能名称
-  - 技能说明
-- 武器：
-  - 武器类型
-  - 武器等级
-  - 武器经验
-  - 武器相关说明
-
-#### 推荐结构
-
-
-流程：
-
-当前 UI
-    ↓
-玩家移动光标
-    ↓
-当前 Control 提供 InfoProvider
-    ↓
-按 R
-    ↓
-InfoViewer.open(current_info_provider)
-    ↓
-获取 description
-    ↓
-复用 textbox.tscn 显示
-    ↓
-方向键切换 InfoProvider
-    ↓
-更新 Dialogue
-    ↓
-R 键 退出
-    ↓
-返回原 UI 状态
-### 
+（暂无。原"信息查看系统"已完成，见上方条目；InfoData（标题+图标+多段文字的结构化 Resource）按规划暂缓——当前描述仍是单一字符串，需要结构化时再创建 InfoData 并让 InfoProvider 挂载它。）
 
 # 新增功能时，优先扩展已有类，没有已有类，再创建新的 Manager、Controller、Component、Resource 或 Scene 并不构成代码重复
 

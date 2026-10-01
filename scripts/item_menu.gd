@@ -43,6 +43,8 @@ const COLOR_NORMAL := Color(1, 1, 1)
 
 ##当前打开菜单的单位
 var unit: Unit = null
+##信息查看器（信息查看系统，Level 装配时注入；R 查看选中物品说明）
+var info_viewer: Node = null
 ##当前选中项索引
 var _index := 0
 ##当前面板宽度（open 时按物品内容自适应，update_side 换位用）
@@ -101,14 +103,25 @@ func open(p_unit: Unit) -> void:
 	_panel.visible = true
 
 
-##关闭菜单
+##关闭菜单（信息查看中一并收起）
 func close() -> void:
+	if info_viewer != null and info_viewer.active:
+		info_viewer.close()
 	_panel.visible = false
 	unit = null
 
 
+##注入信息查看器（Level 装配）
+func set_info_viewer(viewer: Node) -> void:
+	info_viewer = viewer
+
+
 ##外部输入入口（由 BattleManager 转发）
 func handle_input(event: InputEvent) -> void:
+	##信息查看中：输入全部转给 InfoViewer（R/X 退出、方向键切换物品）
+	if info_viewer != null and info_viewer.active:
+		info_viewer.handle_input(event)
+		return
 	if not event.is_pressed() or unit == null:
 		return
 	if event.is_action_pressed("ui_up"):
@@ -120,6 +133,25 @@ func handle_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("no"):
 		close()
 		closed.emit()
+	elif event.is_action_pressed("R"):
+		_open_info()
+
+
+##==================== 信息查看（信息查看系统） ====================
+
+##R 查看当前选中物品的说明（空背包不打开）
+func _open_info() -> void:
+	if info_viewer == null or unit == null or unit.inventory.is_empty():
+		return
+	info_viewer.open(_rows[_index], _nav_info)
+
+
+##信息查看导航（本面板的导航规则）：上下=背包内移动物品光标；左右无切换
+func _nav_info(dir: Vector2i) -> ItemRow:
+	if dir.y != 0 and unit != null and not unit.inventory.is_empty():
+		_move(dir.y)
+		return _rows[_index]
+	return null
 
 
 ##左右换位：单位在屏幕左半边时菜单放右侧，右半边时放左侧（同行动菜单）
