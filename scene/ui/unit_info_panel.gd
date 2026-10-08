@@ -50,25 +50,26 @@ const WEAPON_TYPE_INFO := {
 ##顺序即角色页导航顺序：名称/等级/经验/生命/属性 → 力..移 → 体格/救出/状态/指挥/对话
 ##（职业为动态说明，导航时插在名称之后；技能说明动态追加在最后）
 const STATIC_INFO_PATHS := [
-	"BaseInfo/Class/Info",
-	"BaseInfo/Name/Info",
-	"BaseInfo/LV/Info",
-	"BaseInfo/E/Info",
-	"BaseInfo/HP/Info",
-	"BaseInfo/AffinityIcon/Info",
-	"InfoData/VBoxData1/Str/Info",
-	"InfoData/VBoxData1/Mag/Info",
-	"InfoData/VBoxData1/Skl/Info",
-	"InfoData/VBoxData1/Spd/Info",
-	"InfoData/VBoxData1/Luk/Info",
-	"InfoData/VBoxData1/Def_H/Info",
-	"InfoData/VBoxData1/Res/Info",
-	"InfoData/VBoxData1/Move/Info",
-	"InfoData/VBoxData2/Con/Info",
-	"InfoData/VBoxData2/Rescue/Info",
-	"InfoData/VBoxData2/States/Info",
-	"InfoData/VBoxData2/Cmd/Info",
-	"InfoData/VBoxData2/Talk/Info",
+	"BaseInfo/Info",
+	"BaseInfo/Name",
+	"BaseInfo/Class",
+	"BaseInfo/LV",
+	"BaseInfo/Exp",
+	"BaseInfo/HP",
+	"BaseInfo/AffinityIcon",
+	"InfoData/VBoxData1/Str",
+	"InfoData/VBoxData1/Mag",
+	"InfoData/VBoxData1/Skl",
+	"InfoData/VBoxData1/Spd",
+	"InfoData/VBoxData1/Luk",
+	"InfoData/VBoxData1/Def_H",
+	"InfoData/VBoxData1/Res",
+	"InfoData/VBoxData1/Move",
+	"InfoData/VBoxData2/Con",
+	"InfoData/VBoxData2/Rescue",
+	"InfoData/VBoxData2/States",
+	"InfoData/VBoxData2/Cmd",
+	"InfoData/VBoxData2/Talk",
 ]
 
 ##当前显示的页：0 角色信息 1 物品 2 武器&支援等级
@@ -85,10 +86,14 @@ var _info_index := 0
 var _static_providers: Array = []
 ##技能说明（动态：随当前单位的技能列表变化，追加在角色页末尾）
 var _skill_providers: Array = []
+## 角色信息面板的说明
+var info_list: Array = []
+## 物品栏的说明
+var item_list: Array = []
 ##武器类型说明（动态：随当前单位 rank_* 变化，武器&支援页按此导航）
 var _weapon_providers: Array = []
 
-@onready var _stat_labels: Array[Label] = [
+@onready var _stat_labels: Array[InfoProvider] = [
 	$InfoData/VBoxData1/Str,
 	$InfoData/VBoxData1/Mag,
 	$InfoData/VBoxData1/Skl,
@@ -108,27 +113,25 @@ var _weapon_providers: Array = []
 	$InfoData/VBoxData1Bar/ResBar,
 	$InfoData/VBoxData1Bar/MoveBar,
 ]
-@onready var _con_label: Label = $InfoData/VBoxData2/Con
+@onready var _con_label: InfoProvider = $InfoData/VBoxData2/Con
 #@onready var _max_con_bar: TextureProgressBar = $InfoData/VBoxData1Bar2/MAXConBar
 @onready var _con_bar: TextureProgressBar = $InfoData/VBoxData1Bar2/ConBar
-@onready var _rescue_label: Label = $InfoData/VBoxData2/Rescue
-@onready var _states_label: Label = $InfoData/VBoxData2/States
-@onready var _cmd_label: Label = $InfoData/VBoxData2/Cmd
-@onready var _talk_label: Label = $InfoData/VBoxData2/Talk
+@onready var _rescue_label: InfoProvider = $InfoData/VBoxData2/Rescue
+@onready var _states_label: InfoProvider = $InfoData/VBoxData2/States
+@onready var _cmd_label: InfoProvider = $InfoData/VBoxData2/Cmd
+@onready var _talk_label: InfoProvider = $InfoData/VBoxData2/Talk
 @onready var _skill_flow: HFlowContainer = $InfoData/Skill
 
-@onready var _name_label: Label = $BaseInfo/Name
-@onready var _name_info : Control = $BaseInfo/Name/Info
-@onready var _class_label: Label = $BaseInfo/Class
-@onready var _class_info : Control =  $BaseInfo/Class/Info
-@onready var _lv_label: Label = $BaseInfo/LV
-@onready var _exp_label: Label = $BaseInfo/E
-@onready var _hp_label: Label = $BaseInfo/HP
-@onready var _max_hp_label: Label = $BaseInfo/MAXHP
-@onready var _class_card: TextureRect = $ClassCard
-@onready var _map_sprite: AnimatedSprite2D = $MapSprite2D
+@onready var _name: InfoProvider = $BaseInfo/Name
+@onready var _class: InfoProvider = $BaseInfo/Class
+@onready var _lv: InfoProvider = $BaseInfo/LV
+@onready var _exp: InfoProvider = $BaseInfo/Exp
+@onready var _hp: InfoProvider = $BaseInfo/HP
+@onready var _max_hp: Label = $BaseInfo/MAXHP
+@onready var _class_card: TextureRect = $BaseInfo/ClassCard
+@onready var _map_sprite: AnimatedSprite2D = $BaseInfo/MapSprite2D
 ##属性图标（5G：ClassData.affinity.icon，无属性留空隐藏）
-@onready var _affinity_icon: TextureRect = $BaseInfo/AffinityIcon
+@onready var _affinity_icon: InfoProvider = $BaseInfo/AffinityIcon
 ##支援列表容器与行模板（5G：Weapon&SupportLevel/SupportLevel，模板脱容器隐藏、填充时 duplicate）
 @onready var _support_box: VBoxContainer = $"Weapon&SupportLevel/SupportLevel"
 @onready var _support_row_template: HBoxContainer = $"Weapon&SupportLevel/SupportLevel/character"
@@ -210,21 +213,21 @@ func _apply_page() -> void:
 ##填充全部数据（每次打开都重新读取，保证与 Unit 当前状态一致）
 func _fill(unit: Unit) -> void:
 	#基本信息
-	_name_label.text = unit.unit_name
-	_name_info.description = unit.info
-	_lv_label.text = str(unit.lv)
-	_exp_label.text = str(unit.exp % 100)
-	_hp_label.text = str(unit.hp)
-	_max_hp_label.text = str(unit.max_hp)
+	_name.text = unit.unit_name
+	_name.description = unit.info
+	_lv.text = str(unit.lv)
+	_exp.text = str(unit.exp % 100)
+	_hp.text = str(unit.hp)
+	_max_hp.text = str(unit.max_hp)
 
 	#职业名/职业卡/技能（ClassData）
 	var cd: ClassData = unit.class_data
 	if cd != null:
-		_class_label.text = cd.job_name
-		_class_info.description = cd.job_info
+		_class.text = cd.job_name
+		_class.description = cd.job_info
 		_class_card.texture = cd.class_card
 	else:
-		_class_label.text = "——"
+		_class.text = "——"
 		_class_card.texture = null
 
 	#八项能力值
@@ -250,6 +253,12 @@ func _fill(unit: Unit) -> void:
 	_fill_affinity(unit)
 	_fill_weapon_page(unit)
 	_fill_support_list(unit)
+	#信息查看：静态 + 技能
+	if not _static_providers.is_empty():
+		info_list = _static_providers
+		info_list.append_array(_skill_providers)
+	for info in info_list:
+		info.focus_entered.connect(info_viewer._on_button_focus_entered.bind(info))
 
 ##技能栏：合并职业技能 + 个人技能，按 Skill.view_scene 实例化（无 view_scene 只进信息查看）
 func _fill_skills(unit: Unit) -> void:
@@ -292,6 +301,10 @@ func _fill_items(unit: Unit) -> void:
 			row.set_item(items[i])
 		else:
 			row.clear()
+	for row in _item_rows:
+		if row.visible:
+			item_list.append(row)
+	
 
 
 ##武器&支援等级页：按 Unit rank_* 可用武器类型逐行显示（升级系统）
@@ -349,7 +362,7 @@ func _fill_affinity(unit: Unit) -> void:
 	var tex: Texture2D = null
 	if unit.class_data != null and unit.class_data.affinity != null:
 		tex = unit.class_data.affinity.icon
-	_affinity_icon.texture = tex
+	_affinity_icon.icon = tex
 	_affinity_icon.visible = tex != null
 
 
@@ -396,10 +409,9 @@ func handle_info_input(event: InputEvent) -> bool:
 		if providers.is_empty():
 			return false
 		_info_index = clampi(_info_index, 0, providers.size() - 1)
-		if info_viewer.open(providers[_info_index], _nav_info):
+		if info_viewer.open(providers[_info_index],_nav_info):
 			return true
 	return false
-
 
 ##信息查看导航（本面板的导航规则，InfoViewer 只透传方向）：
 ##上下=当前页内切换条目；左右=切换页面并跳到该页第一个条目（目标页为空不切换）
@@ -426,16 +438,8 @@ func _nav_info(dir: Vector2i) -> Node:
 func _page_providers(page: int) -> Array:
 	match page:
 		0:
-			var list: Array = []
-			if not _static_providers.is_empty():
-				list = _static_providers
-			list.append_array(_skill_providers)
-			return list
+			return info_list
 		1:
-			var item_list: Array = []
-			for row in _item_rows:
-				if row.visible:
-					item_list.append(row)
 			return item_list
 		2:
 			return _weapon_providers

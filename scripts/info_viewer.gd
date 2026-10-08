@@ -30,23 +30,26 @@ func _ready() -> void:
 
 
 ##进入信息查看：provider 需实现 get_info()；返回 false 表示无可查看信息（面板不接管理由）
-func open(provider, nav: Callable = Callable()) -> bool:
+func open(provider, nav: Callable) -> bool:
 	if provider == null or not provider.has_method("get_info"):
 		return false
 	_provider = provider
-	_nav = nav
 	active = true
-	_textbox.show_text(provider.get_info())
+	_textbox.show_text(_provider.get_info())
+	_provider.grab_focus()
+	_nav = nav
 	return true
 
 
 ##退出信息查看，收起文字框
 func close() -> void:
 	active = false
-	_provider = null
 	_nav = Callable()
 	_textbox.hide_box()
-
+	if _provider is InfoProvider:
+		var focused: InfoProvider = get_viewport().gui_get_focus_owner()
+		focused.release_focus()  # 释放焦点，避免 InfoProvider 持续显示 hover 效果
+	_provider = null
 
 ##外部输入入口（由当前面板在自己持有输入权时转发）
 func handle_input(event: InputEvent) -> void:
@@ -55,12 +58,13 @@ func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("R") or event.is_action_pressed("no"):
 		close()
 		return
-	var dir := _direction_of(event)
-	if dir != Vector2i.ZERO and _nav.is_valid():
-		var next = _nav.call(dir)
-		if next != null and next != _provider and next.has_method("get_info"):
-			_provider = next
-			_textbox.show_text(next.get_info())
+	if _provider is not InfoProvider:
+		var dir := _direction_of(event)
+		if dir != Vector2i.ZERO and _nav.is_valid():
+			var next = _nav.call(dir)
+			if next != null and next != _provider and next.has_method("get_info"):
+				_provider = next
+				_textbox.show_text(next.get_info())
 
 
 ##方向键 -> 方向向量（无方向键按下返回 ZERO）
@@ -74,3 +78,6 @@ func _direction_of(event: InputEvent) -> Vector2i:
 	if event.is_action_pressed("ui_right"):
 		return Vector2i(1, 0)
 	return Vector2i.ZERO
+
+func _on_button_focus_entered(btn: InfoProvider):
+	_textbox.show_text(btn.get_info())

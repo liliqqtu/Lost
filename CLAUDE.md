@@ -302,7 +302,7 @@ DEPOSIT：左侧背包 ↑↓ 移动光标，Z 寄存物品，无 ←→ 操作
 
 信息查看系统（完成 2026-09-30；InfoData 结构化资源按规划暂不实现）
 - 目标：统一物品/人物属性/职业/技能/武器等级的信息查看。玩家在可查看对象上按 R 进入，方向键切换，R/X 退出；查看不修改游戏数据，InfoViewer 也不做 if item / if character 的类型判断——一切对象只认 get_info() 接口。
-- InfoProvider（scripts/info_provider.gd，extends Control）：挂在需要说明的 Control 下的子节点（tscn 里给 Label/TextureRect 加名为 Info 的 InfoProvider 子节点，Inspector 填 @export_multiline description）。静态说明走此路；动态说明由面板运行时 InfoProvider.new() 赋 description，或控件自身实现 get_info()（ItemRow：返回物品 description，为空退回显示名，各物品 .tres 的 description 待填）。
+- InfoProvider（scripts/info_provider.gd，extends Button）：挂在需要说明的 Control 下的子节点（tscn 里给 Label/TextureRect 加名为 Info 的 InfoProvider 子节点，Inspector 填 @export_multiline description）。静态说明走此路；动态说明由面板运行时 InfoProvider.new() 赋 description，或控件自身实现 get_info()（ItemRow：返回物品 description，为空退回显示名，各物品 .tres 的 description 待填）。
 - 文字框复用：scene/ui/textbox.tscn（已从 talk.tscn 的 Dialogue 分离，talk.tscn 实例它作正文框）+ 新增 textbox.gd：show_text 按完整文字测量自适应尺寸（min 91×48 / max 224×64、左缘 8、下边界 156），整段立即显示不逐字（浏览信息无逐字需求）；箭头常隐藏。注意 TextBox._ready 不隐藏自身（talk 实例可见性由 talk 根节点控制）。
 - InfoViewer（scripts/info_viewer.gd，extends Node）：通用流程控制器。open(provider, nav) 进入——nav 是面板提供的方向回调 func(dir: Vector2i) -> provider（上=(0,-1) 下=(0,1) 左=(-1,0) 右=(1,0)，返回 null 保持当前）；handle_input 处理方向切换与 R/X 退出；close 收起文字框。输入由各面板在 BattleManager 对应状态下转发，BM 状态机零改动。
 - 各界面集成（"有哪些可查看对象"与导航关系归各面板）：

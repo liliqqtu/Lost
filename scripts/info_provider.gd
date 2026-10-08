@@ -1,5 +1,5 @@
 class_name InfoProvider
-extends Control
+extends Button
 ##"""信息查看系统：信息提供者
 ##挂在需要查看说明的 Control 下的子节点（编辑器里给 Label/TextureRect 等加一个
 ##名为 Info 的 InfoProvider 子节点，在 Inspector 填 description 即可被信息查看系统读取）。
@@ -11,6 +11,8 @@ extends Control
 
 ## 描述信息（Inspector 多行编辑）
 @export_multiline var description: String
+## 二维坐标
+@export var info_position: Vector2i
 
 ## 统一信息接口：返回当前对象的说明
 func get_info() -> String:

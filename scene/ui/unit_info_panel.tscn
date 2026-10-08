@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="11_13eqi"]
 [ext_resource type="Texture2D" uid="uid://dtaqpfdd873pt" path="res://assets/graphics/UI/AffinityIcon/wind.png" id="12_c8cgo"]
 [ext_resource type="Script" uid="uid://cxcxv11gjylhu" path="res://scene/ui/unit_info_panel.gd" id="12_panel"]
+[ext_resource type="StyleBox" uid="uid://cpw8ox3wtnak6" path="res://data/test_style_box_flat.tres" id="13_ccw4s"]
 [ext_resource type="Script" uid="uid://cu163dal4qwan" path="res://scripts/info_provider.gd" id="13_infoprovider"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xod08"]
@@ -32,11 +33,17 @@ grow_vertical = 2
 script = ExtResource("12_panel")
 metadata/_edit_lock_ = true
 
-[node name="InfoData" type="TextureRect" parent="." unique_id=343659382]
+[node name="BG" type="TextureRect" parent="." unique_id=1317824173]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 240.0
+offset_bottom = 160.0
 texture = ExtResource("1_nue8u")
+metadata/_edit_lock_ = true
+
+[node name="InfoData" type="Control" parent="." unique_id=2063612835]
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 160.0
 metadata/_edit_lock_ = true
 
 [node name="VBoxData1Bar" type="VBoxContainer" parent="InfoData" unique_id=406390722]
@@ -163,150 +170,158 @@ offset_bottom = 154.0
 theme_override_constants/separation = 0
 metadata/_edit_lock_ = true
 
-[node name="Str" type="Label" parent="InfoData/VBoxData1" unique_id=1910517832]
+[node name="Str" type="Button" parent="InfoData/VBoxData1" unique_id=1006255495]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Str" unique_id=700000106]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "力量
 影响物理武器的伤害。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Mag" type="Label" parent="InfoData/VBoxData1" unique_id=295342234]
+[node name="Mag" type="Button" parent="InfoData/VBoxData1" unique_id=600575921]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Mag" unique_id=700000107]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "魔力
 影响魔法武器的伤害。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Skl" type="Label" parent="InfoData/VBoxData1" unique_id=1975806893]
+[node name="Skl" type="Button" parent="InfoData/VBoxData1" unique_id=1376215389]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Skl" unique_id=700000108]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "技巧
 影响命中与必杀。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Spd" type="Label" parent="InfoData/VBoxData1" unique_id=947198764]
+[node name="Spd" type="Button" parent="InfoData/VBoxData1" unique_id=782179164]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Spd" unique_id=700000109]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "速度
 影响回避与攻速，
 攻速高出对方 4 点可追击。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Luk" type="Label" parent="InfoData/VBoxData1" unique_id=1660349103]
+[node name="Luk" type="Button" parent="InfoData/VBoxData1" unique_id=447614718]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Luk" unique_id=700000110]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "幸运
 影响回避与必杀回避。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Def_H" type="Label" parent="InfoData/VBoxData1" unique_id=1046948811]
+[node name="Def_H" type="Button" parent="InfoData/VBoxData1" unique_id=1476992748]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Def_H" unique_id=700000111]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "守备
 减轻物理攻击的伤害。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Res" type="Label" parent="InfoData/VBoxData1" unique_id=1888685179]
+[node name="Res" type="Button" parent="InfoData/VBoxData1" unique_id=92451078]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Res" unique_id=700000112]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "魔防
 减轻魔法攻击的伤害。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Move" type="Label" parent="InfoData/VBoxData1" unique_id=395920921]
+[node name="Move" type="Button" parent="InfoData/VBoxData1" unique_id=1891527261]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "5"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData1/Move" unique_id=700000113]
-anchors_preset = 0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "7"
 script = ExtResource("13_infoprovider")
 description = "移动力
 一回合内可移动的格数。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="VBoxData2" type="VBoxContainer" parent="InfoData" unique_id=264864915]
 layout_mode = 0
@@ -317,100 +332,98 @@ offset_bottom = 154.0
 theme_override_constants/separation = 0
 metadata/_edit_lock_ = true
 
-[node name="Con" type="Label" parent="InfoData/VBoxData2" unique_id=2064591501]
-custom_minimum_size = Vector2(40, 16)
-custom_maximum_size = Vector2(40, 16)
+[node name="Con" type="Button" parent="InfoData/VBoxData2" unique_id=592889734]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "9"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData2/Con" unique_id=700000114]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
-description = "体格
-影响攻速；体格越大越难被
-其他单位救起。"
+description = "体格人物身形大小，
+与救出指令和攻速有关"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Rescue" type="Label" parent="InfoData/VBoxData2" unique_id=5212247]
-custom_minimum_size = Vector2(40, 16)
-custom_maximum_size = Vector2(40, 16)
+[node name="Rescue" type="Button" parent="InfoData/VBoxData2" unique_id=1960302839]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "15"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData2/Rescue" unique_id=700000115]
-anchors_preset = 0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "10"
 script = ExtResource("13_infoprovider")
-description = "救出
-救援力，不小于友军体格时
-才能救起对方。"
+description = "救出相关数值
+可以救出此数值以下体格的人物"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="States" type="Label" parent="InfoData/VBoxData2" unique_id=7868832]
-custom_minimum_size = Vector2(40, 16)
-custom_maximum_size = Vector2(40, 16)
+[node name="States" type="Button" parent="InfoData/VBoxData2" unique_id=2090388059]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "- -"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData2/States" unique_id=700000116]
-anchors_preset = 0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "--"
 script = ExtResource("13_infoprovider")
 description = "状态
 异常状态（未实现）。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Cmd" type="Label" parent="InfoData/VBoxData2" unique_id=72351513]
-custom_minimum_size = Vector2(40, 16)
-custom_maximum_size = Vector2(40, 16)
+[node name="Cmd" type="Button" parent="InfoData/VBoxData2" unique_id=2018724225]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "1⭐"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData2/Cmd" unique_id=700000117]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "指挥
 周围友军获得的命中/回避
 加成（未实现）。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="Talk" type="Label" parent="InfoData/VBoxData2" unique_id=1133489036]
-custom_minimum_size = Vector2(40, 16)
-custom_maximum_size = Vector2(40, 16)
+[node name="Talk" type="Button" parent="InfoData/VBoxData2" unique_id=1337437744]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 0.105882354, 1)
-theme_override_constants/line_spacing = 0
+focus_neighbor_left = NodePath("../../VBoxData1/Luk")
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "- -
-"
-horizontal_alignment = 1
-
-[node name="Info" type="Control" parent="InfoData/VBoxData2/Talk" unique_id=700000118]
-anchors_preset = 0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "--"
 script = ExtResource("13_infoprovider")
 description = "对话
 当前可与该角色触发剧情
 对话的对象。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Skill" type="HFlowContainer" parent="InfoData" unique_id=637449044]
 layout_mode = 0
@@ -420,6 +433,28 @@ offset_right = 228.0
 offset_bottom = 153.0
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 2
+
+[node name="SkillInfo" type="Button" parent="InfoData" unique_id=905766427]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 107.0
+offset_right = 177.0
+offset_bottom = 115.0
+focus_neighbor_left = NodePath("../VBoxData1/Def_H")
+focus_neighbor_top = NodePath("../VBoxData2/Talk")
+focus_neighbor_right = NodePath(".")
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+script = ExtResource("13_infoprovider")
+description = "人物的相关技能"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Items" type="TextureRect" parent="." unique_id=863289823]
 visible = false
@@ -454,6 +489,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Weapon&SupportLevel" type="TextureRect" parent="." unique_id=889004812]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -538,105 +574,128 @@ theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.35294
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 11
 
-[node name="ClassCard" type="TextureRect" parent="." unique_id=1759974002]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 2.0
-offset_right = 88.0
-offset_bottom = 82.0
-texture = ExtResource("11_13eqi")
-metadata/_edit_lock_ = true
-
 [node name="BaseInfo" type="Control" parent="." unique_id=1904931213]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="Name" type="Label" parent="BaseInfo" unique_id=240463553]
+[node name="Info" type="Button" parent="BaseInfo" unique_id=659538548]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+focus_neighbor_left = NodePath("../Name")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../../InfoData/VBoxData2/Con")
+focus_neighbor_bottom = NodePath("../../InfoData/VBoxData1/Str")
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+script = ExtResource("13_infoprovider")
+description = "在角色信息这里按回车键
+切换查看成长率"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
+
+[node name="Name" type="Button" parent="BaseInfo" unique_id=1435732775]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 82.0
 offset_right = 83.0
 offset_bottom = 96.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Info")
+focus_neighbor_right = NodePath("../AffinityIcon")
+focus_neighbor_bottom = NodePath("../Class")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
-theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "忒"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Info" type="Control" parent="BaseInfo/Name" unique_id=700000101]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "名称
 角色的名字。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="LV" type="Label" parent="BaseInfo" unique_id=1002374799]
+[node name="LV" type="Button" parent="BaseInfo" unique_id=1878555807]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 121.0
 offset_right = 43.0
 offset_bottom = 135.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Class")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
-theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Info" type="Control" parent="BaseInfo/LV" unique_id=700000102]
-anchors_preset = 0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "7"
 script = ExtResource("13_infoprovider")
 description = "等级
 角色当前的等级，满级为 20。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="E" type="Label" parent="BaseInfo" unique_id=1959953036]
+[node name="Exp" type="Button" parent="BaseInfo" unique_id=565681135]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 121.0
 offset_right = 67.0
 offset_bottom = 135.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Class")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
-theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Info" type="Control" parent="BaseInfo/E" unique_id=700000103]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
 description = "经验
-战斗后积累，累计到 100 升一级。"
+经验为100时升一级"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="HP" type="Label" parent="BaseInfo" unique_id=468957155]
+[node name="HP" type="Button" parent="BaseInfo" unique_id=1820046154]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 137.0
 offset_right = 47.0
 offset_bottom = 151.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Class")
+focus_neighbor_bottom = NodePath("../HP/Info")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
-theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "30"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Info" type="Control" parent="BaseInfo/HP" unique_id=700000104]
-anchors_preset = 0
 script = ExtResource("13_infoprovider")
-description = "生命
-角色的生命值，归零则退场。
-最大生命值随升级成长。"
+description = "HP
+人物当前的血量，为0时死亡。"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="MAXHP" type="Label" parent="BaseInfo" unique_id=1315619520]
 layout_mode = 0
@@ -653,45 +712,62 @@ text = "30"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Class" type="Label" parent="BaseInfo" unique_id=177388058]
+[node name="Class" type="Button" parent="BaseInfo" unique_id=382336382]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 104.0
 offset_right = 61.0
 offset_bottom = 118.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Name")
+focus_neighbor_right = NodePath("../../InfoData/VBoxData1/Def_H")
+focus_neighbor_bottom = NodePath("../LV")
+focus_mode = 0
 theme_override_colors/font_color = Color(0.973744, 0.9686771, 0.96543163, 0.9843137)
-theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "弓骑"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Info" type="Control" parent="BaseInfo/Class" unique_id=1351742119]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+text = "弓骑兵"
 script = ExtResource("13_infoprovider")
 description = "角色职业描述"
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="AffinityIcon" type="TextureRect" parent="BaseInfo" unique_id=798805548]
+[node name="AffinityIcon" type="Button" parent="BaseInfo" unique_id=521188041]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 83.0
 offset_right = 93.0
 offset_bottom = 96.0
-texture = ExtResource("12_c8cgo")
-
-[node name="Info" type="Control" parent="BaseInfo/AffinityIcon" unique_id=700000105]
-anchors_preset = 0
+theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
+theme_override_constants/outline_size = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("13_ccw4s")
+theme_override_styles/pressed = ExtResource("13_ccw4s")
+theme_override_styles/hover = ExtResource("13_ccw4s")
+theme_override_styles/disabled = ExtResource("13_ccw4s")
+theme_override_styles/focus = ExtResource("13_ccw4s")
+icon = ExtResource("12_c8cgo")
 script = ExtResource("13_infoprovider")
 description = "属性
-影响支援的相性与加成
-（命中/回避/必杀）。"
+影响支援的相性与加成"
+metadata/_custom_type_script = "uid://cu163dal4qwan"
 
-[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=264813783]
+[node name="ClassCard" type="TextureRect" parent="BaseInfo" unique_id=1759974002]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 88.0
+offset_bottom = 82.0
+texture = ExtResource("11_13eqi")
+metadata/_edit_lock_ = true
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="BaseInfo" unique_id=264813783]
 material = SubResource("ShaderMaterial_xod08")
 position = Vector2(80, 125)
 sprite_frames = ExtResource("6_685kj")
