@@ -31,6 +31,9 @@ func show_text(text: String) -> void:
 	_resize(text)
 	visible = true
 
+#改变位置
+func set_pos(pos: Vector2) -> void:
+	position = pos
 
 ##隐藏文字框
 func hide_box() -> void:

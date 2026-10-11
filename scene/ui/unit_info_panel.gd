@@ -421,14 +421,7 @@ func _nav_info(dir: Vector2i) -> Node:
 		_info_index = wrapi(_info_index + dir.y, 0, providers.size())
 		return providers[_info_index]
 	if dir.x != 0:
-		var next_page := wrapi(_page_index + dir.x, 0, _pages.size())
-		var next_list := _page_providers(next_page)
-		if next_list.is_empty():
-			return null
-		_page_index = next_page
-		_apply_page()
-		_info_index = 0
-		return next_list[0]
+		return null
 	return null
 
 

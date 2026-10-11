@@ -174,6 +174,7 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/Name")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -475,18 +476,23 @@ metadata/_edit_lock_ = true
 
 [node name="itemrow" parent="Items/VBoxItems" unique_id=1693196374 instance=ExtResource("6_13eqi")]
 layout_mode = 2
+focus_mode = 2
 
 [node name="itemrow2" parent="Items/VBoxItems" unique_id=793510028 instance=ExtResource("6_13eqi")]
 layout_mode = 2
+focus_mode = 2
 
 [node name="itemrow3" parent="Items/VBoxItems" unique_id=1261207650 instance=ExtResource("6_13eqi")]
 layout_mode = 2
+focus_mode = 2
 
 [node name="itemrow4" parent="Items/VBoxItems" unique_id=1974560734 instance=ExtResource("6_13eqi")]
 layout_mode = 2
+focus_mode = 2
 
 [node name="itemrow5" parent="Items/VBoxItems" unique_id=2079561210 instance=ExtResource("6_13eqi")]
 layout_mode = 2
+focus_mode = 2
 
 [node name="Weapon&SupportLevel" type="TextureRect" parent="." unique_id=889004812]
 visible = false
@@ -722,7 +728,6 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Name")
 focus_neighbor_right = NodePath("../../InfoData/VBoxData1/Def_H")
 focus_neighbor_bottom = NodePath("../LV")
-focus_mode = 0
 theme_override_colors/font_color = Color(0.973744, 0.9686771, 0.96543163, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0

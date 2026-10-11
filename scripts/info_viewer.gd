@@ -81,3 +81,4 @@ func _direction_of(event: InputEvent) -> Vector2i:
 
 func _on_button_focus_entered(btn: InfoProvider):
 	_textbox.show_text(btn.get_info())
+	_textbox.set_pos(btn.global_position)
