@@ -92,34 +92,30 @@ static func can_counter(attacker: Unit, defender: Unit) -> bool:
 
 ##生成战斗序列（纯数据，无随机），供战斗预览 UI 与实际结算共用
 ##顺序：攻方打击 -> 防御方反击 -> 攻方追击 -> 防方追击
-##按期望伤害模拟血量，任一方死亡则不再生成后续打击
+##保留防御方反击与追击数据（用于预览与战斗画面展示；实际战斗结算遇阵亡由 BattleCombat 中断）
 ##每项：{attacker, defender, damage, hit, crit, is_counter, is_double}
 ##tile_map 传入时结算双方地形加成，为空则地形按 0/0 处理
 ##units 传入时命中/必杀结算支援加成（3 格内），为空则支援按 0（旧调用兼容）
 static func generate_battle_sequence(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null, units: Array = []) -> Array[Dictionary]:
 	var sequence: Array[Dictionary] = []
-	var sim_hp := {attacker: attacker.hp, defender: defender.hp}
 
 	var attacker_doubles := can_double(attacker, defender)
 	var defender_doubles := can_double(defender, attacker)
 	##防御方射程外不能反击，追击与反击共享射程判定（GBA 行为）
 	var defender_can_strike := can_counter(attacker, defender)
 
-	if not _append_strike(sequence, sim_hp, attacker, defender, false, false, tile_map, units):
-		return sequence
+	_append_strike(sequence, attacker, defender, false, false, tile_map, units)
 	if defender_can_strike:
-		if not _append_strike(sequence, sim_hp, defender, attacker, true, false, tile_map, units):
-			return sequence
+		_append_strike(sequence, defender, attacker, true, false, tile_map, units)
 	if attacker_doubles:
-		if not _append_strike(sequence, sim_hp, attacker, defender, false, true, tile_map, units):
-			return sequence
+		_append_strike(sequence, attacker, defender, false, true, tile_map, units)
 	if defender_doubles and defender_can_strike:
-		_append_strike(sequence, sim_hp, defender, attacker, false, true, tile_map, units)
+		_append_strike(sequence, defender, attacker, false, true, tile_map, units)
 	return sequence
 
 
-##追加一次打击到序列，模拟扣血，返回防御方是否存活
-static func _append_strike(sequence: Array[Dictionary], sim_hp: Dictionary, a: Unit, d: Unit, is_counter: bool, is_double: bool, tile_map: TileMapLayer, units: Array) -> bool:
+##追加一次打击到序列
+static func _append_strike(sequence: Array[Dictionary], a: Unit, d: Unit, is_counter: bool, is_double: bool, tile_map: TileMapLayer, units: Array) -> void:
 	var damage := calculate_damage(a, d, tile_map)
 	sequence.append({
 		"attacker": a,
@@ -130,8 +126,6 @@ static func _append_strike(sequence: Array[Dictionary], sim_hp: Dictionary, a: U
 		"is_counter": is_counter,
 		"is_double": is_double,
 	})
-	sim_hp[d] = maxi(sim_hp[d] - damage, 0)
-	return sim_hp[d] > 0
 
 
 ##攻击力：魔法武器用魔力，物理武器用力量，无武器裸力量

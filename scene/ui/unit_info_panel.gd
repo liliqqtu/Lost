@@ -12,26 +12,18 @@ const BAR_MAX_VALUE := 40
 
 ##武器类型 -> 武器等级页的类型图标（魔法/杖暂无图标，隐藏）
 const WEAPON_TYPE_ICONS := {
-	Weapon.WeaponType.SWORD: preload("res://assets/graphics/UI/ItemIconClass/sword.png"),
-	Weapon.WeaponType.LANCE: preload("res://assets/graphics/UI/ItemIconClass/lance.png"),
-	Weapon.WeaponType.AXE: preload("res://assets/graphics/UI/ItemIconClass/axe.png"),
-	Weapon.WeaponType.BOW: preload("res://assets/graphics/UI/ItemIconClass/bow.png"),
-	Weapon.WeaponType.ANIMA: preload("res://assets/graphics/UI/ItemIconClass/anima.png"),
-	Weapon.WeaponType.LIGHT: preload("res://assets/graphics/UI/ItemIconClass/light.png"),
-	Weapon.WeaponType.DARK: preload("res://assets/graphics/UI/ItemIconClass/dark.png"),
-	Weapon.WeaponType.STAFF: preload("res://assets/graphics/UI/ItemIconClass/staff.png"),
+	Weapon.WeaponType.SWORD: preload("res://assets/graphics/UI/ItemIconClass/sword.png"), Weapon.WeaponType.LANCE: preload("res://assets/graphics/UI/ItemIconClass/lance.png"),
+	Weapon.WeaponType.AXE: preload("res://assets/graphics/UI/ItemIconClass/axe.png"), Weapon.WeaponType.BOW: preload("res://assets/graphics/UI/ItemIconClass/bow.png"),
+	Weapon.WeaponType.ANIMA: preload("res://assets/graphics/UI/ItemIconClass/anima.png"), Weapon.WeaponType.LIGHT: preload("res://assets/graphics/UI/ItemIconClass/light.png"),
+	Weapon.WeaponType.DARK: preload("res://assets/graphics/UI/ItemIconClass/dark.png"), Weapon.WeaponType.STAFF: preload("res://assets/graphics/UI/ItemIconClass/staff.png"),
 }
 
 ##武器类型 -> 中文名（信息查看用）
 const WEAPON_TYPE_NAMES := {
-	Weapon.WeaponType.SWORD: "剑",
-	Weapon.WeaponType.LANCE: "枪",
-	Weapon.WeaponType.AXE: "斧",
-	Weapon.WeaponType.BOW: "弓",
-	Weapon.WeaponType.ANIMA: "理（魔法）",
-	Weapon.WeaponType.DARK: "暗（魔法）",
-	Weapon.WeaponType.LIGHT: "光（魔法）",
-	Weapon.WeaponType.STAFF: "杖",
+	Weapon.WeaponType.SWORD: "剑", Weapon.WeaponType.LANCE: "枪",
+	Weapon.WeaponType.AXE: "斧", Weapon.WeaponType.BOW: "弓",
+	Weapon.WeaponType.ANIMA: "理（魔法）", Weapon.WeaponType.DARK: "暗（魔法）",
+	Weapon.WeaponType.LIGHT: "光（魔法）", Weapon.WeaponType.STAFF: "杖",
 }
 
 ##武器类型说明（信息查看用：三角相克等）
@@ -46,30 +38,19 @@ const WEAPON_TYPE_INFO := {
 	Weapon.WeaponType.STAFF: "辅助武器（治疗等，效果未实现）。",
 }
 
-##静态信息提供者节点路径（tscn 中挂在对应 Label/图标下、名为 Info 的 InfoProvider 子节点）
-##顺序即角色页导航顺序：名称/等级/经验/生命/属性 → 力..移 → 体格/救出/状态/指挥/对话
-##（职业为动态说明，导航时插在名称之后；技能说明动态追加在最后）
+##手光标场景（光标跟随当前查看项，5F/UI 升级）
+const CURSOR_HAND_SCENE := preload("res://scene/ui/cursorhand.tscn")
+const FLAT_STYLE := preload("res://data/test_style_box_flat.tres")
+
+##静态信息提供者节点路径（顺序即角色页导航顺序）
 const STATIC_INFO_PATHS := [
-	"BaseInfo/Info",
-	"BaseInfo/Name",
-	"BaseInfo/Class",
-	"BaseInfo/LV",
-	"BaseInfo/Exp",
-	"BaseInfo/HP",
-	"BaseInfo/AffinityIcon",
-	"InfoData/VBoxData1/Str",
-	"InfoData/VBoxData1/Mag",
-	"InfoData/VBoxData1/Skl",
-	"InfoData/VBoxData1/Spd",
-	"InfoData/VBoxData1/Luk",
-	"InfoData/VBoxData1/Def_H",
-	"InfoData/VBoxData1/Res",
-	"InfoData/VBoxData1/Move",
-	"InfoData/VBoxData2/Con",
-	"InfoData/VBoxData2/Rescue",
-	"InfoData/VBoxData2/States",
-	"InfoData/VBoxData2/Cmd",
-	"InfoData/VBoxData2/Talk",
+	"BaseInfo/Info", "BaseInfo/Name", "BaseInfo/Class", "BaseInfo/LV", "BaseInfo/Exp",
+	"BaseInfo/HP", "BaseInfo/AffinityIcon",
+	"InfoData/VBoxData1/Str", "InfoData/VBoxData1/Mag", "InfoData/VBoxData1/Skl",
+	"InfoData/VBoxData1/Spd", "InfoData/VBoxData1/Luk", "InfoData/VBoxData1/Def_H",
+	"InfoData/VBoxData1/Res", "InfoData/VBoxData1/Move",
+	"InfoData/VBoxData2/Con", "InfoData/VBoxData2/Rescue", "InfoData/VBoxData2/States",
+	"InfoData/VBoxData2/Cmd", "InfoData/VBoxData2/Talk","InfoData/SkillInfo"
 ]
 
 ##当前显示的页：0 角色信息 1 物品 2 武器&支援等级
@@ -82,6 +63,8 @@ var current_unit: Unit = null
 var info_viewer: Node = null
 ##信息查看：当前条目索引（按页面维护，R 打开时从该条目起）
 var _info_index := 0
+##手光标实例（信息查看中跟随当前聚焦项）
+var _cursor: Control = null
 ##静态信息提供者（tscn 中挂在各 Label 下的 Info 子节点，_ready 收集）
 var _static_providers: Array = []
 ##技能说明（动态：随当前单位的技能列表变化，追加在角色页末尾）
@@ -94,32 +77,20 @@ var item_list: Array = []
 var _weapon_providers: Array = []
 
 @onready var _stat_labels: Array[InfoProvider] = [
-	$InfoData/VBoxData1/Str,
-	$InfoData/VBoxData1/Mag,
-	$InfoData/VBoxData1/Skl,
-	$InfoData/VBoxData1/Spd,
-	$InfoData/VBoxData1/Luk,
-	$InfoData/VBoxData1/Def_H,
-	$InfoData/VBoxData1/Res,
-	$InfoData/VBoxData1/Move,
+	$InfoData/VBoxData1/Str, $InfoData/VBoxData1/Mag, $InfoData/VBoxData1/Skl, $InfoData/VBoxData1/Spd,
+	$InfoData/VBoxData1/Luk, $InfoData/VBoxData1/Def_H, $InfoData/VBoxData1/Res, $InfoData/VBoxData1/Move,
 ]
 @onready var _stat_bars: Array[TextureProgressBar] = [
-	$InfoData/VBoxData1Bar/StrBar,
-	$InfoData/VBoxData1Bar/MagBar,
-	$InfoData/VBoxData1Bar/SklBar,
-	$InfoData/VBoxData1Bar/SpdBar,
-	$InfoData/VBoxData1Bar/LukBar,
-	$InfoData/VBoxData1Bar/Def_HBar,
-	$InfoData/VBoxData1Bar/ResBar,
-	$InfoData/VBoxData1Bar/MoveBar,
+	$InfoData/VBoxData1Bar/StrBar, $InfoData/VBoxData1Bar/MagBar, $InfoData/VBoxData1Bar/SklBar, $InfoData/VBoxData1Bar/SpdBar,
+	$InfoData/VBoxData1Bar/LukBar, $InfoData/VBoxData1Bar/Def_HBar, $InfoData/VBoxData1Bar/ResBar, $InfoData/VBoxData1Bar/MoveBar,
 ]
 @onready var _con_label: InfoProvider = $InfoData/VBoxData2/Con
-#@onready var _max_con_bar: TextureProgressBar = $InfoData/VBoxData1Bar2/MAXConBar
 @onready var _con_bar: TextureProgressBar = $InfoData/VBoxData1Bar2/ConBar
 @onready var _rescue_label: InfoProvider = $InfoData/VBoxData2/Rescue
 @onready var _states_label: InfoProvider = $InfoData/VBoxData2/States
 @onready var _cmd_label: InfoProvider = $InfoData/VBoxData2/Cmd
 @onready var _talk_label: InfoProvider = $InfoData/VBoxData2/Talk
+@onready var _skillinfo: InfoProvider = $InfoData/SkillInfo
 @onready var _skill_flow: HFlowContainer = $InfoData/Skill
 
 @onready var _name: InfoProvider = $BaseInfo/Name
@@ -142,17 +113,20 @@ var _weapon_providers: Array = []
 @onready var _weapon_level_template: Label = $"Weapon&SupportLevel/WeaponLevel/Label"
 
 @onready var _item_rows: Array[ItemRow] = [
-	$Items/VBoxItems/itemrow,
-	$Items/VBoxItems/itemrow2,
-	$Items/VBoxItems/itemrow3,
-	$Items/VBoxItems/itemrow4,
-	$Items/VBoxItems/itemrow5,
+	$Items/VBoxItems/itemrow, $Items/VBoxItems/itemrow2, $Items/VBoxItems/itemrow3,
+	$Items/VBoxItems/itemrow4, $Items/VBoxItems/itemrow5,
 ]
 
 
 func _ready() -> void:
 	_pages = [$InfoData, $Items, $"Weapon&SupportLevel"]
 	visible = false
+	## 手光标（cursorhand.tscn，信息查看时跟随当前项）
+	_cursor = CURSOR_HAND_SCENE.instantiate()
+	_cursor.name = "Cursor"
+	_cursor.visible = false
+	add_child(_cursor)
+	move_child(_cursor, -1)
 	##收集静态信息提供者（tscn 中挂在各 Label 下的 Info 子节点，缺节点自动跳过）
 	for path in STATIC_INFO_PATHS:
 		var node := get_node_or_null(path)
@@ -182,12 +156,16 @@ func show_panel(unit: Unit, keep_page := false) -> void:
 		_page_index = 0
 	_apply_page()
 	visible = true
+	if _cursor != null:
+		_cursor.visible = false
 	##信息查看条目从头开始
 	_info_index = 0
 
 
 ##关闭面板（信息查看中一并收起）
 func hide_panel() -> void:
+	if _cursor != null:
+		_cursor.visible = false
 	if info_viewer != null and info_viewer.active:
 		info_viewer.close()
 	visible = false
@@ -196,19 +174,44 @@ func hide_panel() -> void:
 ##注入信息查看器（Level 装配）
 func set_info_viewer(viewer: Node) -> void:
 	info_viewer = viewer
+	if info_viewer != null:
+		if not info_viewer.focused_changed.is_connected(_on_info_focused):
+			info_viewer.focused_changed.connect(_on_info_focused)
+		if not info_viewer.viewer_closed.is_connected(_on_info_closed):
+			info_viewer.viewer_closed.connect(_on_info_closed)
 
+func _on_info_focused(target: Control) -> void:
+	_update_cursor(target)
+
+func _on_info_closed() -> void:
+	if _cursor != null:
+		_cursor.visible = false
+
+##更新手光标位置：紧贴目标左侧居中；支持 InfoProvider 自定义 cursor_offset
+func _update_cursor(target: Control) -> void:
+	if _cursor == null or target == null:
+		return
+	_cursor.visible = true
+	var offset := Vector2(-12.0, (target.size.y - 16.0) / 2.0)
+	if target is InfoProvider and (target as InfoProvider).cursor_offset != Vector2.ZERO:
+		offset = (target as InfoProvider).cursor_offset
+	var pos := target.global_position + offset
+	pos.x = maxf(pos.x, 0.0)
+	_cursor.global_position = pos
 
 ##切页：dir -1 上一页 / 1 下一页，索引回绕
 func cycle_page(dir: int) -> void:
+	if _cursor != null:
+		_cursor.visible = false
+	if info_viewer != null and info_viewer.active:
+		info_viewer.close()
 	_page_index = wrapi(_page_index + dir, 0, _pages.size())
 	_apply_page()
-
 
 ##只显示当前页
 func _apply_page() -> void:
 	for i in _pages.size():
 		_pages[i].visible = i == _page_index
-
 
 ##填充全部数据（每次打开都重新读取，保证与 Unit 当前状态一致）
 func _fill(unit: Unit) -> void:
@@ -255,17 +258,22 @@ func _fill(unit: Unit) -> void:
 	_fill_support_list(unit)
 	#信息查看：静态 + 技能
 	if not _static_providers.is_empty():
-		info_list = _static_providers
+		info_list = _static_providers.duplicate()
 		info_list.append_array(_skill_providers)
 	for info in info_list:
-		info.focus_entered.connect(info_viewer._on_button_focus_entered.bind(info))
+		if info_viewer != null:
+			var callable: Callable = info_viewer._on_button_focus_entered.bind(info)
+			if not info.focus_entered.is_connected(callable):
+				info.focus_entered.connect(callable)
 
-##技能栏：合并职业技能 + 个人技能，按 Skill.view_scene 实例化（无 view_scene 只进信息查看）
+
+##技能栏：合并职业技能 + 个人技能，动态创建 InfoProvider 并编排 3x2 网格焦点
 func _fill_skills(unit: Unit) -> void:
 	for child in _skill_flow.get_children():
 		child.queue_free()
 	_skill_providers.clear()
 	if unit.class_data == null and unit.personal_skills.is_empty():
+		_link_skill_focus([])
 		return
 	var skills: Array[Skill] = []
 	if unit.class_data != null:
@@ -274,12 +282,60 @@ func _fill_skills(unit: Unit) -> void:
 	for skill in skills:
 		if skill == null:
 			continue
-		if skill.view_scene != null:
-			_skill_flow.add_child(skill.view_scene.instantiate())
-		##信息查看：技能名称 + 说明
-		var provider := InfoProvider.new()
-		provider.description = "技能：%s\n%s" % [skill.display_name, skill.description]
+		var provider := _create_info_provider(
+			Vector2(16, 16),
+			"技能：%s\n%s" % [skill.display_name, skill.description],
+			Vector2(-120, -50),
+			Vector2(-12, 0)
+		)
+		provider.icon = skill.icon
+		_skill_flow.add_child(provider)
 		_skill_providers.append(provider)
+	_link_skill_focus(_skill_providers)
+
+
+##技能焦点连接：3列网格，上接 Talk，左接 Res / Move
+func _link_skill_focus(skill_items: Array) -> void:
+	_link_grid_focus(skill_items, 3, _skillinfo, null, [_stat_labels[6], _stat_labels[7]])
+	if skill_items.is_empty():
+		_skillinfo.focus_neighbor_bottom = _stat_labels[7].get_path()
+		_stat_labels[6].focus_neighbor_right = _skillinfo.get_path()
+		_stat_labels[7].focus_neighbor_right = _skillinfo.get_path()
+	else:
+		_skillinfo.focus_neighbor_bottom = skill_items[0].get_path()
+		_stat_labels[6].focus_neighbor_right = skill_items[0].get_path()
+		_stat_labels[7].focus_neighbor_right = skill_items[mini(3, skill_items.size() - 1)].get_path()
+
+
+##通用 2D 网格焦点编排函数：将 items 列表排成 cols 列，自动连接内部上下左右与边界
+func _link_grid_focus(items: Array, cols: int, top_b: Node = null, bottom_b: Node = null, left_b: Array = [], right_b: Array = []) -> void:
+	var count := items.size()
+	for i in count:
+		var item := items[i] as InfoProvider
+		var r := i / cols
+		var c := i % cols
+		item.focus_neighbor_top = items[i - cols].get_path() if r > 0 else (top_b.get_path() if top_b != null else item.get_path())
+		item.focus_neighbor_bottom = items[i + cols].get_path() if i + cols < count else (bottom_b.get_path() if bottom_b != null else item.get_path())
+		var lb = left_b[mini(r, left_b.size() - 1)] if not left_b.is_empty() else null
+		item.focus_neighbor_left = items[i - 1].get_path() if c > 0 else (lb.get_path() if lb != null else item.get_path())
+		var rb = right_b[mini(r, right_b.size() - 1)] if not right_b.is_empty() else null
+		item.focus_neighbor_right = items[i + 1].get_path() if (c < cols - 1 and i + 1 < count) else (rb.get_path() if rb != null else item.get_path())
+
+
+##快速构造透明焦点 InfoProvider 按钮
+func _create_info_provider(size: Vector2, desc: String, info_pos: Vector2, cursor_off: Vector2) -> InfoProvider:
+	var p := InfoProvider.new()
+	p.custom_minimum_size = size
+	p.flat = true
+	p.description = desc
+	p.info_position = info_pos
+	p.cursor_offset = cursor_off
+	p.expand_icon = true
+	p.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	p.vertical_icon_alignment = VERTICAL_ALIGNMENT_CENTER
+	for state in ["focus", "normal", "hover", "pressed", "disabled"]:
+		p.add_theme_stylebox_override(state, FLAT_STYLE)
+	return p
 
 
 ##地图立绘：复制单位的地图精灵帧并播放选中动画
@@ -295,6 +351,7 @@ func _fill_map_sprite(unit: Unit) -> void:
 ##物品页：遍历 unit.inventory 填充 ItemRow；空槽位 clear() 隐藏
 func _fill_items(unit: Unit) -> void:
 	var items: Array[Item] = unit.inventory
+	item_list.clear()
 	for i in _item_rows.size():
 		var row: ItemRow = _item_rows[i]
 		if i < items.size() and items[i] != null:
@@ -304,13 +361,9 @@ func _fill_items(unit: Unit) -> void:
 	for row in _item_rows:
 		if row.visible:
 			item_list.append(row)
-	
 
 
 ##武器&支援等级页：按 Unit rank_* 可用武器类型逐行显示（升级系统）
-##WeaponXP/WeaponClass 行 = 类型图标 + 武器经验条（当前等级内的进度）
-##WeaponLevel 行 = 对应武器等级字母 E..S（两个容器子节点一一对应）
-##武器等级数据在 Unit 上（rank_* 上限 + weapon_xp 经验），ClassData 只存职业静态数据
 func _fill_weapon_page(unit: Unit) -> void:
 	for child in _weapon_xp_box.get_children():
 		_weapon_xp_box.remove_child(child)
@@ -323,10 +376,10 @@ func _fill_weapon_page(unit: Unit) -> void:
 		if not unit.can_use_weapon(type):
 			continue
 		##武器经验行：图标 + 当前等级内进度条
-		##rank = 当前等级（get_weapon_ex）；到等级上限或 S 级时条直接填满
 		var row: HBoxContainer = _weapon_class_template.duplicate()
 		row.visible = true
-		(row.get_node("Icon") as TextureRect).texture = WEAPON_TYPE_ICONS.get(type)
+		var icon_rect: TextureRect = row.get_node("Icon")
+		icon_rect.texture = WEAPON_TYPE_ICONS.get(type)
 		var rank: int = unit.get_weapon_ex(type)
 		var cap: int = unit.get_weapon_rank(type)
 		var xp: int = unit.get_weapon_xp(type)
@@ -339,22 +392,37 @@ func _fill_weapon_page(unit: Unit) -> void:
 			var next_t: int = Weapon.WEXP_THRESHOLDS[rank + 1]
 			bar.max_value = next_t - cur_t
 			bar.value = clampi(xp - cur_t, 0, next_t - cur_t)
+
+		##信息查看提供者挂在 Icon 上（覆盖 Button），位置与图标重合
+		var weapon_idx := _weapon_providers.size()
+		var desc := "%s 等级 %s（上限 %s） 经验 %d\n%s" % [
+			WEAPON_TYPE_NAMES.get(type, "武器"),
+			Weapon.rank_to_text(rank), Weapon.rank_to_text(cap), xp,
+			WEAPON_TYPE_INFO.get(type, ""),
+		]
+		var provider := _create_info_provider(
+			Vector2(16, 16), desc,
+			Vector2(-40, 20 if weapon_idx < 2 else -40),
+			Vector2(-12, 0)
+		)
+		provider.name = "Info"
+		icon_rect.add_child(provider)
+		_weapon_providers.append(provider)
 		_weapon_xp_box.add_child(row)
+
 		##等级字母（与经验行一一对应）
 		var lv_label: Label = _weapon_level_template.duplicate()
 		lv_label.visible = true
 		lv_label.text = Weapon.WeaponRank.find_key(rank)
 		_weapon_level_box.add_child(lv_label)
-		##信息查看：武器类型/等级/经验/相克说明
-		var provider := InfoProvider.new()
-		provider.description = "%s  等级 %s（上限 %s）\n武器经验 %d\n%s" % [
-			WEAPON_TYPE_NAMES.get(type, "武器"),
-			Weapon.rank_to_text(rank),
-			Weapon.rank_to_text(cap),
-			xp,
-			WEAPON_TYPE_INFO.get(type, ""),
-		]
-		_weapon_providers.append(provider)
+
+	##编排武器等级 2x2 网格焦点
+	_link_grid_focus(_weapon_providers, 2)
+	for wp in _weapon_providers:
+		if info_viewer != null:
+			var callable: Callable = info_viewer._on_button_focus_entered.bind(wp)
+			if not wp.focus_entered.is_connected(callable):
+				wp.focus_entered.connect(callable)
 
 
 ##属性图标（5G）：ClassData.affinity，普通敌人无属性留空
@@ -367,7 +435,6 @@ func _fill_affinity(unit: Unit) -> void:
 
 
 ##支援列表（5G，Weapon&SupportLevel/SupportLevel）：每条支援一行
-##icon=对方属性图标 / Name=对方名字 / Level=支援等级（未建立显示"——"）
 func _fill_support_list(unit: Unit) -> void:
 	for child in _support_box.get_children():
 		_support_box.remove_child(child)
@@ -386,18 +453,11 @@ func _fill_support_list(unit: Unit) -> void:
 func _get_cap(unit: Unit, key: String) -> int:
 	if unit.class_data != null:
 		return unit.class_data.get("cap_" + key)
-	match key:
-		"move":
-			return 10
-		"con":
-			return 20
-	return unit.get("max_" + key)
-
+	return 10 if key == "move" else (20 if key == "con" else unit.get("max_" + key))
 
 ##==================== 信息查看（信息查看系统） ====================
 
 ##信息查看输入（由 BattleUnitCommands.handle_unit_info_input 最先调用）
-##返回 true 表示已消费（查看中或刚打开），外层面板输入（切页/切单位/关面板）不再处理
 func handle_info_input(event: InputEvent) -> bool:
 	if info_viewer == null:
 		return false
@@ -409,31 +469,22 @@ func handle_info_input(event: InputEvent) -> bool:
 		if providers.is_empty():
 			return false
 		_info_index = clampi(_info_index, 0, providers.size() - 1)
-		if info_viewer.open(providers[_info_index],_nav_info):
+		if info_viewer.open(providers[_info_index], _nav_info):
 			return true
 	return false
 
-##信息查看导航（本面板的导航规则，InfoViewer 只透传方向）：
-##上下=当前页内切换条目；左右=切换页面并跳到该页第一个条目（目标页为空不切换）
+##信息查看导航（本面板的导航规则，InfoViewer 只透传方向）
 func _nav_info(dir: Vector2i) -> Node:
 	var providers := _page_providers(_page_index)
 	if dir.y != 0 and not providers.is_empty():
 		_info_index = wrapi(_info_index + dir.y, 0, providers.size())
 		return providers[_info_index]
-	if dir.x != 0:
-		return null
 	return null
 
-
-##当前页的可查看对象列表（顺序即上下键导航顺序）
-##角色页：名称→职业(动态)→等级→经验→生命→属性→八项能力→体格/救出/状态/指挥/对话→技能(动态)
-##物品页：背包内的 ItemRow（自带 get_info）；武器&支援页：各可用武器类型（动态）
+##当前页的可查看对象列表
 func _page_providers(page: int) -> Array:
 	match page:
-		0:
-			return info_list
-		1:
-			return item_list
-		2:
-			return _weapon_providers
+		0: return info_list
+		1: return item_list
+		2: return _weapon_providers
 	return []

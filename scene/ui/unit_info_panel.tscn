@@ -175,6 +175,7 @@ custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../../BaseInfo/Name")
+focus_neighbor_top = NodePath("../../../BaseInfo/Info")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -188,12 +189,15 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "力量
 影响物理武器的伤害。"
+info_position = Vector2(-40, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Mag" type="Button" parent="InfoData/VBoxData1" unique_id=600575921]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/Name")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -207,12 +211,15 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "魔力
 影响魔法武器的伤害。"
+info_position = Vector2(-40, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Skl" type="Button" parent="InfoData/VBoxData1" unique_id=1376215389]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/Name")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -226,12 +233,15 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "技巧
 影响命中与必杀。"
+info_position = Vector2(-40, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Spd" type="Button" parent="InfoData/VBoxData1" unique_id=782179164]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_right = NodePath("../../VBoxData2/Cmd")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -246,12 +256,15 @@ script = ExtResource("13_infoprovider")
 description = "速度
 影响回避与攻速，
 攻速高出对方 4 点可追击。"
+info_position = Vector2(-40, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Luk" type="Button" parent="InfoData/VBoxData1" unique_id=447614718]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_right = NodePath("../../VBoxData2/Talk")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -265,12 +278,16 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "幸运
 影响回避与必杀回避。"
+info_position = Vector2(-40, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Def_H" type="Button" parent="InfoData/VBoxData1" unique_id=1476992748]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/Class")
+focus_neighbor_right = NodePath("../../SkillInfo")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -284,12 +301,15 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "守备
 减轻物理攻击的伤害。"
+info_position = Vector2(-40, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Res" type="Button" parent="InfoData/VBoxData1" unique_id=92451078]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/Exp")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -303,12 +323,15 @@ text = "5"
 script = ExtResource("13_infoprovider")
 description = "魔防
 减轻魔法攻击的伤害。"
+info_position = Vector2(-40, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Move" type="Button" parent="InfoData/VBoxData1" unique_id=1891527261]
 custom_minimum_size = Vector2(40, 16)
 custom_maximum_size = Vector2(40, 16)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../BaseInfo/HP")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -322,6 +345,8 @@ text = "7"
 script = ExtResource("13_infoprovider")
 description = "移动力
 一回合内可移动的格数。"
+info_position = Vector2(-40, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="VBoxData2" type="VBoxContainer" parent="InfoData" unique_id=264864915]
@@ -349,6 +374,8 @@ text = "9"
 script = ExtResource("13_infoprovider")
 description = "体格人物身形大小，
 与救出指令和攻速有关"
+info_position = Vector2(-130, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Rescue" type="Button" parent="InfoData/VBoxData2" unique_id=1960302839]
@@ -367,6 +394,8 @@ text = "10"
 script = ExtResource("13_infoprovider")
 description = "救出相关数值
 可以救出此数值以下体格的人物"
+info_position = Vector2(-130, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="States" type="Button" parent="InfoData/VBoxData2" unique_id=2090388059]
@@ -385,6 +414,8 @@ text = "--"
 script = ExtResource("13_infoprovider")
 description = "状态
 异常状态（未实现）。"
+info_position = Vector2(-130, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Cmd" type="Button" parent="InfoData/VBoxData2" unique_id=2018724225]
@@ -404,6 +435,8 @@ script = ExtResource("13_infoprovider")
 description = "指挥
 周围友军获得的命中/回避
 加成（未实现）。"
+info_position = Vector2(-130, 15)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Talk" type="Button" parent="InfoData/VBoxData2" unique_id=1337437744]
@@ -424,6 +457,8 @@ script = ExtResource("13_infoprovider")
 description = "对话
 当前可与该角色触发剧情
 对话的对象。"
+info_position = Vector2(-130, -65)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Skill" type="HFlowContainer" parent="InfoData" unique_id=637449044]
@@ -455,6 +490,8 @@ theme_override_styles/disabled = ExtResource("13_ccw4s")
 theme_override_styles/focus = ExtResource("13_ccw4s")
 script = ExtResource("13_infoprovider")
 description = "人物的相关技能"
+info_position = Vector2(-60, -60)
+cursor_offset = Vector2(-4, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Items" type="TextureRect" parent="." unique_id=863289823]
@@ -476,23 +513,18 @@ metadata/_edit_lock_ = true
 
 [node name="itemrow" parent="Items/VBoxItems" unique_id=1693196374 instance=ExtResource("6_13eqi")]
 layout_mode = 2
-focus_mode = 2
 
 [node name="itemrow2" parent="Items/VBoxItems" unique_id=793510028 instance=ExtResource("6_13eqi")]
 layout_mode = 2
-focus_mode = 2
 
 [node name="itemrow3" parent="Items/VBoxItems" unique_id=1261207650 instance=ExtResource("6_13eqi")]
 layout_mode = 2
-focus_mode = 2
 
 [node name="itemrow4" parent="Items/VBoxItems" unique_id=1974560734 instance=ExtResource("6_13eqi")]
 layout_mode = 2
-focus_mode = 2
 
 [node name="itemrow5" parent="Items/VBoxItems" unique_id=2079561210 instance=ExtResource("6_13eqi")]
 layout_mode = 2
-focus_mode = 2
 
 [node name="Weapon&SupportLevel" type="TextureRect" parent="." unique_id=889004812]
 visible = false
@@ -588,8 +620,10 @@ metadata/_edit_lock_ = true
 
 [node name="Info" type="Button" parent="BaseInfo" unique_id=659538548]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 117.0
+offset_top = 9.0
+offset_right = 125.0
+offset_bottom = 17.0
 focus_neighbor_left = NodePath("../Name")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../../InfoData/VBoxData2/Con")
@@ -606,6 +640,8 @@ theme_override_styles/focus = ExtResource("13_ccw4s")
 script = ExtResource("13_infoprovider")
 description = "在角色信息这里按回车键
 切换查看成长率"
+info_position = Vector2(0, 12)
+cursor_offset = Vector2(-1, -4)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Name" type="Button" parent="BaseInfo" unique_id=1435732775]
@@ -631,6 +667,7 @@ text = "忒"
 script = ExtResource("13_infoprovider")
 description = "名称
 角色的名字。"
+info_position = Vector2(-24, 16)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="LV" type="Button" parent="BaseInfo" unique_id=1878555807]
@@ -641,6 +678,8 @@ offset_right = 43.0
 offset_bottom = 135.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Class")
+focus_neighbor_right = NodePath("../Exp")
+focus_neighbor_bottom = NodePath("../HP")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -654,6 +693,8 @@ text = "7"
 script = ExtResource("13_infoprovider")
 description = "等级
 角色当前的等级，满级为 20。"
+info_position = Vector2(-22, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="Exp" type="Button" parent="BaseInfo" unique_id=565681135]
@@ -664,6 +705,8 @@ offset_right = 67.0
 offset_bottom = 135.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Class")
+focus_neighbor_right = NodePath("../../InfoData/VBoxData1/Res")
+focus_neighbor_bottom = NodePath("../HP")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
 theme_override_constants/line_spacing = 0
@@ -677,6 +720,8 @@ text = "0"
 script = ExtResource("13_infoprovider")
 description = "经验
 经验为100时升一级"
+info_position = Vector2(-46, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="HP" type="Button" parent="BaseInfo" unique_id=1820046154]
@@ -686,7 +731,8 @@ offset_top = 137.0
 offset_right = 47.0
 offset_bottom = 151.0
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../Class")
+focus_neighbor_top = NodePath("../LV")
+focus_neighbor_right = NodePath("../../InfoData/VBoxData1/Move")
 focus_neighbor_bottom = NodePath("../HP/Info")
 theme_override_colors/font_color = Color(1, 1, 0.56078434, 0.9843137)
 theme_override_constants/outline_size = 3
@@ -701,6 +747,8 @@ text = "30"
 script = ExtResource("13_infoprovider")
 description = "HP
 人物当前的血量，为0时死亡。"
+info_position = Vector2(-20, -48)
+cursor_offset = Vector2(-24, 0)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="MAXHP" type="Label" parent="BaseInfo" unique_id=1315619520]
@@ -740,6 +788,7 @@ theme_override_styles/focus = ExtResource("13_ccw4s")
 text = "弓骑兵"
 script = ExtResource("13_infoprovider")
 description = "角色职业描述"
+info_position = Vector2(-2, -48)
 metadata/_custom_type_script = "uid://cu163dal4qwan"
 
 [node name="AffinityIcon" type="Button" parent="BaseInfo" unique_id=521188041]

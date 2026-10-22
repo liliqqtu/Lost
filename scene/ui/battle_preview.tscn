@@ -128,8 +128,15 @@ text = "铁斧"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="Sprite2D" parent="." unique_id=1713187939]
-position = Vector2(64, 48)
+[node name="Chase" type="Control" parent="." unique_id=160951934]
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 48.0
+
+[node name="TextureRect" type="Sprite2D" parent="Chase" unique_id=1713187939]
+position = Vector2(10, 0)
 texture = ExtResource("4_jqvvr")
 hframes = 2
 script = ExtResource("5_jdixm")

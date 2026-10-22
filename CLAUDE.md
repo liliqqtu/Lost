@@ -76,9 +76,9 @@ Lost (Godot Game Project)
 |   |   |- fire.tres / dark.tres / anim.tres / thunder.tres / ice.tres / light.tres / wind.tres
 |   |- support/                     # 支援表资源（5G：一对角色的支援关系数据）
 |   |   |- te_isar.tres             # 忒×伊萨尔（炎×暗，C门槛=1，测试对话"1"）
-|   |- skill/                       # 技能场景
-|   |   |- flourish.tscn            # 焕发（再移动）
-|   |   |- lost.tscn                # 仿徨（所有武器射程减一）
+|   |- skills/                      # 技能资源（.tres 数据模板）
+|   |   |- flourish.tres            # 焕发（再移动）
+|   |   |- lost.tres                # 仿徨（所有武器射程减一）
 |
 |
 |- scripts/                         # 核心脚本目录
@@ -225,7 +225,7 @@ TARGET_SELECT 状态悬停敌方目标时使用 level_0.tscn 里的 `CanvasLayer
 - 上下键在同队伍单位间循环切换（按格子坐标排序回绕），面板保持当前页。
 - 面板 scene/unit_info_panel.tscn + unit_info_panel.gd，全部数据从 Unit/ClassData/Weapon 实时读取（每次打开/切换重新填充，不复制数据）：
   - 基本信息页：姓名/职业/等级/经验(exp%100)/当前HP/最大HP；八项能力 力/魔/技/速/幸/守/防/移 数值 + 能力条（职业上限=40）；；体格同上；救出/状态异常显示"——"（5E 后填真值）；指挥⭐有值显示"%d⭐"否则"——"；对话对象显示 unit.talk 否则"——"。
-  - 技能栏：运行时按 ClassData.skills 实例化技能场景（焕发=flourish.tscn），无职业数据留空。
+  - 技能栏：按 ClassData.skills 与 Unit.personal_skills 动态生成 InfoProvider 按钮（直接读取 Skill.icon 渲染图标），无技能留空。
   - 地图立绘：复制单位 MapSprite2D 的 sprite_frames 播放 idle_selected。
   - 物品页：当前只有 current_weapon 一件（图标/名称/"耐久/最大耐久"），背包 5C 实现后扩展。
   - 武器&支援等级页：按武器类型显示 ItemIconClass 图标（剑/枪/斧/弓，魔法/杖暂无图标），武器经验条填 0（未实现）。
@@ -308,12 +308,17 @@ DEPOSIT：左侧背包 ↑↓ 移动光标，Z 寄存物品，无 ←→ 操作
 - 各界面集成（"有哪些可查看对象"与导航关系归各面板）：
   - 物品菜单（ItemMenu）：R 查看选中物品，上下=背包内切换。
   - 运输队（ConvoyPanel）：R 查看光标处物品（取出=仓库列表/寄存=背包），上下=列表内切换，取出模式左右=切类别；模式选择界面无可查看对象。
-  - 人物面板（UnitInfoPanel）：R 查看当前页条目。角色页顺序 名称→职业(动态：职业名/骑乘/强度)→等级→经验→生命→属性→力/魔/技/速/幸/守/防/移→体格/救出/状态/指挥/对话→技能(动态：名称+说明)；物品页=背包 ItemRow；武器&支援页=各可用武器类型(动态：等级/上限/武器经验/相克说明)。上下=页内切换，左右=切页并跳到该页第一条（目标页为空不切换）。查看中切页由 _nav_info 驱动 cycle 逻辑（_apply_page），上下不再切换单位。
+  - 人物面板（UnitInfoPanel）：R 查看当前页条目。采用 InfoProvider 焦点系统导航：
+	- 角色页：静态属性（名称/等级/八项能力等）通过 Inspector 配好 focus_neighbor；动态技能（最多 6 个，3×2 网格）在 _fill_skills 时动态创建透明 InfoProvider 按钮并由 _link_grid_focus 算法自动连接上下左右与边界（上接 Talk，左接 Def_H/Res/Move），无技能时安全兜底不卡死。
+	- 物品页：背包 ItemRow 列表导航（自带 get_info）。
+	- 武器&支援页：按可用武器类型（最多 4 个，2×2 网格）在 Icon 上挂透明 InfoProvider，复用 _link_grid_focus 自动编排 2D 网格上下左右自由跳转。
+	- 手光标指示（cursorhand.tscn）：R 进入查看时显形并对齐当前项，切换焦点时跟随移动，退出查看或关面板时自动隐藏；InfoProvider 支持 cursor_offset 微调。
   - 静态说明配置在 unit_info_panel.tscn 各 Label 下的 Info 子节点（Inspector 直接改文案）；unit_info_panel.gd 用 STATIC_INFO_PATHS 收集（缺节点自动跳过）。
 - 装配：Level._setup_info_viewer()（在各面板创建之后）创建 InfoViewer 挂 CanvasLayer，BattleManager.set_info_viewer(viewer) → commands.set_info_viewer 分发给 item_menu/convoy_panel/unit_info_panel（has_method 兜底，旧测试的最小面板不受影响）。handle_unit_info_input 最先调用面板 handle_info_input，返回 true（查看中/刚打开）则不再处理切页/切单位/关面板。
 ## 待开发
-
-（暂无。原"信息查看系统"已完成，见上方条目；InfoData（标题+图标+多段文字的结构化 Resource）按规划暂缓——当前描述仍是单一字符串，需要结构化时再创建 InfoData 并让 InfoProvider 挂载它。）
+  - 武器也有技能，比如勇者武器的追击效果，以及一些S级武器带来的额外属性增益，还有特殊的技能效果，比如某s武器带有技能“日耀”，技术%触发吸血，并且带有属性增益+5双防 ，这些属性增益需要在战斗中实时更新。并显示到人物面板，考虑到人物带有的技能也有属性增益，比如临近2格所有友方双防+2，因此我在考虑 武器/人物/职业 这3类技能统一归为技能资源，而且武器/人物/职业可以公用一个技能，比如原本刺客的瞬杀，可以让某S武器拥有，也可以通过剧情发展让特定人物学会。
+（原"信息查看系统"已完成，见上方条目；InfoData（标题+图标+多段文字的结构化 Resource）按规划暂缓——当前描述仍是单一字符串，需要结构化时再创建 InfoData 并让 InfoProvider 挂载它。）
+# 项目设计应有良好的可维护性
 
 # 新增功能时，优先扩展已有类，没有已有类，再创建新的 Manager、Controller、Component、Resource 或 Scene 并不构成代码重复
 
@@ -321,50 +326,51 @@ DEPOSIT：左侧背包 ↑↓ 移动光标，Z 寄存物品，无 ←→ 操作
 
 # 所有脚本文件 不建议超过500行，如果超过了大概率承担了不该承担的功能，就分包处理。
 
-# battle_manager.gd 已按此规则分包（2026-09）：门面保留状态机/输入分派/选中移动/行动收尾，
-# 非战斗功能拆入 battle_unit_commands / battle_map_interaction / battle_rescue /
-# battle_range_inspect / battle_canto / battle_combat / battle_phases 七个模块
-# （RefCounted 纯逻辑对象，_init 创建、经 bm 引用共享状态；对外接口 set_*/begin_battle/
-# add_unit/handle_input/open_dialogue/_move_unit 保持不变，关卡与事件脚本零改动）。
+# 一次修改
+ battle_manager.gd 已按此规则分包（2026-09）：门面保留状态机/输入分派/选中移动/行动收尾，
+ 非战斗功能拆入 battle_unit_commands / battle_map_interaction / battle_rescue /
+ battle_range_inspect / battle_canto / battle_combat / battle_phases 七个模块
+ （RefCounted 纯逻辑对象，_init 创建、经 bm 引用共享状态；对外接口 set_*/begin_battle/
+ add_unit/handle_input/open_dialogue/_move_unit 保持不变，关卡与事件脚本零改动）。
 
-# P2 行动结束解耦（2026-09，渐进式）：行动结束流程统一走 BattleManager 公开接口——
-# end_action(allow_canto)（=原 _end_action 公开包装）、mark_action_spent()/is_action_spent()
-# （替代直写 _menu_action_spent）、mark_attack_action()（替代直写 _last_action_was_attack）、
-# finalize_action()（行动收尾唯一出口：清选中上下文/范围层/光标限制→回 CURSOR→查胜负与回合结束）。
-# BattleCanto._finish_canto 与 _end_action 共用 finalize_action，不再各自实现清理尾巴
-# （此前两处 11 行重复，正是"状态恢复互相覆盖"风险点）。子模块（unit_commands/map_interaction/
-# rescue/canto）已全部迁移；_end_action/_menu_action_spent/_last_action_was_attack 保留为兼容入口
-# （旧测试可继续用）。
-#
-# P2 批次2（2026-09，查询/单位操作/撤回移动解耦）：BattleManager 新增公开接口
-# get_unit_at(cell) / get_blocked_cells(exclude)（查询簇）、remove_unit(unit)（阵亡移除+胜负检查）、
-# move_unit(unit, destination)（通用移动演出，敌方回合与增援走位复用）、undo_move()（撤回移动：
-# 坐标还原+重新选中收进 BM，外部不再触碰 _pre_move_cell/_select_unit）。
-# 全部外部调用方已迁移（unit_commands/rescue/map_interaction/range_inspect/canto/combat/phases/
-# action_reinforce 共 19 处），生产代码对 bm 私有成员的访问归零（bm._* 仅 BM 内部使用）。
-# 私有名 _get_unit_at/_get_blocked_cells/_remove_unit/_move_unit 保留为兼容入口（旧测试与
-# 关卡脚本可继续用）。注意：move_unit 是协程，调用方需 await。
+ P2 行动结束解耦（2026-09，渐进式）：行动结束流程统一走 BattleManager 公开接口——
+ end_action(allow_canto)（=原 _end_action 公开包装）、mark_action_spent()/is_action_spent()
+（替代直写 _menu_action_spent）、mark_attack_action()（替代直写 _last_action_was_attack）、
+ finalize_action()（行动收尾唯一出口：清选中上下文/范围层/光标限制→回 CURSOR→查胜负与回合结束）。
+ BattleCanto._finish_canto 与 _end_action 共用 finalize_action，不再各自实现清理尾巴
+ （此前两处 11 行重复，正是"状态恢复互相覆盖"风险点）。子模块（unit_commands/map_interaction/
+ rescue/canto）已全部迁移；_end_action/_menu_action_spent/_last_action_was_attack 保留为兼容入口
+ （旧测试可继续用）。
 
-# P3 关卡职责整理（2026-09，渐进式）：scene/level/level.gd 为基础关卡类（class_name Level extends
-# Node2D），承载跨关卡通用职责；具体关卡 extends Level 只填本关数据。首批拆"地图事件/对话"组，
-# 批次2（2026-09-27）拆完全部剩余职责组，Level 现为完整关卡骨架模板：
-#   - _ready() 模板方法（顺序与原 level_0._ready 逐行一致）：创建+setup BattleManager → _setup_units()
-#     → 各 UI _setup_*（forecast/action_menu/item_menu/trade/convoy/battle_animation/unit_info_panel）→
-#     _setup_talk() → _setup_interactables() → _setup_map_events() → _on_level_ready() → 连接横幅 →
-#     add_child + begin_battle
-#   - 虚钩子（关卡按需 override，全部有默认实现）：_setup_units()（单位摆放，默认空）、
-#     _seed_convoy()（运输队种子，默认空）、get_talk_dialogue()（对话数据，默认无）、
-#     _setup_map_events()（事件定义，默认空）、_on_level_ready()（本关收尾如隐藏预摆增援，默认空）、
-#     get_village_reward(cell)（村庄门奖励，默认伤药）
-#   - 通用机制：_build_action_menu_panel、回合横幅 _on_turn_started（含 Phase Switch 节点约定）、
-#     相机 _process / 输入 _unhandled_input 转发、run_map_event 事件执行器、
-#     _create_enemy / _create_iron_sword / _create_iron_axe 工厂
-#   - 关卡 tscn 节点名约定：TileMapLayer / HighLightMapLayer / Cursor / Camera / Units（敌人在
-#     Units/Enemy 下，约定由关卡自己持有 enemy_node）/ CanvasLayer（含 Phase Switch、Battle Preview）
-# level_0.gd 只剩本关数据：对话+肖像、第 2 回合 Isar 增援事件、Te/敌人摆放、运输队种子、
-# 隐藏预摆 Isar。场景节点名、资源路径、BattleManager 对外接口、level_0.tscn 均零改动。
-# 第二张地图复用方式：新建 level_1.gd extends Level + level_1.tscn（同名节点约定），按需 override
-# 虚钩子即可，不需要动基类。
+ P2 批次2（2026-09，查询/单位操作/撤回移动解耦）：BattleManager 新增公开接口
+ get_unit_at(cell) / get_blocked_cells(exclude)（查询簇）、remove_unit(unit)（阵亡移除+胜负检查）、
+ move_unit(unit, destination)（通用移动演出，敌方回合与增援走位复用）、undo_move()（撤回移动：
+ 坐标还原+重新选中收进 BM，外部不再触碰 _pre_move_cell/_select_unit）。
+ 全部外部调用方已迁移（unit_commands/rescue/map_interaction/range_inspect/canto/combat/phases/
+ action_reinforce 共 19 处），生产代码对 bm 私有成员的访问归零（bm._* 仅 BM 内部使用）。
+ 私有名 _get_unit_at/_get_blocked_cells/_remove_unit/_move_unit 保留为兼容入口（旧测试与
+ 关卡脚本可继续用）。注意：move_unit 是协程，调用方需 await。
+
+ P3 关卡职责整理（2026-09，渐进式）：scene/level/level.gd 为基础关卡类（class_name Level extends
+ Node2D），承载跨关卡通用职责；具体关卡 extends Level 只填本关数据。首批拆"地图事件/对话"组，
+ 批次2（2026-09-27）拆完全部剩余职责组，Level 现为完整关卡骨架模板：
+   - _ready() 模板方法（顺序与原 level_0._ready 逐行一致）：创建+setup BattleManager → _setup_units()
+	 → 各 UI _setup_*（forecast/action_menu/item_menu/trade/convoy/battle_animation/unit_info_panel）→
+	 _setup_talk() → _setup_interactables() → _setup_map_events() → _on_level_ready() → 连接横幅 →
+	 add_child + begin_battle
+   - 虚钩子（关卡按需 override，全部有默认实现）：_setup_units()（单位摆放，默认空）、
+	 _seed_convoy()（运输队种子，默认空）、get_talk_dialogue()（对话数据，默认无）、
+	 _setup_map_events()（事件定义，默认空）、_on_level_ready()（本关收尾如隐藏预摆增援，默认空）、
+	 get_village_reward(cell)（村庄门奖励，默认伤药）
+   - 通用机制：_build_action_menu_panel、回合横幅 _on_turn_started（含 Phase Switch 节点约定）、
+	 相机 _process / 输入 _unhandled_input 转发、run_map_event 事件执行器、
+	 _create_enemy / _create_iron_sword / _create_iron_axe 工厂
+   - 关卡 tscn 节点名约定：TileMapLayer / HighLightMapLayer / Cursor / Camera / Units（敌人在
+	 Units/Enemy 下，约定由关卡自己持有 enemy_node）/ CanvasLayer（含 Phase Switch、Battle Preview）
+ level_0.gd 只剩本关数据：对话+肖像、第 2 回合 Isar 增援事件、Te/敌人摆放、运输队种子、
+ 隐藏预摆 Isar。场景节点名、资源路径、BattleManager 对外接口、level_0.tscn 均零改动。
+ 第二张地图复用方式：新建 level_1.gd extends Level + level_1.tscn（同名节点约定），按需 override
+ 虚钩子即可，不需要动基类。
 
 # 修改现有接口前，应保持向后兼容，不要无故改变已完成模块的调用方式，如果模块管理了不该管理的内容，应拆包到新模块。
 

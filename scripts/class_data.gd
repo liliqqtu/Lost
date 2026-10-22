@@ -52,8 +52,8 @@ class_name ClassData
 @export var cap_move := 10
 ## 体格上限
 @export var cap_con := 20
-## 职业技能（人物面板技能栏，如 scene/skill/flourish.tres 焕发=再移动）
-## view_scene 为面板图标（人物面板按 view_scene 实例化渲染），trigger 字段决定技能实际生效方式
+## 职业技能（人物面板技能栏，如 data/skills/flourish.tres 焕发=再移动）
+## icon 为面板图标，trigger 字段决定技能实际生效方式
 @export var skills: Array[Skill] = []
 
 ##骑乘类型（5F 救援 Aid 公式，FE8）：步行 Aid=体格-1 / 骑乘·男 Aid=25-体格 / 骑乘·女 Aid=20-体格

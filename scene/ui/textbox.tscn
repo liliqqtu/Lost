@@ -6,7 +6,7 @@
 
 [node name="TextBox" type="NinePatchRect" unique_id=480522078]
 custom_minimum_size = Vector2(91, 48)
-custom_maximum_size = Vector2(224, 64)
+custom_maximum_size = Vector2(224, 76)
 offset_left = 8.0
 offset_top = 16.0
 offset_right = 232.0
@@ -37,7 +37,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 1
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 8
@@ -45,7 +45,7 @@ theme_override_constants/margin_bottom = 7
 
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1141900712]
 custom_minimum_size = Vector2(16, 16)
-custom_maximum_size = Vector2(204, 51)
+custom_maximum_size = Vector2(204, 62)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

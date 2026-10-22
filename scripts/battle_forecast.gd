@@ -19,10 +19,26 @@ const PANEL_MARGIN := 2.0
 @onready var _enemy_weapon: TextureRect = $EnemyWeapon
 @onready var _enemy_weapon_name: Label = $EnemyWeaponName
 
+##追击指示节点（Chase/TextureRect）
+@onready var _chase: Control = get_node_or_null("Chase")
+@onready var _chase_sprite = get_node_or_null("Chase/TextureRect")
+
 
 ##由外部传入面板根节点，按名称绑定子节点
-func setup() -> void:
+func setup(panel: TextureRect = null) -> void:
+	if panel != null and panel != self:
+		_player_name = panel.get_node_or_null("PlayerName")
+		_player_dph = panel.get_node_or_null("PlayerDPH")
+		_player_weapon = panel.get_node_or_null("PlayerWeapon")
+		_enemy_name = panel.get_node_or_null("EnemyName")
+		_enemy_dph = panel.get_node_or_null("EnemyDPH")
+		_enemy_weapon = panel.get_node_or_null("EnemyWeapon")
+		_enemy_weapon_name = panel.get_node_or_null("EnemyWeaponName")
+		_chase = panel.get_node_or_null("Chase")
+		_chase_sprite = panel.get_node_or_null("Chase/TextureRect")
 	self.visible = false
+	if _chase != null:
+		_chase.visible = false
 
 
 ##显示预览：attacker 为玩家操作单位，sequence 由 BattleCalculator 生成
@@ -32,19 +48,28 @@ func show_forecast(attacker: Unit, sequence: Array[Dictionary]) -> void:
 		return
 	var defender: Unit = sequence[0]["defender"]
 
+	var player_doubles := _has_double(sequence, attacker)
+	var enemy_doubles := _has_double(sequence, defender)
+
 	set_player_name(attacker)
-	set_player_dph(_get_first_strike(sequence, attacker), attacker, _has_double(sequence, attacker))
+	set_player_dph(_get_first_strike(sequence, attacker), attacker, player_doubles)
 	set_player_weapon(attacker)
 
 	set_enemy_name(defender)
-	set_enemy_dph(_get_first_strike(sequence, defender), defender, _has_double(sequence, defender))
+	set_enemy_dph(_get_first_strike(sequence, defender), defender, enemy_doubles)
 	set_enemy_weapon(defender)
+
+	_update_chase(player_doubles, enemy_doubles, sequence, attacker, defender)
 
 	self.visible = true
 
 
 ##隐藏预览面板
 func hide_forecast() -> void:
+	if _chase_sprite != null and _chase_sprite.has_method("stop_animation"):
+		_chase_sprite.stop_animation()
+	if _chase != null:
+		_chase.visible = false
 	self.visible = false
 
 
@@ -90,15 +115,51 @@ func set_enemy_weapon(unit: Unit) -> void:
 	_enemy_weapon_name.text = _weapon_name(unit.current_weapon)
 
 
-##四行文本：HP 只显示当前值；命中/必杀不带 %；无打击（无法反击/已被击杀）时威力/命中/必杀显示 ——；追击在威力后加 ×2
-func _dph_text(strike: Dictionary, unit: Unit, doubles: bool) -> String:
+##四行文本：HP 只显示当前值；命中/必杀不带 %；无打击（无法反击/已被击杀）时威力/命中/必杀显示 ——；追击由 Chase/TextureRect 浮动图标呈现
+func _dph_text(strike: Dictionary, unit: Unit, _doubles: bool) -> String:
 	var hp_line := str(unit.hp)
 	if strike.is_empty():
 		return "%s\n——\n——\n——" % hp_line
 	var power_line := str(strike["damage"])
-	if doubles:
-		power_line += "×2"
 	return "%s\n%s\n%d\n%d" % [hp_line, power_line, strike["hit"], strike["crit"]]
+
+
+##更新追击指示图标（Chase/TextureRect）：我方追击在右侧(64,48)，敌方追击在左侧(21,48)
+func _update_chase(player_doubles: bool, enemy_doubles: bool, sequence: Array[Dictionary], attacker: Unit, defender: Unit) -> void:
+	if _chase == null or _chase_sprite == null:
+		return
+	if player_doubles:
+		_chase.position = Vector2(64, 48)
+		_chase.visible = true
+		var strikes := _count_strikes(sequence, attacker)
+		var times := 4 if strikes >= 4 else 2
+		if _chase_sprite.has_method("set_chase"):
+			_chase_sprite.set_chase(times)
+		else:
+			_chase_sprite.visible = true
+	elif enemy_doubles:
+		_chase.position = Vector2(21, 48)
+		_chase.visible = true
+		var strikes := _count_strikes(sequence, defender)
+		var times := 4 if strikes >= 4 else 2
+		if _chase_sprite.has_method("set_chase"):
+			_chase_sprite.set_chase(times)
+		else:
+			_chase_sprite.visible = true
+	else:
+		if _chase_sprite.has_method("stop_animation"):
+			_chase_sprite.stop_animation()
+		else:
+			_chase_sprite.visible = false
+		_chase.visible = false
+
+
+func _count_strikes(sequence: Array[Dictionary], unit: Unit) -> int:
+	var count := 0
+	for strike in sequence:
+		if strike["attacker"] == unit:
+			count += 1
+	return count
 
 
 ##从序列中找出该单位的第一次打击，找不到返回空字典

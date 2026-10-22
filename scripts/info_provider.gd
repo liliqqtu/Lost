@@ -12,7 +12,9 @@ extends Button
 ## 描述信息（Inspector 多行编辑）
 @export_multiline var description: String
 ## 二维坐标
-@export var info_position: Vector2i
+@export var info_position: Vector2
+## 光标偏移（默认 Vector2.ZERO 表示使用左侧默认偏移）
+@export var cursor_offset: Vector2 = Vector2.ZERO
 
 ## 统一信息接口：返回当前对象的说明
 func get_info() -> String:

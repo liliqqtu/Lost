@@ -15,6 +15,10 @@ extends Node
 
 const TEXTBOX_SCENE := preload("res://scene/ui/textbox.tscn")
 
+## 焦点变化与关闭信号（供光标手跟随及面板联动）
+signal focused_changed(provider)
+signal viewer_closed
+
 ##是否处于信息查看中（面板据此接管输入）
 var active := false
 
@@ -35,9 +39,16 @@ func open(provider, nav: Callable) -> bool:
 		return false
 	_provider = provider
 	active = true
-	_textbox.show_text(_provider.get_info())
-	_provider.grab_focus()
+	var text: String = _provider.get_info()
+	if text.is_empty():
+		_textbox.hide_box()
+	else:
+		_textbox.show_text(text)
+		_update_textbox_position(_provider)
+	if _provider is Control and _provider.has_method("grab_focus"):
+		_provider.grab_focus()
 	_nav = nav
+	focused_changed.emit(_provider)
 	return true
 
 
@@ -46,10 +57,12 @@ func close() -> void:
 	active = false
 	_nav = Callable()
 	_textbox.hide_box()
-	if _provider is InfoProvider:
-		var focused: InfoProvider = get_viewport().gui_get_focus_owner()
+	var focused = get_viewport().gui_get_focus_owner()
+	if focused != null and focused.has_method("release_focus"):
 		focused.release_focus()  # 释放焦点，避免 InfoProvider 持续显示 hover 效果
 	_provider = null
+	viewer_closed.emit()
+
 
 ##外部输入入口（由当前面板在自己持有输入权时转发）
 func handle_input(event: InputEvent) -> void:
@@ -62,9 +75,18 @@ func handle_input(event: InputEvent) -> void:
 		var dir := _direction_of(event)
 		if dir != Vector2i.ZERO and _nav.is_valid():
 			var next = _nav.call(dir)
-			if next != null and next != _provider and next.has_method("get_info"):
+			if next != null and next.has_method("get_info"):
 				_provider = next
-				_textbox.show_text(next.get_info())
+				var text: String = next.get_info()
+				if text.is_empty():
+					_textbox.hide_box()
+				else:
+					_textbox.show_text(text)
+					_update_textbox_position(next)
+				focused_changed.emit(next)
+			elif next == null:
+				_textbox.hide_box()
+				focused_changed.emit(null)
 
 
 ##方向键 -> 方向向量（无方向键按下返回 ZERO）
@@ -79,6 +101,47 @@ func _direction_of(event: InputEvent) -> Vector2i:
 		return Vector2i(1, 0)
 	return Vector2i.ZERO
 
-func _on_button_focus_entered(btn: InfoProvider):
-	_textbox.show_text(btn.get_info())
-	_textbox.set_pos(btn.global_position)
+
+func _on_button_focus_entered(btn: InfoProvider) -> void:
+	if not active:
+		return
+	_provider = btn
+	var text: String = btn.get_info()
+	if text.is_empty():
+		_textbox.hide_box()
+	else:
+		_textbox.show_text(text)
+		_update_textbox_position(btn)
+	focused_changed.emit(btn)
+
+
+##根据当前查看对象动态调整文字框位置（跟随物品/条目屏幕位置）
+func _update_textbox_position(provider) -> void:
+	if _textbox == null:
+		return
+	if provider is InfoProvider:
+		_textbox.set_pos(provider.global_position + provider.info_position)
+	elif provider is Control:
+		var view_rect := provider.get_viewport_rect() as Rect2
+		var view_w := view_rect.size.x
+		var view_h := view_rect.size.y
+		var row_pos: Vector2 = provider.global_position
+		var row_size: Vector2 = provider.size
+		var box_size: Vector2 = _textbox.size
+
+		var pos_x: float
+		##如果物品在屏幕右半边，文字框放左侧；如果在左半边，文字框放右侧
+		if row_pos.x + row_size.x * 0.5 > view_w * 0.5:
+			pos_x = row_pos.x - box_size.x - 6.0
+			if pos_x < 4.0:
+				pos_x = 4.0
+		else:
+			pos_x = row_pos.x + row_size.x + 6.0
+			if pos_x + box_size.x > view_w - 4.0:
+				pos_x = view_w - box_size.x - 4.0
+
+		##Y 坐标跟随当前物品行垂直居中偏上，限制在屏幕边界内不出屏
+		var pos_y: float = row_pos.y - 8.0
+		pos_y = clampf(pos_y, 4.0, view_h - box_size.y - 4.0)
+
+		_textbox.set_pos(Vector2(pos_x, pos_y))

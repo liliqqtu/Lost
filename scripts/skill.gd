@@ -6,7 +6,7 @@ extends Resource
 ##  POST_ACTION_NO_ATTACK    非攻击行动后可再移动（普通焕发：游牧民）
 ##  POST_ACTION_ALL          所有行动后可再移动（焕发+：游侠/弓骑）
 ##数值偏移字段覆盖大部分 FE 技能（仿徨/鬼神一击/狙击等），未来出现条件型技能再扩子类
-##人物面板通过 view_scene 渲染图标；技能逻辑由 BattleManager/Unit/BattleCalculator 查询"""
+##人物面板通过 icon 渲染图标；技能逻辑由 BattleManager/Unit/BattleCalculator 查询"""
 class_name Skill
 
 ## 触发类型
@@ -24,8 +24,6 @@ enum SkillTrigger {
 @export var icon: Texture2D
 ## 描述（tooltip 显示）
 @export var description: String
-## 人物面板展示场景（TextureRect + 描述，可空）
-@export var view_scene: PackedScene
 ## 触发类型
 @export var trigger: SkillTrigger = SkillTrigger.PASSIVE
 

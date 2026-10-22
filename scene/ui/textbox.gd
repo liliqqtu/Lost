@@ -63,4 +63,4 @@ func _measure_text(text: String) -> Vector2:
 	if size.y > 0.0:
 		var line_count: int = ceili(size.y / font.get_height(font_size))
 		size.y += (line_count - 1) * spacing
-	return size.min(text_label.custom_maximum_size)
+	return Vector2(minf(size.x, text_label.custom_maximum_size.x), size.y)
