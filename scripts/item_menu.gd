@@ -196,10 +196,12 @@ func _confirm() -> void:
 		if unit.use_item(item):
 			item_used.emit()
 	elif item.is_weapon():
-		##换装：通过 Unit.equip_item 保证 current_weapon 一定来自 inventory
+		##换装：通过 Unit.equip_item 保证 current_weapon 一定来自 inventory（并移至首位）
 		##武器等级不足时 equip_item 返回 false（升级系统），提示后不换装
 		if not unit.equip_item(item):
 			print("%s 武器等级不足，无法装备 %s" % [unit.unit_name, item.display_name])
+		else:
+			_index = 0
 		_refresh()
 
 

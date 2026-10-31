@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnigsgv0lt3t3"
-path="res://.godot/imported/仿徨.png-2c4715c9e5255ca690fcb0122354bd20.ctex"
+uid="uid://cv31k0vsbn62l"
+path="res://.godot/imported/勇者之弓.png-d459c2d96c3af647e0340e685c2e925d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/UI/skill/仿徨.png"
-dest_files=["res://.godot/imported/仿徨.png-2c4715c9e5255ca690fcb0122354bd20.ctex"]
+source_file="res://assets/graphics/Item Icons/Bows/勇者之弓.png"
+dest_files=["res://.godot/imported/勇者之弓.png-d459c2d96c3af647e0340e685c2e925d.ctex"]
 
 [params]
 

@@ -61,8 +61,11 @@ func start_player_phase() -> void:
 	bm.turn += 1
 	bm.phase = 0
 	for unit in bm.units:
-		unit.has_acted = false
-		unit.remove_grayscale()
+		if unit.has_method("reset_turn_state"):
+			unit.reset_turn_state()
+		else:
+			unit.has_acted = false
+			unit.remove_grayscale()
 	bm.cursor.visible = true
 	bm.turn_started.emit(0)
 	await bm.get_tree().create_timer(1.35).timeout

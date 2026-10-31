@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ki2tfb5awnwe" path="res://scripts/item.gd" id="2_x3s12"]
 [ext_resource type="Resource" uid="uid://1tqsb36g6g2l" path="res://data/items/weapon_fire.tres" id="3_6gtc4"]
 [ext_resource type="Resource" uid="uid://cae6xpinabrdi" path="res://data/class_data/isar.tres" id="4_6gtc4"]
+[ext_resource type="SpriteFrames" uid="uid://cjfucaeqdw32o" path="res://data/battle_animation_tres/Isar.tres" id="5_eemy6"]
 [ext_resource type="SpriteFrames" uid="uid://cpiuujm6h5mio" path="res://data/map_sprite_frames/Sage_sprite_frames.tres" id="7_4a17m"]
 [ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="9_o6tdu"]
 
@@ -35,6 +36,7 @@ res = 14
 luk = 20
 con = 12
 talk = "忒"
+battle_frames = ExtResource("5_eemy6")
 
 [node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=1848687586]
 material = SubResource("ShaderMaterial_71hhi")

@@ -20,6 +20,8 @@ var item_menu: Node = null
 var convoy_panel: Node = null
 ##人物信息面板（阶段五 5B）
 var unit_info_panel: Node = null
+##武器选择界面（攻击前选择武器与查看属性）
+var weapon_select_menu: Node = null
 ##攻击范围内是否有敌方单位（决定菜单"攻击"项是否可用）
 var _menu_attack_ready := false
 ##行动菜单附加上下文项（5E：访问/开启/对话；5F：救援/放下/交接/交换），与菜单动态项一一对应
@@ -51,6 +53,16 @@ func set_trade_menu(menu: Node) -> void:
 	trade_menu = menu
 	if trade_menu != null and trade_menu.has_signal("closed"):
 		trade_menu.closed.connect(_on_trade_closed)
+
+
+##设置武器选择菜单（连接确认与取消信号）
+func set_weapon_select_menu(menu: Node) -> void:
+	weapon_select_menu = menu
+	if weapon_select_menu != null:
+		if not weapon_select_menu.weapon_confirmed.is_connected(_on_weapon_selected):
+			weapon_select_menu.weapon_confirmed.connect(_on_weapon_selected)
+		if not weapon_select_menu.cancelled.is_connected(_on_weapon_select_cancelled):
+			weapon_select_menu.cancelled.connect(_on_weapon_select_cancelled)
 
 
 ##设置信息查看器（信息查看系统）：分发给物品菜单/运输队/人物面板（各自实现 set_info_viewer）
@@ -109,7 +121,10 @@ func _on_menu_confirmed(index: int) -> void:
 		match _extra_actions[index]:
 			"攻击":
 				if _menu_attack_ready:
-					_enter_target_select()
+					if weapon_select_menu != null:
+						_enter_weapon_select()
+					else:
+						_enter_target_select()
 			"访问", "开启":
 				bm.interaction.do_interaction()
 			"对话":
@@ -156,13 +171,46 @@ func _undo_move() -> void:
 	bm.undo_move()
 
 
-##从行动菜单进入目标选择：显示攻击范围，收集敌方目标，光标跳到第一个目标
+##进入武器选择界面（攻击前）
+func _enter_weapon_select() -> void:
+	action_menu.close()
+	bm.range_drawer.clear_all(bm.high_light_layer)
+	bm.state = BattleManager.State.WEAPON_SELECT
+	bm.cursor.set_process(false)
+	weapon_select_menu.open(bm.selected_unit, bm.tile_map, bm.units)
+
+
+##武器选择确认回调
+func _on_weapon_selected(w: Weapon) -> void:
+	weapon_select_menu.close()
+	bm.selected_unit.equip_item(w)
+	_enter_target_select()
+
+
+##武器选择取消回调：返回行动菜单
+func _on_weapon_select_cancelled() -> void:
+	weapon_select_menu.close()
+	bm.attack_range = bm.selected_unit.get_attack_range(bm.tile_map, [bm.selected_unit.cell])
+	show_action_menu()
+
+
+##处理武器选择界面输入
+func handle_weapon_select_input(event: InputEvent) -> void:
+	if weapon_select_menu != null and weapon_select_menu.visible:
+		weapon_select_menu.handle_input(event)
+
+
+##从行动菜单/武器选择进入目标选择：显示攻击范围，收集敌方目标，光标跳到第一个目标
 ##光标自身移动关闭（改由方向键循环切换目标），攻击范围不连通时也能到达所有目标
 func _enter_target_select() -> void:
 	action_menu.close()
 	bm.state = BattleManager.State.TARGET_SELECT
 	bm.cursor.set_process(false)
 	bm.range_drawer.clear_all(bm.high_light_layer)
+	if bm.selected_unit != null and bm.selected_unit.current_weapon != null:
+		bm.attack_range = bm.selected_unit.get_attack_range_for_weapon(bm.tile_map, [bm.selected_unit.cell], bm.selected_unit.current_weapon)
+	elif bm.selected_unit != null:
+		bm.attack_range = bm.selected_unit.get_attack_range(bm.tile_map, [bm.selected_unit.cell])
 	bm.range_drawer.draw_attack_range(bm.attack_range, bm.high_light_layer)
 	bm.cursor.restrict_to = {}
 	_forecast_cursor_cell = Vector2i(-9999, -9999)
@@ -177,7 +225,7 @@ func _enter_target_select() -> void:
 		bm.cursor.set_cell(_target_list[0].cell)
 
 
-##处理目标选择输入：方向键在攻击目标间循环切换，确认攻击，取消返回行动菜单
+##处理目标选择输入：方向键在攻击目标间循环切换，确认攻击，取消返回武器选择/行动菜单
 ##不使用光标逐格移动——弓等武器攻击范围不连通（如仅距离2一圈），逐格移动无法跨过射程外空格
 func handle_target_select_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_up"):
@@ -195,9 +243,12 @@ func handle_target_select_input(event: InputEvent) -> void:
 			await bm.combat.execute_attack(bm.selected_unit, target)
 			bm.end_action()
 	elif event.is_action_pressed("no"):
-		##取消目标选择，返回行动菜单（单位保持已移动状态）
+		##取消目标选择，优先返回武器选择界面；无武器选择界面时退回行动菜单
 		hide_forecast()
-		show_action_menu()
+		if weapon_select_menu != null:
+			_enter_weapon_select()
+		else:
+			show_action_menu()
 
 
 ##循环切换攻击目标：索引回绕，光标直接跳到目标格
@@ -338,4 +389,4 @@ func _cycle_info_unit(dir: int) -> void:
 	same_team.sort_custom(func(a: Unit, b: Unit): return a.cell < b.cell)
 	var index := same_team.find(panel_unit)
 	var next_index := wrapi(index + dir, 0, same_team.size())
-	unit_info_panel.show_panel(same_team[next_index], true)
+	unit_info_panel.show_panel(same_team[next_index], true, bm.units)

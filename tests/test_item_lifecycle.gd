@@ -68,7 +68,13 @@ func _init() -> void:
 	##装备背包内的武器
 	assert(u4.equip_item(sword4), "[场景四] 装备背包内武器应成功")
 	assert(u4.current_weapon == sword4, "[场景四] current_weapon 切换到 sword4")
-	print("场景四 通过：equip_item 仅 inventory 内武器")
+	##验证装备后移动到背包首位
+	var w_front := _make_weapon("前置武器", 40)
+	var w_back := _make_weapon("后置武器", 40)
+	u4.inventory = [w_front, w_back]
+	assert(u4.equip_item(w_back), "[场景四] 装备后置武器应成功")
+	assert(u4.inventory[0] == w_back, "[场景四] 装备的武器应移动到物品栏第一位")
+	print("场景四 通过：equip_item 仅 inventory 内武器且移至首位")
 
 	# ===== 场景五：consume_weapon_durability 扣耐久与损坏 =====
 	var u5 := _make_unit("测试员")

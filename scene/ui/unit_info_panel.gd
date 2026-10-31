@@ -28,14 +28,10 @@ const WEAPON_TYPE_NAMES := {
 
 ##武器类型说明（信息查看用：三角相克等）
 const WEAPON_TYPE_INFO := {
-	Weapon.WeaponType.SWORD: "物理武器。克制斧，被枪克制。",
-	Weapon.WeaponType.LANCE: "物理武器。克制剑，被斧克制。",
-	Weapon.WeaponType.AXE: "物理武器。克制枪，被剑克制。",
-	Weapon.WeaponType.BOW: "物理武器。基础射程 2，近距离无法反击。",
-	Weapon.WeaponType.ANIMA: "魔法。克制光，被暗克制。",
-	Weapon.WeaponType.DARK: "魔法。克制理，被光克制。",
-	Weapon.WeaponType.LIGHT: "魔法。克制暗，被理克制。",
-	Weapon.WeaponType.STAFF: "辅助武器（治疗等，效果未实现）。",
+	Weapon.WeaponType.SWORD: "物理武器。克制斧，被枪克制。", Weapon.WeaponType.LANCE: "物理武器。克制剑，被斧克制。",
+	Weapon.WeaponType.AXE: "物理武器。克制枪，被剑克制。", Weapon.WeaponType.BOW: "物理武器。基础射程 2，近距离无法反击。",
+	Weapon.WeaponType.ANIMA: "魔法。克制光，被暗克制。", Weapon.WeaponType.DARK: "魔法。克制理，被光克制。",
+	Weapon.WeaponType.LIGHT: "魔法。克制暗，被理克制。", Weapon.WeaponType.STAFF: "辅助武器（治疗等，效果未实现）。",
 }
 
 ##手光标场景（光标跟随当前查看项，5F/UI 升级）
@@ -44,13 +40,9 @@ const FLAT_STYLE := preload("res://data/test_style_box_flat.tres")
 
 ##静态信息提供者节点路径（顺序即角色页导航顺序）
 const STATIC_INFO_PATHS := [
-	"BaseInfo/Info", "BaseInfo/Name", "BaseInfo/Class", "BaseInfo/LV", "BaseInfo/Exp",
-	"BaseInfo/HP", "BaseInfo/AffinityIcon",
-	"InfoData/VBoxData1/Str", "InfoData/VBoxData1/Mag", "InfoData/VBoxData1/Skl",
-	"InfoData/VBoxData1/Spd", "InfoData/VBoxData1/Luk", "InfoData/VBoxData1/Def_H",
-	"InfoData/VBoxData1/Res", "InfoData/VBoxData1/Move",
-	"InfoData/VBoxData2/Con", "InfoData/VBoxData2/Rescue", "InfoData/VBoxData2/States",
-	"InfoData/VBoxData2/Cmd", "InfoData/VBoxData2/Talk","InfoData/SkillInfo"
+	"BaseInfo/Info", "BaseInfo/Name", "BaseInfo/Class", "BaseInfo/LV", "BaseInfo/Exp", "BaseInfo/HP", "BaseInfo/AffinityIcon",
+	"InfoData/VBoxData1/Str", "InfoData/VBoxData1/Mag", "InfoData/VBoxData1/Skl", "InfoData/VBoxData1/Spd", "InfoData/VBoxData1/Luk", "InfoData/VBoxData1/Def_H", "InfoData/VBoxData1/Res", "InfoData/VBoxData1/Move",
+	"InfoData/VBoxData2/Con", "InfoData/VBoxData2/Rescue", "InfoData/VBoxData2/States", "InfoData/VBoxData2/Cmd", "InfoData/VBoxData2/Talk", "InfoData/SkillInfo"
 ]
 
 ##当前显示的页：0 角色信息 1 物品 2 武器&支援等级
@@ -58,6 +50,8 @@ var _page_index := 0
 var _pages: Array[Control] = []
 ##当前显示的单位（上下键切换同队伍单位用）
 var current_unit: Unit = null
+##战场全部单位列表（用于光环技能计算）
+var all_units: Array = []
 
 ##信息查看器（信息查看系统，Level 装配时注入；R 查看当前页条目说明）
 var info_viewer: Node = null
@@ -92,7 +86,6 @@ var _weapon_providers: Array = []
 @onready var _talk_label: InfoProvider = $InfoData/VBoxData2/Talk
 @onready var _skillinfo: InfoProvider = $InfoData/SkillInfo
 @onready var _skill_flow: HFlowContainer = $InfoData/Skill
-
 @onready var _name: InfoProvider = $BaseInfo/Name
 @onready var _class: InfoProvider = $BaseInfo/Class
 @onready var _lv: InfoProvider = $BaseInfo/LV
@@ -101,21 +94,14 @@ var _weapon_providers: Array = []
 @onready var _max_hp: Label = $BaseInfo/MAXHP
 @onready var _class_card: TextureRect = $BaseInfo/ClassCard
 @onready var _map_sprite: AnimatedSprite2D = $BaseInfo/MapSprite2D
-##属性图标（5G：ClassData.affinity.icon，无属性留空隐藏）
 @onready var _affinity_icon: InfoProvider = $BaseInfo/AffinityIcon
-##支援列表容器与行模板（5G：Weapon&SupportLevel/SupportLevel，模板脱容器隐藏、填充时 duplicate）
 @onready var _support_box: VBoxContainer = $"Weapon&SupportLevel/SupportLevel"
 @onready var _support_row_template: HBoxContainer = $"Weapon&SupportLevel/SupportLevel/character"
-##武器经验容器与模板（升级系统：WeaponClass 行 + WeaponLevel 等级字母，模板脱容器隐藏、填充时 duplicate）
 @onready var _weapon_xp_box: HFlowContainer = $"Weapon&SupportLevel/WeaponXP"
 @onready var _weapon_class_template: HBoxContainer = $"Weapon&SupportLevel/WeaponXP/WeaponClass"
 @onready var _weapon_level_box: HFlowContainer = $"Weapon&SupportLevel/WeaponLevel"
 @onready var _weapon_level_template: Label = $"Weapon&SupportLevel/WeaponLevel/Label"
-
-@onready var _item_rows: Array[ItemRow] = [
-	$Items/VBoxItems/itemrow, $Items/VBoxItems/itemrow2, $Items/VBoxItems/itemrow3,
-	$Items/VBoxItems/itemrow4, $Items/VBoxItems/itemrow5,
-]
+@onready var _item_rows: Array[ItemRow] = [$Items/VBoxItems/itemrow, $Items/VBoxItems/itemrow2, $Items/VBoxItems/itemrow3, $Items/VBoxItems/itemrow4, $Items/VBoxItems/itemrow5]
 
 
 func _ready() -> void:
@@ -132,25 +118,59 @@ func _ready() -> void:
 		var node := get_node_or_null(path)
 		if node != null:
 			_static_providers.append(node)
-		else :
-			print(path)
 
-	##支援行模板脱离容器并隐藏（避免空槽占布局；填充时 duplicate 生成真实行）
-	_support_row_template.get_parent().remove_child(_support_row_template)
-	_support_row_template.visible = false
-	add_child(_support_row_template)
-	##武器经验行/等级字母模板同样脱离容器隐藏（升级系统）
-	_weapon_class_template.get_parent().remove_child(_weapon_class_template)
-	_weapon_class_template.visible = false
-	add_child(_weapon_class_template)
-	_weapon_level_template.get_parent().remove_child(_weapon_level_template)
-	_weapon_level_template.visible = false
-	add_child(_weapon_level_template)
+	##支援与武器经验行/等级字母模板脱离容器隐藏（升级系统）
+	for tmpl in [_support_row_template, _weapon_class_template, _weapon_level_template]:
+		tmpl.get_parent().remove_child(tmpl)
+		tmpl.visible = false
+		add_child(tmpl)
+
+	##方案A：为八项能力与体格按钮附加绿色加成标签（零侵入，不破坏 tscn 与焦点关系）
+	for btn in _stat_labels:
+		_setup_bonus_label(btn)
+	_setup_bonus_label(_con_label)
+
+
+func _setup_bonus_label(btn: Button) -> void:
+	if btn == null or btn.has_node("BonusLabel"):
+		return
+	var lbl := Label.new()
+	lbl.name = "BonusLabel"
+	lbl.position = Vector2(27, 1)
+	lbl.size = Vector2(24, 14)
+	lbl.add_theme_font_size_override("font_size", 9)
+	lbl.add_theme_color_override("font_color", Color(0.25, 0.95, 0.35))
+	lbl.add_theme_constant_override("outline_size", 2)
+	lbl.add_theme_color_override("font_outline_color", Color(0, 0, 0, 1))
+	lbl.visible = false
+	btn.add_child(lbl)
+
+
+func _apply_stat_display(btn: InfoProvider, base_val: int, eff_val: int) -> void:
+	var bonus := eff_val - base_val
+	var bonus_lbl = btn.get_node_or_null("BonusLabel") as Label
+	btn.text = str(base_val)
+	btn.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	if bonus != 0 and bonus_lbl != null:
+		bonus_lbl.text = ("+%d" if bonus > 0 else "%d") % bonus
+		bonus_lbl.add_theme_color_override("font_color", Color(0.25, 0.95, 0.35) if bonus > 0 else Color(1.0, 0.4, 0.3))
+		var font: Font = btn.get_theme_font("font")
+		var font_sz: int = btn.get_theme_font_size("font_size")
+		var text_w: float = font.get_string_size(btn.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_sz if font_sz > 0 else 10).x if font != null else (btn.text.length() * 6.0)
+		var btn_w: float = btn.size.x if btn.size.x > 0.0 else 40.0
+		bonus_lbl.position = Vector2((btn_w + text_w) * 0.5 + 1.0, 1.0)
+		bonus_lbl.visible = true
+	elif bonus_lbl != null:
+		bonus_lbl.visible = false
 
 
 ##显示面板并填充 unit 的当前数据（keep_page 为 true 时保持当前页，切换单位用）
-func show_panel(unit: Unit, keep_page := false) -> void:
+func show_panel(unit: Unit, keep_page := false, in_units: Array = []) -> void:
 	current_unit = unit
+	if not in_units.is_empty():
+		all_units = in_units
+	elif all_units.is_empty() and unit != null and unit.get_parent() != null:
+		all_units = unit.get_parent().get_children().filter(func(n): return n is Unit)
 	_fill(unit)
 	if not keep_page:
 		_page_index = 0
@@ -180,12 +200,9 @@ func set_info_viewer(viewer: Node) -> void:
 		if not info_viewer.viewer_closed.is_connected(_on_info_closed):
 			info_viewer.viewer_closed.connect(_on_info_closed)
 
-func _on_info_focused(target: Control) -> void:
-	_update_cursor(target)
-
+func _on_info_focused(target: Control) -> void: _update_cursor(target)
 func _on_info_closed() -> void:
-	if _cursor != null:
-		_cursor.visible = false
+	if _cursor != null: _cursor.visible = false
 
 ##更新手光标位置：紧贴目标左侧居中；支持 InfoProvider 自定义 cursor_offset
 func _update_cursor(target: Control) -> void:
@@ -233,16 +250,20 @@ func _fill(unit: Unit) -> void:
 		_class.text = "——"
 		_class_card.texture = null
 
-	#八项能力值
+	#八项能力值（方案A：基础属性保持原样，加成属性以绿色 +x 区分显示）
 	for i in STAT_KEYS.size():
 		var key: String = STAT_KEYS[i]
-		_stat_labels[i].text = str(unit.get(key))
+		var base_val: int = unit.get(key) if key in unit else 0
+		var eff_val: int = unit.get_effective_stat(key, all_units) if unit.has_method("get_effective_stat") else base_val
+		_apply_stat_display(_stat_labels[i], base_val, eff_val)
 		_stat_bars[i].custom_maximum_size.x = _get_cap(unit, key)
-		_stat_bars[i].value = unit.get(key)
+		_stat_bars[i].value = eff_val
 
-	_con_label.text = str(unit.con)
+	var base_con: int = unit.con
+	var con_val: int = unit.get_effective_con(all_units) if unit.has_method("get_effective_con") else base_con
+	_apply_stat_display(_con_label, base_con, con_val)
 	_con_bar.custom_maximum_size.x = _get_cap(unit, "con")
-	_con_bar.value = unit.con
+	_con_bar.value = con_val
 
 	#救出（5E 实现救援时填真值）/ 状态异常（未实现）/ 指挥⭐ / 对话对象
 	_rescue_label.text = "——"
@@ -267,27 +288,21 @@ func _fill(unit: Unit) -> void:
 				info.focus_entered.connect(callable)
 
 
-##技能栏：合并职业技能 + 个人技能，动态创建 InfoProvider 并编排 3x2 网格焦点
+##技能栏：展示单位当前所有生效技能（职业 + 个人 + 装备武器附加，上限 6 个）
 func _fill_skills(unit: Unit) -> void:
 	for child in _skill_flow.get_children():
 		child.queue_free()
 	_skill_providers.clear()
-	if unit.class_data == null and unit.personal_skills.is_empty():
+	var skills: Array[Skill] = unit.get_all_active_skills() if unit.has_method("get_all_active_skills") else []
+	if skills.is_empty():
 		_link_skill_focus([])
 		return
-	var skills: Array[Skill] = []
-	if unit.class_data != null:
-		skills.append_array(unit.class_data.skills)
-	skills.append_array(unit.personal_skills)
 	for skill in skills:
 		if skill == null:
 			continue
-		var provider := _create_info_provider(
-			Vector2(16, 16),
-			"技能：%s\n%s" % [skill.display_name, skill.description],
-			Vector2(-120, -50),
-			Vector2(-12, 0)
-		)
+		if _skill_providers.size() >= 6:
+			break
+		var provider := _create_info_provider(Vector2(16, 16), "技能：%s\n%s" % [skill.display_name, skill.description], Vector2(-120, -50), Vector2(-12, 0))
 		provider.icon = skill.icon
 		_skill_flow.add_child(provider)
 		_skill_providers.append(provider)
@@ -395,16 +410,8 @@ func _fill_weapon_page(unit: Unit) -> void:
 
 		##信息查看提供者挂在 Icon 上（覆盖 Button），位置与图标重合
 		var weapon_idx := _weapon_providers.size()
-		var desc := "%s 等级 %s（上限 %s） 经验 %d\n%s" % [
-			WEAPON_TYPE_NAMES.get(type, "武器"),
-			Weapon.rank_to_text(rank), Weapon.rank_to_text(cap), xp,
-			WEAPON_TYPE_INFO.get(type, ""),
-		]
-		var provider := _create_info_provider(
-			Vector2(16, 16), desc,
-			Vector2(-40, 20 if weapon_idx < 2 else -40),
-			Vector2(-12, 0)
-		)
+		var desc := "%s 等级 %s（上限 %s） 经验 %d\n%s" % [WEAPON_TYPE_NAMES.get(type, "武器"), Weapon.rank_to_text(rank), Weapon.rank_to_text(cap), xp, WEAPON_TYPE_INFO.get(type, "")]
+		var provider := _create_info_provider(Vector2(16, 16), desc, Vector2(-40, 20 if weapon_idx < 2 else -40), Vector2(-12, 0))
 		provider.name = "Info"
 		icon_rect.add_child(provider)
 		_weapon_providers.append(provider)

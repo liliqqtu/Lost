@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="2_wdv5d"]
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="3_xyfg7"]
 [ext_resource type="Resource" uid="uid://cadarkaff001" path="res://data/affinity/dark.tres" id="4_aff"]
+[ext_resource type="Resource" uid="uid://fphrk1sp74a7" path="res://data/skills/mitsein.tres" id="5_8oxo5"]
 
 [resource]
 script = ExtResource("2_wdv5d")
 job_name = "暗之贤者"
 job_info = "熟练掌握暗魔法的近战法师"
-info = "一位知识渊博的贤者，人们尊称他为“诗人”"
 class_card = ExtResource("1_hol7c")
 affinity = ExtResource("4_aff")
 cap_str = 24
@@ -20,4 +20,5 @@ cap_luk = 40
 cap_def_h = 22
 cap_res = 28
 cap_move = 6
+skills = Array[ExtResource("3_xyfg7")]([ExtResource("5_8oxo5")])
 metadata/_custom_type_script = "uid://b7tgj14glu46f"

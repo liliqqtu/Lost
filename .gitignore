@@ -3,3 +3,8 @@
 .workbuddy/
 .godot/
 *.md
+!README.md
+!gemini.md
+!docs/**
+!问题.md
+!心得.md

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://bqrcvaxy2l1a6"]
+
+[ext_resource type="Texture2D" uid="uid://dk6jn14gd25tt" path="res://assets/graphics/skill/笃行.png" id="1_tttcf"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_waw47"]
+
+[resource]
+script = ExtResource("1_waw47")
+skill_id = &"relentless_advance"
+display_name = "笃行"
+icon = ExtResource("1_tttcf")
+description = "攻击结束后获得一次再次行动机会（每回合限一次）"
+trigger = 3
+metadata/_custom_type_script = "uid://ya11tcahbnio"

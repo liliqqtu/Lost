@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ee4d6cvpch42"]
+
+[ext_resource type="Texture2D" uid="uid://cv31k0vsbn62l" path="res://assets/graphics/Item Icons/Bows/勇者之弓.png" id="1_jcfjx"]
+[ext_resource type="Script" uid="uid://d4d43f53sv7ne" path="res://scripts/weapon.gd" id="2_nvfgd"]
+
+[resource]
+script = ExtResource("2_nvfgd")
+required_rank = 3
+weapon_type = 3
+might = 9
+weight = 12
+durability = 30
+max_durability = 30
+min_range = 2
+max_range = 2
+item_id = &"brave_bow"
+display_name = "勇者之弓"
+description = "可以连续攻击的武器"
+icon = ExtResource("1_jcfjx")
+is_brave = true
+metadata/_custom_type_script = "uid://d4d43f53sv7ne"

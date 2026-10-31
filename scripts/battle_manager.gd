@@ -20,6 +20,7 @@ enum State {
 	CURSOR,
 	UNIT_SELECTED,
 	MOVING,
+	WEAPON_SELECT,
 	TARGET_SELECT,
 	ACTION_MENU,
 	ENEMY_TURN,
@@ -142,6 +143,10 @@ func set_convoy_panel(panel: Node) -> void:
 func set_item_menu(menu: Node) -> void:
 	commands.set_item_menu(menu)
 
+##设置武器选择界面
+func set_weapon_select_menu(menu: Node) -> void:
+	commands.set_weapon_select_menu(menu)
+
 ##设置交换界面（5F）
 func set_trade_menu(menu: Node) -> void:
 	commands.set_trade_menu(menu)
@@ -188,6 +193,8 @@ func handle_input(event: InputEvent) -> void:
 			_handle_unit_selected_input(event)
 		State.MOVING:
 			pass
+		State.WEAPON_SELECT:
+			commands.handle_weapon_select_input(event)
 		State.TARGET_SELECT:
 			commands.handle_target_select_input(event)
 		State.ACTION_MENU:
@@ -313,7 +320,7 @@ func _handle_cursor_input(event: InputEvent) -> void:
 		##光标停在任意单位上（不分敌我）打开人物信息面板
 		var unit := _get_unit_at(cursor.cell)
 		if unit != null and commands.unit_info_panel != null:
-			commands.unit_info_panel.show_panel(unit)
+			commands.unit_info_panel.show_panel(unit, false, units)
 			state = State.UNIT_INFO
 			cursor.set_process(false)
 
@@ -485,6 +492,19 @@ func _end_action(allow_canto := true) -> void:
 	if selected_unit != null and is_instance_valid(selected_unit) and not selected_unit.is_queued_for_deletion():
 		var was_attack := _last_action_was_attack
 		_last_action_was_attack = false
+
+		##【笃行】特技判定：攻击后可以再次行动并攻击，每回合限一次
+		if was_attack and selected_unit.has_method("has_act_again_skill") and selected_unit.has_act_again_skill() \
+				and not selected_unit.relentless_advance_triggered_this_turn:
+			selected_unit.relentless_advance_triggered_this_turn = true
+			selected_unit.has_acted = false
+			selected_unit.remove_grayscale()
+			selected_unit.play_idle_animation()
+			selected_unit.canto_remaining = selected_unit.get_effective_move()
+			print("%s 触发【笃行】：本回合获得再次行动机会！" % selected_unit.unit_name)
+			finalize_action()
+			return
+
 		var can_canto := false
 		if was_attack:
 			can_canto = selected_unit.can_canto_after_attack()

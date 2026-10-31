@@ -129,19 +129,32 @@ func _update_textbox_position(provider) -> void:
 		var row_size: Vector2 = provider.size
 		var box_size: Vector2 = _textbox.size
 
-		var pos_x: float
-		##如果物品在屏幕右半边，文字框放左侧；如果在左半边，文字框放右侧
-		if row_pos.x + row_size.x * 0.5 > view_w * 0.5:
-			pos_x = row_pos.x - box_size.x - 6.0
-			if pos_x < 4.0:
-				pos_x = 4.0
+		## 垂直排版：上下原则（复刻 GBA 火焰纹章）
+		## 避免描述框遮挡正在查看的物品行及手光标。
+		## 屏幕上半部分（row_pos.y < 70）优先向下展开；下半部分优先向上展开。
+		var fits_below := (row_pos.y + row_size.y + 2.0 + box_size.y <= view_h - 4.0)
+		var fits_above := (row_pos.y - 2.0 - box_size.y >= 4.0)
+		var pos_y: float
+		if row_pos.y < 70.0:
+			if fits_below:
+				pos_y = row_pos.y + row_size.y + 2.0
+			elif fits_above:
+				pos_y = row_pos.y - box_size.y - 2.0
+			else:
+				pos_y = clampf(row_pos.y + row_size.y + 2.0, 4.0, view_h - box_size.y - 4.0)
 		else:
-			pos_x = row_pos.x + row_size.x + 6.0
-			if pos_x + box_size.x > view_w - 4.0:
-				pos_x = view_w - box_size.x - 4.0
+			if fits_above:
+				pos_y = row_pos.y - box_size.y - 2.0
+			elif fits_below:
+				pos_y = row_pos.y + row_size.y + 2.0
+			else:
+				pos_y = clampf(row_pos.y - box_size.y - 2.0, 4.0, view_h - box_size.y - 4.0)
 
-		##Y 坐标跟随当前物品行垂直居中偏上，限制在屏幕边界内不出屏
-		var pos_y: float = row_pos.y - 8.0
-		pos_y = clampf(pos_y, 4.0, view_h - box_size.y - 4.0)
+		## 水平排版：
+		## 从物品节点左侧一点起步（对齐手光标/物品左缘），向右展开；
+		## 若向右展开超出屏幕右边缘（留 4px 边距），则自动向左平移，确保完整容纳于屏幕内。
+		var target_left: float = row_pos.x - 12.0
+		var pos_x: float = minf(target_left, view_w - box_size.x - 4.0)
+		pos_x = clampf(pos_x, 4.0, view_w - box_size.x - 4.0)
 
 		_textbox.set_pos(Vector2(pos_x, pos_y))

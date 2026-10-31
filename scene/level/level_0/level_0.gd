@@ -103,3 +103,7 @@ func _seed_convoy() -> void:
 	ConvoyStore.add(potion1)
 	var potion2: Consumable = POTION_TRES.duplicate()
 	ConvoyStore.add(potion2)
+	var brave_bow = load("res://data/items/weapon_brave_bow.tres").duplicate()
+	ConvoyStore.add(brave_bow)
+	var s_bow = load("res://data/items/weapon_snapped_string_bow.tres").duplicate()
+	ConvoyStore.add(s_bow)

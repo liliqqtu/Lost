@@ -48,18 +48,18 @@ func show_forecast(attacker: Unit, sequence: Array[Dictionary]) -> void:
 		return
 	var defender: Unit = sequence[0]["defender"]
 
-	var player_doubles := _has_double(sequence, attacker)
-	var enemy_doubles := _has_double(sequence, defender)
+	var player_strikes := _count_strikes(sequence, attacker)
+	var enemy_strikes := _count_strikes(sequence, defender)
 
 	set_player_name(attacker)
-	set_player_dph(_get_first_strike(sequence, attacker), attacker, player_doubles)
+	set_player_dph(_get_first_strike(sequence, attacker), attacker, player_strikes >= 2)
 	set_player_weapon(attacker)
 
 	set_enemy_name(defender)
-	set_enemy_dph(_get_first_strike(sequence, defender), defender, enemy_doubles)
+	set_enemy_dph(_get_first_strike(sequence, defender), defender, enemy_strikes >= 2)
 	set_enemy_weapon(defender)
 
-	_update_chase(player_doubles, enemy_doubles, sequence, attacker, defender)
+	_update_chase(player_strikes, enemy_strikes)
 
 	self.visible = true
 
@@ -125,23 +125,21 @@ func _dph_text(strike: Dictionary, unit: Unit, _doubles: bool) -> String:
 
 
 ##更新追击指示图标（Chase/TextureRect）：我方追击在右侧(64,48)，敌方追击在左侧(21,48)
-func _update_chase(player_doubles: bool, enemy_doubles: bool, sequence: Array[Dictionary], attacker: Unit, defender: Unit) -> void:
+func _update_chase(player_strikes: int, enemy_strikes: int) -> void:
 	if _chase == null or _chase_sprite == null:
 		return
-	if player_doubles:
+	if player_strikes >= 2:
 		_chase.position = Vector2(64, 48)
 		_chase.visible = true
-		var strikes := _count_strikes(sequence, attacker)
-		var times := 4 if strikes >= 4 else 2
+		var times := 4 if player_strikes >= 4 else 2
 		if _chase_sprite.has_method("set_chase"):
 			_chase_sprite.set_chase(times)
 		else:
 			_chase_sprite.visible = true
-	elif enemy_doubles:
+	elif enemy_strikes >= 2:
 		_chase.position = Vector2(21, 48)
 		_chase.visible = true
-		var strikes := _count_strikes(sequence, defender)
-		var times := 4 if strikes >= 4 else 2
+		var times := 4 if enemy_strikes >= 4 else 2
 		if _chase_sprite.has_method("set_chase"):
 			_chase_sprite.set_chase(times)
 		else:

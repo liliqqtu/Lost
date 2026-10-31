@@ -18,6 +18,7 @@ extends Node2D
 const UNIT_SCENE := preload("res://scene/character/unit.tscn")
 const FORECAST_SCENE := preload("res://scene/ui/battle_preview.tscn")
 const ACTION_MENU_SCRIPT := preload("res://scripts/action_menu.gd")
+const WEAPON_SELECT_MENU_SCRIPT := preload("res://scripts/weapon_select_menu.gd")
 const ITEM_MENU_SCRIPT := preload("res://scripts/item_menu.gd")
 const TRADE_MENU_SCRIPT := preload("res://scripts/trade_menu.gd")
 const TALK_SCENE := preload("res://scene/ui/talk.tscn")
@@ -63,6 +64,7 @@ func _ready() -> void:
 	_setup_units()
 	_setup_battle_forecast()
 	_setup_action_menu()
+	_setup_weapon_select_menu()
 	_setup_item_menu()
 	_setup_trade()
 	_setup_convoy()
@@ -111,6 +113,13 @@ func _setup_action_menu() -> void:
 	ui_layer.add_child(menu)
 	menu.setup(_build_action_menu_panel())
 	battle_manager.set_action_menu(menu)
+
+
+##初始化武器选择界面（攻击前选择武器与预览属性）
+func _setup_weapon_select_menu() -> void:
+	var menu := WEAPON_SELECT_MENU_SCRIPT.new()
+	$CanvasLayer.add_child(menu)
+	battle_manager.set_weapon_select_menu(menu)
 
 
 ##初始化物品菜单（阶段五 5D）：面板代码构建，挂在 CanvasLayer 下

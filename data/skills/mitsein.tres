@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://fphrk1sp74a7"]
+
+[ext_resource type="Texture2D" uid="uid://dhg8m2a8xe2qa" path="res://assets/graphics/skill/公在.png" id="1_ax2fe"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="2_s7224"]
+
+[resource]
+script = ExtResource("2_s7224")
+skill_id = &"mitsein"
+display_name = "公在"
+icon = ExtResource("1_ax2fe")
+description = "临近2格所有友军双防+2"
+stat_modifiers = {
+"def_h": 2,
+"res": 2
+}
+bonus_def = 2
+bonus_res = 2
+aura_range = 2
+metadata/_custom_type_script = "uid://ya11tcahbnio"

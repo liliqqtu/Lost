@@ -36,17 +36,19 @@ static func get_triangle(attacker: Unit, defender: Unit) -> int:
 
 
 ##攻速（AS）：速度 - max(0, 武器重量 - 体格)，无武器按速度
-static func get_attack_speed(unit: Unit) -> int:
+static func get_attack_speed(unit: Unit, units: Array = []) -> int:
+	var spd: int = unit.get_effective_spd(units) if unit.has_method("get_effective_spd") else unit.spd
+	var con: int = unit.get_effective_con(units) if unit.has_method("get_effective_con") else unit.con
 	var weapon := unit.current_weapon
 	if not weapon:
-		return unit.spd
-	return unit.spd - maxi(0, weapon.weight - unit.con)
+		return spd
+	return spd - maxi(0, weapon.weight - con)
 
 
 ##伤害：攻击力 + 三角相克 - 防御（按攻击武器类型选择守备/魔防，含防御方地形加成）
-static func calculate_damage(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null) -> int:
-	var atk := _get_attack_power(attacker) + get_triangle(attacker, defender) * TRIANGLE_DAMAGE
-	var defense := _get_defense(attacker, defender) + _terrain_def_bonus(defender, tile_map)
+static func calculate_damage(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null, units: Array = []) -> int:
+	var atk := _get_attack_power(attacker, units) + get_triangle(attacker, defender) * TRIANGLE_DAMAGE
+	var defense := _get_defense(attacker, defender, units) + _terrain_def_bonus(defender, tile_map)
 	return max(atk - defense, 0)
 
 
@@ -54,12 +56,15 @@ static func calculate_damage(attacker: Unit, defender: Unit, tile_map: TileMapLa
 ##units 传入当前地图全部单位时结算支援加成（支援对象 3 格内生效，SupportStore 查表），为空则支援按 0（旧调用兼容）
 static func calculate_hit_rate(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null, units: Array = []) -> int:
 	var weapon := attacker.current_weapon
-	var hit := (weapon.hit + attacker.skl * 2 + attacker.luk / 2) if weapon else 0
+	var a_skl: int = attacker.get_effective_skl(units) if attacker.has_method("get_effective_skl") else attacker.skl
+	var a_luk: int = attacker.get_effective_luk(units) if attacker.has_method("get_effective_luk") else attacker.luk
+	var d_luk: int = defender.get_effective_luk(units) if defender.has_method("get_effective_luk") else defender.luk
+	var hit := (weapon.hit + a_skl * 2 + a_luk / 2) if weapon else 0
 	hit += get_triangle(attacker, defender) * TRIANGLE_HIT
 	var support_a := SupportStore.get_support_bonus(attacker, units)
 	var support_d := SupportStore.get_support_bonus(defender, units)
 	hit += support_a["hit"]
-	var avoid := get_attack_speed(defender) * 2 + defender.luk + _terrain_avoid_bonus(defender, tile_map) + support_d["avoid"] as int
+	var avoid := get_attack_speed(defender, units) * 2 + d_luk + _terrain_avoid_bonus(defender, tile_map) + support_d["avoid"] as int
 	return clampi(hit - avoid, 0, 100)
 
 
@@ -69,14 +74,16 @@ static func calculate_crit_rate(attacker: Unit, defender: Unit, units: Array = [
 	var weapon := attacker.current_weapon
 	if not weapon:
 		return 0
-	var crit := weapon.crit + attacker.skl / 2 - defender.luk
+	var a_skl: int = attacker.get_effective_skl(units) if attacker.has_method("get_effective_skl") else attacker.skl
+	var d_luk: int = defender.get_effective_luk(units) if defender.has_method("get_effective_luk") else defender.luk
+	var crit := weapon.crit + a_skl / 2 - d_luk
 	crit += SupportStore.get_support_bonus(attacker, units)["crit"]
 	return max(crit, 0)
 
 
 ##追击判定：攻速差 >= 4
-static func can_double(attacker: Unit, defender: Unit) -> bool:
-	return get_attack_speed(attacker) >= get_attack_speed(defender) + 4
+static func can_double(attacker: Unit, defender: Unit, units: Array = []) -> bool:
+	return get_attack_speed(attacker, units) >= get_attack_speed(defender, units) + 4
 
 
 ##反击判定：防御方有武器且攻击距离在其武器射程内（被动技能如仿徨影响防御方有效射程）
@@ -91,7 +98,7 @@ static func can_counter(attacker: Unit, defender: Unit) -> bool:
 
 
 ##生成战斗序列（纯数据，无随机），供战斗预览 UI 与实际结算共用
-##顺序：攻方打击 -> 防御方反击 -> 攻方追击 -> 防方追击
+##顺序：攻方打击 -> 防御方反击 -> 攻方追击 -> 防方追击（勇者武器则该轮连续打 2 次）
 ##保留防御方反击与追击数据（用于预览与战斗画面展示；实际战斗结算遇阵亡由 BattleCombat 中断）
 ##每项：{attacker, defender, damage, hit, crit, is_counter, is_double}
 ##tile_map 传入时结算双方地形加成，为空则地形按 0/0 处理
@@ -99,24 +106,39 @@ static func can_counter(attacker: Unit, defender: Unit) -> bool:
 static func generate_battle_sequence(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null, units: Array = []) -> Array[Dictionary]:
 	var sequence: Array[Dictionary] = []
 
-	var attacker_doubles := can_double(attacker, defender)
-	var defender_doubles := can_double(defender, attacker)
+	var attacker_doubles := can_double(attacker, defender, units)
+	var defender_doubles := can_double(defender, attacker, units)
 	##防御方射程外不能反击，追击与反击共享射程判定（GBA 行为）
 	var defender_can_strike := can_counter(attacker, defender)
 
+	var a_brave: bool = attacker.current_weapon != null and attacker.current_weapon.is_brave_weapon()
+	var d_brave: bool = defender.current_weapon != null and defender.current_weapon.is_brave_weapon()
+
 	_append_strike(sequence, attacker, defender, false, false, tile_map, units)
+	if a_brave:
+		_append_strike(sequence, attacker, defender, false, false, tile_map, units)
+
 	if defender_can_strike:
 		_append_strike(sequence, defender, attacker, true, false, tile_map, units)
+		if d_brave:
+			_append_strike(sequence, defender, attacker, true, false, tile_map, units)
+
 	if attacker_doubles:
 		_append_strike(sequence, attacker, defender, false, true, tile_map, units)
+		if a_brave:
+			_append_strike(sequence, attacker, defender, false, true, tile_map, units)
+
 	if defender_doubles and defender_can_strike:
 		_append_strike(sequence, defender, attacker, false, true, tile_map, units)
+		if d_brave:
+			_append_strike(sequence, defender, attacker, false, true, tile_map, units)
+
 	return sequence
 
 
 ##追加一次打击到序列
 static func _append_strike(sequence: Array[Dictionary], a: Unit, d: Unit, is_counter: bool, is_double: bool, tile_map: TileMapLayer, units: Array) -> void:
-	var damage := calculate_damage(a, d, tile_map)
+	var damage := calculate_damage(a, d, tile_map, units)
 	sequence.append({
 		"attacker": a,
 		"defender": d,
@@ -129,21 +151,24 @@ static func _append_strike(sequence: Array[Dictionary], a: Unit, d: Unit, is_cou
 
 
 ##攻击力：魔法武器用魔力，物理武器用力量，无武器裸力量
-static func _get_attack_power(unit: Unit) -> int:
+static func _get_attack_power(unit: Unit, units: Array = []) -> int:
 	var weapon := unit.current_weapon
-	if not weapon:
-		return unit.str
-	if weapon.weapon_type == WeaponRef.WeaponType.ANIMA or weapon.weapon_type == WeaponRef.WeaponType.DARK or weapon.weapon_type == WeaponRef.WeaponType.LIGHT:
-		return unit.mag + weapon.might
-	return unit.str + weapon.might
+	var is_magic := weapon != null and (weapon.weapon_type == WeaponRef.WeaponType.ANIMA or weapon.weapon_type == WeaponRef.WeaponType.DARK or weapon.weapon_type == WeaponRef.WeaponType.LIGHT)
+	var stat := 0
+	if is_magic:
+		stat = unit.get_effective_mag(units) if unit.has_method("get_effective_mag") else unit.mag
+	else:
+		stat = unit.get_effective_str(units) if unit.has_method("get_effective_str") else unit.str
+	return stat + (weapon.might if weapon else 0)
 
 
 ##防御：魔法攻击对魔防，物理攻击对守备
-static func _get_defense(attacker: Unit, defender: Unit) -> int:
+static func _get_defense(attacker: Unit, defender: Unit, units: Array = []) -> int:
 	var weapon := attacker.current_weapon
-	if weapon and (weapon.weapon_type == WeaponRef.WeaponType.ANIMA or weapon.weapon_type == WeaponRef.WeaponType.DARK or weapon.weapon_type == WeaponRef.WeaponType.LIGHT):
-		return defender.res
-	return defender.def_h
+	var is_magic := weapon != null and (weapon.weapon_type == WeaponRef.WeaponType.ANIMA or weapon.weapon_type == WeaponRef.WeaponType.DARK or weapon.weapon_type == WeaponRef.WeaponType.LIGHT)
+	if is_magic:
+		return defender.get_effective_res(units) if defender.has_method("get_effective_res") else defender.res
+	return defender.get_effective_def(units) if defender.has_method("get_effective_def") else defender.def_h
 
 
 ##"""单位所在地形的守备加成，无地图时按 0"""

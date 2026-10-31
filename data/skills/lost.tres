@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Skill" format=3 uid="uid://b8f1lost00001"]
 
-[ext_resource type="Texture2D" uid="uid://cnigsgv0lt3t3" path="res://assets/graphics/UI/skill/仿徨.png" id="1_lhfxl"]
+[ext_resource type="Texture2D" uid="uid://cnigsgv0lt3t3" path="res://assets/graphics/skill/仿徨.png" id="1_lhfxl"]
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_skill"]
 
 [resource]
