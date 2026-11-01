@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdlcoqc51umkm"
-path="res://.godot/imported/安达隆传奇-8.png-a57d6bd57889f8911f173d6a08e9b5ae.ctex"
+uid="uid://cqq2vb2uci2w0"
+path="res://.godot/imported/MyPixel13_opaque.png-6f9ad32f9308d841def20dccad3f1518.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tests/安达隆传奇-8.png"
-dest_files=["res://.godot/imported/安达隆传奇-8.png-a57d6bd57889f8911f173d6a08e9b5ae.ctex"]
+source_file="res://assets/fonts/MyPixel13_opaque.png"
+dest_files=["res://.godot/imported/MyPixel13_opaque.png-6f9ad32f9308d841def20dccad3f1518.ctex"]
 
 [params]
 

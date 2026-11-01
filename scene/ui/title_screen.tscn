@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scene/ui/title_screen.gd" id="1_ts001"]
+[ext_resource type="Texture2D" uid="uid://decq4d4ve36w6" path="res://assets/graphics/UI/界面标题.png" id="2_pgr5r"]
+[ext_resource type="Shader" uid="uid://cbe5n44jae1m6" path="res://data/shader/press_start.gdshader" id="3_rwnin"]
+[ext_resource type="Texture2D" uid="uid://dvqm1nl3lvuhn" path="res://assets/graphics/UI/01.png" id="4_6jh0p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oq5r2"]
+shader = ExtResource("3_rwnin")
+shader_parameter/flash_speed = 4.0
+shader_parameter/min_brightness = 0.30000001425
+shader_parameter/max_brightness = 0.7010000332975
+shader_parameter/flash_color = Color(0.3137255, 0.1882353, 0.09411765, 1)
+shader_parameter/color_tolerance = 0.1
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts001")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_pgr5r")
+
+[node name="PressStart" type="TextureRect" parent="BG"]
+material = SubResource("ShaderMaterial_oq5r2")
+layout_mode = 0
+offset_left = 80.0
+offset_top = 107.0
+offset_right = 160.0
+offset_bottom = 123.0
+texture = ExtResource("4_6jh0p")

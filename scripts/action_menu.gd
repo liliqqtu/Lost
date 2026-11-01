@@ -4,7 +4,7 @@ class_name ActionMenu
 ##行动菜单（阶段四）：单位移动后弹出 物品 / 待机 / 运输队
 ##阶段五 5E：动态附加项（访问/开启/对话）追加在固定项之上
 ##阶段五 5A 升级：攻击也归入动态附加项（仅在攻击范围内有敌人时显示），
-##实际菜单顺序 = 攻击 / 访问 / 开启 / 对话 / 救援 / 放下 / 交接 / 物品 / 待机 / 运输队
+##实际菜单顺序 = 攻击 / 访问 / 开启 / 对话 / 救援 / 放下 / 交接 / 物品 / 待机 / 运输队 / 保存 / 主菜单
 ##5F/UI 升级：背景用 scene/ui/itemsbox.tscn 九宫格（宽 48），
 ##size.y 随可见选项数量动态调整（原版效果）；手光标 scene/ui/cursorhand.tscn 跟随选中项
 ##绑定模式与 BattleForecast 一致：按名称绑定面板子节点，节点可由代码或编辑器创建
@@ -134,6 +134,14 @@ func _visible_labels() -> Array[Label]:
 ##最后一个可见菜单项的索引（= 可见项数 - 1）
 func _max_visible_index() -> int:
 	return _visible_labels().size() - 1
+
+
+##当前选中项文本
+func get_selected_text() -> String:
+	var labels := _visible_labels()
+	if _selected >= 0 and _selected < labels.size():
+		return labels[_selected].text
+	return ""
 
 
 ##当前选中项索引

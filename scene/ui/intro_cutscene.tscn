@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scene/ui/intro_cutscene.gd" id="1_ic001"]
+[ext_resource type="Texture2D" path="res://assets/graphics/cutscene/intro_bg_1.png" id="2_bg1"]
+[ext_resource type="LabelSettings" uid="uid://cjcmub2qdfi1h" path="res://assets/graphics/UI/label_settings.tres" id="3_font"]
+
+[node name="IntroCutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ic001")
+
+[node name="BgUnder" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_bg1")
+expand_mode = 1
+
+[node name="BgOver" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+expand_mode = 1
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="Header" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 24.0
+
+[node name="LblSubtitle" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 230.0
+offset_bottom = 20.0
+text = "序幕 · 存在与虚无 (1/4)"
+label_settings = ExtResource("3_font")
+horizontal_alignment = 1
+
+[node name="LblText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 28.0
+offset_right = 222.0
+offset_bottom = 136.0
+text = "很久以前……"
+label_settings = ExtResource("3_font")
+autowrap_mode = 3
+
+[node name="Footer" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 138.0
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="LblPrompt" type="Label" parent="Footer"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 230.0
+offset_bottom = 18.0
+text = "Z 继续    Space 跳过"
+label_settings = ExtResource("3_font")
+horizontal_alignment = 1

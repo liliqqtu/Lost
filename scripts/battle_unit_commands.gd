@@ -162,6 +162,14 @@ func _on_menu_confirmed(index: int) -> void:
 				convoy_panel.show_panel(bm.selected_unit)
 				bm.state = BattleManager.State.CONVOY
 				bm.cursor.set_process(false)
+		3:
+			##保存
+			action_menu.close()
+			bm.save_game()
+		4:
+			##主菜单
+			action_menu.close()
+			bm.prompt_return_to_title()
 
 
 ##取消行动：单位撤回移动前的位置，重新进入选中状态

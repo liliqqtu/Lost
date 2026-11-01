@@ -15,6 +15,10 @@ class_name BattleManager
 
 ##回合开始时广播（team 0 玩家 1 敌方），关卡脚本用于播放回合横幅
 signal turn_started(team: int)
+##地图系统菜单与全局交互请求
+signal map_menu_requested
+signal save_requested
+signal return_to_title_requested
 
 enum State {
 	CURSOR,
@@ -310,12 +314,15 @@ func _handle_cursor_input(event: InputEvent) -> void:
 		var enemy := _get_unit_at(cursor.cell)
 		if enemy != null and enemy.team == 1 and enemy.carried_by == null:
 			range_inspect.toggle_single(enemy)
+			return
+		##空地点击：触发地图系统菜单
+		map_menu_requested.emit()
 	elif event.is_action_pressed("no"):
 		##查看中的敌人范围随取消键关闭
 		range_inspect.clear_display()
 	elif event.is_action_pressed("start"):
-		##显示/关闭全部敌人的攻击范围并集（红色，不显示移动范围）
-		range_inspect.toggle_all()
+		##按菜单键：若未在查看单体威胁，唤出地图系统菜单
+		map_menu_requested.emit()
 	elif event.is_action_pressed("R"):
 		##光标停在任意单位上（不分敌我）打开人物信息面板
 		var unit := _get_unit_at(cursor.cell)
@@ -479,6 +486,14 @@ func finalize_action() -> void:
 		_check_battle_end()
 		if not battle_over and phase == 0:
 			phases.check_player_phase_end()
+
+
+func save_game() -> void:
+	save_requested.emit()
+
+
+func prompt_return_to_title() -> void:
+	return_to_title_requested.emit()
 
 
 ##行动结束（selected_unit 可能已死于反击被移除，需判空）

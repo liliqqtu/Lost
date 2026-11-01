@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://ssbtpvmnatc2"]
+
+[ext_resource type="Script" uid="uid://tbrbd1rmx0gf" path="res://scene/ui/save_slot_menu.gd" id="1_ss001"]
+[ext_resource type="Texture2D" uid="uid://ctc1rpxi5rwf8" path="res://assets/graphics/UI/save_slot_empty.png" id="2_empty"]
+[ext_resource type="Texture2D" uid="uid://celjxvnjqh02f" path="res://assets/graphics/UI/save_bg.png" id="2_s37nf"]
+[ext_resource type="PackedScene" uid="uid://hkvgn16en2gw" path="res://scene/ui/cursorhand.tscn" id="3_cursor"]
+[ext_resource type="Texture2D" uid="uid://36dyriv3q7ht" path="res://assets/graphics/UI/save_slot_active.png" id="3_d5yku"]
+[ext_resource type="Shader" uid="uid://c0ar22ek0cxok" path="res://tests/MyPixel13_transparent.gdshader" id="4_0s60f"]
+[ext_resource type="Texture2D" uid="uid://crx8mf5688a4j" path="res://assets/graphics/UI/物品栏.png" id="4_itemsbox"]
+[ext_resource type="LabelSettings" uid="uid://cjcmub2qdfi1h" path="res://assets/graphics/UI/label_settings.tres" id="5_font"]
+[ext_resource type="FontFile" uid="uid://dnlcxmlvjasil" path="res://assets/fonts/MyPixel13_transparent.fnt" id="5_wdjut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5yku"]
+shader = ExtResource("4_0s60f")
+shader_parameter/main_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0.3, 0.3, 0.3, 1)
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+
+[node name="SaveSlotMenu" type="Control" unique_id=1260256105]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ss001")
+
+[node name="BG" type="TextureRect" parent="." unique_id=827788130]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_s37nf")
+
+[node name="HeaderBar" type="NinePatchRect" parent="." unique_id=1808520753]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 4.0
+offset_right = 160.0
+offset_bottom = 22.0
+texture = ExtResource("3_d5yku")
+
+[node name="HeaderLabel" type="Label" parent="HeaderBar" unique_id=1214313494]
+material = SubResource("ShaderMaterial_d5yku")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_wdjut")
+text = "记录"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="Control" parent="." unique_id=2068849205]
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="Slot1" type="TextureRect" parent="Cards" unique_id=1146510647]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 27.0
+offset_right = 184.0
+offset_bottom = 58.0
+texture = ExtResource("2_empty")
+
+[node name="LblChapter" type="Label" parent="Cards/Slot1" unique_id=1302609131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-- 没有档案 --"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" type="TextureRect" parent="Cards" unique_id=1543979206]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 65.0
+offset_right = 184.0
+offset_bottom = 96.0
+texture = ExtResource("2_empty")
+
+[node name="LblChapter" type="Label" parent="Cards/Slot2" unique_id=961962228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-- 没有档案 --"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" type="TextureRect" parent="Cards" unique_id=1123128774]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 103.0
+offset_right = 184.0
+offset_bottom = 134.0
+texture = ExtResource("2_empty")
+
+[node name="LblChapter" type="Label" parent="Cards/Slot3" unique_id=1793702892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-- 没有档案 --"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayTimePanel" type="NinePatchRect" parent="." unique_id=591936067]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 126.0
+offset_right = 234.0
+offset_bottom = 156.0
+texture = ExtResource("4_itemsbox")
+patch_margin_left = 13
+patch_margin_top = 10
+patch_margin_right = 13
+patch_margin_bottom = 10
+
+[node name="LblPlayTimeTitle" type="Label" parent="PlayTimePanel" unique_id=1993062009]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 15.0
+text = "PLAY-TIME"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+
+[node name="LblPlayTimeValue" type="Label" parent="PlayTimePanel" unique_id=1630634825]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 14.0
+offset_right = 76.0
+offset_bottom = 26.0
+text = "--:--"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+
+[node name="BottomHint" type="Label" parent="." unique_id=1976142696]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 142.0
+offset_right = 140.0
+offset_bottom = 156.0
+text = "Z 确定    X 返回"
+label_settings = ExtResource("5_font")
+
+[node name="CursorHand" parent="." unique_id=1645528718 instance=ExtResource("3_cursor")]
+layout_mode = 0
+offset_top = 34.0
+offset_bottom = 50.0
+
+[node name="ActionPanel" type="NinePatchRect" parent="." unique_id=1540119048]
+visible = false
+layout_mode = 0
+offset_left = 172.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 104.0
+texture = ExtResource("4_itemsbox")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+
+[node name="VBox" type="VBoxContainer" parent="ActionPanel" unique_id=5107627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="ItemContinue" type="Label" parent="ActionPanel/VBox" unique_id=1127389403]
+layout_mode = 2
+text = "继续游戏"
+label_settings = ExtResource("5_font")
+
+[node name="ItemNew" type="Label" parent="ActionPanel/VBox" unique_id=91173863]
+layout_mode = 2
+text = "新建游戏"
+label_settings = ExtResource("5_font")
+
+[node name="ItemDelete" type="Label" parent="ActionPanel/VBox" unique_id=997585858]
+layout_mode = 2
+text = "删除存档"
+label_settings = ExtResource("5_font")
+
+[node name="ItemBack" type="Label" parent="ActionPanel/VBox" unique_id=2162267]
+layout_mode = 2
+text = "返回"
+label_settings = ExtResource("5_font")
+
+[node name="ActionCursor" parent="ActionPanel" unique_id=275649309 instance=ExtResource("3_cursor")]
+layout_mode = 0
+offset_top = 34.0
+offset_bottom = 50.0
+
+[node name="ConfirmDialog" type="NinePatchRect" parent="." unique_id=1463554118]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 52.0
+offset_right = 210.0
+offset_bottom = 108.0
+texture = ExtResource("4_itemsbox")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+
+[node name="PromptLabel" type="Label" parent="ConfirmDialog" unique_id=193061256]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 8.0
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "覆盖此档案开始新游戏？"
+label_settings = ExtResource("5_font")
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="ConfirmDialog" unique_id=1156570795]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="BtnYes" type="Label" parent="ConfirmDialog/HBox" unique_id=199863714]
+layout_mode = 2
+text = "确定"
+label_settings = ExtResource("5_font")
+
+[node name="BtnNo" type="Label" parent="ConfirmDialog/HBox" unique_id=1868637117]
+layout_mode = 2
+text = "取消"
+label_settings = ExtResource("5_font")
+
+[node name="ConfirmCursor" parent="ConfirmDialog" unique_id=1821743219 instance=ExtResource("3_cursor")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 32.0
+offset_right = 58.0
+offset_bottom = 48.0

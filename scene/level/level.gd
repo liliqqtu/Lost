@@ -30,6 +30,7 @@ const UNIT_INFO_PANEL_SCENE := preload("res://scene/ui/unit_info_panel.tscn")
 const INFO_VIEWER_SCRIPT := preload("res://scripts/info_viewer.gd")
 ##九宫格背景（行动菜单/物品栏共用，5F/UI 升级）
 const ITEMSBOX_SCENE := preload("res://scene/ui/itemsbox.tscn")
+const LEVEL_SYSTEM_UI_SCRIPT := preload("res://scripts/level_system_ui.gd")
 
 ##通用物品模板与武器图标（武器工厂用）
 const POTION_TRES := preload("res://data/items/consumable_potion.tres")
@@ -68,6 +69,7 @@ func _ready() -> void:
 	_setup_item_menu()
 	_setup_trade()
 	_setup_convoy()
+	_setup_system_ui()
 	_setup_battle_animation()
 	_setup_unit_info_panel()
 	_setup_info_viewer()
@@ -187,10 +189,10 @@ func _build_action_menu_panel() -> Control:
 	vbox.position = Vector2(13, 13)
 	vbox.add_theme_constant_override("separation", 0)
 	panel.add_child(vbox)
-	for text in ["物品", "待机", "运输队"]:
+	for text in ["物品", "待机", "运输队", "保存", "主菜单"]:
 		var label := Label.new()
 		label.text = text
-		label.custom_minimum_size = Vector2(22, 10)
+		label.custom_minimum_size = Vector2(28, 10)
 		label.label_settings = label_setting
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		vbox.add_child(label)
@@ -347,4 +349,15 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if system_ui != null and system_ui.handle_input(event):
+		return
 	battle_manager.handle_input(event)
+
+
+##==================== 系统级 UI 委托 ====================
+
+var system_ui: LevelSystemUI = null
+
+
+func _setup_system_ui() -> void:
+	system_ui = LEVEL_SYSTEM_UI_SCRIPT.new(self, battle_manager, $CanvasLayer, camera, cursor_node, label_setting)
