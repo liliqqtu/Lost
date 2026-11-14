@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" uid="uid://d4d43f53sv7ne" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/Staff/回复之杖.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"staff_heal"
+display_name = "回复之杖"
+description = "治愈同伴伤势的基础法杖"
+icon = ExtResource("2_icon")
+weapon_type = 7
+might = 10
+hit = 100
+crit = 0
+weight = 2
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1

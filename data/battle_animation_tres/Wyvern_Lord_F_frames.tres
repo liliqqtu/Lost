@@ -1,0 +1,783 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_000.png" id="1_lance_Lance_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_001.png" id="2_lance_Lance_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_002.png" id="3_lance_Lance_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_003.png" id="4_lance_Lance_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_004.png" id="5_lance_Lance_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_005.png" id="6_lance_Lance_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_006.png" id="7_lance_Lance_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_007.png" id="8_lance_Lance_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_008.png" id="9_lance_Lance_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_009.png" id="10_lance_Lance_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_010.png" id="11_lance_Lance_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_011.png" id="12_lance_Lance_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_012.png" id="13_lance_Lance_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_013.png" id="14_lance_Lance_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_014.png" id="15_lance_Lance_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_015.png" id="16_lance_Lance_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_016.png" id="17_lance_Lance_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_017.png" id="18_lance_Lance_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_018.png" id="19_lance_Lance_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_019.png" id="20_lance_Lance_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_020.png" id="21_lance_Lance_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_021.png" id="22_lance_Lance_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_022.png" id="23_lance_Lance_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_023.png" id="24_lance_Lance_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_024.png" id="25_lance_Lance_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_025.png" id="26_lance_Lance_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_026.png" id="27_lance_Lance_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_027.png" id="28_lance_Lance_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_028.png" id="29_lance_Lance_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_029.png" id="30_lance_Lance_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_030.png" id="31_lance_Lance_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_031.png" id="32_lance_Lance_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_032.png" id="33_lance_Lance_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_033.png" id="34_lance_Lance_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_034.png" id="35_lance_Lance_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_035.png" id="36_lance_Lance_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_036.png" id="37_lance_Lance_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_037.png" id="38_lance_Lance_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_038.png" id="39_lance_Lance_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_039.png" id="40_lance_Lance_039_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_040.png" id="41_lance_Lance_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_041.png" id="42_lance_Lance_041_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_042.png" id="43_lance_Lance_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_043.png" id="44_lance_Lance_043_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_044.png" id="45_lance_Lance_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_045.png" id="46_lance_Lance_045_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_046.png" id="47_lance_Lance_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_047.png" id="48_lance_Lance_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_048.png" id="49_lance_Lance_048_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_049.png" id="50_lance_Lance_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Wyvern_Lord-Base[F]/Lance/Lance_050.png" id="51_lance_Lance_050_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_lance_Lance_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_lance_Lance_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_lance_Lance_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_lance_Lance_006_png")
+}, {
+"duration": 23.0,
+"texture": ExtResource("8_lance_Lance_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_lance_Lance_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lance_Lance_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_lance_Lance_010_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("12_lance_Lance_011_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("13_lance_Lance_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_lance_Lance_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_lance_Lance_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lance_Lance_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lance_Lance_016_png")
+}, {
+"duration": 19.0,
+"texture": ExtResource("18_lance_Lance_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_lance_Lance_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lance_Lance_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lance_Lance_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lance_Lance_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lance_Lance_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_lance_Lance_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_lance_Lance_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_lance_Lance_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("27_lance_Lance_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_lance_Lance_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_lance_Lance_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_lance_Lance_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_lance_Lance_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_lance_Lance_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_lance_Lance_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lance_Lance_033_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("35_lance_Lance_034_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}],
+"loop": false,
+"name": &"lance",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("36_lance_Lance_035_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_lance_Lance_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_lance_Lance_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_lance_Lance_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_lance_Lance_006_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("8_lance_Lance_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_lance_Lance_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lance_Lance_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_lance_Lance_010_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("12_lance_Lance_011_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("13_lance_Lance_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_lance_Lance_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_lance_Lance_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lance_Lance_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lance_Lance_016_png")
+}, {
+"duration": 19.0,
+"texture": ExtResource("18_lance_Lance_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_lance_Lance_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lance_Lance_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lance_Lance_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lance_Lance_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lance_Lance_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_lance_Lance_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_lance_Lance_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_lance_Lance_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("27_lance_Lance_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_lance_Lance_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_lance_Lance_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_lance_Lance_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_lance_Lance_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_lance_Lance_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_lance_Lance_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lance_Lance_033_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("35_lance_Lance_034_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}],
+"loop": false,
+"name": &"lance_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("36_lance_Lance_035_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_lance_Lance_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_lance_Lance_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_lance_Lance_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_lance_Lance_006_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("8_lance_Lance_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_lance_Lance_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lance_Lance_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_lance_Lance_010_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("12_lance_Lance_011_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("13_lance_Lance_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_lance_Lance_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_lance_Lance_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lance_Lance_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lance_Lance_016_png")
+}, {
+"duration": 19.0,
+"texture": ExtResource("18_lance_Lance_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_lance_Lance_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lance_Lance_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lance_Lance_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lance_Lance_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lance_Lance_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_lance_Lance_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_lance_Lance_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_lance_Lance_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("27_lance_Lance_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_lance_Lance_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_lance_Lance_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_lance_Lance_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_lance_Lance_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_lance_Lance_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_lance_Lance_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lance_Lance_033_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("35_lance_Lance_034_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}],
+"loop": false,
+"name": &"lance_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("36_lance_Lance_035_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("41_lance_Lance_040_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("42_lance_Lance_041_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("43_lance_Lance_042_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("44_lance_Lance_043_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_lance_Lance_044_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lance_Lance_045_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("47_lance_Lance_046_png")
+}],
+"loop": false,
+"name": &"lance_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("36_lance_Lance_035_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_lance_Lance_036_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_lance_Lance_037_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("39_lance_Lance_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_lance_Lance_039_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("42_lance_Lance_041_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("43_lance_Lance_042_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("44_lance_Lance_043_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_lance_Lance_044_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lance_Lance_045_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("47_lance_Lance_046_png")
+}],
+"loop": false,
+"name": &"lance_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("48_lance_Lance_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_lance_Lance_048_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("48_lance_Lance_047_png")
+}],
+"loop": false,
+"name": &"lance_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("48_lance_Lance_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_lance_Lance_048_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("48_lance_Lance_047_png")
+}],
+"loop": false,
+"name": &"lance_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}],
+"loop": false,
+"name": &"lance_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}],
+"loop": false,
+"name": &"lance_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}],
+"loop": false,
+"name": &"lance_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lance_Lance_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_lance_Lance_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_lance_Lance_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_lance_Lance_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_lance_Lance_006_png")
+}, {
+"duration": 23.0,
+"texture": ExtResource("8_lance_Lance_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("50_lance_Lance_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_lance_Lance_050_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_lance_Lance_010_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("12_lance_Lance_011_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("13_lance_Lance_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_lance_Lance_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_lance_Lance_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lance_Lance_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lance_Lance_016_png")
+}, {
+"duration": 19.0,
+"texture": ExtResource("18_lance_Lance_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_lance_Lance_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lance_Lance_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lance_Lance_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lance_Lance_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lance_Lance_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_lance_Lance_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_lance_Lance_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_lance_Lance_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("27_lance_Lance_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_lance_Lance_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_lance_Lance_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_lance_Lance_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_lance_Lance_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_lance_Lance_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_lance_Lance_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lance_Lance_033_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("35_lance_Lance_034_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lance_Lance_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_lance_Lance_001_png")
+}],
+"loop": false,
+"name": &"lance_miss",
+"speed": 60.0
+}
+]

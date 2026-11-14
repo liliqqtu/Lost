@@ -6,13 +6,57 @@ extends Level
 ##人物肖像（Class Card，阶段五 5E 对话系统）
 const TE_CARD := preload("res://assets/graphics/Class Card/忒.png")
 const ISAR_CARD := preload("res://assets/graphics/Class Card/Isar.png")
+const ZAKA_CARD := preload("res://assets/graphics/Class Card/扎卡.png")
 
-##人物对话数据（5E 测试）：忒 × 伊萨尔，伊萨尔在 left1、忒在 right1
+##开场对话：忒在废弃驿站荒沙中直面末日狂欢的山贼头目扎卡
+const OPENING_LINES: Array = [
+	{"speaker": "扎卡", "text": "哈哈哈！看看这个要死不活的小子……脸白得跟风化的骨头一样，还提着张拉不开的破短弓！", "side": "left1"},
+	{"speaker": "扎卡", "text": "小子，老老实实把盘缠交出来！大爷给你个痛快，省得你在白风里慢慢风化成灰！", "side": "left1"},
+	{"speaker": "忒", "text": "……生来皆无意义。既然最终都要化作风暴里的白尘，你们为何还要如此费力地挥刀？", "side": "right1"},
+	{"speaker": "扎卡", "text": "少他妈跟老子扯什么大道理！肚子饿了要吃肉，刀锋砍进肉里有血喷出来，这就是老子的活法！动手！", "side": "left1"},
+	{"speaker": "忒", "text": "……天地荒谬，终极的意义或许真的不存在。但既然冰冷的刀锋已逼至眼前一寸……", "side": "right1"},
+	{"speaker": "忒", "text": "……那就容不得我退缩！", "side": "right1"},
+]
+
+##Boss 交战台词：扎卡 × 玩家角色
+const BOSS_BATTLE_ZAKA_TE: Array = [
+	{"speaker": "扎卡", "text": "哈哈哈！不知天高地厚的白面小子，也敢来捋大爷的虎须！老子一斧头把你剁碎！", "side": "left1"},
+	{"speaker": "忒", "text": "……天地荒谬，终极的意义或许真的不存在。但眼前逼至一寸的刀锋，我绝不退让！", "side": "right1"},
+]
+
+const BOSS_BATTLE_ZAKA_ISAR: Array = [
+	{"speaker": "扎卡", "text": "哪来的黑袍怪人！少管大爷们的快活事，去死吧！", "side": "left1"},
+	{"speaker": "伊萨尔", "text": "在真理的暗门前，荒原狂徒的刀剑不过是微不足道的尘埃。", "side": "right1"},
+]
+
+const BOSS_BATTLE_ZAKA_GENERIC: Array = [
+	{"speaker": "扎卡", "text": "不长眼的杂碎！尝尝大爷我手中利斧的滋味！", "side": "left1"},
+]
+
+##Boss 临终遗言
+const BOSS_DEFEAT_ZAKA: Array = [
+	{"speaker": "扎卡", "text": "呃……啊！怎、怎么可能……老子横行这片荒原……竟然会栽在这里……咳啊！", "side": "left1"},
+]
+
+##人物对话数据：忒 × 伊萨尔
 const TALK_TE_ISAR: Array = [
-	{"speaker": "忒", "text": "老师！是你嘛？！哦谢天谢地，你怎么会在这里？", "side": "right1"},
-	{"speaker": "伊萨尔", "text": "我打算去王都xxx，特意绕远路过来看看你，看来国王的高税收诞生的后果已经蔓延到这里了。", "side": "left1"},
-	{"speaker": "忒", "text": "是的，很多老实本分的人当起了山贼来抢劫村庄。", "side": "right1"},
-	{"speaker": "伊萨尔", "text": "话不多说，先解决掉眼前的敌人吧。", "side": "left1"},
+	{"speaker": "忒", "text": "老师！怎么会是您？！您怎么会出现在这片荒原？", "side": "right1"},
+	{"speaker": "伊萨尔", "text": "我一直在追踪虚无之潮蔓延的痕迹。听说这片荒野有末日狂徒聚集，特意赶来看看，没想到正好看见你手握短弓的样子。", "side": "left1"},
+	{"speaker": "忒", "text": "我……我依然不知道明天该去向何方。我拉不开远方的弓，眼前所见只有这脚下一寸之地。", "side": "right1"},
+	{"speaker": "伊萨尔", "text": "那就先看清脚下的一寸之地。心怀迷茫并不耻辱，重要的是你手里的弓还没有放下。并肩作战吧，忒！", "side": "left1"},
+]
+
+##战后收尾对话：伊萨尔递上水壶，探讨一寸之遥的呼吸与存在的明证
+const ENDING_LINES: Array = [
+	{"speaker": "忒", "text": "呼……哈……呼……刀刃……终于停下了……", "side": "right1"},
+	{"speaker": "伊萨尔", "text": "（递过皮水壶）大口喘息吧，忒。喝点水。", "side": "left1"},
+	{"speaker": "忒", "text": "（接过水壶大口咽下，双手仍微微颤抖）老师……刚才在刀光扑来的那一瞬，我浑身都在发抖……我以为自己随时会变成风化的死人。", "side": "right1"},
+	{"speaker": "伊萨尔", "text": "二十年前，贤者们推开真理的暗门，发现宏大的命途不过是一场虚妄。整片大陆的人因此绝望沉沦，任由灵魂风化为灰烬。", "side": "left1"},
+	{"speaker": "伊萨尔", "text": "但看看你刚才，忒。剧烈起伏的胸膛，狂跳的心脏，手腕上的鲜血与泥土——这就是你一寸之遥的呼吸。在虚无的荒原上，这声呼吸就是你存在的明证。", "side": "left1"},
+	{"speaker": "忒", "text": "存在的……明证？可是荒原的前方……真的还有道路吗？", "side": "right1"},
+	{"speaker": "伊萨尔", "text": "路从来不是现成的，是你踏出的每一步定义了它。收拾行装吧，随我前往断风隘口。", "side": "left1"},
+	{"speaker": "伊萨尔", "text": "听说那里的难民车队正被狂徒截杀……我们要去看看，在没有救世主的世界里，还有没有人愿意迈出脚步。", "side": "left1"},
+	{"speaker": "忒", "text": "……断风隘口吗。哪怕不知道明天会怎样……我也想去亲眼看一看。", "side": "right1"},
 ]
 
 ##地图事件动作（本关：第 2 回合 Isar 增援）
@@ -65,6 +109,47 @@ func get_talk_dialogue(unit: Unit, target: Unit) -> Dictionary:
 	return {}
 
 
+func get_opening_dialogue() -> Dictionary:
+	return {
+		"lines": OPENING_LINES,
+		"portraits": {"忒": TE_CARD, "扎卡": ZAKA_CARD}
+	}
+
+
+func get_ending_dialogue() -> Dictionary:
+	return {
+		"lines": ENDING_LINES,
+		"portraits": {"忒": TE_CARD, "伊萨尔": ISAR_CARD}
+	}
+
+
+func get_boss_battle_dialogue(attacker: Unit, defender: Unit) -> Dictionary:
+	var boss: Unit = defender if defender.unit_name == "扎卡" else (attacker if attacker.unit_name == "扎卡" else null)
+	if boss == null:
+		return {}
+	var other: Unit = attacker if defender == boss else defender
+	if other.unit_name == "忒":
+		return {"lines": BOSS_BATTLE_ZAKA_TE, "portraits": {"扎卡": ZAKA_CARD, "忒": TE_CARD}}
+	elif other.unit_name == "伊萨尔":
+		return {"lines": BOSS_BATTLE_ZAKA_ISAR, "portraits": {"扎卡": ZAKA_CARD, "伊萨尔": ISAR_CARD}}
+	else:
+		return {"lines": BOSS_BATTLE_ZAKA_GENERIC, "portraits": {"扎卡": ZAKA_CARD}}
+
+
+func get_boss_defeat_dialogue(boss: Unit, _killer: Unit) -> Dictionary:
+	if boss.unit_name == "扎卡":
+		return {"lines": BOSS_DEFEAT_ZAKA, "portraits": {"扎卡": ZAKA_CARD}}
+	return {}
+
+
+func get_next_chapter_path() -> String:
+	return "res://scene/level/level_1/level_1.tscn"
+
+
+func get_next_chapter_title() -> String:
+	return "第一章 向崖底纵跃之人"
+
+
 ##==================== 地图事件（override 基类虚钩子） ====================
 
 ##初始化地图事件（阶段五 5E）：第 2 回合开始时 Isar 登场并走到地图中央
@@ -102,8 +187,3 @@ func _seed_convoy() -> void:
 	var potion1: Consumable = POTION_TRES.duplicate()
 	ConvoyStore.add(potion1)
 	var potion2: Consumable = POTION_TRES.duplicate()
-	ConvoyStore.add(potion2)
-	var brave_bow = load("res://data/items/weapon_brave_bow.tres").duplicate()
-	ConvoyStore.add(brave_bow)
-	var s_bow = load("res://data/items/weapon_snapped_string_bow.tres").duplicate()
-	ConvoyStore.add(s_bow)

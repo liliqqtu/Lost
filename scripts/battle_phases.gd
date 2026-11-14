@@ -33,14 +33,25 @@ func check_player_phase_end() -> void:
 	start_enemy_phase()
 
 
+##玩家主动结束回合（地图菜单“结束”）
+func end_player_phase() -> void:
+	for unit in bm.units:
+		if unit.team == 0 and not unit.has_acted:
+			unit.has_acted = true
+			unit.apply_grayscale()
+	start_enemy_phase()
+
+
 ##开始敌方回合：播放横幅后依次执行每个敌人的 AI 决策
 func start_enemy_phase() -> void:
 	bm.phase = 1
 	bm.state = BattleManager.State.ENEMY_TURN
-	bm.cursor.set_process(false)
-	bm.cursor.visible = false
+	if bm.cursor != null:
+		bm.cursor.set_process(false)
+		bm.cursor.visible = false
 	bm.turn_started.emit(1)
-	await bm.get_tree().create_timer(0.9).timeout
+	if bm.get_tree() != null:
+		await bm.get_tree().create_timer(0.9).timeout
 	##遍历快照：循环中敌人可能死于我方反击被移除
 	for enemy in bm.units.duplicate():
 		if bm.battle_over:
@@ -106,6 +117,7 @@ func _execute_enemy_action(enemy: Unit) -> void:
 	if target != null and is_instance_valid(target) and not target.is_queued_for_deletion() and bm.units.has(target):
 		await bm.combat.execute_attack(enemy, target)
 		await bm.get_tree().create_timer(0.3).timeout
+		bm.check_battle_end()
 	##敌人可能死于我方反击，标记已行动前需判存活
 	if is_instance_valid(enemy) and not enemy.is_queued_for_deletion():
 		enemy.has_acted = true

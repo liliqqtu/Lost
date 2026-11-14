@@ -1,0 +1,526 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_000.png" id="1_dragonstone_Dragonstone_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_001.png" id="2_dragonstone_Dragonstone_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_002.png" id="3_dragonstone_Dragonstone_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_003.png" id="4_dragonstone_Dragonstone_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_004.png" id="5_dragonstone_Dragonstone_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_005.png" id="6_dragonstone_Dragonstone_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_006.png" id="7_dragonstone_Dragonstone_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_007.png" id="8_dragonstone_Dragonstone_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_008.png" id="9_dragonstone_Dragonstone_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_009.png" id="10_dragonstone_Dragonstone_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_010.png" id="11_dragonstone_Dragonstone_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_011.png" id="12_dragonstone_Dragonstone_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Dragonstone_012.png" id="13_dragonstone_Dragonstone_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_000.png" id="14_dragonstone_Revert_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_001.png" id="15_dragonstone_Revert_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_002.png" id="16_dragonstone_Revert_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_003.png" id="17_dragonstone_Revert_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_004.png" id="18_dragonstone_Revert_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_005.png" id="19_dragonstone_Revert_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_006.png" id="20_dragonstone_Revert_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_007.png" id="21_dragonstone_Revert_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_008.png" id="22_dragonstone_Revert_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_009.png" id="23_dragonstone_Revert_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_010.png" id="24_dragonstone_Revert_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_011.png" id="25_dragonstone_Revert_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Revert_012.png" id="26_dragonstone_Revert_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_000.png" id="27_dragonstone_Transform_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_001.png" id="28_dragonstone_Transform_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_002.png" id="29_dragonstone_Transform_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_003.png" id="30_dragonstone_Transform_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_004.png" id="31_dragonstone_Transform_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_005.png" id="32_dragonstone_Transform_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_006.png" id="33_dragonstone_Transform_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_007.png" id="34_dragonstone_Transform_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_008.png" id="35_dragonstone_Transform_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_009.png" id="36_dragonstone_Transform_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Manakete-Base[F]/Dragonstone/Transform_010.png" id="37_dragonstone_Transform_010_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"transform",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"breath",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"transform_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dragonstone_Dragonstone_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dragonstone_Dragonstone_012_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
+}],
+"loop": false,
+"name": &"dragonstone_miss",
+"speed": 60.0
+}
+]

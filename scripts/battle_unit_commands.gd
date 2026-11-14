@@ -88,6 +88,10 @@ func show_action_menu() -> void:
 	if _menu_attack_ready:
 		_extra_actions.append("攻击")
 	var extras: Array[String] = []
+	if bm.staff_mgr != null:
+		extras.append_array(bm.staff_mgr.gather_menu_extras(bm.selected_unit))
+	if bm.dance_mgr != null:
+		extras.append_array(bm.dance_mgr.gather_menu_extras(bm.selected_unit))
 	extras.append_array(bm.interaction.gather_menu_extras(bm.selected_unit))
 	extras.append_array(bm.rescue.gather_menu_extras(bm.selected_unit))
 	_extra_actions.append_array(extras)
@@ -125,6 +129,12 @@ func _on_menu_confirmed(index: int) -> void:
 						_enter_weapon_select()
 					else:
 						_enter_target_select()
+			"杖":
+				if bm.staff_mgr != null:
+					bm.staff_mgr.enter_select(bm.selected_unit)
+			"跳舞", "奏乐":
+				if bm.dance_mgr != null:
+					bm.dance_mgr.enter_select(bm.selected_unit)
 			"访问", "开启":
 				bm.interaction.do_interaction()
 			"对话":
@@ -236,6 +246,12 @@ func _enter_target_select() -> void:
 ##处理目标选择输入：方向键在攻击目标间循环切换，确认攻击，取消返回武器选择/行动菜单
 ##不使用光标逐格移动——弓等武器攻击范围不连通（如仅距离2一圈），逐格移动无法跨过射程外空格
 func handle_target_select_input(event: InputEvent) -> void:
+	if bm.staff_mgr != null and bm.staff_mgr._is_staff_selecting:
+		bm.staff_mgr.handle_input(event)
+		return
+	if bm.dance_mgr != null and bm.dance_mgr._is_dance_selecting:
+		bm.dance_mgr.handle_input(event)
+		return
 	if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_up"):
 		_cycle_target(-1)
 	elif event.is_action_pressed("ui_right") or event.is_action_pressed("ui_down"):
@@ -329,6 +345,10 @@ func do_trade(target: Unit) -> void:
 
 ##TARGET_SELECT 状态下根据光标位置刷新战斗预览
 func update_forecast() -> void:
+	if bm.staff_mgr != null and bm.staff_mgr._is_staff_selecting:
+		return
+	if bm.dance_mgr != null and bm.dance_mgr._is_dance_selecting:
+		return
 	if forecast_panel == null:
 		return
 	var cursor_cell: Vector2i = bm.cursor.cell

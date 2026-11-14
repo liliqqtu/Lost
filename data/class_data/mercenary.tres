@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ClassData" format=3]
+
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Class Card/雷恩.png" id="2_card"]
+
+[resource]
+script = ExtResource("1_class")
+job_name = "佣兵"
+job_info = "手握利刃游走于战场的剑士，攻防兼备"
+info = "梦想成为拯救世人英雄的少年"
+class_card = ExtResource("2_card")
+growths_hp = 85
+growths_str = 50
+growths_skl = 45
+growths_spd = 40
+growths_def = 35
+cap_hp = 60
+cap_str = 20
+cap_skl = 20
+cap_spd = 20
+cap_def = 20
+cap_con = 16
+mount_type = 0

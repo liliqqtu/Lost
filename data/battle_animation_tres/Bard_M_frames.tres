@@ -1,0 +1,719 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_000.png" id="1_refresh_Refresh_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_001.png" id="2_refresh_Refresh_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_002.png" id="3_refresh_Refresh_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_003.png" id="4_refresh_Refresh_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_004.png" id="5_refresh_Refresh_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_005.png" id="6_refresh_Refresh_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_006.png" id="7_refresh_Refresh_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_007.png" id="8_refresh_Refresh_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_008.png" id="9_refresh_Refresh_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_009.png" id="10_refresh_Refresh_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_010.png" id="11_refresh_Refresh_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_011.png" id="12_refresh_Refresh_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_012.png" id="13_refresh_Refresh_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_013.png" id="14_refresh_Refresh_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_014.png" id="15_refresh_Refresh_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_015.png" id="16_refresh_Refresh_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_016.png" id="17_refresh_Refresh_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_017.png" id="18_refresh_Refresh_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_018.png" id="19_refresh_Refresh_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_019.png" id="20_refresh_Refresh_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_020.png" id="21_refresh_Refresh_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_021.png" id="22_refresh_Refresh_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_022.png" id="23_refresh_Refresh_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_023.png" id="24_refresh_Refresh_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_024.png" id="25_refresh_Refresh_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Bard-Base[M]/Refresh/Refresh_025.png" id="26_refresh_Refresh_025_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"dance",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"play",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_mode_5",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_refresh_Refresh_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_refresh_Refresh_021_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_refresh_Refresh_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_refresh_Refresh_022_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_mode_6",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_refresh_Refresh_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}],
+"loop": false,
+"name": &"refresh_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_refresh_Refresh_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}],
+"loop": false,
+"name": &"dance_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_refresh_Refresh_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_refresh_Refresh_024_png")
+}],
+"loop": false,
+"name": &"refresh_mode_8",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("2_refresh_Refresh_001_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_refresh_Refresh_002_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_refresh_Refresh_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_refresh_Refresh_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_refresh_Refresh_005_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("7_refresh_Refresh_006_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_refresh_Refresh_007_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_refresh_Refresh_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_refresh_Refresh_009_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_refresh_Refresh_010_png")
+}, {
+"duration": 11.0,
+"texture": ExtResource("12_refresh_Refresh_011_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("13_refresh_Refresh_012_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("14_refresh_Refresh_013_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("15_refresh_Refresh_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("16_refresh_Refresh_015_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("17_refresh_Refresh_016_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("18_refresh_Refresh_017_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_refresh_Refresh_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_refresh_Refresh_019_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_mode_12",
+"speed": 60.0
+}
+]

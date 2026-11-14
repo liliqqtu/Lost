@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" uid="uid://d4d43f53sv7ne" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/Swords/铁剑.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"iron_sword"
+display_name = "铁剑"
+description = "轻便锋利的基础近战剑"
+icon = ExtResource("2_icon")
+weapon_type = 0
+might = 5
+hit = 90
+crit = 0
+weight = 5
+durability = 46
+max_durability = 46
+min_range = 1
+max_range = 1

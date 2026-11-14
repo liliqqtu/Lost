@@ -3,6 +3,8 @@ extends Node2D
 var cell := Vector2i(0, 0)
 ## 移动限制：非空时只能在字典包含的格子中移动
 var restrict_to: Dictionary = {}
+## 地图边界限制：防止光标移动到地图外部
+var map_rect: Rect2i = Rect2i()
 ##第一次移动光标后delay
 var first_move_delay := 0.3
 ##之后光标移动delay
@@ -11,6 +13,10 @@ var repeat_delay := 0.12
 var move_delay := first_move_delay
 ##记录时间
 var timer := 0.0
+
+
+func _ready() -> void:
+	cell = Vector2i(round(position.x / Global.TILE_SIZE), round(position.y / Global.TILE_SIZE))
 
 
 func _process(delta: float) -> void:
@@ -34,6 +40,12 @@ func _process(delta: float) -> void:
 		return
 
 	var new_cell := cell + dir
+	# 地图边界限制保护
+	if map_rect.has_area() and not map_rect.has_point(new_cell):
+		move_delay = first_move_delay
+		timer = 0.0
+		return
+
 	#判断可移动路径是否为空  
 	if restrict_to.is_empty() or restrict_to.has(new_cell):
 		cell = new_cell

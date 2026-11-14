@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" format=3]
+
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_skill"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_id = &"vigilance"
+display_name = "守望"
+description = "默默守护同伴，自身魔防+3，幸运+5"
+bonus_res = 3
+bonus_luk = 5

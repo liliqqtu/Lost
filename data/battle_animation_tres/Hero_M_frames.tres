@@ -1,0 +1,2634 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_000.png" id="1_sword_Sword_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_001.png" id="2_sword_Sword_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_002.png" id="3_sword_Sword_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_003.png" id="4_sword_Sword_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_004.png" id="5_sword_Sword_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_005.png" id="6_sword_Sword_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_006.png" id="7_sword_Sword_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_007.png" id="8_sword_Sword_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_008.png" id="9_sword_Sword_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_009.png" id="10_sword_Sword_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_010.png" id="11_sword_Sword_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_011.png" id="12_sword_Sword_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_012.png" id="13_sword_Sword_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_013.png" id="14_sword_Sword_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_014.png" id="15_sword_Sword_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_015.png" id="16_sword_Sword_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_016.png" id="17_sword_Sword_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_017.png" id="18_sword_Sword_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_018.png" id="19_sword_Sword_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_019.png" id="20_sword_Sword_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_020.png" id="21_sword_Sword_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_021.png" id="22_sword_Sword_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_022.png" id="23_sword_Sword_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_023.png" id="24_sword_Sword_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_024.png" id="25_sword_Sword_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_025.png" id="26_sword_Sword_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_026.png" id="27_sword_Sword_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_027.png" id="28_sword_Sword_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_028.png" id="29_sword_Sword_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_029.png" id="30_sword_Sword_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_030.png" id="31_sword_Sword_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_031.png" id="32_sword_Sword_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_032.png" id="33_sword_Sword_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_033.png" id="34_sword_Sword_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_034.png" id="35_sword_Sword_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_035.png" id="36_sword_Sword_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_036.png" id="37_sword_Sword_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_037.png" id="38_sword_Sword_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_038.png" id="39_sword_Sword_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_039.png" id="40_sword_Sword_039_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_040.png" id="41_sword_Sword_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_041.png" id="42_sword_Sword_041_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_042.png" id="43_sword_Sword_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_043.png" id="44_sword_Sword_043_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_044.png" id="45_sword_Sword_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_045.png" id="46_sword_Sword_045_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_046.png" id="47_sword_Sword_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_047.png" id="48_sword_Sword_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_048.png" id="49_sword_Sword_048_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_049.png" id="50_sword_Sword_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_050.png" id="51_sword_Sword_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_051.png" id="52_sword_Sword_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_052.png" id="53_sword_Sword_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_053.png" id="54_sword_Sword_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_054.png" id="55_sword_Sword_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_055.png" id="56_sword_Sword_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_056.png" id="57_sword_Sword_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_057.png" id="58_sword_Sword_057_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_058.png" id="59_sword_Sword_058_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_059.png" id="60_sword_Sword_059_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_060.png" id="61_sword_Sword_060_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_061.png" id="62_sword_Sword_061_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_062.png" id="63_sword_Sword_062_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_063.png" id="64_sword_Sword_063_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_064.png" id="65_sword_Sword_064_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_065.png" id="66_sword_Sword_065_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_066.png" id="67_sword_Sword_066_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_067.png" id="68_sword_Sword_067_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_068.png" id="69_sword_Sword_068_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_069.png" id="70_sword_Sword_069_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_070.png" id="71_sword_Sword_070_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_071.png" id="72_sword_Sword_071_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_072.png" id="73_sword_Sword_072_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_073.png" id="74_sword_Sword_073_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_074.png" id="75_sword_Sword_074_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_075.png" id="76_sword_Sword_075_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_076.png" id="77_sword_Sword_076_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_077.png" id="78_sword_Sword_077_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_078.png" id="79_sword_Sword_078_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_079.png" id="80_sword_Sword_079_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_080.png" id="81_sword_Sword_080_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_081.png" id="82_sword_Sword_081_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_082.png" id="83_sword_Sword_082_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_083.png" id="84_sword_Sword_083_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_084.png" id="85_sword_Sword_084_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_085.png" id="86_sword_Sword_085_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_086.png" id="87_sword_Sword_086_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_087.png" id="88_sword_Sword_087_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_088.png" id="89_sword_Sword_088_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_089.png" id="90_sword_Sword_089_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_090.png" id="91_sword_Sword_090_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_091.png" id="92_sword_Sword_091_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_092.png" id="93_sword_Sword_092_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_093.png" id="94_sword_Sword_093_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_094.png" id="95_sword_Sword_094_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_095.png" id="96_sword_Sword_095_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_096.png" id="97_sword_Sword_096_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_097.png" id="98_sword_Sword_097_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_098.png" id="99_sword_Sword_098_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_099.png" id="100_sword_Sword_099_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_100.png" id="101_sword_Sword_100_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_101.png" id="102_sword_Sword_101_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_102.png" id="103_sword_Sword_102_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_103.png" id="104_sword_Sword_103_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_104.png" id="105_sword_Sword_104_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_105.png" id="106_sword_Sword_105_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_106.png" id="107_sword_Sword_106_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_107.png" id="108_sword_Sword_107_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_108.png" id="109_sword_Sword_108_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_109.png" id="110_sword_Sword_109_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_110.png" id="111_sword_Sword_110_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_111.png" id="112_sword_Sword_111_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_112.png" id="113_sword_Sword_112_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_113.png" id="114_sword_Sword_113_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_114.png" id="115_sword_Sword_114_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_115.png" id="116_sword_Sword_115_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_116.png" id="117_sword_Sword_116_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_117.png" id="118_sword_Sword_117_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_118.png" id="119_sword_Sword_118_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_119.png" id="120_sword_Sword_119_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_120.png" id="121_sword_Sword_120_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_121.png" id="122_sword_Sword_121_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_122.png" id="123_sword_Sword_122_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_123.png" id="124_sword_Sword_123_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_124.png" id="125_sword_Sword_124_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_125.png" id="126_sword_Sword_125_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_126.png" id="127_sword_Sword_126_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_127.png" id="128_sword_Sword_127_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_128.png" id="129_sword_Sword_128_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_129.png" id="130_sword_Sword_129_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_130.png" id="131_sword_Sword_130_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_131.png" id="132_sword_Sword_131_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Sword/Sword_132.png" id="133_sword_Sword_132_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_000.png" id="134_axe_Axe_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_001.png" id="135_axe_Axe_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_002.png" id="136_axe_Axe_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_003.png" id="137_axe_Axe_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_004.png" id="138_axe_Axe_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_005.png" id="139_axe_Axe_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_006.png" id="140_axe_Axe_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_007.png" id="141_axe_Axe_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_008.png" id="142_axe_Axe_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_009.png" id="143_axe_Axe_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_010.png" id="144_axe_Axe_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_011.png" id="145_axe_Axe_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_012.png" id="146_axe_Axe_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_013.png" id="147_axe_Axe_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_014.png" id="148_axe_Axe_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_015.png" id="149_axe_Axe_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_016.png" id="150_axe_Axe_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_017.png" id="151_axe_Axe_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_018.png" id="152_axe_Axe_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_019.png" id="153_axe_Axe_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_020.png" id="154_axe_Axe_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_021.png" id="155_axe_Axe_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_022.png" id="156_axe_Axe_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_023.png" id="157_axe_Axe_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_024.png" id="158_axe_Axe_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_025.png" id="159_axe_Axe_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_026.png" id="160_axe_Axe_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_027.png" id="161_axe_Axe_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_028.png" id="162_axe_Axe_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_029.png" id="163_axe_Axe_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_030.png" id="164_axe_Axe_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_031.png" id="165_axe_Axe_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_032.png" id="166_axe_Axe_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_033.png" id="167_axe_Axe_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_034.png" id="168_axe_Axe_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_035.png" id="169_axe_Axe_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_036.png" id="170_axe_Axe_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_037.png" id="171_axe_Axe_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_038.png" id="172_axe_Axe_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_039.png" id="173_axe_Axe_039_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_040.png" id="174_axe_Axe_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_041.png" id="175_axe_Axe_041_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_042.png" id="176_axe_Axe_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_043.png" id="177_axe_Axe_043_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_044.png" id="178_axe_Axe_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_045.png" id="179_axe_Axe_045_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_046.png" id="180_axe_Axe_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_047.png" id="181_axe_Axe_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_048.png" id="182_axe_Axe_048_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_049.png" id="183_axe_Axe_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_050.png" id="184_axe_Axe_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_051.png" id="185_axe_Axe_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_052.png" id="186_axe_Axe_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_053.png" id="187_axe_Axe_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_054.png" id="188_axe_Axe_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_055.png" id="189_axe_Axe_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_056.png" id="190_axe_Axe_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_057.png" id="191_axe_Axe_057_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_058.png" id="192_axe_Axe_058_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_059.png" id="193_axe_Axe_059_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_060.png" id="194_axe_Axe_060_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_061.png" id="195_axe_Axe_061_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_062.png" id="196_axe_Axe_062_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_063.png" id="197_axe_Axe_063_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_064.png" id="198_axe_Axe_064_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_065.png" id="199_axe_Axe_065_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_066.png" id="200_axe_Axe_066_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_067.png" id="201_axe_Axe_067_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_068.png" id="202_axe_Axe_068_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_069.png" id="203_axe_Axe_069_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_070.png" id="204_axe_Axe_070_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_071.png" id="205_axe_Axe_071_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_072.png" id="206_axe_Axe_072_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_073.png" id="207_axe_Axe_073_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_074.png" id="208_axe_Axe_074_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_075.png" id="209_axe_Axe_075_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_076.png" id="210_axe_Axe_076_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_077.png" id="211_axe_Axe_077_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_078.png" id="212_axe_Axe_078_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_079.png" id="213_axe_Axe_079_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_080.png" id="214_axe_Axe_080_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_081.png" id="215_axe_Axe_081_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_082.png" id="216_axe_Axe_082_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_083.png" id="217_axe_Axe_083_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_084.png" id="218_axe_Axe_084_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_085.png" id="219_axe_Axe_085_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_086.png" id="220_axe_Axe_086_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_087.png" id="221_axe_Axe_087_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_088.png" id="222_axe_Axe_088_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_089.png" id="223_axe_Axe_089_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_090.png" id="224_axe_Axe_090_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_091.png" id="225_axe_Axe_091_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_092.png" id="226_axe_Axe_092_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_093.png" id="227_axe_Axe_093_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_094.png" id="228_axe_Axe_094_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_095.png" id="229_axe_Axe_095_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_096.png" id="230_axe_Axe_096_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_097.png" id="231_axe_Axe_097_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_098.png" id="232_axe_Axe_098_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_099.png" id="233_axe_Axe_099_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_100.png" id="234_axe_Axe_100_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_101.png" id="235_axe_Axe_101_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_102.png" id="236_axe_Axe_102_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_103.png" id="237_axe_Axe_103_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_104.png" id="238_axe_Axe_104_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_105.png" id="239_axe_Axe_105_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_106.png" id="240_axe_Axe_106_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_107.png" id="241_axe_Axe_107_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_108.png" id="242_axe_Axe_108_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_109.png" id="243_axe_Axe_109_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_110.png" id="244_axe_Axe_110_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_111.png" id="245_axe_Axe_111_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_112.png" id="246_axe_Axe_112_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_113.png" id="247_axe_Axe_113_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_114.png" id="248_axe_Axe_114_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_115.png" id="249_axe_Axe_115_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_116.png" id="250_axe_Axe_116_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_117.png" id="251_axe_Axe_117_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_118.png" id="252_axe_Axe_118_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_119.png" id="253_axe_Axe_119_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_120.png" id="254_axe_Axe_120_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_121.png" id="255_axe_Axe_121_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_122.png" id="256_axe_Axe_122_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_123.png" id="257_axe_Axe_123_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_124.png" id="258_axe_Axe_124_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_125.png" id="259_axe_Axe_125_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_126.png" id="260_axe_Axe_126_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_127.png" id="261_axe_Axe_127_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_128.png" id="262_axe_Axe_128_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_129.png" id="263_axe_Axe_129_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_130.png" id="264_axe_Axe_130_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_131.png" id="265_axe_Axe_131_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_132.png" id="266_axe_Axe_132_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_133.png" id="267_axe_Axe_133_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_134.png" id="268_axe_Axe_134_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_135.png" id="269_axe_Axe_135_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Hero-Base[M]/Axe/Axe_136.png" id="270_axe_Axe_136_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_sword_Sword_006_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_sword_Sword_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sword_Sword_014_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("16_sword_Sword_015_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("17_sword_Sword_016_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("18_sword_Sword_017_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sword_Sword_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sword_Sword_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sword_Sword_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sword_Sword_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sword_Sword_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sword_Sword_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sword_Sword_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sword_Sword_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sword_Sword_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sword_Sword_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sword_Sword_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("39_sword_Sword_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_sword_Sword_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("41_sword_Sword_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sword_Sword_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_sword_Sword_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_sword_Sword_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sword_Sword_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_sword_Sword_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sword_Sword_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_sword_Sword_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_sword_Sword_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("50_sword_Sword_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_sword_Sword_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_sword_Sword_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sword_Sword_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("54_sword_Sword_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sword_Sword_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sword_Sword_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("57_sword_Sword_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sword_Sword_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_sword_Sword_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sword_Sword_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_sword_Sword_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("62_sword_Sword_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("63_sword_Sword_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_sword_Sword_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_sword_Sword_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("67_sword_Sword_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("68_sword_Sword_067_png")
+}],
+"loop": false,
+"name": &"sword",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_sword_Sword_068_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_sword_Sword_069_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_sword_Sword_070_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_sword_Sword_071_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_sword_Sword_072_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_sword_Sword_073_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_sword_Sword_074_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_sword_Sword_075_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sword_Sword_076_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_sword_Sword_077_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_sword_Sword_078_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_sword_Sword_079_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_sword_Sword_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_sword_Sword_081_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_sword_Sword_082_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_sword_Sword_083_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_sword_Sword_084_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("86_sword_Sword_085_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("87_sword_Sword_086_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("88_sword_Sword_087_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("89_sword_Sword_088_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("90_sword_Sword_089_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_sword_Sword_090_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_sword_Sword_091_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_sword_Sword_092_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_sword_Sword_093_png")
+}, {
+"duration": 35.0,
+"texture": ExtResource("95_sword_Sword_094_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("96_sword_Sword_095_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("97_sword_Sword_096_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("98_sword_Sword_097_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("99_sword_Sword_098_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_sword_Sword_099_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_sword_Sword_100_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_sword_Sword_101_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_sword_Sword_102_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_sword_Sword_103_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_sword_Sword_104_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_sword_Sword_105_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_sword_Sword_106_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_sword_Sword_107_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_sword_Sword_108_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_sword_Sword_109_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_sword_Sword_110_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_sword_Sword_111_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_sword_Sword_112_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_sword_Sword_113_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_sword_Sword_114_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_sword_Sword_115_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_sword_Sword_116_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_sword_Sword_117_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_sword_Sword_118_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_sword_Sword_119_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_sword_Sword_120_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_sword_Sword_121_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_sword_Sword_122_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_sword_Sword_123_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_sword_Sword_124_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_sword_Sword_125_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sword_Sword_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sword_Sword_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sword_Sword_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sword_Sword_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sword_Sword_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sword_Sword_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sword_Sword_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sword_Sword_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sword_Sword_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sword_Sword_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sword_Sword_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("39_sword_Sword_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_sword_Sword_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("41_sword_Sword_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sword_Sword_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_sword_Sword_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_sword_Sword_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sword_Sword_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_sword_Sword_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sword_Sword_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_sword_Sword_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_sword_Sword_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("50_sword_Sword_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_sword_Sword_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_sword_Sword_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sword_Sword_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("54_sword_Sword_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sword_Sword_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sword_Sword_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("57_sword_Sword_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sword_Sword_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_sword_Sword_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sword_Sword_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_sword_Sword_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("62_sword_Sword_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("63_sword_Sword_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_sword_Sword_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_sword_Sword_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("67_sword_Sword_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("68_sword_Sword_067_png")
+}],
+"loop": false,
+"name": &"sword_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_sword_Sword_068_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_sword_Sword_069_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_sword_Sword_070_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_sword_Sword_071_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_sword_Sword_072_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_sword_Sword_073_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_sword_Sword_074_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_sword_Sword_075_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sword_Sword_076_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_sword_Sword_077_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_sword_Sword_078_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_sword_Sword_079_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_sword_Sword_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_sword_Sword_081_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_sword_Sword_082_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_sword_Sword_083_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_sword_Sword_084_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("86_sword_Sword_085_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("87_sword_Sword_086_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("88_sword_Sword_087_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("89_sword_Sword_088_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("90_sword_Sword_089_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_sword_Sword_090_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_sword_Sword_091_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_sword_Sword_092_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_sword_Sword_093_png")
+}, {
+"duration": 35.0,
+"texture": ExtResource("95_sword_Sword_094_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("96_sword_Sword_095_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("97_sword_Sword_096_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("98_sword_Sword_097_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("99_sword_Sword_098_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_sword_Sword_099_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_sword_Sword_100_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_sword_Sword_101_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_sword_Sword_102_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_sword_Sword_103_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_sword_Sword_104_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_sword_Sword_105_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_sword_Sword_106_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_sword_Sword_107_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_sword_Sword_108_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_sword_Sword_109_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_sword_Sword_110_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_sword_Sword_111_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_sword_Sword_112_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_sword_Sword_113_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_sword_Sword_114_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_sword_Sword_115_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_sword_Sword_116_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_sword_Sword_117_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_sword_Sword_118_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_sword_Sword_119_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_sword_Sword_120_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_sword_Sword_121_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_sword_Sword_122_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_sword_Sword_123_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_sword_Sword_124_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_sword_Sword_125_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sword_Sword_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sword_Sword_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sword_Sword_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sword_Sword_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sword_Sword_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sword_Sword_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sword_Sword_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sword_Sword_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sword_Sword_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sword_Sword_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sword_Sword_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("39_sword_Sword_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_sword_Sword_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("41_sword_Sword_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sword_Sword_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_sword_Sword_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_sword_Sword_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sword_Sword_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_sword_Sword_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sword_Sword_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_sword_Sword_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_sword_Sword_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("50_sword_Sword_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_sword_Sword_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_sword_Sword_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sword_Sword_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("54_sword_Sword_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sword_Sword_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sword_Sword_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("57_sword_Sword_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sword_Sword_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_sword_Sword_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sword_Sword_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_sword_Sword_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("62_sword_Sword_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("63_sword_Sword_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_sword_Sword_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_sword_Sword_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("67_sword_Sword_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("68_sword_Sword_067_png")
+}],
+"loop": false,
+"name": &"sword_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("127_sword_Sword_126_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("127_sword_Sword_126_png")
+}],
+"loop": false,
+"name": &"sword_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("127_sword_Sword_126_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("129_sword_Sword_128_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("129_sword_Sword_128_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("129_sword_Sword_128_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("129_sword_Sword_128_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_sword_Sword_127_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("127_sword_Sword_126_png")
+}],
+"loop": false,
+"name": &"sword_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("130_sword_Sword_129_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_sword_Sword_130_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("130_sword_Sword_129_png")
+}],
+"loop": false,
+"name": &"sword_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("130_sword_Sword_129_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_sword_Sword_130_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("130_sword_Sword_129_png")
+}],
+"loop": false,
+"name": &"sword_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_sword_Sword_006_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_sword_Sword_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sword_Sword_014_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("16_sword_Sword_015_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("17_sword_Sword_016_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("132_sword_Sword_131_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_sword_Sword_132_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sword_Sword_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sword_Sword_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sword_Sword_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sword_Sword_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sword_Sword_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sword_Sword_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("39_sword_Sword_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_sword_Sword_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("41_sword_Sword_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sword_Sword_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_sword_Sword_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_sword_Sword_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sword_Sword_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("46_sword_Sword_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sword_Sword_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_sword_Sword_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_sword_Sword_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("50_sword_Sword_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_sword_Sword_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_sword_Sword_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sword_Sword_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("54_sword_Sword_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sword_Sword_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sword_Sword_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("57_sword_Sword_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sword_Sword_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_sword_Sword_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sword_Sword_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_sword_Sword_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("62_sword_Sword_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("63_sword_Sword_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_sword_Sword_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_sword_Sword_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_sword_Sword_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("67_sword_Sword_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("68_sword_Sword_067_png")
+}],
+"loop": false,
+"name": &"sword_miss",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("138_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("139_axe_Axe_005_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("140_axe_Axe_006_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("141_axe_Axe_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("142_axe_Axe_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("143_axe_Axe_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_axe_Axe_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_axe_Axe_011_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_axe_Axe_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_axe_Axe_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_axe_Axe_014_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("149_axe_Axe_015_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("150_axe_Axe_016_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("151_axe_Axe_017_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_axe_Axe_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_axe_Axe_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_axe_Axe_020_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_axe_Axe_021_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_axe_Axe_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_axe_Axe_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_axe_Axe_024_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("159_axe_Axe_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("160_axe_Axe_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_axe_Axe_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_axe_Axe_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_axe_Axe_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_axe_Axe_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_axe_Axe_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_axe_Axe_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_axe_Axe_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("172_axe_Axe_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("173_axe_Axe_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("174_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_axe_Axe_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("179_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_axe_Axe_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("181_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_axe_Axe_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("183_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_axe_Axe_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("185_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_axe_Axe_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("187_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_axe_Axe_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("190_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_axe_Axe_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_axe_Axe_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("195_axe_Axe_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("196_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("197_axe_Axe_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("198_axe_Axe_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("200_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}],
+"loop": false,
+"name": &"axe",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_axe_Axe_067_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_axe_Axe_068_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_axe_Axe_069_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_axe_Axe_070_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_axe_Axe_071_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_axe_Axe_072_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_axe_Axe_073_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_axe_Axe_074_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_axe_Axe_075_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_axe_Axe_076_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_axe_Axe_077_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_axe_Axe_078_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_axe_Axe_079_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_axe_Axe_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_axe_Axe_081_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_axe_Axe_082_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_axe_Axe_083_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("218_axe_Axe_084_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("219_axe_Axe_085_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("220_axe_Axe_086_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("221_axe_Axe_087_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("222_axe_Axe_088_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_axe_Axe_089_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_axe_Axe_090_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_axe_Axe_091_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_axe_Axe_092_png")
+}, {
+"duration": 35.0,
+"texture": ExtResource("227_axe_Axe_093_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("228_axe_Axe_094_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("229_axe_Axe_095_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("230_axe_Axe_096_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("231_axe_Axe_097_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_axe_Axe_098_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_axe_Axe_099_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_axe_Axe_100_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_axe_Axe_101_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_axe_Axe_102_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_axe_Axe_103_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_axe_Axe_104_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_axe_Axe_105_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_axe_Axe_106_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_axe_Axe_107_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_axe_Axe_108_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_axe_Axe_109_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_axe_Axe_110_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_axe_Axe_111_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_axe_Axe_112_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_axe_Axe_113_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_axe_Axe_114_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_axe_Axe_115_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_axe_Axe_116_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_axe_Axe_117_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_axe_Axe_118_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_axe_Axe_119_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_axe_Axe_120_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_axe_Axe_121_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_axe_Axe_122_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_axe_Axe_123_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_axe_Axe_124_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_axe_Axe_125_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_axe_Axe_126_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_axe_Axe_127_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_axe_Axe_128_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_axe_Axe_129_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_axe_Axe_130_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_axe_Axe_131_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("266_axe_Axe_132_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("160_axe_Axe_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_axe_Axe_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_axe_Axe_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_axe_Axe_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_axe_Axe_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_axe_Axe_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_axe_Axe_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_axe_Axe_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("172_axe_Axe_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("173_axe_Axe_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("174_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_axe_Axe_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("179_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_axe_Axe_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("181_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_axe_Axe_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("183_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_axe_Axe_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("185_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_axe_Axe_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("187_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_axe_Axe_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("190_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_axe_Axe_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_axe_Axe_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("195_axe_Axe_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("196_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("197_axe_Axe_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("198_axe_Axe_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("200_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}],
+"loop": false,
+"name": &"axe_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_axe_Axe_067_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_axe_Axe_068_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_axe_Axe_069_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_axe_Axe_070_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_axe_Axe_071_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_axe_Axe_072_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_axe_Axe_073_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_axe_Axe_074_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_axe_Axe_075_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_axe_Axe_076_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_axe_Axe_077_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_axe_Axe_078_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_axe_Axe_079_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_axe_Axe_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_axe_Axe_081_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_axe_Axe_082_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_axe_Axe_083_png")
+}, {
+"duration": 14.0,
+"texture": ExtResource("218_axe_Axe_084_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("219_axe_Axe_085_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("220_axe_Axe_086_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("221_axe_Axe_087_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("222_axe_Axe_088_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_axe_Axe_089_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_axe_Axe_090_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_axe_Axe_091_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_axe_Axe_092_png")
+}, {
+"duration": 35.0,
+"texture": ExtResource("227_axe_Axe_093_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("228_axe_Axe_094_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("229_axe_Axe_095_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("230_axe_Axe_096_png")
+}, {
+"duration": 16.0,
+"texture": ExtResource("231_axe_Axe_097_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_axe_Axe_098_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_axe_Axe_099_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_axe_Axe_100_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_axe_Axe_101_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_axe_Axe_102_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_axe_Axe_103_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_axe_Axe_104_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_axe_Axe_105_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_axe_Axe_106_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_axe_Axe_107_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_axe_Axe_108_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_axe_Axe_109_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_axe_Axe_110_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_axe_Axe_111_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_axe_Axe_112_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_axe_Axe_113_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_axe_Axe_114_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_axe_Axe_115_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_axe_Axe_116_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_axe_Axe_117_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_axe_Axe_118_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_axe_Axe_119_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_axe_Axe_120_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_axe_Axe_121_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_axe_Axe_122_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_axe_Axe_123_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_axe_Axe_124_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_axe_Axe_125_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_axe_Axe_126_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_axe_Axe_127_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_axe_Axe_128_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_axe_Axe_129_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_axe_Axe_130_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_axe_Axe_131_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("266_axe_Axe_132_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("160_axe_Axe_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_axe_Axe_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_axe_Axe_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_axe_Axe_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_axe_Axe_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_axe_Axe_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_axe_Axe_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_axe_Axe_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("172_axe_Axe_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("173_axe_Axe_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("174_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_axe_Axe_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("179_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_axe_Axe_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("181_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_axe_Axe_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("183_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_axe_Axe_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("185_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_axe_Axe_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("187_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_axe_Axe_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("190_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_axe_Axe_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_axe_Axe_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("195_axe_Axe_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("196_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("197_axe_Axe_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("198_axe_Axe_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("200_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}],
+"loop": false,
+"name": &"axe_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("267_axe_Axe_133_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_axe_Axe_134_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("267_axe_Axe_133_png")
+}],
+"loop": false,
+"name": &"axe_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("267_axe_Axe_133_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_axe_Axe_134_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("267_axe_Axe_133_png")
+}],
+"loop": false,
+"name": &"axe_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("138_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("139_axe_Axe_005_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("140_axe_Axe_006_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("141_axe_Axe_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("142_axe_Axe_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("143_axe_Axe_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_axe_Axe_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_axe_Axe_011_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_axe_Axe_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_axe_Axe_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_axe_Axe_014_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("149_axe_Axe_015_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("150_axe_Axe_016_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("269_axe_Axe_135_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270_axe_Axe_136_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("160_axe_Axe_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_axe_Axe_027_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_axe_Axe_028_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_axe_Axe_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_axe_Axe_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_axe_Axe_034_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_axe_Axe_035_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_axe_Axe_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("172_axe_Axe_038_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("173_axe_Axe_039_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("174_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_axe_Axe_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("179_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_axe_Axe_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("181_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_axe_Axe_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("183_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_axe_Axe_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("185_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_axe_Axe_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("187_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_axe_Axe_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("190_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_axe_Axe_059_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_axe_Axe_060_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("195_axe_Axe_061_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("196_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("197_axe_Axe_063_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("198_axe_Axe_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_axe_Axe_065_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("200_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("135_axe_Axe_001_png")
+}],
+"loop": false,
+"name": &"axe_miss",
+"speed": 60.0
+}
+]

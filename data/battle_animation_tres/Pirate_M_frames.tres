@@ -1,0 +1,233 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_000.png" id="1_axe_Axe_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_001.png" id="2_axe_Axe_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_002.png" id="3_axe_Axe_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_003.png" id="4_axe_Axe_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_004.png" id="5_axe_Axe_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_005.png" id="6_axe_Axe_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_006.png" id="7_axe_Axe_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_007.png" id="8_axe_Axe_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_008.png" id="9_axe_Axe_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_009.png" id="10_axe_Axe_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_010.png" id="11_axe_Axe_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_011.png" id="12_axe_Axe_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_012.png" id="13_axe_Axe_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Pirate-Base[M]/Axe/Axe_013.png" id="14_axe_Axe_013_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}],
+"loop": false,
+"name": &"axe",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 15.0,
+"texture": ExtResource("8_axe_Axe_007_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_axe_Axe_009_png")
+}, {
+"duration": 30.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}],
+"loop": false,
+"name": &"axe_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 15.0,
+"texture": ExtResource("8_axe_Axe_007_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_axe_Axe_009_png")
+}, {
+"duration": 30.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}],
+"loop": false,
+"name": &"axe_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_axe_Axe_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}],
+"loop": false,
+"name": &"axe_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_axe_Axe_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}],
+"loop": false,
+"name": &"axe_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_axe_Axe_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_axe_Axe_013_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}],
+"loop": false,
+"name": &"axe_miss",
+"speed": 60.0
+}
+]

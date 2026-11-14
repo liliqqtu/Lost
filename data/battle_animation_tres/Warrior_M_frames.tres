@@ -1,0 +1,1274 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_000.png" id="1_axe_Axe_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_001.png" id="2_axe_Axe_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_002.png" id="3_axe_Axe_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_003.png" id="4_axe_Axe_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_004.png" id="5_axe_Axe_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_005.png" id="6_axe_Axe_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_006.png" id="7_axe_Axe_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_007.png" id="8_axe_Axe_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_008.png" id="9_axe_Axe_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_009.png" id="10_axe_Axe_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_010.png" id="11_axe_Axe_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_011.png" id="12_axe_Axe_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_012.png" id="13_axe_Axe_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_013.png" id="14_axe_Axe_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_014.png" id="15_axe_Axe_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_015.png" id="16_axe_Axe_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_016.png" id="17_axe_Axe_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_017.png" id="18_axe_Axe_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_018.png" id="19_axe_Axe_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_019.png" id="20_axe_Axe_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_020.png" id="21_axe_Axe_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_021.png" id="22_axe_Axe_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_022.png" id="23_axe_Axe_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_023.png" id="24_axe_Axe_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_024.png" id="25_axe_Axe_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_025.png" id="26_axe_Axe_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_026.png" id="27_axe_Axe_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_027.png" id="28_axe_Axe_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_028.png" id="29_axe_Axe_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_029.png" id="30_axe_Axe_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_030.png" id="31_axe_Axe_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_031.png" id="32_axe_Axe_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_032.png" id="33_axe_Axe_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_033.png" id="34_axe_Axe_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_034.png" id="35_axe_Axe_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_035.png" id="36_axe_Axe_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_036.png" id="37_axe_Axe_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_037.png" id="38_axe_Axe_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_038.png" id="39_axe_Axe_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_039.png" id="40_axe_Axe_039_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_040.png" id="41_axe_Axe_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_041.png" id="42_axe_Axe_041_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_042.png" id="43_axe_Axe_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_043.png" id="44_axe_Axe_043_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_044.png" id="45_axe_Axe_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_045.png" id="46_axe_Axe_045_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_046.png" id="47_axe_Axe_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_047.png" id="48_axe_Axe_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_048.png" id="49_axe_Axe_048_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_049.png" id="50_axe_Axe_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_050.png" id="51_axe_Axe_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_051.png" id="52_axe_Axe_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_052.png" id="53_axe_Axe_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_053.png" id="54_axe_Axe_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_054.png" id="55_axe_Axe_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_055.png" id="56_axe_Axe_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_056.png" id="57_axe_Axe_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_057.png" id="58_axe_Axe_057_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_058.png" id="59_axe_Axe_058_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_059.png" id="60_axe_Axe_059_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_060.png" id="61_axe_Axe_060_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_061.png" id="62_axe_Axe_061_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_062.png" id="63_axe_Axe_062_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_063.png" id="64_axe_Axe_063_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_064.png" id="65_axe_Axe_064_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_065.png" id="66_axe_Axe_065_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_066.png" id="67_axe_Axe_066_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_067.png" id="68_axe_Axe_067_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_068.png" id="69_axe_Axe_068_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_069.png" id="70_axe_Axe_069_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_070.png" id="71_axe_Axe_070_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Axe/Axe_071.png" id="72_axe_Axe_071_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_000.png" id="73_bow_Bow_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_001.png" id="74_bow_Bow_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_002.png" id="75_bow_Bow_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_003.png" id="76_bow_Bow_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_004.png" id="77_bow_Bow_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_005.png" id="78_bow_Bow_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_006.png" id="79_bow_Bow_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_007.png" id="80_bow_Bow_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_008.png" id="81_bow_Bow_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_009.png" id="82_bow_Bow_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_010.png" id="83_bow_Bow_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_011.png" id="84_bow_Bow_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_012.png" id="85_bow_Bow_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_013.png" id="86_bow_Bow_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_014.png" id="87_bow_Bow_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_015.png" id="88_bow_Bow_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_016.png" id="89_bow_Bow_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_017.png" id="90_bow_Bow_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_018.png" id="91_bow_Bow_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_019.png" id="92_bow_Bow_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_020.png" id="93_bow_Bow_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_021.png" id="94_bow_Bow_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_022.png" id="95_bow_Bow_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_023.png" id="96_bow_Bow_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_024.png" id="97_bow_Bow_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_025.png" id="98_bow_Bow_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_026.png" id="99_bow_Bow_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_027.png" id="100_bow_Bow_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_028.png" id="101_bow_Bow_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_029.png" id="102_bow_Bow_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_030.png" id="103_bow_Bow_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Warrior-Base[M]/Bow/Bow_031.png" id="104_bow_Bow_031_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_axe_Axe_007_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_axe_Axe_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_axe_Axe_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_axe_Axe_012_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_axe_Axe_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_axe_Axe_014_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_axe_Axe_015_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_axe_Axe_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_axe_Axe_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_axe_Axe_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_axe_Axe_019_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_axe_Axe_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_axe_Axe_021_png")
+}],
+"loop": false,
+"name": &"axe",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_axe_Axe_022_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_axe_Axe_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_axe_Axe_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_axe_Axe_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_axe_Axe_026_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_axe_Axe_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_axe_Axe_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_axe_Axe_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_axe_Axe_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_axe_Axe_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_axe_Axe_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("35_axe_Axe_034_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("36_axe_Axe_035_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_axe_Axe_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_axe_Axe_037_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_axe_Axe_038_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_axe_Axe_039_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_axe_Axe_044_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_axe_Axe_046_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_axe_Axe_048_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_axe_Axe_050_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_axe_Axe_052_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_axe_Axe_055_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_axe_Axe_059_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("61_axe_Axe_060_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("62_axe_Axe_061_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("63_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_axe_Axe_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_axe_Axe_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_axe_Axe_063_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_axe_Axe_018_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("20_axe_Axe_019_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_axe_Axe_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_axe_Axe_021_png")
+}],
+"loop": false,
+"name": &"axe_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_axe_Axe_022_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_axe_Axe_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_axe_Axe_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_axe_Axe_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("27_axe_Axe_026_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_axe_Axe_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("29_axe_Axe_028_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_axe_Axe_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("31_axe_Axe_030_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_axe_Axe_031_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_axe_Axe_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_axe_Axe_033_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_axe_Axe_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_axe_Axe_010_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_axe_Axe_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("35_axe_Axe_034_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("36_axe_Axe_035_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_axe_Axe_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_axe_Axe_036_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_axe_Axe_037_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_axe_Axe_038_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_axe_Axe_039_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_axe_Axe_040_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_axe_Axe_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_axe_Axe_042_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_axe_Axe_043_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_axe_Axe_044_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_axe_Axe_045_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_axe_Axe_046_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_axe_Axe_047_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_axe_Axe_048_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_axe_Axe_049_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_axe_Axe_050_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_axe_Axe_051_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_axe_Axe_052_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_axe_Axe_053_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_axe_Axe_054_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_axe_Axe_055_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_axe_Axe_056_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_axe_Axe_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_axe_Axe_058_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_axe_Axe_059_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("61_axe_Axe_060_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("62_axe_Axe_061_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("63_axe_Axe_062_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_axe_Axe_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_axe_Axe_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("64_axe_Axe_063_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("19_axe_Axe_018_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("20_axe_Axe_019_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_axe_Axe_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_axe_Axe_021_png")
+}],
+"loop": false,
+"name": &"axe_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_axe_Axe_064_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_axe_Axe_064_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_axe_Axe_064_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("65_axe_Axe_064_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("66_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("66_axe_Axe_065_png")
+}],
+"loop": false,
+"name": &"axe_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("66_axe_Axe_065_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_axe_Axe_066_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("66_axe_Axe_065_png")
+}],
+"loop": false,
+"name": &"axe_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}],
+"loop": false,
+"name": &"axe_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axe_Axe_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_axe_Axe_001_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axe_Axe_002_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_axe_Axe_003_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_axe_Axe_004_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_axe_Axe_005_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("7_axe_Axe_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_axe_Axe_007_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("9_axe_Axe_008_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("68_axe_Axe_067_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_axe_Axe_068_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("70_axe_Axe_069_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("71_axe_Axe_070_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("72_axe_Axe_071_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_axe_Axe_014_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_axe_Axe_015_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("17_axe_Axe_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_axe_Axe_017_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_axe_Axe_018_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_axe_Axe_019_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("21_axe_Axe_020_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("22_axe_Axe_021_png")
+}],
+"loop": false,
+"name": &"axe_miss",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("74_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("75_bow_Bow_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("76_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("77_bow_Bow_004_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("78_bow_Bow_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("79_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_bow_Bow_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("81_bow_Bow_008_png")
+}, {
+"duration": 15.0,
+"texture": ExtResource("82_bow_Bow_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("84_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("85_bow_Bow_012_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("86_bow_Bow_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("87_bow_Bow_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_bow_Bow_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bow_Bow_016_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_bow_Bow_017_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bow_Bow_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("94_bow_Bow_021_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("95_bow_Bow_022_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("96_bow_Bow_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("97_bow_Bow_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("98_bow_Bow_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("99_bow_Bow_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_bow_Bow_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("101_bow_Bow_028_png")
+}, {
+"duration": 25.0,
+"texture": ExtResource("102_bow_Bow_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("84_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("85_bow_Bow_012_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("86_bow_Bow_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("87_bow_Bow_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_bow_Bow_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bow_Bow_016_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_bow_Bow_017_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bow_Bow_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("94_bow_Bow_021_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("95_bow_Bow_022_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("96_bow_Bow_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("97_bow_Bow_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("98_bow_Bow_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("99_bow_Bow_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_bow_Bow_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("101_bow_Bow_028_png")
+}, {
+"duration": 25.0,
+"texture": ExtResource("102_bow_Bow_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("74_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("75_bow_Bow_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("76_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("77_bow_Bow_004_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("78_bow_Bow_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("79_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_bow_Bow_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("81_bow_Bow_008_png")
+}, {
+"duration": 15.0,
+"texture": ExtResource("82_bow_Bow_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("84_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("85_bow_Bow_012_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("86_bow_Bow_013_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("87_bow_Bow_014_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_bow_Bow_015_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bow_Bow_016_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_bow_Bow_017_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bow_Bow_019_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("94_bow_Bow_021_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("95_bow_Bow_022_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("96_bow_Bow_023_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("97_bow_Bow_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("98_bow_Bow_025_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("99_bow_Bow_026_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_bow_Bow_027_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("101_bow_Bow_028_png")
+}, {
+"duration": 25.0,
+"texture": ExtResource("102_bow_Bow_029_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("103_bow_Bow_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_bow_Bow_031_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("103_bow_Bow_030_png")
+}],
+"loop": false,
+"name": &"bow_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("103_bow_Bow_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_bow_Bow_031_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("103_bow_Bow_030_png")
+}],
+"loop": false,
+"name": &"bow_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("74_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("75_bow_Bow_002_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("76_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("77_bow_Bow_004_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("78_bow_Bow_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("79_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_bow_Bow_007_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("81_bow_Bow_008_png")
+}, {
+"duration": 15.0,
+"texture": ExtResource("82_bow_Bow_009_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bow_Bow_010_png")
+}],
+"loop": false,
+"name": &"bow_miss",
+"speed": 60.0
+}
+]

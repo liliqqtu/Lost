@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ded3n37btmpk2" path="res://assets/graphics/Battle bg/草地.png" id="2_08d3c"]
 [ext_resource type="Texture2D" uid="uid://c2sotv3nxakeh" path="res://assets/graphics/Battle bg/草地地形.png" id="3_2bulg"]
 [ext_resource type="Shader" uid="uid://qeoaocgnntu7" path="res://data/shader/battle_animation.gdshader" id="4_jt41f"]
-[ext_resource type="SpriteFrames" uid="uid://cjfucaeqdw32o" path="res://data/battle_animation_tres/Isar.tres" id="5_4am2m"]
+[ext_resource type="SpriteFrames" path="res://data/battle_animation_tres/Mercenary_M_frames.tres" id="5_y0ncb"]
 [ext_resource type="SpriteFrames" uid="uid://c3oji4bmxra71" path="res://data/battle_animation_tres/Brigand_M_frames.tres" id="6_l1lng"]
 [ext_resource type="Shader" uid="uid://duqbxaw5jaxv1" path="res://data/shader/magic.gdshader" id="7_n85w1"]
 [ext_resource type="SpriteFrames" uid="uid://y0bhqolok4ke" path="res://data/battle_animation_tres/Magic_frames.tres" id="8_05pam"]
@@ -181,9 +181,9 @@ metadata/_edit_lock_ = true
 
 [node name="PlayTreamAnimation" type="AnimatedSprite2D" parent="." unique_id=815879019]
 material = SubResource("ShaderMaterial_3bg2x")
-sprite_frames = ExtResource("5_4am2m")
-animation = &"magic_start_crit"
-frame = 22
+sprite_frames = ExtResource("5_y0ncb")
+animation = &"sword_critical"
+frame = 72
 frame_progress = 1.0
 metadata/_edit_lock_ = true
 
@@ -191,6 +191,8 @@ metadata/_edit_lock_ = true
 material = SubResource("ShaderMaterial_h10f2")
 sprite_frames = ExtResource("6_l1lng")
 animation = &"axe_critical"
+frame = 35
+frame_progress = 1.0
 flip_h = true
 metadata/_edit_lock_ = true
 

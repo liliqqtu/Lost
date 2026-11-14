@@ -1,0 +1,1287 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_000.png" id="1_sword_Sword_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_001.png" id="2_sword_Sword_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_002.png" id="3_sword_Sword_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_003.png" id="4_sword_Sword_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_004.png" id="5_sword_Sword_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_005.png" id="6_sword_Sword_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_006.png" id="7_sword_Sword_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_007.png" id="8_sword_Sword_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_008.png" id="9_sword_Sword_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_009.png" id="10_sword_Sword_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_010.png" id="11_sword_Sword_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_011.png" id="12_sword_Sword_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_012.png" id="13_sword_Sword_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_013.png" id="14_sword_Sword_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_014.png" id="15_sword_Sword_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_015.png" id="16_sword_Sword_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_016.png" id="17_sword_Sword_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_017.png" id="18_sword_Sword_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_018.png" id="19_sword_Sword_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_019.png" id="20_sword_Sword_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_020.png" id="21_sword_Sword_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_021.png" id="22_sword_Sword_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_022.png" id="23_sword_Sword_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_023.png" id="24_sword_Sword_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_024.png" id="25_sword_Sword_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_025.png" id="26_sword_Sword_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_026.png" id="27_sword_Sword_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_027.png" id="28_sword_Sword_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_028.png" id="29_sword_Sword_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_029.png" id="30_sword_Sword_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_030.png" id="31_sword_Sword_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_031.png" id="32_sword_Sword_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_032.png" id="33_sword_Sword_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Sword/Sword_033.png" id="34_sword_Sword_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_000.png" id="35_bow_Bow_000_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_001.png" id="36_bow_Bow_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_002.png" id="37_bow_Bow_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_003.png" id="38_bow_Bow_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_004.png" id="39_bow_Bow_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_005.png" id="40_bow_Bow_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_006.png" id="41_bow_Bow_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_007.png" id="42_bow_Bow_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_008.png" id="43_bow_Bow_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_009.png" id="44_bow_Bow_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_010.png" id="45_bow_Bow_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_011.png" id="46_bow_Bow_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_012.png" id="47_bow_Bow_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_013.png" id="48_bow_Bow_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_014.png" id="49_bow_Bow_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_015.png" id="50_bow_Bow_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_016.png" id="51_bow_Bow_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_017.png" id="52_bow_Bow_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_018.png" id="53_bow_Bow_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_019.png" id="54_bow_Bow_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_020.png" id="55_bow_Bow_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_021.png" id="56_bow_Bow_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_022.png" id="57_bow_Bow_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_023.png" id="58_bow_Bow_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_024.png" id="59_bow_Bow_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_025.png" id="60_bow_Bow_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_026.png" id="61_bow_Bow_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_027.png" id="62_bow_Bow_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_028.png" id="63_bow_Bow_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_029.png" id="64_bow_Bow_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_030.png" id="65_bow_Bow_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_031.png" id="66_bow_Bow_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_032.png" id="67_bow_Bow_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_033.png" id="68_bow_Bow_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_034.png" id="69_bow_Bow_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_035.png" id="70_bow_Bow_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_036.png" id="71_bow_Bow_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_037.png" id="72_bow_Bow_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_038.png" id="73_bow_Bow_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_039.png" id="74_bow_Bow_039_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_040.png" id="75_bow_Bow_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_041.png" id="76_bow_Bow_041_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_042.png" id="77_bow_Bow_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_043.png" id="78_bow_Bow_043_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_044.png" id="79_bow_Bow_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_045.png" id="80_bow_Bow_045_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_046.png" id="81_bow_Bow_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_047.png" id="82_bow_Bow_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_048.png" id="83_bow_Bow_048_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_049.png" id="84_bow_Bow_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_050.png" id="85_bow_Bow_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_051.png" id="86_bow_Bow_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_052.png" id="87_bow_Bow_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_053.png" id="88_bow_Bow_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_054.png" id="89_bow_Bow_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_055.png" id="90_bow_Bow_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_056.png" id="91_bow_Bow_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_057.png" id="92_bow_Bow_057_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Ranger-Base[F]/Bow/Bow_058.png" id="93_bow_Bow_058_png"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_sword_Sword_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sword_Sword_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_sword_Sword_014_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_sword_Sword_015_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("17_sword_Sword_016_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_sword_Sword_017_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("19_sword_Sword_018_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("20_sword_Sword_019_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("21_sword_Sword_020_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("22_sword_Sword_021_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("23_sword_Sword_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 12.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sword_Sword_006_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("8_sword_Sword_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_sword_Sword_014_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_sword_Sword_015_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("17_sword_Sword_016_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_sword_Sword_017_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("19_sword_Sword_018_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("20_sword_Sword_019_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("21_sword_Sword_020_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("22_sword_Sword_021_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("23_sword_Sword_022_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("27_sword_Sword_026_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_sword_Sword_027_png")
+}, {
+"duration": 12.0,
+"texture": ExtResource("29_sword_Sword_028_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sword_Sword_006_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("8_sword_Sword_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("30_sword_Sword_029_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("26_sword_Sword_025_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_sword_Sword_024_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_sword_Sword_023_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("32_sword_Sword_031_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("31_sword_Sword_030_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_sword_Sword_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_sword_Sword_002_png")
+}, {
+"duration": 9.0,
+"texture": ExtResource("4_sword_Sword_003_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_sword_Sword_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_sword_Sword_005_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("33_sword_Sword_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sword_Sword_033_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sword_Sword_008_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_sword_Sword_009_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_sword_Sword_010_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_sword_Sword_011_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_sword_Sword_012_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_sword_Sword_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sword_Sword_000_png")
+}],
+"loop": false,
+"name": &"sword_miss",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("36_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_bow_Bow_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("38_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("39_bow_Bow_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("40_bow_Bow_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_bow_Bow_007_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bow_Bow_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("44_bow_Bow_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_bow_Bow_010_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("46_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_bow_Bow_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bow_Bow_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("36_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_bow_Bow_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("38_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("39_bow_Bow_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("40_bow_Bow_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_bow_Bow_007_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bow_Bow_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("44_bow_Bow_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_bow_Bow_010_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("46_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_bow_Bow_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bow_Bow_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("36_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_bow_Bow_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("38_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("39_bow_Bow_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("40_bow_Bow_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_bow_Bow_007_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bow_Bow_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("44_bow_Bow_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_bow_Bow_010_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("46_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_bow_Bow_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bow_Bow_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_critical",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("36_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_bow_Bow_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("38_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("39_bow_Bow_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("40_bow_Bow_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_bow_Bow_007_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bow_Bow_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("44_bow_Bow_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_bow_Bow_010_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("46_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_bow_Bow_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bow_Bow_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("68_bow_Bow_033_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("69_bow_Bow_034_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("70_bow_Bow_035_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("71_bow_Bow_036_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("72_bow_Bow_037_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("73_bow_Bow_038_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("74_bow_Bow_039_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("75_bow_Bow_040_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("76_bow_Bow_041_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_bow_Bow_039_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("77_bow_Bow_042_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("78_bow_Bow_043_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("79_bow_Bow_044_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_bow_Bow_045_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("81_bow_Bow_046_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("82_bow_Bow_047_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("83_bow_Bow_048_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("84_bow_Bow_049_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("85_bow_Bow_050_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("86_bow_Bow_051_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("87_bow_Bow_052_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("88_bow_Bow_053_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("89_bow_Bow_054_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("90_bow_Bow_055_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("91_bow_Bow_056_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 8.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_ranged_crit",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("92_bow_Bow_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bow_Bow_058_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("92_bow_Bow_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_dodge",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("92_bow_Bow_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bow_Bow_058_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("92_bow_Bow_057_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_dodge_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_stand",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_idle",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_mode_11",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("36_bow_Bow_001_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("37_bow_Bow_002_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("38_bow_Bow_003_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("39_bow_Bow_004_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("40_bow_Bow_005_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bow_Bow_006_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_bow_Bow_007_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bow_Bow_008_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("44_bow_Bow_009_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("45_bow_Bow_010_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("46_bow_Bow_011_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("47_bow_Bow_012_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bow_Bow_013_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bow_Bow_014_png")
+}, {
+"duration": 20.0,
+"texture": ExtResource("50_bow_Bow_015_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("51_bow_Bow_016_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("52_bow_Bow_017_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("53_bow_Bow_018_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bow_Bow_019_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("55_bow_Bow_020_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("56_bow_Bow_021_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("57_bow_Bow_022_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_bow_Bow_023_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("59_bow_Bow_024_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("60_bow_Bow_025_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("61_bow_Bow_026_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("62_bow_Bow_027_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("63_bow_Bow_028_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("64_bow_Bow_029_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("65_bow_Bow_030_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("66_bow_Bow_031_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("67_bow_Bow_032_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bow_Bow_000_png")
+}],
+"loop": false,
+"name": &"bow_miss",
+"speed": 60.0
+}
+]

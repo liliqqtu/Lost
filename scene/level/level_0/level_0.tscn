@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c73b8favdp0fg" path="res://scene/character/units/level_0/brigand.tscn" id="6_fxowc"]
 [ext_resource type="PackedScene" uid="uid://d2kohdrb8xqeu" path="res://scene/ui/cursor.tscn" id="6_h10f2"]
 [ext_resource type="PackedScene" uid="uid://bf6qs4f42l1db" path="res://scene/character/units/player_team/isar/isar.tscn" id="7_7vhj7"]
+[ext_resource type="Resource" path="res://data/class_data/boss_zaka.tres" id="8_zaka"]
 [ext_resource type="Texture2D" uid="uid://bnql5g5oaxrsq" path="res://assets/graphics/UI/{Lukiroh} Player Phase.png" id="11_h10f2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdiei"]
@@ -1483,8 +1484,17 @@ tile_set = SubResource("TileSet_uafsf")
 
 [node name="Enemy" type="Node2D" parent="Units" unique_id=2052524977]
 
-[node name="Bandit" parent="Units/Enemy" unique_id=1792816135 instance=ExtResource("6_fxowc")]
+[node name="Zaka" parent="Units/Enemy" unique_id=1792816135 instance=ExtResource("6_fxowc")]
 position = Vector2(0, 64)
+class_data = ExtResource("8_zaka")
+unit_name = "扎卡"
+info = "狂徒头目 · 扎卡"
+is_boss = true
+lv = 2
+max_hp = 22
+hp = 22
+str_h = 7
+def_h = 4
 
 [node name="Bandit3" parent="Units/Enemy" unique_id=2028581135 instance=ExtResource("6_fxowc")]
 position = Vector2(32, 64)

@@ -48,6 +48,7 @@ var label_setting = LABEL_SETTING_TRES.duplicate()
 
 ##战斗管理器：由本类 _ready 创建与装配（setup/add_unit/begin_battle 流程不变）
 var battle_manager: BattleManager
+var talk_scene: Control
 
 @onready var tile_map: TileMapLayer = $TileMapLayer
 @onready var high_light_layer: TileMapLayer = $HighLightMapLayer
@@ -62,6 +63,7 @@ var battle_manager: BattleManager
 func _ready() -> void:
 	battle_manager = BattleManager.new()
 	battle_manager.setup(tile_map, high_light_layer, cursor_node, camera)
+	_setup_camera_and_cursor_bounds()
 	_setup_units()
 	_setup_battle_forecast()
 	_setup_action_menu()
@@ -78,8 +80,64 @@ func _ready() -> void:
 	_setup_map_events()
 	_on_level_ready()
 	battle_manager.turn_started.connect(_on_turn_started)
+	battle_manager.victory_achieved.connect(_on_battle_victory)
 	add_child(battle_manager)
+	_start_level_flow()
+
+
+func _start_level_flow() -> void:
+	var opening: Dictionary = get_opening_dialogue()
+	if not opening.is_empty() and opening.has("lines") and not opening["lines"].is_empty():
+		battle_manager.state = BattleManager.State.DIALOGUE
+		talk_scene.open(opening["lines"], opening.get("portraits", {}), opening.get("bg", null))
+		await talk_scene.closed
+		battle_manager.state = BattleManager.State.CURSOR
 	battle_manager.begin_battle()
+
+
+func _on_battle_victory() -> void:
+	print("--- Level Victory Triggered! ---")
+	await get_tree().create_timer(0.6).timeout
+	var ending: Dictionary = get_ending_dialogue()
+	if not ending.is_empty() and ending.has("lines") and not ending["lines"].is_empty():
+		battle_manager.state = BattleManager.State.DIALOGUE
+		talk_scene.open(ending["lines"], ending.get("portraits", {}), ending.get("bg", null))
+		await talk_scene.closed
+		battle_manager.state = BattleManager.State.CURSOR
+	_auto_save_chapter_clear()
+	var next_path := get_next_chapter_path()
+	if next_path != "" and ResourceLoader.exists(next_path):
+		await get_tree().create_timer(0.5).timeout
+		if Engine.has_singleton("SceneTransition") or get_node_or_null("/root/SceneTransition") != null:
+			SceneTransition.change_scene(next_path, 0.5, 0.5)
+		else:
+			get_tree().change_scene_to_file(next_path)
+	else:
+		print("--- 本阶段全部章节完成 ---")
+
+
+func _auto_save_chapter_clear() -> void:
+	if SaveManager.current_slot > 0:
+		var slot_id := SaveManager.current_slot
+		var old_data := SaveManager.load_from_slot(slot_id)
+		var next_path := get_next_chapter_path()
+		var next_id := next_path.get_file().get_basename()
+		var save_data := {
+			"version": 1,
+			"slot_id": slot_id,
+			"is_empty": false,
+			"chapter_id": next_id if next_id != "" else "cleared",
+			"chapter_name": get_next_chapter_title() if get_next_chapter_title() != "" else old_data.get("chapter_name", "已通关"),
+			"protagonist_name": "忒",
+			"protagonist_level": 1,
+			"protagonist_class": "游牧民",
+			"play_time_seconds": old_data.get("play_time_seconds", 0) + int(Time.get_ticks_msec() / 1000.0),
+			"turn_count": battle_manager.turn,
+			"timestamp": Time.get_datetime_string_from_system(false, true).substr(0, 16),
+			"difficulty": "普通"
+		}
+		SaveManager.save_to_slot(slot_id, save_data)
+		print("[Level] Chapter clear auto-saved to slot %d" % slot_id)
 
 
 ##虚钩子：本关单位摆放（默认空关卡）
@@ -207,8 +265,10 @@ func _build_action_menu_panel() -> Control:
 func _setup_talk() -> void:
 	var talk := TALK_SCENE.instantiate()
 	$CanvasLayer.add_child(talk)
+	talk_scene = talk
 	battle_manager.set_talk_scene(talk)
 	battle_manager.set_talk_provider(get_talk_dialogue)
+	battle_manager.set_boss_dialogue_provider(get_boss_battle_dialogue, get_boss_defeat_dialogue)
 
 
 ##人物对话数据提供者（虚方法）：按对话双方单位匹配，返回空字典表示无对话
@@ -216,6 +276,36 @@ func _setup_talk() -> void:
 ##具体关卡 override 此方法返回本关对话；默认无对话
 func get_talk_dialogue(_unit: Unit, _target: Unit) -> Dictionary:
 	return {}
+
+
+##开场剧情数据提供者（虚方法）：返回 {"lines": [...], "portraits": {...}, "bg": Texture2D}，默认空
+func get_opening_dialogue() -> Dictionary:
+	return {}
+
+
+##终局剧情数据提供者（虚方法）：返回 {"lines": [...], "portraits": {...}, "bg": Texture2D}，默认空
+func get_ending_dialogue() -> Dictionary:
+	return {}
+
+
+##Boss 首次交战台词数据提供者（虚方法）：返回 {"lines": [...], "portraits": {...}}，默认空
+func get_boss_battle_dialogue(_attacker: Unit, _defender: Unit) -> Dictionary:
+	return {}
+
+
+##Boss 阵亡遗言数据提供者（虚方法）：返回 {"lines": [...], "portraits": {...}}，默认空
+func get_boss_defeat_dialogue(_boss: Unit, _killer: Unit) -> Dictionary:
+	return {}
+
+
+##下一关卡场景路径（虚方法）：默认空字符串
+func get_next_chapter_path() -> String:
+	return ""
+
+
+##下一关卡展示名（虚方法）：用于存档记录更新
+func get_next_chapter_title() -> String:
+	return ""
 
 
 ##==================== 可交互物 ====================
@@ -335,6 +425,18 @@ func _on_turn_started(team: int) -> void:
 
 
 ##==================== 相机与输入转发 ====================
+
+func _setup_camera_and_cursor_bounds() -> void:
+	if tile_map == null:
+		return
+	var map_rect: Rect2i = tile_map.get_used_rect()
+	if not map_rect.has_area():
+		return
+	if cursor_node != null and "map_rect" in cursor_node:
+		cursor_node.map_rect = map_rect
+	if camera != null and camera.has_method("set_map_limits"):
+		camera.set_map_limits(map_rect)
+
 
 func _process(_delta: float) -> void:
 	##敌方回合相机跟随当前行动的敌人，事件演出跟随 cutscene_focus，其余时间跟随光标

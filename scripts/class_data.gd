@@ -12,6 +12,8 @@ class_name ClassData
 @export var class_card: Texture2D
 ##"""职业强度（升级系统，FE8 经验公式 Q）：普通职业=3，弱职业=2，单位无职业数据按 3"""
 @export var class_power := 3
+## 是否上位/进阶职业（如贤者、圣骑士等，FE8 经验结算等效等级 +20）
+@export var is_promoted: bool = false
 
 ## 属性（5G 支援系统）：人物面板 BaseInfo/AffinityIcon 显示其图标，数据资源在 data/affinity/
 ## 支援结算的属性贡献查支援表 SupportPair（scripts/support_pair.gd），两边应保持一致

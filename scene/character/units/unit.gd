@@ -32,7 +32,12 @@ const HP_BAR_RED := 0.25
 ## 人物描述
 @export var info := ""
 ## 队伍 0是玩家 1是敌方 2是友军
-@export var team := 0
+@export var team := 0:
+	set(value):
+		team = value
+		update_team_palette()
+## 是否为本关Boss（交战台词与击破专属演出）
+@export var is_boss := false
 ## 是否携带运输队（主角忒等特定角色）
 @export var has_convoy := false
 ## 等级
@@ -267,24 +272,32 @@ func get_canto_trigger() -> Skill.SkillTrigger:
 			return Skill.SkillTrigger.POST_ACTION_NO_ATTACK
 	return Skill.SkillTrigger.PASSIVE
 
-func can_canto_after_attack() -> bool:
-	return get_canto_trigger() == Skill.SkillTrigger.POST_ACTION_ALL
-
+func can_canto_after_attack() -> bool: return get_canto_trigger() == Skill.SkillTrigger.POST_ACTION_ALL
 func can_canto_after_non_attack() -> bool:
 	var t := get_canto_trigger()
 	return t == Skill.SkillTrigger.POST_ACTION_NO_ATTACK or t == Skill.SkillTrigger.POST_ACTION_ALL
 
-## 灰度着色器操作
+## 灰度与阵营着色器操作
 func apply_grayscale() -> void:
+	if not has_node("MapSprite2D"): return
 	_ensure_unique_material()
 	$MapSprite2D.material.set("shader_parameter/grayscale", true)
 
 func remove_grayscale() -> void:
+	if not has_node("MapSprite2D"): return
 	_ensure_unique_material()
 	$MapSprite2D.material.set("shader_parameter/grayscale", false)
 
+func update_team_palette() -> void:
+	if not has_node("MapSprite2D"): return
+	_ensure_unique_material()
+	var mat := $MapSprite2D.material as ShaderMaterial
+	if mat != null:
+		mat.set_shader_parameter("team", team)
+
 var _material_duplicated := false
 func _ensure_unique_material() -> void:
+	if not has_node("MapSprite2D"): return
 	if not _material_duplicated and $MapSprite2D.material:
 		$MapSprite2D.material = $MapSprite2D.material.duplicate()
 		_material_duplicated = true
@@ -322,6 +335,7 @@ func _ready() -> void:
 	_own_inventory()
 	_setup_hp_bar()
 	update_hp_bar()
+	update_team_palette()
 
 ## 背包实例唯一化与默认装备
 func _own_inventory() -> void:
@@ -432,18 +446,14 @@ func gain_weapon_exp(weapon: Weapon) -> void:
 	weapon_xp[type] = mini(get_weapon_xp(type) + weapon.weapon_exp, cap_xp)
 
 func can_equip(weapon: Weapon) -> bool:
-	if weapon == null:
-		return false
-	if class_data == null:
-		return true
-	if not can_use_weapon(weapon.weapon_type):
-		return false
+	if weapon == null: return false
+	if class_data == null: return true
+	if not can_use_weapon(weapon.weapon_type): return false
 	return get_weapon_ex(weapon.weapon_type) >= weapon.required_rank
 
 func gain_exp(amount: int) -> void:
-	if lv >= LEVEL_CAP:
-		return
-	exp += amount
+	if lv < LEVEL_CAP:
+		exp += amount
 
 func level_up(gains: Dictionary) -> void:
 	lv += 1

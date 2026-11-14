@@ -155,6 +155,10 @@ func do_talk() -> void:
 		var data: Dictionary = talk_provider.call(bm.selected_unit, target)
 		if data != null and data.has("lines") and not data["lines"].is_empty():
 			await play_dialogue(data["lines"], data.get("portraits", {}))
+			if data.get("recruit", false) == true:
+				target.team = 0
+				if data.has("callback") and data["callback"] is Callable:
+					data["callback"].call()
 	##回到行动菜单继续行动（talk 已清空，"对话"项不会再出现）
 	##已执行过对话：此后行动菜单按 no 不再撤回移动，直接待机
 	bm.mark_action_spent()

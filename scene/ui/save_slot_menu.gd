@@ -29,6 +29,7 @@ const CONFIRM_CURSOR_X: Array[float] = [42.0, 88.0]
 const CONFIRM_CURSOR_Y: float = 32.0
 
 @onready var cursor_hand: Control = $CursorHand
+@onready var fog_overlay: ColorRect = $FogGlowOverlay
 @onready var slot_cards: Array[TextureRect] = [
 	$Cards/Slot1,
 	$Cards/Slot2,
@@ -59,6 +60,7 @@ var selected_slot_index: int = 0  ## 0, 1, 2 (对应 slot 1, 2, 3)
 var action_menu_index: int = 0    ## 0: 继续, 1: 新建, 2: 删除, 3: 返回
 var confirm_dialog_index: int = 0 ## 0: 确定, 1: 取消
 var _is_transitioning: bool = false
+var _fog_time: float = 0.0
 
 
 func _ready() -> void:
@@ -66,6 +68,12 @@ func _ready() -> void:
 	confirm_dialog.visible = false
 	_refresh_all_slots()
 	_update_slot_cursor()
+
+
+func _process(delta: float) -> void:
+	_fog_time += delta
+	if fog_overlay and fog_overlay.material:
+		(fog_overlay.material as ShaderMaterial).set_shader_parameter("custom_time", _fog_time)
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -30,6 +30,12 @@ func execute_attack(attacker: Unit, defender: Unit) -> void:
 				Pathfinder.get_terrain_name(bm.tile_map, attacker.cell),
 				Pathfinder.get_terrain_name(bm.tile_map, defender.cell))
 
+	##Boss 首次交战对话（圣魔机制：切入战斗特写后、打击动作前弹出专属对话）
+	if bm.has_method("get_boss_battle_dialogue"):
+		var boss_quote: Dictionary = bm.get_boss_battle_dialogue(attacker, defender)
+		if not boss_quote.is_empty() and boss_quote.has("lines") and not boss_quote["lines"].is_empty():
+			await bm.play_dialogue(boss_quote["lines"], boss_quote.get("portraits", {}))
+
 	##经验统计（升级系统）：参战双方记录 是否造成伤害/是否击杀，战后结算（只有玩家方真正获得）
 	var exp_stats := {
 		attacker: {"damage": false, "kill": false},
@@ -74,6 +80,15 @@ func execute_attack(attacker: Unit, defender: Unit) -> void:
 
 		if d.hp <= 0:
 			exp_stats[a]["kill"] = true
+			if d.is_boss:
+				## 1. 播放 Boss 临终遗言
+				if bm.has_method("get_boss_defeat_dialogue"):
+					var defeat_quote: Dictionary = bm.get_boss_defeat_dialogue(d, a)
+					if not defeat_quote.is_empty() and defeat_quote.has("lines") and not defeat_quote["lines"].is_empty():
+						await bm.play_dialogue(defeat_quote["lines"], defeat_quote.get("portraits", {}))
+				## 2. 播放 Boss 击破专属动画
+				if battle_scene != null and battle_scene.has_method("play_boss_defeat_fx"):
+					await battle_scene.play_boss_defeat_fx(d)
 			bm.remove_unit(d)
 			print("%s 被击败！" % d.unit_name)
 			break

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ClassData" format=3]
+
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Class Card/布雷特.png" id="2_card"]
+
+[resource]
+script = ExtResource("1_class")
+job_name = "断风寨主"
+job_info = "截断断风隘口的重装巨汉，力大无穷"
+class_card = ExtResource("2_card")
+class_power = 3
+cap_hp = 50
+cap_str = 26
+cap_mag = 10
+cap_skl = 22
+cap_spd = 18
+cap_luk = 20
+cap_def_h = 24
+cap_res = 18
+cap_con = 25
+mount_type = 0

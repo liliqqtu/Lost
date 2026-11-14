@@ -191,20 +191,30 @@ static func _manhattan(a: Vector2i, b: Vector2i) -> int:
 
 ##==================== 经验与升级（升级系统） ====================
 
-##"""FE8 经验公式（转职加成/BOSS/盗贼标记未实现，有这些系统后再扩展）：
-##造成伤害 = (31 + 敌Lv - 己Lv) / 己职业强度（下取整，最低1）
+##"""FE8 经验公式（支持进阶上位职业 is_promoted 等效等级+20）：
+##造成伤害 = (31 + 敌等效Lv - 己等效Lv) / 己职业强度（下取整，最低1）
 ##未命中或 0 伤 = 1
-##击杀 = 伤害经验 + max(0, 敌Lv×敌职业强度 - 己Lv×己职业强度 + 20)，封顶 100"""
+##击杀 = 伤害经验 + max(0, 敌等效Lv×敌职业强度 - 己等效Lv×己职业强度 + 20)，封顶 100"""
 static func calculate_exp_gain(player_unit: Unit, enemy_unit: Unit, did_damage: bool, killed: bool) -> int:
 	var qp := _class_power(player_unit)
 	var qe := _class_power(enemy_unit)
+	var elv_p := _effective_level(player_unit)
+	var elv_e := _effective_level(enemy_unit)
 	var exp_dmg := 1
 	if did_damage:
-		exp_dmg = maxi(floori((31.0 + enemy_unit.lv - player_unit.lv) / qp), 1)
+		exp_dmg = maxi(floori((31.0 + elv_e - elv_p) / qp), 1)
 	if not killed:
 		return exp_dmg
-	var kill_bonus := maxi(enemy_unit.lv * qe - player_unit.lv * qp + 20, 0)
+	var kill_bonus := maxi(elv_e * qe - elv_p * qp + 20, 0)
 	return mini(exp_dmg + kill_bonus, 100)
+
+
+##"""等效等级（FE8 规则：上位职业进阶加成 +20）"""
+static func _effective_level(unit: Unit) -> int:
+	var elv := unit.lv
+	if unit.class_data != null and unit.class_data.is_promoted:
+		elv += 20
+	return elv
 
 
 ##"""职业强度（无职业数据按普通职业 3）"""

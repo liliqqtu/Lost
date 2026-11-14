@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" uid="uid://d4d43f53sv7ne" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/Anima/疾风.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"weapon_wind"
+display_name = "疾风"
+description = "如风刃般锐利的风系理法术"
+icon = ExtResource("2_icon")
+required_rank = 1
+weapon_type = 4
+might = 6
+hit = 85
+crit = 0
+weight = 4
+durability = 40
+max_durability = 40
+min_range = 1
+max_range = 2

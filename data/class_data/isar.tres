@@ -10,6 +10,7 @@
 script = ExtResource("2_wdv5d")
 job_name = "暗之贤者"
 job_info = "熟练掌握暗魔法的近战法师"
+is_promoted = true
 class_card = ExtResource("1_hol7c")
 affinity = ExtResource("4_aff")
 cap_str = 24

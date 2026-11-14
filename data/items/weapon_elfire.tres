@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" uid="uid://d4d43f53sv7ne" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/Anima/业火.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"weapon_elfire"
+display_name = "业火"
+description = "释放高热狂暴爆炎的中级理法术"
+icon = ExtResource("2_icon")
+required_rank = 2
+weapon_type = 4
+might = 10
+hit = 75
+crit = 0
+weight = 10
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 2

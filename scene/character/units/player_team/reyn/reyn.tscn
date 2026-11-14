@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cpppxvkyv26hm"]
+
+[ext_resource type="Script" uid="uid://xir5jxtdsv56" path="res://scene/character/units/player_team/reyn/reyn.gd" id="1_reyn"]
+[ext_resource type="Script" uid="uid://ki2tfb5awnwe" path="res://scripts/item.gd" id="2_item"]
+[ext_resource type="Resource" path="res://data/items/weapon_iron_sword.tres" id="3_sword"]
+[ext_resource type="Resource" uid="uid://b8f1potion001" path="res://data/items/consumable_potion.tres" id="4_potion"]
+[ext_resource type="Resource" path="res://data/class_data/mercenary.tres" id="5_class"]
+[ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="6_skill"]
+[ext_resource type="Resource" path="res://data/skills/surge.tres" id="7_surge"]
+[ext_resource type="Resource" path="res://data/skills/blood_boil.tres" id="8_blood"]
+[ext_resource type="SpriteFrames" path="res://data/battle_animation_tres/Myrmidon_M_frames.tres" id="9_a8x56"]
+[ext_resource type="SpriteFrames" uid="uid://dl85oryubaged" path="res://data/map_sprite_frames/Mercenary_map_sprite.tres" id="9_anim"]
+[ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="10_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_reyn"]
+shader = ExtResource("10_shader")
+shader_parameter/team = 2
+shader_parameter/grayscale = false
+shader_parameter/red_tint = false
+shader_parameter/remove_background = true
+
+[node name="Reyn" type="Node2D" unique_id=607681095]
+script = ExtResource("1_reyn")
+inventory = Array[ExtResource("2_item")]([ExtResource("3_sword"), ExtResource("4_potion")])
+class_data = ExtResource("5_class")
+personal_skills = Array[ExtResource("6_skill")]([ExtResource("7_surge"), ExtResource("8_blood")])
+unit_name = "雷恩"
+info = "满脑子英雄童话的热血少年佣兵"
+team = 2
+lv = 2
+rank_sword = 0
+max_hp = 24
+hp = 12
+str = 8
+skl = 9
+spd = 10
+def_h = 6
+res = 1
+luk = 6
+con = 9
+talk = "忒"
+battle_frames = ExtResource("9_a8x56")
+
+[node name="MapSprite2D" type="AnimatedSprite2D" parent="." unique_id=732260370]
+material = SubResource("ShaderMaterial_reyn")
+position = Vector2(8, 0)
+sprite_frames = ExtResource("9_anim")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="hp" type="ProgressBar" parent="." unique_id=1803285337]
+custom_maximum_size = Vector2(-1, 2)
+offset_top = 14.0
+offset_right = 16.0
+offset_bottom = 16.0
+show_percentage = false

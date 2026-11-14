@@ -19,6 +19,8 @@ signal turn_started(team: int)
 signal map_menu_requested
 signal save_requested
 signal return_to_title_requested
+signal victory_achieved
+signal defeat_occurred
 
 enum State {
 	CURSOR,
@@ -95,6 +97,10 @@ var canto: BattleCanto
 var combat: BattleCombat
 ##回合切换、敌方回合与地图事件
 var phases: BattlePhases
+##法杖管理（治愈/状态）
+var staff_mgr: BattleStaff
+##舞者/吟游诗人管理（跳舞/奏乐）
+var dance_mgr: BattleDance
 
 
 func _init() -> void:
@@ -112,6 +118,10 @@ func _init() -> void:
 	combat.bm = self
 	phases = BattlePhases.new()
 	phases.bm = self
+	staff_mgr = BattleStaff.new()
+	staff_mgr.bm = self
+	dance_mgr = BattleDance.new()
+	dance_mgr.bm = self
 
 
 ##==================== 装配（对外接口不变，内部委托分包） ====================
@@ -168,6 +178,34 @@ func set_talk_scene(scene: Node) -> void:
 func set_talk_provider(cb: Callable) -> void:
 	interaction.talk_provider = cb
 
+var boss_battle_dialogue_provider: Callable
+var boss_defeat_dialogue_provider: Callable
+var _boss_quotes_played: Dictionary = {}
+
+##设置 Boss 专属交战与阵亡台词提供者
+func set_boss_dialogue_provider(battle_cb: Callable, defeat_cb: Callable) -> void:
+	boss_battle_dialogue_provider = battle_cb
+	boss_defeat_dialogue_provider = defeat_cb
+
+##获取 Boss 首次交战对话（仅触发一次）
+func get_boss_battle_dialogue(attacker: Unit, defender: Unit) -> Dictionary:
+	var boss: Unit = defender if (defender != null and defender.is_boss) else (attacker if (attacker != null and attacker.is_boss) else null)
+	if boss == null or _boss_quotes_played.has(boss.unit_name):
+		return {}
+	if not boss_battle_dialogue_provider.is_valid():
+		return {}
+	var data: Dictionary = boss_battle_dialogue_provider.call(attacker, defender)
+	if not data.is_empty() and data.has("lines") and not data["lines"].is_empty():
+		_boss_quotes_played[boss.unit_name] = true
+		return data
+	return {}
+
+##获取 Boss 阵亡遗言
+func get_boss_defeat_dialogue(boss: Unit, killer: Unit) -> Dictionary:
+	if not boss_defeat_dialogue_provider.is_valid():
+		return {}
+	return boss_defeat_dialogue_provider.call(boss, killer)
+
 ##设置地图事件与执行器（阶段五 5E）：runner 签名 func(event: MapEvent) -> void（可 async）
 func set_map_events(events: Array[MapEvent], runner: Callable) -> void:
 	phases.set_map_events(events, runner)
@@ -188,7 +226,7 @@ func add_unit(unit: Unit) -> void:
 
 ##处理输入
 func handle_input(event: InputEvent) -> void:
-	if battle_over:
+	if battle_over and state != State.DIALOGUE:
 		return
 	match state:
 		State.CURSOR:
@@ -278,8 +316,9 @@ func move_unit(unit: Unit, destination: Vector2i) -> void:
 
 
 ##胜负判定：任一阵营全灭则结束战斗
+##注意：战斗动画（State.BATTLE_ANIM）期间不直接触发结算，待战后完全返回地图后再结算
 func _check_battle_end() -> void:
-	if battle_over:
+	if battle_over or state == State.BATTLE_ANIM:
 		return
 	var has_player := false
 	var has_enemy := false
@@ -290,14 +329,22 @@ func _check_battle_end() -> void:
 			has_enemy = true
 	if not has_enemy:
 		battle_over = true
+		cursor.set_process(false)
 		##5G 支援：章节胜利结算——双方都登场过的支援对 +1 支援值
 		SupportStore.on_chapter_cleared()
 		print("=== 我方胜利！敌方全灭（回合 %d）===" % turn)
+		victory_achieved.emit()
 	elif not has_player:
 		battle_over = true
+		cursor.set_process(false)
 		##5G 支援：章节失败，登场记录作废
 		SupportStore.on_chapter_failed()
 		print("=== 我方败北…（回合 %d）===" % turn)
+		defeat_occurred.emit()
+
+
+func check_battle_end() -> void:
+	_check_battle_end()
 
 
 ##==================== 光标 ====================
@@ -479,13 +526,14 @@ func finalize_action() -> void:
 	attack_range = []
 	current_path = []
 	cursor.restrict_to = {}
-	cursor.set_process(true)
 	range_drawer.clear_all(high_light_layer)
 	state = State.CURSOR
 	if not battle_over:
 		_check_battle_end()
-		if not battle_over and phase == 0:
-			phases.check_player_phase_end()
+		if not battle_over:
+			cursor.set_process(true)
+			if phase == 0:
+				phases.check_player_phase_end()
 
 
 func save_game() -> void:
@@ -504,6 +552,13 @@ func _end_action(allow_canto := true) -> void:
 	commands.reset_forecast_cache()
 	if commands.action_menu != null:
 		commands.action_menu.close()
+	var has_enemy := false
+	for u in units:
+		if u.team == 1:
+			has_enemy = true
+			break
+	if not has_enemy:
+		allow_canto = false
 	if selected_unit != null and is_instance_valid(selected_unit) and not selected_unit.is_queued_for_deletion():
 		var was_attack := _last_action_was_attack
 		_last_action_was_attack = false

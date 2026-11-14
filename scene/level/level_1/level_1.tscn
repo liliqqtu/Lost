@@ -1,0 +1,344 @@
+[gd_scene format=4 uid="uid://dcyliabiq3i5n"]
+
+[ext_resource type="Script" uid="uid://ctfgmpctm773r" path="res://scene/level/level_1/level_1.gd" id="1_ajyet"]
+[ext_resource type="PackedScene" uid="uid://bfrx3eeqe2vcs" path="res://scene/ui/camera.tscn" id="2_fxowc"]
+[ext_resource type="Texture2D" uid="uid://btkq7r12tww56" path="res://assets/graphics/Tilesets/FE8 - Mountainous - 6c006d6e.png" id="3_mountain"]
+[ext_resource type="Texture2D" uid="uid://c5n5wawfxq0xr" path="res://assets/graphics/UI/maphighlight.png" id="4_4h1fj"]
+[ext_resource type="PackedScene" uid="uid://cxj0kcl55613h" path="res://scene/character/units/player_team/te/te.tscn" id="5_7ogla"]
+[ext_resource type="PackedScene" uid="uid://c73b8favdp0fg" path="res://scene/character/units/level_0/brigand.tscn" id="6_fxowc"]
+[ext_resource type="PackedScene" uid="uid://d2kohdrb8xqeu" path="res://scene/ui/cursor.tscn" id="6_h10f2"]
+[ext_resource type="PackedScene" uid="uid://bf6qs4f42l1db" path="res://scene/character/units/player_team/isar/isar.tscn" id="7_7vhj7"]
+[ext_resource type="Texture2D" uid="uid://bnql5g5oaxrsq" path="res://assets/graphics/UI/{Lukiroh} Player Phase.png" id="11_h10f2"]
+[ext_resource type="PackedScene" path="res://scene/character/units/player_team/reyn/reyn.tscn" id="12_reyn"]
+[ext_resource type="PackedScene" path="res://scene/character/units/player_team/vera/vera.tscn" id="13_vera"]
+[ext_resource type="Resource" path="res://data/class_data/boss_brett.tres" id="14_brett"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mountain"]
+texture = ExtResource("3_mountain")
+2:0/0 = 0
+2:0/0/custom_data_0 = "民居"
+6:0/0 = 0
+6:0/0/custom_data_0 = "平原"
+1:1/0 = 0
+1:1/0/custom_data_0 = "民居"
+2:2/0 = 0
+2:2/0/custom_data_0 = "平原"
+6:2/0 = 0
+6:2/0/custom_data_0 = "平原"
+11:2/0 = 0
+11:2/0/custom_data_0 = "平原"
+14:2/0 = 0
+14:2/0/custom_data_0 = "平原"
+7:3/0 = 0
+7:3/0/custom_data_0 = "平原"
+13:3/0 = 0
+13:3/0/custom_data_0 = "平原"
+15:3/0 = 0
+15:3/0/custom_data_0 = "平原"
+4:4/0 = 0
+4:4/0/custom_data_0 = "平原"
+7:4/0 = 0
+7:4/0/custom_data_0 = "平原"
+2:5/0 = 0
+2:5/0/custom_data_0 = "平原"
+3:5/0 = 0
+3:5/0/custom_data_0 = "平原"
+6:5/0 = 0
+6:5/0/custom_data_0 = "平原"
+11:5/0 = 0
+11:5/0/custom_data_0 = "平原"
+5:6/0 = 0
+5:6/0/custom_data_0 = "森林"
+6:6/0 = 0
+6:6/0/custom_data_0 = "森林"
+5:7/0 = 0
+5:7/0/custom_data_0 = "森林"
+9:8/0 = 0
+9:8/0/custom_data_0 = "山"
+10:8/0 = 0
+10:8/0/custom_data_0 = "山"
+11:8/0 = 0
+11:8/0/custom_data_0 = "山"
+9:9/0 = 0
+9:9/0/custom_data_0 = "山"
+1:13/0 = 0
+1:13/0/custom_data_0 = "山"
+8:13/0 = 0
+8:13/0/custom_data_0 = "山"
+26:13/0 = 0
+26:13/0/custom_data_0 = "山"
+5:14/0 = 0
+5:14/0/custom_data_0 = "山"
+8:14/0 = 0
+8:14/0/custom_data_0 = "山"
+13:14/0 = 0
+13:14/0/custom_data_0 = "山"
+17:14/0 = 0
+17:14/0/custom_data_0 = "山"
+27:14/0 = 0
+27:14/0/custom_data_0 = "山"
+5:15/0 = 0
+5:15/0/custom_data_0 = "山"
+13:15/0 = 0
+13:15/0/custom_data_0 = "山"
+14:15/0 = 0
+14:15/0/custom_data_0 = "山"
+15:15/0 = 0
+15:15/0/custom_data_0 = "山"
+16:15/0 = 0
+16:15/0/custom_data_0 = "山"
+17:15/0 = 0
+17:15/0/custom_data_0 = "山"
+26:15/0 = 0
+26:15/0/custom_data_0 = "山"
+27:15/0 = 0
+27:15/0/custom_data_0 = "山"
+8:16/0 = 0
+8:16/0/custom_data_0 = "山"
+12:16/0 = 0
+12:16/0/custom_data_0 = "山"
+20:16/0 = 0
+20:16/0/custom_data_0 = "山"
+0:17/0 = 0
+0:17/0/custom_data_0 = "山"
+1:17/0 = 0
+1:17/0/custom_data_0 = "山"
+5:17/0 = 0
+5:17/0/custom_data_0 = "山"
+8:17/0 = 0
+8:17/0/custom_data_0 = "山"
+9:17/0 = 0
+9:17/0/custom_data_0 = "山"
+15:17/0 = 0
+15:17/0/custom_data_0 = "山"
+16:17/0 = 0
+16:17/0/custom_data_0 = "山"
+17:17/0 = 0
+17:17/0/custom_data_0 = "山"
+20:17/0 = 0
+20:17/0/custom_data_0 = "山"
+21:17/0 = 0
+21:17/0/custom_data_0 = "山"
+5:18/0 = 0
+5:18/0/custom_data_0 = "山"
+7:18/0 = 0
+7:18/0/custom_data_0 = "山"
+14:18/0 = 0
+14:18/0/custom_data_0 = "山"
+15:18/0 = 0
+15:18/0/custom_data_0 = "山"
+22:18/0 = 0
+22:18/0/custom_data_0 = "河"
+23:18/0 = 0
+23:18/0/custom_data_0 = "河"
+24:18/0 = 0
+24:18/0/custom_data_0 = "河"
+28:18/0 = 0
+28:18/0/custom_data_0 = "河"
+29:18/0 = 0
+29:18/0/custom_data_0 = "河"
+7:19/0 = 0
+7:19/0/custom_data_0 = "山"
+8:19/0 = 0
+8:19/0/custom_data_0 = "山"
+9:19/0 = 0
+9:19/0/custom_data_0 = "山"
+16:19/0 = 0
+16:19/0/custom_data_0 = "山"
+22:19/0 = 0
+22:19/0/custom_data_0 = "河"
+23:19/0 = 0
+23:19/0/custom_data_0 = "河"
+0:20/0 = 0
+0:20/0/custom_data_0 = "山"
+12:20/0 = 0
+12:20/0/custom_data_0 = "峰"
+13:20/0 = 0
+13:20/0/custom_data_0 = "峰"
+4:21/0 = 0
+4:21/0/custom_data_0 = "山"
+5:21/0 = 0
+5:21/0/custom_data_0 = "山"
+7:21/0 = 0
+7:21/0/custom_data_0 = "山"
+8:21/0 = 0
+8:21/0/custom_data_0 = "山"
+12:21/0 = 0
+12:21/0/custom_data_0 = "峰"
+13:21/0 = 0
+13:21/0/custom_data_0 = "峰"
+2:22/0 = 0
+2:22/0/custom_data_0 = "山"
+16:22/0 = 0
+16:22/0/custom_data_0 = "山"
+21:22/0 = 0
+21:22/0/custom_data_0 = "山"
+8:23/0 = 0
+8:23/0/custom_data_0 = "森林"
+9:23/0 = 0
+9:23/0/custom_data_0 = "森林"
+4:24/0 = 0
+4:24/0/custom_data_0 = "山"
+6:24/0 = 0
+6:24/0/custom_data_0 = "山"
+31:24/0 = 0
+31:24/0/custom_data_0 = "山"
+4:25/0 = 0
+4:25/0/custom_data_0 = "山"
+5:25/0 = 0
+5:25/0/custom_data_0 = "山"
+6:25/0 = 0
+6:25/0/custom_data_0 = "山"
+29:25/0 = 0
+29:25/0/custom_data_0 = "山"
+0:26/0 = 0
+0:26/0/custom_data_0 = "民居"
+28:27/0 = 0
+28:27/0/custom_data_0 = "道路"
+4:28/0 = 0
+4:28/0/custom_data_0 = "山"
+8:28/0 = 0
+8:28/0/custom_data_0 = "山"
+10:28/0 = 0
+10:28/0/custom_data_0 = "山"
+15:28/0 = 0
+15:28/0/custom_data_0 = "道路"
+29:28/0 = 0
+29:28/0/custom_data_0 = "道路"
+0:29/0 = 0
+0:29/0/custom_data_0 = "民居"
+11:29/0 = 0
+11:29/0/custom_data_0 = "山"
+14:29/0 = 0
+14:29/0/custom_data_0 = "道路"
+15:29/0 = 0
+15:29/0/custom_data_0 = "道路"
+27:29/0 = 0
+27:29/0/custom_data_0 = "道路"
+28:29/0 = 0
+28:29/0/custom_data_0 = "道路"
+29:29/0 = 0
+29:29/0/custom_data_0 = "道路"
+31:29/0 = 0
+31:29/0/custom_data_0 = "道路"
+0:30/0 = 0
+0:30/0/custom_data_0 = "民居"
+4:30/0 = 0
+4:30/0/custom_data_0 = "道路"
+5:30/0 = 0
+5:30/0/custom_data_0 = "要塞"
+6:30/0 = 0
+6:30/0/custom_data_0 = "道路"
+11:30/0 = 0
+11:30/0/custom_data_0 = "山"
+14:30/0 = 0
+14:30/0/custom_data_0 = "道路"
+15:30/0 = 0
+15:30/0/custom_data_0 = "道路"
+26:30/0 = 0
+26:30/0/custom_data_0 = "道路"
+28:30/0 = 0
+28:30/0/custom_data_0 = "道路"
+30:30/0 = 0
+30:30/0/custom_data_0 = "道路"
+14:31/0 = 0
+14:31/0/custom_data_0 = "道路"
+30:31/0 = 0
+30:31/0/custom_data_0 = "道路"
+
+[sub_resource type="TileSet" id="TileSet_level1"]
+custom_data_layer_0/name = "Name"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_mountain")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uafsf"]
+texture = ExtResource("4_4h1fj")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uafsf"]
+sources/0 = SubResource("TileSetAtlasSource_uafsf")
+
+[node name="level1" type="Node2D" unique_id=385838683]
+script = ExtResource("1_ajyet")
+
+[node name="Camera" parent="." unique_id=1973205089 instance=ExtResource("2_fxowc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1570302870]
+tile_map_data = PackedByteArray("AAAAAAAAAAAIAA0AAAABAAAAAAAQAA8AAAACAAAAAAAIABUAAAADAAAAAAAMABUAAAAEAAAAAAACAAUAAAAFAAAAAAAcABsAAAAGAAAAAAAcAB4AAAAHAAAAAAAdAB0AAAAIAAAAAAAEAAQAAAAJAAAAAAAMABUAAAAKAAAAAAANABUAAAALAAAAAAAPABEAAAAMAAAAAAAMABAAAAANAAAAAAAAABEAAAAOAAAAAAAHABMAAAAPAAAAAAABABEAAAAAAAEAAAAIAA0AAAABAAEAAAANAA4AAAACAAEAAAARAA8AAAADAAEAAAAIABcAAAAEAAEAAAAJABcAAAAFAAEAAAAEAAQAAAAGAAEAAAAcABsAAAAHAAEAAAAcAB4AAAAIAAEAAAAdABwAAAAJAAEAAAACAAUAAAAKAAEAAAAIABcAAAALAAEAAAAJABcAAAAMAAEAAAAPAA8AAAANAAEAAAAIABAAAAAOAAEAAAAFAA4AAAAPAAEAAAAIAA0AAAAAAAIAAAAIABEAAAABAAIAAAAJABMAAAACAAIAAAAQABEAAAADAAIAAAANABUAAAAEAAIAAAAMABUAAAAFAAIAAAACAAIAAAAGAAIAAAACAAIAAAAHAAIAAAAaAB4AAAAIAAIAAAAdAB0AAAAJAAIAAAAMABUAAAAKAAIAAAANABQAAAALAAIAAAANABUAAAAMAAIAAAAPABEAAAANAAIAAAAMABAAAAAOAAIAAAAFAA8AAAAPAAIAAAAIABMAAAAAAAMAAAAHABIAAAABAAMAAAABABEAAAACAAMAAAARABEAAAADAAMAAAANABUAAAAEAAMAAAANABQAAAAFAAMAAAADAAUAAAAGAAMAAAAEAAQAAAAHAAMAAAAcABsAAAAIAAMAAAAeAB8AAAAJAAMAAAACAAIAAAAKAAMAAAANABUAAAALAAMAAAAMABQAAAAMAAMAAAAIABUAAAANAAMAAAAPABEAAAAOAAMAAAAMABAAAAAPAAMAAAABABEAAAAAAAQAAAAJABEAAAABAAQAAAAIAA4AAAACAAQAAAANAA4AAAADAAQAAAARAA8AAAAEAAQAAAANABUAAAAFAAQAAAACABYAAAAGAAQAAAACABYAAAAHAAQAAAAFABUAAAAIAAQAAAALAAUAAAAJAAQAAAAbAB0AAAAKAAQAAAAdAB0AAAALAAQAAAACAAUAAAAMAAQAAAAMABQAAAANAAQAAAAHABUAAAAOAAQAAAAPAA8AAAAPAAQAAAAIAA4AAAAAAAUAAAAOAA8AAAABAAUAAAAHABIAAAACAAUAAAABABEAAAADAAUAAAARAA4AAAAEAAUAAAAIABcAAAAFAAUAAAAJABcAAAAGAAUAAAACAAUAAAAHAAUAAAADAAUAAAAIAAUAAAACAAIAAAAJAAUAAAAaAB4AAAAKAAUAAAAeAB4AAAALAAUAAAACAAIAAAAMAAUAAAANABUAAAANAAUAAAAMABQAAAAOAAUAAAAPABEAAAAPAAUAAAAMABAAAAAAAAYAAAANAA8AAAABAAYAAAAAABEAAAACAAYAAAAFABIAAAADAAYAAAABABEAAAAEAAYAAAARAA8AAAAFAAYAAAAMABUAAAAGAAYAAAAGAAYAAAAHAAYAAAACAAUAAAAIAAYAAAAbAB0AAAAJAAYAAAAcAB4AAAAKAAYAAAAeAB4AAAALAAYAAAACAAIAAAAMAAYAAAAAAB4AAAANAAYAAAAIABcAAAAOAAYAAAAJABcAAAAPAAYAAAAPAA8AAAAAAAcAAAAQABYAAAABAAcAAAAIAA4AAAACAAcAAAAJABEAAAADAAcAAAAIAA0AAAAEAAcAAAAQABEAAAAFAAcAAAAAAB0AAAAGAAcAAAAFAAYAAAAHAAcAAAACAAIAAAAIAAcAAAAaAB4AAAAJAAcAAAAcAB4AAAAKAAcAAAAeAB8AAAALAAcAAAACAAUAAAAMAAcAAAAMABUAAAANAAcAAAANABUAAAAOAAcAAAANAA8AAAAPAAcAAAAMABAAAAAAAAgAAAAWABMAAAABAAgAAAAPABEAAAACAAgAAAAAABEAAAADAAgAAAAOABIAAAAEAAgAAAAQABMAAAAFAAgAAAADAAUAAAAGAAgAAAAFAAcAAAAHAAgAAAAEAAQAAAAIAAgAAAAaAB4AAAAJAAgAAAAeAB4AAAAKAAgAAAACAAIAAAALAAgAAAACAAIAAAAMAAgAAAAEAAQAAAANAAgAAAAMABUAAAAOAAgAAAAHABUAAAAPAAgAAAAPAA8AAAAAAAkAAAAcABIAAAABAAkAAAAWABMAAAACAAkAAAAOABIAAAADAAkAAAAAAB4AAAAEAAkAAAAGAAIAAAAFAAkAAAAHAAQAAAAGAAkAAAAOAAIAAAAHAAkAAAALAAIAAAAIAAkAAAAcABsAAAAJAAkAAAAcAB4AAAAKAAkAAAAdAB0AAAALAAkAAAAAABQAAAAMAAkAAAACAAIAAAANAAkAAAAAABoAAAAOAAkAAAANAA8AAAAPAAkAAAABAA0AAAAAAAoAAAAYABIAAAABAAoAAAAXABIAAAACAAoAAAAWABMAAAADAAoAAAAGAAIAAAAEAAoAAAAGAAAAAAAFAAoAAAAGAAAAAAAGAAoAAAAPAAMAAAAHAAoAAAANAAMAAAAIAAoAAAAbAB0AAAAJAAoAAAAcAB4AAAAKAAoAAAAeAB8AAAALAAoAAAAEABUAAAAMAAoAAAAIABcAAAANAAoAAAAJABcAAAAOAAoAAAAPABIAAAAPAAoAAAAFABEAAAAAAAsAAAAYABIAAAABAAsAAAACAAIAAAACAAsAAAAYABIAAAADAAsAAAAGAAUAAAAEAAsAAAAPAAMAAAAFAAsAAAAHAAMAAAAGAAsAAAADAAUAAAAHAAsAAAAEAAQAAAAIAAsAAAAaAB4AAAAJAAsAAAAeAB4AAAAKAAsAAAACAAIAAAALAAsAAAACAAUAAAAMAAsAAAAMABUAAAANAAsAAAANAA8AAAAOAAsAAAAMABAAAAAPAAsAAAAMABAAAAAAAAwAAAAXABIAAAABAAwAAAAWABMAAAACAAwAAAAXABIAAAADAAwAAAAWABMAAAAEAAwAAAAbAB0AAAAFAAwAAAAdAB0AAAAGAAwAAAAEABkAAAAHAAwAAAAFABkAAAAIAAwAAAAEAB4AAAAJAAwAAAAFAB4AAAAKAAwAAAAGAB4AAAALAAwAAAAEABkAAAAMAAwAAAAEABgAAAANAAwAAAAFABkAAAAOAAwAAAAHABIAAAAPAAwAAAAMABAAAAAAAA0AAAAAAB4AAAABAA0AAAAcABIAAAACAA0AAAAWABMAAAADAA0AAAAYABIAAAAEAA0AAAAaAB4AAAAFAA0AAAAeAB8AAAAGAA0AAAAEABwAAAAHAA0AAAAUABAAAAAIAA0AAAAEAB4AAAAJAA0AAAAFAB4AAAAKAA0AAAAGAB4AAAALAA0AAAAdABkAAAAMAA0AAAAVABYAAAANAA0AAAAFABkAAAAOAA0AAAAJABEAAAAPAA0AAAAMABAAAAAAAA4AAAAXABMAAAABAA4AAAAdABIAAAACAA4AAAAXABIAAAADAA4AAAAWABIAAAAEAA4AAAAcABsAAAAFAA4AAAAfAB0AAAAGAA4AAAAVABEAAAAHAA4AAAAUABEAAAAIAA4AAAAJAAgAAAAJAA4AAAAKAAgAAAAKAA4AAAALAAgAAAALAA4AAAAPABwAAAAMAA4AAAAEABkAAAANAA4AAAAEABgAAAAOAA4AAAAEABgAAAAPAA4AAAAEABgAAAAAAA8AAAAcABIAAAABAA8AAAAWABIAAAACAA8AAAAFAAcAAAADAA8AAAACAAIAAAAEAA8AAAADAAUAAAAFAA8AAAACAAIAAAAGAA8AAAAUABEAAAAHAA8AAAAUABEAAAAIAA8AAAAJAAkAAAAJAA8AAAAbAA8AAAAKAA8AAAAaAA0AAAALAA8AAAAaAA8AAAAMAA8AAAAEABwAAAANAA8AAAAGABgAAAAOAA8AAAAGABgAAAAPAA8AAAAGABgAAAAAABAAAAAYABIAAAABABAAAAAFAAcAAAACABAAAAAFAAYAAAADABAAAAAbAB0AAAAEABAAAAAcAB0AAAAFABAAAAAdAB0AAAAGABAAAAAEABwAAAAHABAAAAAGABgAAAAIABAAAAAOAB8AAAAJABAAAAAbAA4AAAAKABAAAAAEAAQAAAALABAAAAAaAA8AAAAMABAAAAAGABkAAAANABAAAAAOAB4AAAAOABAAAAAPABwAAAAPABAAAAAKABwAAAAAABEAAAACAAAAAAABABEAAAACAAUAAAACABEAAAAEAAQAAAADABEAAAAaAB4AAAAEABEAAAAcAB4AAAAFABEAAAAeAB8AAAAGABEAAAAfABgAAAAHABEAAAAKABwAAAAIABEAAAALAB0AAAAJABEAAAAPAB0AAAAKABEAAAALAB0AAAALABEAAAAKABwAAAAMABEAAAAIABwAAAANABEAAAAOAB0AAAAOABEAAAABAAEAAAAPABEAAAAOAB0AAAAAABIAAAAWABIAAAABABIAAAAEAAQAAAACABIAAAAbAB0AAAADABIAAAAcAB4AAAAEABIAAAAeAB4AAAAFABIAAAAEABkAAAAGABIAAAAFABkAAAAHABIAAAAOAB0AAAAIABIAAAALAB4AAAAJABIAAAAPAB4AAAAKABIAAAALAB4AAAALABIAAAAPAB4AAAAMABIAAAAGABkAAAANABIAAAAOAB0AAAAOABIAAAAPABwAAAAPABIAAAAOAB8AAAAAABMAAAAFAAcAAAABABMAAAACAAUAAAACABMAAAAaAB4AAAADABMAAAAcAB4AAAAEABMAAAAeAB4AAAAFABMAAAAEABkAAAAGABMAAAAFABkAAAAHABMAAAAOAB0AAAAIABMAAAAJAAgAAAAJABMAAAAKAAgAAAAKABMAAAALAAgAAAALABMAAAAOAB8AAAAMABMAAAAGABkAAAANABMAAAAOAB0AAAAOABMAAAABAAEAAAAPABMAAAAOAB0AAAA=")
+tile_set = SubResource("TileSet_level1")
+
+[node name="HighLightMapLayer" type="TileMapLayer" parent="." unique_id=1160570095]
+tile_set = SubResource("TileSet_uafsf")
+
+[node name="Units" type="Node2D" parent="." unique_id=676372930]
+
+[node name="Enemy" type="Node2D" parent="Units" unique_id=1452482982]
+
+[node name="Bandit1" parent="Units/Enemy" unique_id=1571070091 instance=ExtResource("6_fxowc")]
+position = Vector2(144, 112)
+
+[node name="Bandit2" parent="Units/Enemy" unique_id=1622108976 instance=ExtResource("6_fxowc")]
+position = Vector2(112, 144)
+
+[node name="Bandit3" parent="Units/Enemy" unique_id=1629948277 instance=ExtResource("6_fxowc")]
+position = Vector2(128, 176)
+
+[node name="Boss" parent="Units/Enemy" unique_id=1036533642 instance=ExtResource("6_fxowc")]
+position = Vector2(144, 192)
+class_data = ExtResource("14_brett")
+unit_name = "布雷特"
+info = "断风寨主 · 布雷特"
+is_boss = true
+lv = 4
+max_hp = 28
+hp = 28
+def_h = 6
+
+[node name="Te" parent="Units" unique_id=341156043 instance=ExtResource("5_7ogla")]
+position = Vector2(96, 16)
+
+[node name="Isar" parent="Units" unique_id=1343722215 instance=ExtResource("7_7vhj7")]
+position = Vector2(112, 16)
+
+[node name="Reyn" parent="Units" unique_id=1601767866 instance=ExtResource("12_reyn")]
+position = Vector2(128, 112)
+
+[node name="Vera" parent="Units" unique_id=26187372 instance=ExtResource("13_vera")]
+position = Vector2(64, 80)
+
+[node name="Cursor" parent="." unique_id=1560125616 instance=ExtResource("6_h10f2")]
+position = Vector2(96, 16)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1117540413]
+
+[node name="Phase Switch Shadow" type="ColorRect" parent="CanvasLayer" unique_id=296634564]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -20.0
+offset_right = 124.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21568628, 0.21568628, 0.21568628, 0.44705883)
+
+[node name="Phase Switch" type="TextureRect" parent="CanvasLayer" unique_id=1250029138]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -20.0
+offset_right = 124.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_h10f2")

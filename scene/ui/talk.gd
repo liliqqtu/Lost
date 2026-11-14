@@ -64,7 +64,8 @@ func open(lines: Array, portraits: Dictionary = {}, bg_texture: Texture2D = null
 	_portraits = portraits
 	_index = 0
 	_active = true
-	_setup_speakers()
+	_clear_all_slots()
+	_speaker_sides.clear()
 	##背景：关卡内对话为空
 	if bg_texture == null:
 		bg.visible = false
@@ -92,31 +93,33 @@ func handle_input(event: InputEvent) -> void:
 		_finish()
 
 
-##预扫描登记说话人槽位，摆好肖像与翻转（左侧翻转，人物默认面向左侧）
-func _setup_speakers() -> void:
-	_speaker_sides.clear()
-	for line in _lines:
-		var speaker: String = line.get("speaker", "")
-		var side: String = line.get("side", "")
-		if speaker != "" and side != "" and not _speaker_sides.has(speaker):
-			_speaker_sides[speaker] = side
-	##先全部隐藏，再显示有对话槽位的
+## 清理全部槽位与气泡
+func _clear_all_slots() -> void:
 	for side_name in slots:
-		slots[side_name].visible = false
-	for speaker in _speaker_sides:
-		var side: String = _speaker_sides[speaker]
+		var slot: TextureRect = slots[side_name]
+		slot.visible = false
+		slot.texture = null
+		var bubble := slot.get_node_or_null("Bubble") as TextureRect
+		if bubble != null:
+			bubble.visible = false
+
+
+##显示第 i 句：动态登场/更新肖像、更新气泡、按完整台词测量并调整 Dialogue 尺寸、开始逐字
+func _show_line(i: int) -> void:
+	var line: Dictionary = _lines[i]
+	var speaker: String = line.get("speaker", "")
+	var text: String = line.get("text", "")
+	var side: String = line.get("side", _speaker_sides.get(speaker, ""))
+
+	# 动态引入角色：角色第一次说话或变更槽位时，显示肖像并设置朝向
+	if speaker != "" and side != "" and slots.has(side):
+		_speaker_sides[speaker] = side
 		var slot: TextureRect = slots[side]
 		slot.visible = true
 		if _portraits.has(speaker):
 			slot.texture = _portraits[speaker]
 		slot.flip_h = side.begins_with("left")
 
-
-##显示第 i 句：更新气泡、按完整台词测量并调整 Dialogue 尺寸、开始逐字
-func _show_line(i: int) -> void:
-	var line: Dictionary = _lines[i]
-	var speaker: String = line.get("speaker", "")
-	var text: String = line.get("text", "")
 	_update_bubbles(speaker)
 	text_label.text = text
 	_resize_dialogue(text)
@@ -196,5 +199,7 @@ func _finish() -> void:
 	_typing = false
 	if _type_tween != null and _type_tween.is_valid():
 		_type_tween.kill()
+	_clear_all_slots()
+	_speaker_sides.clear()
 	visible = false
 	closed.emit()

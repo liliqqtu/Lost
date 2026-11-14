@@ -1,109 +1,636 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://y0bhqolok4ke"]
 
-[ext_resource type="Texture2D" uid="uid://lsqylmsthuye" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_001.png" id="1_03xdt"]
-[ext_resource type="Texture2D" uid="uid://dg6c7j7je4bl6" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_002.png" id="2_7qt3c"]
-[ext_resource type="Texture2D" uid="uid://bgajnxvr5rcti" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_003.png" id="3_6bmfi"]
-[ext_resource type="Texture2D" uid="uid://cqv2w7qnkxefy" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_004.png" id="4_1siy3"]
-[ext_resource type="Texture2D" uid="uid://d4jtek2n8uovj" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_005.png" id="5_eyyxj"]
-[ext_resource type="Texture2D" uid="uid://dn8ttn8aj46gk" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_006.png" id="6_0b0bd"]
-[ext_resource type="Texture2D" uid="uid://dya5lg1vs3ll4" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_007.png" id="7_801cr"]
-[ext_resource type="Texture2D" uid="uid://jxaaix0rh4de" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_008.png" id="8_bv7pj"]
-[ext_resource type="Texture2D" uid="uid://bo00mlflgdjd7" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_009.png" id="9_q5xor"]
-[ext_resource type="Texture2D" uid="uid://db5ahat3n64rf" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_010.png" id="10_8i0gy"]
-[ext_resource type="Texture2D" uid="uid://ckj8po3fxbdjs" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_011.png" id="11_rb2q3"]
-[ext_resource type="Texture2D" uid="uid://bg5jm3k2ted8c" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_012.png" id="12_nr362"]
-[ext_resource type="Texture2D" uid="uid://ca6s5legp45gg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_013.png" id="13_dr37r"]
-[ext_resource type="Texture2D" uid="uid://dpfraomwfwfk8" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_014.png" id="14_c8lny"]
-[ext_resource type="Texture2D" uid="uid://c13lvcn0eg25s" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_015.png" id="15_ku7kd"]
-[ext_resource type="Texture2D" uid="uid://vemvsi0qnjvg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_016.png" id="16_0uhhf"]
-[ext_resource type="Texture2D" uid="uid://cdd8xmohjedif" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_017.png" id="17_n0tld"]
-[ext_resource type="Texture2D" uid="uid://bek637ftqb7sg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_018.png" id="18_wpbpb"]
-[ext_resource type="Texture2D" uid="uid://qsrta4r871fw" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_019.png" id="19_gdfu5"]
-[ext_resource type="Texture2D" uid="uid://cgnubu42covut" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_020.png" id="20_fxu3b"]
-[ext_resource type="Texture2D" uid="uid://kl6ba37uo7cy" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_021.png" id="21_d8ggg"]
-[ext_resource type="Texture2D" uid="uid://chto03wpvytt4" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_022.png" id="22_b0m6a"]
-[ext_resource type="Texture2D" uid="uid://5rvxm4k4g8xa" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_023.png" id="23_hhdt5"]
-[ext_resource type="Texture2D" uid="uid://dh1jppjsmxnhg" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_024.png" id="24_oj65y"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_001.png" id="1_fire_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_002.png" id="2_fire_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_003.png" id="3_fire_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_004.png" id="4_fire_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_005.png" id="5_fire_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_006.png" id="6_fire_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_007.png" id="7_fire_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_008.png" id="8_fire_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_009.png" id="9_fire_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_010.png" id="10_fire_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_011.png" id="11_fire_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_012.png" id="12_fire_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_013.png" id="13_fire_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_014.png" id="14_fire_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_015.png" id="15_fire_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_016.png" id="16_fire_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_017.png" id="17_fire_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_018.png" id="18_fire_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_019.png" id="19_fire_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_020.png" id="20_fire_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_021.png" id="21_fire_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_022.png" id="22_fire_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_023.png" id="23_fire_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/[Fire] Fire {SkidMarc25, Alice}/Spell_b_024.png" id="24_fire_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_001.png" id="25_thunder_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_002.png" id="26_thunder_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_003.png" id="27_thunder_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_004.png" id="28_thunder_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_005.png" id="29_thunder_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_006.png" id="30_thunder_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_007.png" id="31_thunder_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_008.png" id="32_thunder_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_009.png" id="33_thunder_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_010.png" id="34_thunder_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_011.png" id="35_thunder_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_012.png" id="36_thunder_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_013.png" id="37_thunder_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_014.png" id="38_thunder_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_015.png" id="39_thunder_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_016.png" id="40_thunder_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_017.png" id="41_thunder_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_018.png" id="42_thunder_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_019.png" id="43_thunder_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_020.png" id="44_thunder_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_021.png" id="45_thunder_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_022.png" id="46_thunder_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_023.png" id="47_thunder_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_024.png" id="48_thunder_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_025.png" id="49_thunder_Spell_b_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_026.png" id="50_thunder_Spell_b_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_027.png" id="51_thunder_Spell_b_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_028.png" id="52_thunder_Spell_b_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_029.png" id="53_thunder_Spell_b_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_030.png" id="54_thunder_Spell_b_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_031.png" id="55_thunder_Spell_b_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_032.png" id="56_thunder_Spell_b_032_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_033.png" id="57_thunder_Spell_b_033_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_034.png" id="58_thunder_Spell_b_034_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_035.png" id="59_thunder_Spell_b_035_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_036.png" id="60_thunder_Spell_b_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Thunder/Spell_b_037.png" id="61_thunder_Spell_b_037_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_001.png" id="62_wind_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_002.png" id="63_wind_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_003.png" id="64_wind_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_004.png" id="65_wind_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_005.png" id="66_wind_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_006.png" id="67_wind_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_007.png" id="68_wind_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_008.png" id="69_wind_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_009.png" id="70_wind_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_010.png" id="71_wind_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_011.png" id="72_wind_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_012.png" id="73_wind_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_013.png" id="74_wind_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_014.png" id="75_wind_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_015.png" id="76_wind_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_016.png" id="77_wind_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_017.png" id="78_wind_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_018.png" id="79_wind_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_019.png" id="80_wind_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_020.png" id="81_wind_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_021.png" id="82_wind_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_022.png" id="83_wind_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_023.png" id="84_wind_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_024.png" id="85_wind_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_025.png" id="86_wind_Spell_b_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_026.png" id="87_wind_Spell_b_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Wind/Spell_b_027.png" id="88_wind_Spell_b_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_001.png" id="89_elfire_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_002.png" id="90_elfire_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_003.png" id="91_elfire_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_004.png" id="92_elfire_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_005.png" id="93_elfire_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_006.png" id="94_elfire_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_007.png" id="95_elfire_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_008.png" id="96_elfire_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_009.png" id="97_elfire_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_010.png" id="98_elfire_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_011.png" id="99_elfire_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_012.png" id="100_elfire_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_013.png" id="101_elfire_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_014.png" id="102_elfire_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_015.png" id="103_elfire_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_016.png" id="104_elfire_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_017.png" id="105_elfire_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_018.png" id="106_elfire_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_019.png" id="107_elfire_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_020.png" id="108_elfire_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_021.png" id="109_elfire_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_022.png" id="110_elfire_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_023.png" id="111_elfire_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_024.png" id="112_elfire_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_025.png" id="113_elfire_Spell_b_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_026.png" id="114_elfire_Spell_b_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_027.png" id="115_elfire_Spell_b_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_028.png" id="116_elfire_Spell_b_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_029.png" id="117_elfire_Spell_b_029_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_030.png" id="118_elfire_Spell_b_030_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Anima/Elfire/Spell_b_031.png" id="119_elfire_Spell_b_031_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_001.png" id="120_flux_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_002.png" id="121_flux_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_003.png" id="122_flux_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_004.png" id="123_flux_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_005.png" id="124_flux_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_006.png" id="125_flux_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_007.png" id="126_flux_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_008.png" id="127_flux_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_009.png" id="128_flux_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_010.png" id="129_flux_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_011.png" id="130_flux_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_012.png" id="131_flux_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_013.png" id="132_flux_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_014.png" id="133_flux_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_015.png" id="134_flux_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_016.png" id="135_flux_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_017.png" id="136_flux_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_018.png" id="137_flux_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_019.png" id="138_flux_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_020.png" id="139_flux_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_021.png" id="140_flux_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Dark/Flux/Spell_b_022.png" id="141_flux_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_001.png" id="142_lightning_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_001.png" id="143_lightning_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_002.png" id="144_lightning_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_002.png" id="145_lightning_Spell_b_002_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_003.png" id="146_lightning_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_003.png" id="147_lightning_Spell_b_003_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_004.png" id="148_lightning_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_004.png" id="149_lightning_Spell_b_004_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_005.png" id="150_lightning_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_005.png" id="151_lightning_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_006.png" id="152_lightning_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_006.png" id="153_lightning_Spell_b_006_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_007.png" id="154_lightning_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_007.png" id="155_lightning_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_008.png" id="156_lightning_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_008.png" id="157_lightning_Spell_b_008_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_009.png" id="158_lightning_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_009.png" id="159_lightning_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_010.png" id="160_lightning_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_010.png" id="161_lightning_Spell_b_010_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_011.png" id="162_lightning_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_011.png" id="163_lightning_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_012.png" id="164_lightning_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_012.png" id="165_lightning_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_013.png" id="166_lightning_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_013.png" id="167_lightning_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_014.png" id="168_lightning_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_014.png" id="169_lightning_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_015.png" id="170_lightning_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_015.png" id="171_lightning_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_016.png" id="172_lightning_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_016.png" id="173_lightning_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_017.png" id="174_lightning_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_017.png" id="175_lightning_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_018.png" id="176_lightning_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_018.png" id="177_lightning_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_019.png" id="178_lightning_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_019.png" id="179_lightning_Spell_b_019_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_020.png" id="180_lightning_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_020.png" id="181_lightning_Spell_b_020_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_021.png" id="182_lightning_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_021.png" id="183_lightning_Spell_b_021_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_022.png" id="184_lightning_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_022.png" id="185_lightning_Spell_b_022_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_023.png" id="186_lightning_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_023.png" id="187_lightning_Spell_b_023_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_024.png" id="188_lightning_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_024.png" id="189_lightning_Spell_b_024_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_025.png" id="190_lightning_Spell_b_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_025.png" id="191_lightning_Spell_b_025_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_026.png" id="192_lightning_Spell_b_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_026.png" id="193_lightning_Spell_b_026_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_027.png" id="194_lightning_Spell_b_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_027.png" id="195_lightning_Spell_b_027_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_028.png" id="196_lightning_Spell_b_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_028.png" id="197_lightning_Spell_b_028_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_036.png" id="198_lightning_Spell_b_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_036.png" id="199_lightning_Spell_b_036_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_038.png" id="200_lightning_Spell_b_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_038.png" id="201_lightning_Spell_b_038_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_040.png" id="202_lightning_Spell_b_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_040.png" id="203_lightning_Spell_b_040_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_042.png" id="204_lightning_Spell_b_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_042.png" id="205_lightning_Spell_b_042_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_044.png" id="206_lightning_Spell_b_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_044.png" id="207_lightning_Spell_b_044_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_046.png" id="208_lightning_Spell_b_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_046.png" id="209_lightning_Spell_b_046_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_047.png" id="210_lightning_Spell_b_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_047.png" id="211_lightning_Spell_b_047_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_049.png" id="212_lightning_Spell_b_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_049.png" id="213_lightning_Spell_b_049_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_050.png" id="214_lightning_Spell_b_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_050.png" id="215_lightning_Spell_b_050_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_051.png" id="216_lightning_Spell_b_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_051.png" id="217_lightning_Spell_b_051_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_052.png" id="218_lightning_Spell_b_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_052.png" id="219_lightning_Spell_b_052_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_053.png" id="220_lightning_Spell_b_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_053.png" id="221_lightning_Spell_b_053_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_054.png" id="222_lightning_Spell_b_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_054.png" id="223_lightning_Spell_b_054_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_055.png" id="224_lightning_Spell_b_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_055.png" id="225_lightning_Spell_b_055_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_056.png" id="226_lightning_Spell_b_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Light/Luce/Spell_b_056.png" id="227_lightning_Spell_b_056_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_001.png" id="228_heal_Spell_b_001_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_005.png" id="229_heal_Spell_b_005_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_007.png" id="230_heal_Spell_b_007_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_009.png" id="231_heal_Spell_b_009_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_011.png" id="232_heal_Spell_b_011_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_012.png" id="233_heal_Spell_b_012_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_013.png" id="234_heal_Spell_b_013_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_014.png" id="235_heal_Spell_b_014_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_015.png" id="236_heal_Spell_b_015_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_016.png" id="237_heal_Spell_b_016_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_017.png" id="238_heal_Spell_b_017_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_018.png" id="239_heal_Spell_b_018_png"]
+[ext_resource type="Texture2D" path="res://assets/battle_animations/Staff/Heal/Spell_b_019.png" id="240_heal_Spell_b_019_png"]
 
 [resource]
-animations = [{
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("1_03xdt")
-}, {
-"duration": 2.0,
-"texture": ExtResource("2_7qt3c")
-}, {
-"duration": 2.0,
-"texture": ExtResource("3_6bmfi")
-}, {
-"duration": 2.0,
-"texture": ExtResource("4_1siy3")
-}, {
-"duration": 2.0,
-"texture": ExtResource("5_eyyxj")
-}, {
-"duration": 2.0,
-"texture": ExtResource("6_0b0bd")
-}, {
-"duration": 2.0,
-"texture": ExtResource("7_801cr")
-}, {
-"duration": 2.0,
-"texture": ExtResource("8_bv7pj")
-}, {
-"duration": 2.0,
-"texture": ExtResource("9_q5xor")
-}, {
-"duration": 3.0,
-"texture": ExtResource("10_8i0gy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_rb2q3")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_nr362")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_dr37r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_c8lny")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ku7kd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_0uhhf")
-}, {
-"duration": 2.0,
-"texture": ExtResource("17_n0tld")
-}, {
-"duration": 2.0,
-"texture": ExtResource("18_wpbpb")
-}, {
-"duration": 2.0,
-"texture": ExtResource("19_gdfu5")
-}, {
-"duration": 2.0,
-"texture": ExtResource("20_fxu3b")
-}, {
-"duration": 2.0,
-"texture": ExtResource("21_d8ggg")
-}, {
-"duration": 2.0,
-"texture": ExtResource("22_b0m6a")
-}, {
-"duration": 2.0,
-"texture": ExtResource("23_hhdt5")
-}, {
-"duration": 2.0,
-"texture": ExtResource("24_oj65y")
-}, {
-"duration": 4.0,
-"texture": ExtResource("1_03xdt")
-}],
-"loop": 0,
+animations = [
+{
+"frames": [
+{"duration": 2.0, "texture": ExtResource("1_fire_Spell_b_001_png")},
+{"duration": 2.0, "texture": ExtResource("2_fire_Spell_b_002_png")},
+{"duration": 2.0, "texture": ExtResource("3_fire_Spell_b_003_png")},
+{"duration": 2.0, "texture": ExtResource("4_fire_Spell_b_004_png")},
+{"duration": 2.0, "texture": ExtResource("5_fire_Spell_b_005_png")},
+{"duration": 2.0, "texture": ExtResource("6_fire_Spell_b_006_png")},
+{"duration": 2.0, "texture": ExtResource("7_fire_Spell_b_007_png")},
+{"duration": 2.0, "texture": ExtResource("8_fire_Spell_b_008_png")},
+{"duration": 2.0, "texture": ExtResource("9_fire_Spell_b_009_png")},
+{"duration": 2.0, "texture": ExtResource("10_fire_Spell_b_010_png")},
+{"duration": 2.0, "texture": ExtResource("11_fire_Spell_b_011_png")},
+{"duration": 2.0, "texture": ExtResource("12_fire_Spell_b_012_png")},
+{"duration": 2.0, "texture": ExtResource("13_fire_Spell_b_013_png")},
+{"duration": 2.0, "texture": ExtResource("14_fire_Spell_b_014_png")},
+{"duration": 2.0, "texture": ExtResource("15_fire_Spell_b_015_png")},
+{"duration": 2.0, "texture": ExtResource("16_fire_Spell_b_016_png")},
+{"duration": 2.0, "texture": ExtResource("17_fire_Spell_b_017_png")},
+{"duration": 2.0, "texture": ExtResource("18_fire_Spell_b_018_png")},
+{"duration": 2.0, "texture": ExtResource("19_fire_Spell_b_019_png")},
+{"duration": 2.0, "texture": ExtResource("20_fire_Spell_b_020_png")},
+{"duration": 2.0, "texture": ExtResource("21_fire_Spell_b_021_png")},
+{"duration": 2.0, "texture": ExtResource("22_fire_Spell_b_022_png")},
+{"duration": 2.0, "texture": ExtResource("23_fire_Spell_b_023_png")},
+{"duration": 2.0, "texture": ExtResource("24_fire_Spell_b_024_png")}
+],
+"loop": false,
 "name": &"fire",
 "speed": 60.0
-}]
+},
+
+{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("25_thunder_Spell_b_001_png")},
+{"duration": 1.0, "texture": ExtResource("26_thunder_Spell_b_002_png")},
+{"duration": 1.0, "texture": ExtResource("27_thunder_Spell_b_003_png")},
+{"duration": 1.0, "texture": ExtResource("28_thunder_Spell_b_004_png")},
+{"duration": 1.0, "texture": ExtResource("29_thunder_Spell_b_005_png")},
+{"duration": 1.0, "texture": ExtResource("30_thunder_Spell_b_006_png")},
+{"duration": 1.0, "texture": ExtResource("31_thunder_Spell_b_007_png")},
+{"duration": 1.0, "texture": ExtResource("32_thunder_Spell_b_008_png")},
+{"duration": 1.0, "texture": ExtResource("33_thunder_Spell_b_009_png")},
+{"duration": 1.0, "texture": ExtResource("34_thunder_Spell_b_010_png")},
+{"duration": 1.0, "texture": ExtResource("35_thunder_Spell_b_011_png")},
+{"duration": 1.0, "texture": ExtResource("36_thunder_Spell_b_012_png")},
+{"duration": 1.0, "texture": ExtResource("37_thunder_Spell_b_013_png")},
+{"duration": 1.0, "texture": ExtResource("38_thunder_Spell_b_014_png")},
+{"duration": 5.0, "texture": ExtResource("39_thunder_Spell_b_015_png")},
+{"duration": 1.0, "texture": ExtResource("40_thunder_Spell_b_016_png")},
+{"duration": 1.0, "texture": ExtResource("41_thunder_Spell_b_017_png")},
+{"duration": 1.0, "texture": ExtResource("42_thunder_Spell_b_018_png")},
+{"duration": 1.0, "texture": ExtResource("43_thunder_Spell_b_019_png")},
+{"duration": 1.0, "texture": ExtResource("44_thunder_Spell_b_020_png")},
+{"duration": 1.0, "texture": ExtResource("45_thunder_Spell_b_021_png")},
+{"duration": 1.0, "texture": ExtResource("46_thunder_Spell_b_022_png")},
+{"duration": 1.0, "texture": ExtResource("47_thunder_Spell_b_023_png")},
+{"duration": 1.0, "texture": ExtResource("48_thunder_Spell_b_024_png")},
+{"duration": 1.0, "texture": ExtResource("49_thunder_Spell_b_025_png")},
+{"duration": 1.0, "texture": ExtResource("50_thunder_Spell_b_026_png")},
+{"duration": 1.0, "texture": ExtResource("51_thunder_Spell_b_027_png")},
+{"duration": 1.0, "texture": ExtResource("52_thunder_Spell_b_028_png")},
+{"duration": 1.0, "texture": ExtResource("53_thunder_Spell_b_029_png")},
+{"duration": 1.0, "texture": ExtResource("54_thunder_Spell_b_030_png")},
+{"duration": 1.0, "texture": ExtResource("55_thunder_Spell_b_031_png")},
+{"duration": 1.0, "texture": ExtResource("56_thunder_Spell_b_032_png")},
+{"duration": 1.0, "texture": ExtResource("57_thunder_Spell_b_033_png")},
+{"duration": 1.0, "texture": ExtResource("58_thunder_Spell_b_034_png")},
+{"duration": 1.0, "texture": ExtResource("59_thunder_Spell_b_035_png")},
+{"duration": 1.0, "texture": ExtResource("60_thunder_Spell_b_036_png")},
+{"duration": 1.0, "texture": ExtResource("61_thunder_Spell_b_037_png")}
+],
+"loop": false,
+"name": &"thunder",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 3.0, "texture": ExtResource("62_wind_Spell_b_001_png")},
+{"duration": 2.0, "texture": ExtResource("63_wind_Spell_b_002_png")},
+{"duration": 2.0, "texture": ExtResource("64_wind_Spell_b_003_png")},
+{"duration": 2.0, "texture": ExtResource("65_wind_Spell_b_004_png")},
+{"duration": 2.0, "texture": ExtResource("66_wind_Spell_b_005_png")},
+{"duration": 2.0, "texture": ExtResource("67_wind_Spell_b_006_png")},
+{"duration": 2.0, "texture": ExtResource("68_wind_Spell_b_007_png")},
+{"duration": 2.0, "texture": ExtResource("69_wind_Spell_b_008_png")},
+{"duration": 2.0, "texture": ExtResource("70_wind_Spell_b_009_png")},
+{"duration": 2.0, "texture": ExtResource("71_wind_Spell_b_010_png")},
+{"duration": 2.0, "texture": ExtResource("72_wind_Spell_b_011_png")},
+{"duration": 2.0, "texture": ExtResource("73_wind_Spell_b_012_png")},
+{"duration": 2.0, "texture": ExtResource("74_wind_Spell_b_013_png")},
+{"duration": 2.0, "texture": ExtResource("75_wind_Spell_b_014_png")},
+{"duration": 2.0, "texture": ExtResource("76_wind_Spell_b_015_png")},
+{"duration": 2.0, "texture": ExtResource("77_wind_Spell_b_016_png")},
+{"duration": 2.0, "texture": ExtResource("78_wind_Spell_b_017_png")},
+{"duration": 1.0, "texture": ExtResource("79_wind_Spell_b_018_png")},
+{"duration": 1.0, "texture": ExtResource("80_wind_Spell_b_019_png")},
+{"duration": 2.0, "texture": ExtResource("81_wind_Spell_b_020_png")},
+{"duration": 2.0, "texture": ExtResource("82_wind_Spell_b_021_png")},
+{"duration": 2.0, "texture": ExtResource("83_wind_Spell_b_022_png")},
+{"duration": 2.0, "texture": ExtResource("84_wind_Spell_b_023_png")},
+{"duration": 2.0, "texture": ExtResource("85_wind_Spell_b_024_png")},
+{"duration": 2.0, "texture": ExtResource("86_wind_Spell_b_025_png")},
+{"duration": 2.0, "texture": ExtResource("87_wind_Spell_b_026_png")},
+{"duration": 2.0, "texture": ExtResource("88_wind_Spell_b_027_png")}
+],
+"loop": false,
+"name": &"wind",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 6.0, "texture": ExtResource("89_elfire_Spell_b_001_png")},
+{"duration": 3.0, "texture": ExtResource("90_elfire_Spell_b_002_png")},
+{"duration": 3.0, "texture": ExtResource("91_elfire_Spell_b_003_png")},
+{"duration": 3.0, "texture": ExtResource("92_elfire_Spell_b_004_png")},
+{"duration": 3.0, "texture": ExtResource("93_elfire_Spell_b_005_png")},
+{"duration": 3.0, "texture": ExtResource("94_elfire_Spell_b_006_png")},
+{"duration": 3.0, "texture": ExtResource("95_elfire_Spell_b_007_png")},
+{"duration": 3.0, "texture": ExtResource("96_elfire_Spell_b_008_png")},
+{"duration": 3.0, "texture": ExtResource("97_elfire_Spell_b_009_png")},
+{"duration": 3.0, "texture": ExtResource("98_elfire_Spell_b_010_png")},
+{"duration": 3.0, "texture": ExtResource("99_elfire_Spell_b_011_png")},
+{"duration": 3.0, "texture": ExtResource("100_elfire_Spell_b_012_png")},
+{"duration": 3.0, "texture": ExtResource("101_elfire_Spell_b_013_png")},
+{"duration": 2.0, "texture": ExtResource("102_elfire_Spell_b_014_png")},
+{"duration": 2.0, "texture": ExtResource("103_elfire_Spell_b_015_png")},
+{"duration": 2.0, "texture": ExtResource("104_elfire_Spell_b_016_png")},
+{"duration": 2.0, "texture": ExtResource("105_elfire_Spell_b_017_png")},
+{"duration": 2.0, "texture": ExtResource("106_elfire_Spell_b_018_png")},
+{"duration": 2.0, "texture": ExtResource("107_elfire_Spell_b_019_png")},
+{"duration": 2.0, "texture": ExtResource("108_elfire_Spell_b_020_png")},
+{"duration": 3.0, "texture": ExtResource("109_elfire_Spell_b_021_png")},
+{"duration": 3.0, "texture": ExtResource("110_elfire_Spell_b_022_png")},
+{"duration": 3.0, "texture": ExtResource("111_elfire_Spell_b_023_png")},
+{"duration": 3.0, "texture": ExtResource("112_elfire_Spell_b_024_png")},
+{"duration": 3.0, "texture": ExtResource("113_elfire_Spell_b_025_png")},
+{"duration": 3.0, "texture": ExtResource("114_elfire_Spell_b_026_png")},
+{"duration": 3.0, "texture": ExtResource("115_elfire_Spell_b_027_png")},
+{"duration": 3.0, "texture": ExtResource("116_elfire_Spell_b_028_png")},
+{"duration": 3.0, "texture": ExtResource("117_elfire_Spell_b_029_png")},
+{"duration": 3.0, "texture": ExtResource("118_elfire_Spell_b_030_png")},
+{"duration": 3.0, "texture": ExtResource("119_elfire_Spell_b_031_png")}
+],
+"loop": false,
+"name": &"elfire",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 24.0, "texture": ExtResource("120_flux_Spell_b_001_png")},
+{"duration": 3.0, "texture": ExtResource("121_flux_Spell_b_002_png")},
+{"duration": 3.0, "texture": ExtResource("122_flux_Spell_b_003_png")},
+{"duration": 3.0, "texture": ExtResource("123_flux_Spell_b_004_png")},
+{"duration": 3.0, "texture": ExtResource("124_flux_Spell_b_005_png")},
+{"duration": 3.0, "texture": ExtResource("125_flux_Spell_b_006_png")},
+{"duration": 3.0, "texture": ExtResource("126_flux_Spell_b_007_png")},
+{"duration": 3.0, "texture": ExtResource("127_flux_Spell_b_008_png")},
+{"duration": 3.0, "texture": ExtResource("128_flux_Spell_b_009_png")},
+{"duration": 3.0, "texture": ExtResource("129_flux_Spell_b_010_png")},
+{"duration": 3.0, "texture": ExtResource("130_flux_Spell_b_011_png")},
+{"duration": 3.0, "texture": ExtResource("131_flux_Spell_b_012_png")},
+{"duration": 3.0, "texture": ExtResource("132_flux_Spell_b_013_png")},
+{"duration": 3.0, "texture": ExtResource("133_flux_Spell_b_014_png")},
+{"duration": 3.0, "texture": ExtResource("134_flux_Spell_b_015_png")},
+{"duration": 3.0, "texture": ExtResource("135_flux_Spell_b_016_png")},
+{"duration": 3.0, "texture": ExtResource("136_flux_Spell_b_017_png")},
+{"duration": 3.0, "texture": ExtResource("137_flux_Spell_b_018_png")},
+{"duration": 3.0, "texture": ExtResource("138_flux_Spell_b_019_png")},
+{"duration": 3.0, "texture": ExtResource("139_flux_Spell_b_020_png")},
+{"duration": 3.0, "texture": ExtResource("140_flux_Spell_b_021_png")},
+{"duration": 3.0, "texture": ExtResource("141_flux_Spell_b_022_png")}
+],
+"loop": false,
+"name": &"flux",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("142_lightning_Spell_b_001_png")},
+{"duration": 2.0, "texture": ExtResource("143_lightning_Spell_b_001_png")},
+{"duration": 1.0, "texture": ExtResource("144_lightning_Spell_b_002_png")},
+{"duration": 2.0, "texture": ExtResource("145_lightning_Spell_b_002_png")},
+{"duration": 1.0, "texture": ExtResource("146_lightning_Spell_b_003_png")},
+{"duration": 2.0, "texture": ExtResource("147_lightning_Spell_b_003_png")},
+{"duration": 1.0, "texture": ExtResource("148_lightning_Spell_b_004_png")},
+{"duration": 2.0, "texture": ExtResource("149_lightning_Spell_b_004_png")},
+{"duration": 1.0, "texture": ExtResource("150_lightning_Spell_b_005_png")},
+{"duration": 2.0, "texture": ExtResource("151_lightning_Spell_b_005_png")},
+{"duration": 1.0, "texture": ExtResource("152_lightning_Spell_b_006_png")},
+{"duration": 2.0, "texture": ExtResource("153_lightning_Spell_b_006_png")},
+{"duration": 1.0, "texture": ExtResource("154_lightning_Spell_b_007_png")},
+{"duration": 2.0, "texture": ExtResource("155_lightning_Spell_b_007_png")},
+{"duration": 1.0, "texture": ExtResource("156_lightning_Spell_b_008_png")},
+{"duration": 2.0, "texture": ExtResource("157_lightning_Spell_b_008_png")},
+{"duration": 1.0, "texture": ExtResource("158_lightning_Spell_b_009_png")},
+{"duration": 2.0, "texture": ExtResource("159_lightning_Spell_b_009_png")},
+{"duration": 1.0, "texture": ExtResource("160_lightning_Spell_b_010_png")},
+{"duration": 2.0, "texture": ExtResource("161_lightning_Spell_b_010_png")},
+{"duration": 1.0, "texture": ExtResource("162_lightning_Spell_b_011_png")},
+{"duration": 2.0, "texture": ExtResource("163_lightning_Spell_b_011_png")},
+{"duration": 1.0, "texture": ExtResource("164_lightning_Spell_b_012_png")},
+{"duration": 2.0, "texture": ExtResource("165_lightning_Spell_b_012_png")},
+{"duration": 1.0, "texture": ExtResource("166_lightning_Spell_b_013_png")},
+{"duration": 2.0, "texture": ExtResource("167_lightning_Spell_b_013_png")},
+{"duration": 1.0, "texture": ExtResource("168_lightning_Spell_b_014_png")},
+{"duration": 2.0, "texture": ExtResource("169_lightning_Spell_b_014_png")},
+{"duration": 1.0, "texture": ExtResource("170_lightning_Spell_b_015_png")},
+{"duration": 2.0, "texture": ExtResource("171_lightning_Spell_b_015_png")},
+{"duration": 1.0, "texture": ExtResource("172_lightning_Spell_b_016_png")},
+{"duration": 2.0, "texture": ExtResource("173_lightning_Spell_b_016_png")},
+{"duration": 1.0, "texture": ExtResource("174_lightning_Spell_b_017_png")},
+{"duration": 2.0, "texture": ExtResource("175_lightning_Spell_b_017_png")},
+{"duration": 1.0, "texture": ExtResource("176_lightning_Spell_b_018_png")},
+{"duration": 2.0, "texture": ExtResource("177_lightning_Spell_b_018_png")},
+{"duration": 1.0, "texture": ExtResource("178_lightning_Spell_b_019_png")},
+{"duration": 2.0, "texture": ExtResource("179_lightning_Spell_b_019_png")},
+{"duration": 1.0, "texture": ExtResource("180_lightning_Spell_b_020_png")},
+{"duration": 2.0, "texture": ExtResource("181_lightning_Spell_b_020_png")},
+{"duration": 1.0, "texture": ExtResource("182_lightning_Spell_b_021_png")},
+{"duration": 2.0, "texture": ExtResource("183_lightning_Spell_b_021_png")},
+{"duration": 1.0, "texture": ExtResource("184_lightning_Spell_b_022_png")},
+{"duration": 2.0, "texture": ExtResource("185_lightning_Spell_b_022_png")},
+{"duration": 1.0, "texture": ExtResource("186_lightning_Spell_b_023_png")},
+{"duration": 2.0, "texture": ExtResource("187_lightning_Spell_b_023_png")},
+{"duration": 1.0, "texture": ExtResource("188_lightning_Spell_b_024_png")},
+{"duration": 2.0, "texture": ExtResource("189_lightning_Spell_b_024_png")},
+{"duration": 1.0, "texture": ExtResource("190_lightning_Spell_b_025_png")},
+{"duration": 2.0, "texture": ExtResource("191_lightning_Spell_b_025_png")},
+{"duration": 1.0, "texture": ExtResource("192_lightning_Spell_b_026_png")},
+{"duration": 2.0, "texture": ExtResource("193_lightning_Spell_b_026_png")},
+{"duration": 1.0, "texture": ExtResource("194_lightning_Spell_b_027_png")},
+{"duration": 2.0, "texture": ExtResource("195_lightning_Spell_b_027_png")},
+{"duration": 1.0, "texture": ExtResource("196_lightning_Spell_b_028_png")},
+{"duration": 2.0, "texture": ExtResource("197_lightning_Spell_b_028_png")},
+{"duration": 1.0, "texture": ExtResource("198_lightning_Spell_b_036_png")},
+{"duration": 2.0, "texture": ExtResource("199_lightning_Spell_b_036_png")},
+{"duration": 1.0, "texture": ExtResource("200_lightning_Spell_b_038_png")},
+{"duration": 2.0, "texture": ExtResource("201_lightning_Spell_b_038_png")},
+{"duration": 1.0, "texture": ExtResource("202_lightning_Spell_b_040_png")},
+{"duration": 2.0, "texture": ExtResource("203_lightning_Spell_b_040_png")},
+{"duration": 1.0, "texture": ExtResource("204_lightning_Spell_b_042_png")},
+{"duration": 2.0, "texture": ExtResource("205_lightning_Spell_b_042_png")},
+{"duration": 1.0, "texture": ExtResource("206_lightning_Spell_b_044_png")},
+{"duration": 2.0, "texture": ExtResource("207_lightning_Spell_b_044_png")},
+{"duration": 1.0, "texture": ExtResource("208_lightning_Spell_b_046_png")},
+{"duration": 2.0, "texture": ExtResource("209_lightning_Spell_b_046_png")},
+{"duration": 1.0, "texture": ExtResource("210_lightning_Spell_b_047_png")},
+{"duration": 2.0, "texture": ExtResource("211_lightning_Spell_b_047_png")},
+{"duration": 1.0, "texture": ExtResource("212_lightning_Spell_b_049_png")},
+{"duration": 2.0, "texture": ExtResource("213_lightning_Spell_b_049_png")},
+{"duration": 1.0, "texture": ExtResource("214_lightning_Spell_b_050_png")},
+{"duration": 2.0, "texture": ExtResource("215_lightning_Spell_b_050_png")},
+{"duration": 1.0, "texture": ExtResource("216_lightning_Spell_b_051_png")},
+{"duration": 2.0, "texture": ExtResource("217_lightning_Spell_b_051_png")},
+{"duration": 1.0, "texture": ExtResource("218_lightning_Spell_b_052_png")},
+{"duration": 2.0, "texture": ExtResource("219_lightning_Spell_b_052_png")},
+{"duration": 1.0, "texture": ExtResource("220_lightning_Spell_b_053_png")},
+{"duration": 2.0, "texture": ExtResource("221_lightning_Spell_b_053_png")},
+{"duration": 1.0, "texture": ExtResource("222_lightning_Spell_b_054_png")},
+{"duration": 2.0, "texture": ExtResource("223_lightning_Spell_b_054_png")},
+{"duration": 1.0, "texture": ExtResource("224_lightning_Spell_b_055_png")},
+{"duration": 2.0, "texture": ExtResource("225_lightning_Spell_b_055_png")},
+{"duration": 1.0, "texture": ExtResource("226_lightning_Spell_b_056_png")},
+{"duration": 2.0, "texture": ExtResource("227_lightning_Spell_b_056_png")}
+],
+"loop": false,
+"name": &"lightning",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("142_lightning_Spell_b_001_png")},
+{"duration": 2.0, "texture": ExtResource("143_lightning_Spell_b_001_png")},
+{"duration": 1.0, "texture": ExtResource("144_lightning_Spell_b_002_png")},
+{"duration": 2.0, "texture": ExtResource("145_lightning_Spell_b_002_png")},
+{"duration": 1.0, "texture": ExtResource("146_lightning_Spell_b_003_png")},
+{"duration": 2.0, "texture": ExtResource("147_lightning_Spell_b_003_png")},
+{"duration": 1.0, "texture": ExtResource("148_lightning_Spell_b_004_png")},
+{"duration": 2.0, "texture": ExtResource("149_lightning_Spell_b_004_png")},
+{"duration": 1.0, "texture": ExtResource("150_lightning_Spell_b_005_png")},
+{"duration": 2.0, "texture": ExtResource("151_lightning_Spell_b_005_png")},
+{"duration": 1.0, "texture": ExtResource("152_lightning_Spell_b_006_png")},
+{"duration": 2.0, "texture": ExtResource("153_lightning_Spell_b_006_png")},
+{"duration": 1.0, "texture": ExtResource("154_lightning_Spell_b_007_png")},
+{"duration": 2.0, "texture": ExtResource("155_lightning_Spell_b_007_png")},
+{"duration": 1.0, "texture": ExtResource("156_lightning_Spell_b_008_png")},
+{"duration": 2.0, "texture": ExtResource("157_lightning_Spell_b_008_png")},
+{"duration": 1.0, "texture": ExtResource("158_lightning_Spell_b_009_png")},
+{"duration": 2.0, "texture": ExtResource("159_lightning_Spell_b_009_png")},
+{"duration": 1.0, "texture": ExtResource("160_lightning_Spell_b_010_png")},
+{"duration": 2.0, "texture": ExtResource("161_lightning_Spell_b_010_png")},
+{"duration": 1.0, "texture": ExtResource("162_lightning_Spell_b_011_png")},
+{"duration": 2.0, "texture": ExtResource("163_lightning_Spell_b_011_png")},
+{"duration": 1.0, "texture": ExtResource("164_lightning_Spell_b_012_png")},
+{"duration": 2.0, "texture": ExtResource("165_lightning_Spell_b_012_png")},
+{"duration": 1.0, "texture": ExtResource("166_lightning_Spell_b_013_png")},
+{"duration": 2.0, "texture": ExtResource("167_lightning_Spell_b_013_png")},
+{"duration": 1.0, "texture": ExtResource("168_lightning_Spell_b_014_png")},
+{"duration": 2.0, "texture": ExtResource("169_lightning_Spell_b_014_png")},
+{"duration": 1.0, "texture": ExtResource("170_lightning_Spell_b_015_png")},
+{"duration": 2.0, "texture": ExtResource("171_lightning_Spell_b_015_png")},
+{"duration": 1.0, "texture": ExtResource("172_lightning_Spell_b_016_png")},
+{"duration": 2.0, "texture": ExtResource("173_lightning_Spell_b_016_png")},
+{"duration": 1.0, "texture": ExtResource("174_lightning_Spell_b_017_png")},
+{"duration": 2.0, "texture": ExtResource("175_lightning_Spell_b_017_png")},
+{"duration": 1.0, "texture": ExtResource("176_lightning_Spell_b_018_png")},
+{"duration": 2.0, "texture": ExtResource("177_lightning_Spell_b_018_png")},
+{"duration": 1.0, "texture": ExtResource("178_lightning_Spell_b_019_png")},
+{"duration": 2.0, "texture": ExtResource("179_lightning_Spell_b_019_png")},
+{"duration": 1.0, "texture": ExtResource("180_lightning_Spell_b_020_png")},
+{"duration": 2.0, "texture": ExtResource("181_lightning_Spell_b_020_png")},
+{"duration": 1.0, "texture": ExtResource("182_lightning_Spell_b_021_png")},
+{"duration": 2.0, "texture": ExtResource("183_lightning_Spell_b_021_png")},
+{"duration": 1.0, "texture": ExtResource("184_lightning_Spell_b_022_png")},
+{"duration": 2.0, "texture": ExtResource("185_lightning_Spell_b_022_png")},
+{"duration": 1.0, "texture": ExtResource("186_lightning_Spell_b_023_png")},
+{"duration": 2.0, "texture": ExtResource("187_lightning_Spell_b_023_png")},
+{"duration": 1.0, "texture": ExtResource("188_lightning_Spell_b_024_png")},
+{"duration": 2.0, "texture": ExtResource("189_lightning_Spell_b_024_png")},
+{"duration": 1.0, "texture": ExtResource("190_lightning_Spell_b_025_png")},
+{"duration": 2.0, "texture": ExtResource("191_lightning_Spell_b_025_png")},
+{"duration": 1.0, "texture": ExtResource("192_lightning_Spell_b_026_png")},
+{"duration": 2.0, "texture": ExtResource("193_lightning_Spell_b_026_png")},
+{"duration": 1.0, "texture": ExtResource("194_lightning_Spell_b_027_png")},
+{"duration": 2.0, "texture": ExtResource("195_lightning_Spell_b_027_png")},
+{"duration": 1.0, "texture": ExtResource("196_lightning_Spell_b_028_png")},
+{"duration": 2.0, "texture": ExtResource("197_lightning_Spell_b_028_png")},
+{"duration": 1.0, "texture": ExtResource("198_lightning_Spell_b_036_png")},
+{"duration": 2.0, "texture": ExtResource("199_lightning_Spell_b_036_png")},
+{"duration": 1.0, "texture": ExtResource("200_lightning_Spell_b_038_png")},
+{"duration": 2.0, "texture": ExtResource("201_lightning_Spell_b_038_png")},
+{"duration": 1.0, "texture": ExtResource("202_lightning_Spell_b_040_png")},
+{"duration": 2.0, "texture": ExtResource("203_lightning_Spell_b_040_png")},
+{"duration": 1.0, "texture": ExtResource("204_lightning_Spell_b_042_png")},
+{"duration": 2.0, "texture": ExtResource("205_lightning_Spell_b_042_png")},
+{"duration": 1.0, "texture": ExtResource("206_lightning_Spell_b_044_png")},
+{"duration": 2.0, "texture": ExtResource("207_lightning_Spell_b_044_png")},
+{"duration": 1.0, "texture": ExtResource("208_lightning_Spell_b_046_png")},
+{"duration": 2.0, "texture": ExtResource("209_lightning_Spell_b_046_png")},
+{"duration": 1.0, "texture": ExtResource("210_lightning_Spell_b_047_png")},
+{"duration": 2.0, "texture": ExtResource("211_lightning_Spell_b_047_png")},
+{"duration": 1.0, "texture": ExtResource("212_lightning_Spell_b_049_png")},
+{"duration": 2.0, "texture": ExtResource("213_lightning_Spell_b_049_png")},
+{"duration": 1.0, "texture": ExtResource("214_lightning_Spell_b_050_png")},
+{"duration": 2.0, "texture": ExtResource("215_lightning_Spell_b_050_png")},
+{"duration": 1.0, "texture": ExtResource("216_lightning_Spell_b_051_png")},
+{"duration": 2.0, "texture": ExtResource("217_lightning_Spell_b_051_png")},
+{"duration": 1.0, "texture": ExtResource("218_lightning_Spell_b_052_png")},
+{"duration": 2.0, "texture": ExtResource("219_lightning_Spell_b_052_png")},
+{"duration": 1.0, "texture": ExtResource("220_lightning_Spell_b_053_png")},
+{"duration": 2.0, "texture": ExtResource("221_lightning_Spell_b_053_png")},
+{"duration": 1.0, "texture": ExtResource("222_lightning_Spell_b_054_png")},
+{"duration": 2.0, "texture": ExtResource("223_lightning_Spell_b_054_png")},
+{"duration": 1.0, "texture": ExtResource("224_lightning_Spell_b_055_png")},
+{"duration": 2.0, "texture": ExtResource("225_lightning_Spell_b_055_png")},
+{"duration": 1.0, "texture": ExtResource("226_lightning_Spell_b_056_png")},
+{"duration": 2.0, "texture": ExtResource("227_lightning_Spell_b_056_png")}
+],
+"loop": false,
+"name": &"luce",
+"speed": 60.0
+},
+
+{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("228_heal_Spell_b_001_png")},
+{"duration": 1.0, "texture": ExtResource("229_heal_Spell_b_005_png")},
+{"duration": 1.0, "texture": ExtResource("230_heal_Spell_b_007_png")},
+{"duration": 1.0, "texture": ExtResource("231_heal_Spell_b_009_png")},
+{"duration": 1.0, "texture": ExtResource("232_heal_Spell_b_011_png")},
+{"duration": 1.0, "texture": ExtResource("233_heal_Spell_b_012_png")},
+{"duration": 1.0, "texture": ExtResource("234_heal_Spell_b_013_png")},
+{"duration": 1.0, "texture": ExtResource("235_heal_Spell_b_014_png")},
+{"duration": 1.0, "texture": ExtResource("236_heal_Spell_b_015_png")},
+{"duration": 1.0, "texture": ExtResource("237_heal_Spell_b_016_png")},
+{"duration": 1.0, "texture": ExtResource("238_heal_Spell_b_017_png")},
+{"duration": 1.0, "texture": ExtResource("239_heal_Spell_b_018_png")},
+{"duration": 1.0, "texture": ExtResource("240_heal_Spell_b_019_png")}
+],
+"loop": false,
+"name": &"heal",
+"speed": 60.0
+}
+
+]

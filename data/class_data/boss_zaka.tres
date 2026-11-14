@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ClassData" format=3]
+
+[ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Class Card/扎卡.png" id="2_card"]
+
+[resource]
+script = ExtResource("1_class")
+job_name = "山贼头目"
+job_info = "游荡在荒原边缘的狂徒首领，残忍暴虐"
+class_card = ExtResource("2_card")
+class_power = 3
+cap_hp = 40
+cap_str = 25
+cap_mag = 10
+cap_skl = 20
+cap_spd = 20
+cap_luk = 20
+cap_def_h = 20
+cap_res = 15
+cap_con = 25
+mount_type = 0

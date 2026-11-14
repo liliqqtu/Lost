@@ -5,10 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://celjxvnjqh02f" path="res://assets/graphics/UI/save_bg.png" id="2_s37nf"]
 [ext_resource type="PackedScene" uid="uid://hkvgn16en2gw" path="res://scene/ui/cursorhand.tscn" id="3_cursor"]
 [ext_resource type="Texture2D" uid="uid://36dyriv3q7ht" path="res://assets/graphics/UI/save_slot_active.png" id="3_d5yku"]
-[ext_resource type="Shader" uid="uid://c0ar22ek0cxok" path="res://tests/MyPixel13_transparent.gdshader" id="4_0s60f"]
+[ext_resource type="Shader" uid="uid://c0ar22ek0cxok" path="res://data/shader/MyPixel13_transparent.gdshader" id="4_0s60f"]
 [ext_resource type="Texture2D" uid="uid://crx8mf5688a4j" path="res://assets/graphics/UI/物品栏.png" id="4_itemsbox"]
 [ext_resource type="LabelSettings" uid="uid://cjcmub2qdfi1h" path="res://assets/graphics/UI/label_settings.tres" id="5_font"]
 [ext_resource type="FontFile" uid="uid://dnlcxmlvjasil" path="res://assets/fonts/MyPixel13_transparent.fnt" id="5_wdjut"]
+[ext_resource type="Shader" uid="uid://b7divcccu4u1k" path="res://data/shader/save_menu_fog_glow.gdshader" id="6_fog"]
+[ext_resource type="Texture2D" path="res://data/shader/fe8_fog_noise.tres" id="7_noise"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fog"]
+shader = ExtResource("6_fog")
+shader_parameter/noise_texture = ExtResource("7_noise")
+shader_parameter/glow_color = Color(0.88, 0.94, 1, 1)
+shader_parameter/fog_speed = 0.24
+shader_parameter/fog_density = 0.62
+shader_parameter/fog_cutoff_low = 0.35
+shader_parameter/fog_cutoff_high = 0.68
+shader_parameter/bottom_glow_strength = 0.75
+shader_parameter/breathe_speed = 2.2
+shader_parameter/custom_time = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d5yku"]
 shader = ExtResource("4_0s60f")
@@ -30,6 +44,13 @@ layout_mode = 0
 offset_right = 240.0
 offset_bottom = 160.0
 texture = ExtResource("2_s37nf")
+
+[node name="FogGlowOverlay" type="ColorRect" parent="." unique_id=778899001]
+material = SubResource("ShaderMaterial_fog")
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 160.0
+mouse_filter = 2
 
 [node name="HeaderBar" type="NinePatchRect" parent="." unique_id=1808520753]
 layout_mode = 0
@@ -228,6 +249,7 @@ offset_top = 34.0
 offset_bottom = 50.0
 
 [node name="ConfirmDialog" type="NinePatchRect" parent="." unique_id=1463554118]
+visible = false
 layout_mode = 0
 offset_left = 30.0
 offset_top = 52.0
