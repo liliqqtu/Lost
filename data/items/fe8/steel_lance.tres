@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/steel_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"steel_lance"
+display_name = "钢枪"
+description = "威力较高的重型钢枪。"
+buy_price = 480
+can_sell = true
+item_kind = &"lance"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 30
+max_uses = 30
+original_id = 22
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON", "maxUses": "30", "might": "10", "hit": "70", "weight": "13", "encodedRange": "0x11", "costPerUse": "16", "weaponRank": "WPN_EXP_D", "weaponExp": "2"}
+weapon_type = 1
+required_rank = 1
+weapon_exp = 2
+might = 10
+hit = 70
+crit = 0
+weight = 13
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = false

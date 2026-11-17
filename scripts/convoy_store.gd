@@ -25,6 +25,13 @@ enum Category {
 ## 所有物品（扁平存储）
 var items: Array[Item] = []
 
+func reset_state(saved_items: Array = []) -> void:
+	items.clear()
+	for item in saved_items:
+		if item is Item:
+			add(item)
+	current_items = items.size()
+
 
 ## 根据物品类型判断它属于哪一类图标
 static func category_of(item: Item) -> int:

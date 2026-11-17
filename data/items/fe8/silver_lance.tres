@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/silver_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"silver_lance"
+display_name = "银枪"
+description = "高威力的银制枪。"
+buy_price = 1200
+can_sell = true
+item_kind = &"lance"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 20
+max_uses = 20
+original_id = 23
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON", "maxUses": "20", "might": "14", "hit": "75", "weight": "10", "encodedRange": "0x11", "costPerUse": "60", "weaponRank": "WPN_EXP_A", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 4
+weapon_exp = 1
+might = 14
+hit = 75
+crit = 0
+weight = 10
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

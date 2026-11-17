@@ -1,18 +1,17 @@
-[gd_resource type="SpriteFrames" format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bd4y4g86mjwtb"]
 
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_000.png" id="1_staff_Staff_000_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_001.png" id="2_staff_Staff_001_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_002.png" id="3_staff_Staff_002_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_003.png" id="4_staff_Staff_003_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_004.png" id="5_staff_Staff_004_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_005.png" id="6_staff_Staff_005_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_006.png" id="7_staff_Staff_006_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_007.png" id="8_staff_Staff_007_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_008.png" id="9_staff_Staff_008_png"]
+[ext_resource type="Texture2D" uid="uid://6ccdl80cfley" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_000.png" id="1_staff_Staff_000_png"]
+[ext_resource type="Texture2D" uid="uid://ct636e1jwtnxy" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_001.png" id="2_staff_Staff_001_png"]
+[ext_resource type="Texture2D" uid="uid://ddn18abfcesav" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_002.png" id="3_staff_Staff_002_png"]
+[ext_resource type="Texture2D" uid="uid://c5scm38wrkkic" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_003.png" id="4_staff_Staff_003_png"]
+[ext_resource type="Texture2D" uid="uid://chf0qaojfyrjw" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_004.png" id="5_staff_Staff_004_png"]
+[ext_resource type="Texture2D" uid="uid://dqrt5x86jpvkn" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_005.png" id="6_staff_Staff_005_png"]
+[ext_resource type="Texture2D" uid="uid://qtoxld385e7k" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_006.png" id="7_staff_Staff_006_png"]
+[ext_resource type="Texture2D" uid="uid://cqy4v8qa61s8f" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_007.png" id="8_staff_Staff_007_png"]
+[ext_resource type="Texture2D" uid="uid://dyhl3wsjk3rno" path="res://assets/battle_animations/Cleric-Base[F]/Staff/Staff_008.png" id="9_staff_Staff_008_png"]
 
 [resource]
-animations = [
-{
+animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
@@ -35,11 +34,10 @@ animations = [
 "duration": 4.0,
 "texture": ExtResource("7_staff_Staff_006_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"staff",
 "speed": 60.0
-},
-{
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
@@ -62,119 +60,10 @@ animations = [
 "duration": 4.0,
 "texture": ExtResource("7_staff_Staff_006_png")
 }],
-"loop": false,
-"name": &"staff_start",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}],
-"loop": false,
+"loop": 0,
 "name": &"staff_crit",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
 }, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}],
-"loop": false,
-"name": &"staff_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}],
-"loop": false,
-"name": &"staff_mode_5",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}],
-"loop": false,
-"name": &"staff_mode_6",
-"speed": 60.0
-},
-{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
@@ -188,56 +77,18 @@ animations = [
 "duration": 3.0,
 "texture": ExtResource("8_staff_Staff_007_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"staff_dodge",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
 }, {
-"duration": 3.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_staff_Staff_008_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}],
-"loop": false,
-"name": &"staff_dodge_ranged",
-"speed": 60.0
-},
-{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
 }],
-"loop": false,
-"name": &"staff_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}],
-"loop": false,
+"loop": 1,
 "name": &"staff_idle",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}],
-"loop": false,
-"name": &"staff_mode_11",
-"speed": 60.0
-},
-{
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
@@ -260,8 +111,71 @@ animations = [
 "duration": 4.0,
 "texture": ExtResource("7_staff_Staff_006_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"staff_miss",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_staff_Staff_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_staff_Staff_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_staff_Staff_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_staff_Staff_003_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_staff_Staff_004_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_staff_Staff_006_png")
+}],
+"loop": 0,
+"name": &"staff_ranged",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_staff_Staff_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_staff_Staff_001_png")
+}, {
+"duration": 6.0,
+"texture": ExtResource("3_staff_Staff_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_staff_Staff_003_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_staff_Staff_004_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("7_staff_Staff_006_png")
+}],
+"loop": 0,
+"name": &"staff_ranged_crit",
+"speed": 60.0
+}]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {
+"staff_critical": "staff_crit",
+"staff_dodge_ranged": "staff_dodge",
+"staff_idle_ranged": "staff_idle",
+"staff_mode_11": "staff_idle",
+"staff_mode_5": "staff_ranged",
+"staff_mode_6": "staff_ranged_crit",
+"staff_stand": "staff_idle",
+"staff_start": "staff"
 }
-]
+metadata/battle_animation_impacts = {}

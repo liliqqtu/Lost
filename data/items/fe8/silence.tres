@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/silence.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"silence"
+display_name = "沉默之杖"
+description = "原版使敌人暂时无法使用魔法。（特殊效果待实现）"
+buy_price = 1200
+can_sell = true
+item_kind = &"staff"
+effect_id = &"staff_silence"
+effect_implemented = false
+remaining_uses = 3
+max_uses = 3
+original_id = 81
+original_data = {"useDescTextId": "0x4b5", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF", "maxUses": "3", "hit": "70", "weight": "7", "encodedRange": "0x10", "costPerUse": "400", "weaponRank": "WPN_EXP_B", "useEffectId": "7", "weaponExp": "5"}
+weapon_type = 7
+required_rank = 3
+weapon_exp = 5
+might = 0
+hit = 70
+crit = 0
+weight = 7
+durability = 3
+max_durability = 3
+min_range = 1
+max_range = 1
+is_brave = false

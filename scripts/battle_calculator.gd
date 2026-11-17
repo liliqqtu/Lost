@@ -88,13 +88,23 @@ static func can_double(attacker: Unit, defender: Unit, units: Array = []) -> boo
 
 ##反击判定：防御方有武器且攻击距离在其武器射程内（被动技能如仿徨影响防御方有效射程）
 static func can_counter(attacker: Unit, defender: Unit) -> bool:
-	var weapon := defender.current_weapon
-	if not weapon:
+	return can_attack(defender, attacker)
+
+
+static func is_hostile(a: Unit, b: Unit) -> bool:
+	return a != null and b != null and ((a.team == 1) != (b.team == 1))
+
+static func can_attack_with(unit: Unit, weapon: Weapon) -> bool:
+	return weapon != null and weapon.weapon_type != WeaponRef.WeaponType.STAFF and weapon.durability > 0 and unit.can_equip(weapon)
+
+static func can_attack(attacker: Unit, defender: Unit) -> bool:
+	if not is_instance_valid(attacker) or not is_instance_valid(defender) or not is_hostile(attacker, defender):
 		return false
-	var dist := _manhattan(attacker.cell, defender.cell)
-	var min_r := defender.get_effective_min_range()
-	var max_r := defender.get_effective_max_range()
-	return dist >= min_r and dist <= max_r
+	if attacker.hp <= 0 or defender.hp <= 0 or attacker.carried_by != null or defender.carried_by != null or not can_attack_with(attacker, attacker.current_weapon):
+		return false
+	var ranges := attacker.get_range_for_weapon(attacker.current_weapon)
+	var distance := _manhattan(attacker.cell, defender.cell)
+	return distance >= ranges.min and distance <= ranges.max
 
 
 ##生成战斗序列（纯数据，无随机），供战斗预览 UI 与实际结算共用
@@ -105,6 +115,8 @@ static func can_counter(attacker: Unit, defender: Unit) -> bool:
 ##units 传入时命中/必杀结算支援加成（3 格内），为空则支援按 0（旧调用兼容）
 static func generate_battle_sequence(attacker: Unit, defender: Unit, tile_map: TileMapLayer = null, units: Array = []) -> Array[Dictionary]:
 	var sequence: Array[Dictionary] = []
+	if not can_attack(attacker, defender):
+		return sequence
 
 	var attacker_doubles := can_double(attacker, defender, units)
 	var defender_doubles := can_double(defender, attacker, units)
@@ -138,11 +150,18 @@ static func generate_battle_sequence(attacker: Unit, defender: Unit, tile_map: T
 
 ##追加一次打击到序列
 static func _append_strike(sequence: Array[Dictionary], a: Unit, d: Unit, is_counter: bool, is_double: bool, tile_map: TileMapLayer, units: Array) -> void:
+	var used := 0
+	for strike in sequence:
+		if strike.attacker == a:
+			used += 1
+	if a.current_weapon == null or used >= a.current_weapon.durability:
+		return
 	var damage := calculate_damage(a, d, tile_map, units)
 	sequence.append({
 		"attacker": a,
 		"defender": d,
 		"damage": damage,
+		"weapon": a.current_weapon,
 		"hit": calculate_hit_rate(a, d, tile_map, units),
 		"crit": calculate_crit_rate(a, d, units),
 		"is_counter": is_counter,

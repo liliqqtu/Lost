@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P0-2 验证：Unit 物品/装备实例生命周期统一接口
 ##不变量：`current_weapon == null` 或 `inventory.has(current_weapon)`
@@ -11,10 +11,10 @@ extends SceneTree
 ##  6. use_item 不变量：消耗品用尽后从背包移除，current_weapon（若是武器）不受影响
 ##  7. 模板 .tres 共享：add_item 不复制——多单位共享同一模板会污染耐久（这是已知契约）
 ##  8. 全场景组合：换装→攻击扣耐久→耐久归零→current_weapon 置空
-##运行：godot --headless --path . -s res://tests/test_item_lifecycle.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _init() -> void:
+func _ready() -> void:
 	# ===== 场景一：add_item 容量上限 =====
 	var u1 := _make_unit("测试员")
 	var w1 := _make_weapon("铁剑", 40)
@@ -50,7 +50,7 @@ func _init() -> void:
 	##移除 w32（装备中）应自动卸装
 	assert(u3.remove_item_at(1), "[场景三] 按索引 1 移除成功")
 	assert(u3.current_weapon == null, "[场景三] 移除装备中武器 → current_weapon 置空")
-	assert(u3.inventory == [w32, w33] as Array, "[场景三] 移除后顺序正确")
+	assert(u3.inventory == ([w31, w33] as Array[Item]), "[场景三] 移除后顺序正确")
 	##索引越界
 	assert(not u3.remove_item_at(-1), "[场景三] 负索引返回 false")
 	assert(not u3.remove_item_at(99), "[场景三] 越界返回 false")
@@ -98,7 +98,7 @@ func _init() -> void:
 	var u6 := _make_unit("测试员", 30)
 	u6.hp = 5  ##不触发 max_hp 钳位：5 + 15 = 20
 	var w6 := _make_weapon("铁剑", 40)
-	var potion_tres: Consumable = preload("res://scene/item/consumable_potion.tres") as Consumable
+	var potion_tres: Consumable = preload("res://data/items/consumable_potion.tres") as Consumable
 	var potion := potion_tres.duplicate() as Consumable
 	u6.inventory = [w6, potion]
 	u6.current_weapon = w6
@@ -113,6 +113,7 @@ func _init() -> void:
 	var u7b := _make_unit("乙")
 	var shared_template := _make_weapon("共享铁剑", 40)
 	u7a.add_item(shared_template)
+	u7a.equip_item(shared_template)
 	u7b.add_item(shared_template)  ##按契约应复制后再加，避免共享——这里展示若不复制会污染
 	##u7a 扣耐久
 	u7a.consume_weapon_durability()
@@ -149,6 +150,7 @@ func _init() -> void:
 ##"""构造测试 Unit（不入场景树，绕过 _ready/_own_inventory）"""
 func _make_unit(p_name: String, hp: int = 20) -> Unit:
 	var u := Unit.new()
+	add_child(u)
 	u.unit_name = p_name
 	u.max_hp = hp
 	u.hp = hp

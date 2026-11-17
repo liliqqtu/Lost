@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/solar_brace.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"solar_brace"
+display_name = "日之腕轮"
+description = "伊弗列姆专用转职道具。（使用或持有效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"promotion"
+effect_id = &"solarbrace"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 153
+original_data = {"useDescTextId": "0x4e2", "weaponType": "ITYPE_ITEM", "attributes": "IA_UNSELLABLE", "maxUses": "1", "encodedRange": "0x11", "useEffectId": "50"}

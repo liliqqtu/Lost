@@ -11,9 +11,9 @@ extends Button
 
 ## 描述信息（Inspector 多行编辑）
 @export_multiline var description: String
-## 二维坐标
+## 信息框锚点相对于本节点全局位置的像素偏移，供 InfoViewer 定位说明框。
 @export var info_position: Vector2
-## 光标偏移（默认 Vector2.ZERO 表示使用左侧默认偏移）
+## 人物面板手光标相对于本节点的像素偏移；Vector2.ZERO 使用面板的默认左侧偏移。
 @export var cursor_offset: Vector2 = Vector2.ZERO
 
 ## 统一信息接口：返回当前对象的说明

@@ -1,24 +1,25 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##阶段五 5A 验证脚本：战斗动画场景（标签填充 / 血条更新 / 未命中 / 击杀淡出 / 收尾）
-##运行：godot --headless --path . -s res://tests/test_battle_animation.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
 func _run() -> void:
 	var scene := preload("res://scene/ui/battle_animation.tscn").instantiate()
-	root.add_child(scene)
+	add_child(scene)
 	##-s 模式下 root 尚未进树，等一帧让 _ready（@onready 绑定）执行
-	await process_frame
+	await get_tree().process_frame
 
 	##造一对交战单位（带战斗动画帧与武器）
 	var player := Unit.new()
+	add_child(player)
 	player.unit_name = "忒"
 	player.team = 0
 	player.cell = Vector2i(3, 3)
-	player.battle_frames = preload("res://scene/character/battle_animation_tres/Ranger_M_frames.tres")
+	player.battle_frames = preload("res://data/battle_animation_tres/Ranger_M_frames.tres")
 	var sword := Weapon.new()
 	sword.display_name = "铁剑"
 	sword.weapon_type = Weapon.WeaponType.SWORD
@@ -27,13 +28,14 @@ func _run() -> void:
 	player.current_weapon = sword
 
 	var enemy := Unit.new()
+	add_child(enemy)
 	enemy.unit_name = "山贼"
 	enemy.team = 1
 	enemy.cell = Vector2i(4, 3)
 	enemy.max_hp = 18
 	enemy.hp = 18
 	enemy.def_h = 2
-	enemy.battle_frames = preload("res://scene/character/battle_animation_tres/Bandit_M_frames.tres")
+	enemy.battle_frames = preload("res://data/battle_animation_tres/Brigand_M_frames.tres")
 	var axe := Weapon.new()
 	axe.display_name = "铁斧"
 	axe.weapon_type = Weapon.WeaponType.AXE
@@ -64,8 +66,8 @@ func _run() -> void:
 	assert(scene.enemy_unit == enemy)
 	assert(scene.player_name_label.text == "忒")
 	assert(scene.enemy_name_label.text == "山贼")
-	assert(scene.player_weapon_name_label.text == "铁剑")
-	assert(scene.enemy_weapon_name_label.text == "铁斧")
+	assert(scene.player_weapon_name_label.text == "铁剑 40/40")
+	assert(scene.enemy_weapon_name_label.text == "铁斧 40/40")
 	assert(scene.player_hit_label.text == str(p_strike["hit"]))
 	assert(scene.player_dmg_label.text == str(p_strike["damage"]))
 	assert(scene.enemy_hit_label.text == str(e_strike["hit"]))

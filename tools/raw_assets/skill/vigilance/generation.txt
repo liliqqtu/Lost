@@ -1,0 +1,11 @@
+# 守望技能图标
+
+生成方式：内置 image_gen，不透明底图，无额外留边；原稿 source.png。
+成品：assets/graphics/skill/守望.png，16×16 RGBA、不透明，最后叠加统一技能框。
+预览：preview.png，成品最近邻放大 256×256。
+
+提示词：
+Use case: stylized-concept. Asset type: ONE GBA tactical RPG skill inventory icon. Square canvas. Extremely coarse authentic pixel art: draw on an EXACT 16 by 16 logical pixel grid enlarged uniformly, each logical pixel one flat square color. NO high resolution illustration or tiny detail. Hard stair step edges, no antialiasing, no gradients, no blur, 8-12 colors. Full bleed completely OPAQUE dark colored background edge to edge, NO transparency or white/empty margin. Central subject must fit in the middle 12 by 12 logical pixels, with background extending to every canvas edge, because an external standard inventory frame will cover the outer two pixels later. Do NOT draw any border or frame. No text, no letters, no numbers, no watermark. Skill: 守望 / Vigilance, quiet protection, resistance +3 and luck +5. Single large simple front-facing teal-blue heater shield, broad shoulders tapering to one lower point, dark navy outline, turquoise face, pale icy cyan highlights. One small ivory four-point lucky star embedded in the upper center of the shield face. Shield and star must be bold and immediately readable at 16x16, no heraldic ornament. Restrained deep navy-teal full background, calm protective mood. Flat cool palette distinct from a red attack icon.
+
+处理命令（项目根目录）：
+python tools/scripts/prepare_skill_icon.py tools/raw_assets/skill/vigilance/source.png assets/graphics/skill/守望.png --colors 8 --palette maximum --padding 0 --preview tools/raw_assets/skill/vigilance/preview.png

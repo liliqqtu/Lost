@@ -1,94 +1,93 @@
-[gd_resource type="SpriteFrames" format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxgm4po8omj1k"]
 
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_000.png" id="1_Sword_000_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_001.png" id="2_Sword_001_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_002.png" id="3_Sword_002_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_003.png" id="4_Sword_003_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_004.png" id="5_Sword_004_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_005.png" id="6_Sword_005_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_006.png" id="7_Sword_006_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_007.png" id="8_Sword_007_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_008.png" id="9_Sword_008_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_009.png" id="10_Sword_009_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_010.png" id="11_Sword_010_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_011.png" id="12_Sword_011_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_012.png" id="13_Sword_012_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_013.png" id="14_Sword_013_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_014.png" id="15_Sword_014_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_015.png" id="16_Sword_015_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_016.png" id="17_Sword_016_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_017.png" id="18_Sword_017_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_018.png" id="19_Sword_018_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_019.png" id="20_Sword_019_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_020.png" id="21_Sword_020_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_021.png" id="22_Sword_021_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_022.png" id="23_Sword_022_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_023.png" id="24_Sword_023_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_024.png" id="25_Sword_024_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_025.png" id="26_Sword_025_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_026.png" id="27_Sword_026_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_027.png" id="28_Sword_027_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_028.png" id="29_Sword_028_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_029.png" id="30_Sword_029_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_030.png" id="31_Sword_030_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_031.png" id="32_Sword_031_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_032.png" id="33_Sword_032_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_033.png" id="34_Sword_033_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_034.png" id="35_Sword_034_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_035.png" id="36_Sword_035_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_036.png" id="37_Sword_036_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_037.png" id="38_Sword_037_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_038.png" id="39_Sword_038_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_039.png" id="40_Sword_039_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_040.png" id="41_Sword_040_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_041.png" id="42_Sword_041_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_042.png" id="43_Sword_042_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_043.png" id="44_Sword_043_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_044.png" id="45_Sword_044_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_045.png" id="46_Sword_045_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_046.png" id="47_Sword_046_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_047.png" id="48_Sword_047_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_048.png" id="49_Sword_048_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_049.png" id="50_Sword_049_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_050.png" id="51_Sword_050_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_051.png" id="52_Sword_051_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_052.png" id="53_Sword_052_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_053.png" id="54_Sword_053_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_054.png" id="55_Sword_054_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_055.png" id="56_Sword_055_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_056.png" id="57_Sword_056_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_057.png" id="58_Sword_057_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_058.png" id="59_Sword_058_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_059.png" id="60_Sword_059_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_060.png" id="61_Sword_060_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_061.png" id="62_Sword_061_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_062.png" id="63_Sword_062_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_063.png" id="64_Sword_063_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_064.png" id="65_Sword_064_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_065.png" id="66_Sword_065_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_066.png" id="67_Sword_066_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_067.png" id="68_Sword_067_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_068.png" id="69_Sword_068_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_069.png" id="70_Sword_069_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_070.png" id="71_Sword_070_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_071.png" id="72_Sword_071_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_072.png" id="73_Sword_072_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_073.png" id="74_Sword_073_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_074.png" id="75_Sword_074_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_075.png" id="76_Sword_075_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_076.png" id="77_Sword_076_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_077.png" id="78_Sword_077_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_078.png" id="79_Sword_078_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_079.png" id="80_Sword_079_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_080.png" id="81_Sword_080_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_081.png" id="82_Sword_081_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_082.png" id="83_Sword_082_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_083.png" id="84_Sword_083_png"]
-[ext_resource type="Texture2D" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_084.png" id="85_Sword_084_png"]
+[ext_resource type="Texture2D" uid="uid://i8mqws6yinjq" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_000.png" id="1_Sword_000_png"]
+[ext_resource type="Texture2D" uid="uid://bgflgwwyu1wrf" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_001.png" id="2_Sword_001_png"]
+[ext_resource type="Texture2D" uid="uid://b7w5unpd4ofxq" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_002.png" id="3_Sword_002_png"]
+[ext_resource type="Texture2D" uid="uid://dqfdsw7vlxs7u" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_003.png" id="4_Sword_003_png"]
+[ext_resource type="Texture2D" uid="uid://cx8soqj8hdcd" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_004.png" id="5_Sword_004_png"]
+[ext_resource type="Texture2D" uid="uid://ceqs8myya2gsf" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_005.png" id="6_Sword_005_png"]
+[ext_resource type="Texture2D" uid="uid://gdexxwec7j68" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_006.png" id="7_Sword_006_png"]
+[ext_resource type="Texture2D" uid="uid://u3mwua1j0eiq" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_007.png" id="8_Sword_007_png"]
+[ext_resource type="Texture2D" uid="uid://bqhnet12cv2pb" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_008.png" id="9_Sword_008_png"]
+[ext_resource type="Texture2D" uid="uid://ltil3kvewf8x" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_009.png" id="10_Sword_009_png"]
+[ext_resource type="Texture2D" uid="uid://dhcgsrnxh2a1w" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_010.png" id="11_Sword_010_png"]
+[ext_resource type="Texture2D" uid="uid://dhm71ulsjn06h" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_011.png" id="12_Sword_011_png"]
+[ext_resource type="Texture2D" uid="uid://cq45sd2f63d" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_012.png" id="13_Sword_012_png"]
+[ext_resource type="Texture2D" uid="uid://cqcj5micet1" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_013.png" id="14_Sword_013_png"]
+[ext_resource type="Texture2D" uid="uid://b3olsydf5bqge" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_014.png" id="15_Sword_014_png"]
+[ext_resource type="Texture2D" uid="uid://3ncfmpgy0yql" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_015.png" id="16_Sword_015_png"]
+[ext_resource type="Texture2D" uid="uid://qswjlxk5s622" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_016.png" id="17_Sword_016_png"]
+[ext_resource type="Texture2D" uid="uid://b0c1ikv8hnbxh" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_017.png" id="18_Sword_017_png"]
+[ext_resource type="Texture2D" uid="uid://buuwnxh0twjst" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_018.png" id="19_Sword_018_png"]
+[ext_resource type="Texture2D" uid="uid://dgi6dpr4i4omp" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_019.png" id="20_Sword_019_png"]
+[ext_resource type="Texture2D" uid="uid://c2gq1y1n3xxci" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_020.png" id="21_Sword_020_png"]
+[ext_resource type="Texture2D" uid="uid://ruhsi47t464b" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_021.png" id="22_Sword_021_png"]
+[ext_resource type="Texture2D" uid="uid://dgejhwyglmowe" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_022.png" id="23_Sword_022_png"]
+[ext_resource type="Texture2D" uid="uid://b6op5hrhubcad" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_023.png" id="24_Sword_023_png"]
+[ext_resource type="Texture2D" uid="uid://bg8br7kao6u6b" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_024.png" id="25_Sword_024_png"]
+[ext_resource type="Texture2D" uid="uid://cnaqlnrkftwiy" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_025.png" id="26_Sword_025_png"]
+[ext_resource type="Texture2D" uid="uid://buf01hrp3yn6n" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_026.png" id="27_Sword_026_png"]
+[ext_resource type="Texture2D" uid="uid://qhb17elkkvvv" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_027.png" id="28_Sword_027_png"]
+[ext_resource type="Texture2D" uid="uid://qoo6p3tawhqk" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_028.png" id="29_Sword_028_png"]
+[ext_resource type="Texture2D" uid="uid://ul2u5t2ufbyd" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_029.png" id="30_Sword_029_png"]
+[ext_resource type="Texture2D" uid="uid://dtjnqrmhevmm" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_030.png" id="31_Sword_030_png"]
+[ext_resource type="Texture2D" uid="uid://cr03efsqxbkvq" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_031.png" id="32_Sword_031_png"]
+[ext_resource type="Texture2D" uid="uid://bwl8uwwaup0eb" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_032.png" id="33_Sword_032_png"]
+[ext_resource type="Texture2D" uid="uid://b0jnt1c36iunt" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_033.png" id="34_Sword_033_png"]
+[ext_resource type="Texture2D" uid="uid://ddb4li4s3pyev" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_034.png" id="35_Sword_034_png"]
+[ext_resource type="Texture2D" uid="uid://qde18undf3yp" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_035.png" id="36_Sword_035_png"]
+[ext_resource type="Texture2D" uid="uid://gbwpp3htlcjx" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_036.png" id="37_Sword_036_png"]
+[ext_resource type="Texture2D" uid="uid://dsf1rcggvcgfi" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_037.png" id="38_Sword_037_png"]
+[ext_resource type="Texture2D" uid="uid://choqoqd0xkg7h" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_038.png" id="39_Sword_038_png"]
+[ext_resource type="Texture2D" uid="uid://ctqjxscp0mwc3" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_039.png" id="40_Sword_039_png"]
+[ext_resource type="Texture2D" uid="uid://ckqmq3oihxtu" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_040.png" id="41_Sword_040_png"]
+[ext_resource type="Texture2D" uid="uid://bw7wheoso76hi" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_041.png" id="42_Sword_041_png"]
+[ext_resource type="Texture2D" uid="uid://cvncus4bqwlrx" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_042.png" id="43_Sword_042_png"]
+[ext_resource type="Texture2D" uid="uid://c1xvubglalrdb" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_043.png" id="44_Sword_043_png"]
+[ext_resource type="Texture2D" uid="uid://dryakrdk66nqj" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_044.png" id="45_Sword_044_png"]
+[ext_resource type="Texture2D" uid="uid://gw251jjwafi" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_045.png" id="46_Sword_045_png"]
+[ext_resource type="Texture2D" uid="uid://6im28bs857yr" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_046.png" id="47_Sword_046_png"]
+[ext_resource type="Texture2D" uid="uid://bh0b16gn8n6uy" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_047.png" id="48_Sword_047_png"]
+[ext_resource type="Texture2D" uid="uid://chkwjbqrg6d8v" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_048.png" id="49_Sword_048_png"]
+[ext_resource type="Texture2D" uid="uid://cnv4ooicd7ny7" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_049.png" id="50_Sword_049_png"]
+[ext_resource type="Texture2D" uid="uid://dt6vwmtx75yiw" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_050.png" id="51_Sword_050_png"]
+[ext_resource type="Texture2D" uid="uid://b71geah5n6hwx" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_051.png" id="52_Sword_051_png"]
+[ext_resource type="Texture2D" uid="uid://5paxyx4v2un1" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_052.png" id="53_Sword_052_png"]
+[ext_resource type="Texture2D" uid="uid://bkvoqer3gtnu0" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_053.png" id="54_Sword_053_png"]
+[ext_resource type="Texture2D" uid="uid://b5veclbibsayp" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_054.png" id="55_Sword_054_png"]
+[ext_resource type="Texture2D" uid="uid://bmhydp1fkoii8" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_055.png" id="56_Sword_055_png"]
+[ext_resource type="Texture2D" uid="uid://cl8smp71rnnc2" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_056.png" id="57_Sword_056_png"]
+[ext_resource type="Texture2D" uid="uid://dlg2qeqjg2l8r" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_057.png" id="58_Sword_057_png"]
+[ext_resource type="Texture2D" uid="uid://cxek23l81io2d" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_058.png" id="59_Sword_058_png"]
+[ext_resource type="Texture2D" uid="uid://bipumtu5xixrk" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_059.png" id="60_Sword_059_png"]
+[ext_resource type="Texture2D" uid="uid://bxwpe8t63xibv" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_060.png" id="61_Sword_060_png"]
+[ext_resource type="Texture2D" uid="uid://cfph4cxj4e328" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_061.png" id="62_Sword_061_png"]
+[ext_resource type="Texture2D" uid="uid://l3ufrybuxe0t" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_062.png" id="63_Sword_062_png"]
+[ext_resource type="Texture2D" uid="uid://crabbwgbwn6tl" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_063.png" id="64_Sword_063_png"]
+[ext_resource type="Texture2D" uid="uid://drae570dhiune" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_064.png" id="65_Sword_064_png"]
+[ext_resource type="Texture2D" uid="uid://p4vkaxilgnxu" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_065.png" id="66_Sword_065_png"]
+[ext_resource type="Texture2D" uid="uid://bjcmifb2eda4m" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_066.png" id="67_Sword_066_png"]
+[ext_resource type="Texture2D" uid="uid://ddbya61t74mtb" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_067.png" id="68_Sword_067_png"]
+[ext_resource type="Texture2D" uid="uid://d2sbwmevslg18" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_068.png" id="69_Sword_068_png"]
+[ext_resource type="Texture2D" uid="uid://ffujecs0h27p" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_069.png" id="70_Sword_069_png"]
+[ext_resource type="Texture2D" uid="uid://q68nqt51gb4g" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_070.png" id="71_Sword_070_png"]
+[ext_resource type="Texture2D" uid="uid://daode3wu334r3" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_071.png" id="72_Sword_071_png"]
+[ext_resource type="Texture2D" uid="uid://deodohljsfdoq" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_072.png" id="73_Sword_072_png"]
+[ext_resource type="Texture2D" uid="uid://5bann136st8j" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_073.png" id="74_Sword_073_png"]
+[ext_resource type="Texture2D" uid="uid://es06oux1xljn" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_074.png" id="75_Sword_074_png"]
+[ext_resource type="Texture2D" uid="uid://45repl7k6t3q" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_075.png" id="76_Sword_075_png"]
+[ext_resource type="Texture2D" uid="uid://bmb18wbmvernc" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_076.png" id="77_Sword_076_png"]
+[ext_resource type="Texture2D" uid="uid://b8s6pf47qni7y" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_077.png" id="78_Sword_077_png"]
+[ext_resource type="Texture2D" uid="uid://dd8ihflirgf00" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_078.png" id="79_Sword_078_png"]
+[ext_resource type="Texture2D" uid="uid://ck6dy7jb5fik5" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_079.png" id="80_Sword_079_png"]
+[ext_resource type="Texture2D" uid="uid://0spk7te4vyj6" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_080.png" id="81_Sword_080_png"]
+[ext_resource type="Texture2D" uid="uid://dpaox30wmxf3v" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_081.png" id="82_Sword_081_png"]
+[ext_resource type="Texture2D" uid="uid://cuhbylu2xxbb0" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_082.png" id="83_Sword_082_png"]
+[ext_resource type="Texture2D" uid="uid://gdqymsumygb5" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_083.png" id="84_Sword_083_png"]
+[ext_resource type="Texture2D" uid="uid://wkiumyigany1" path="res://assets/battle_animations/Mercenary-Base[M]/Sword/Sword_084.png" id="85_Sword_084_png"]
 
 [resource]
-animations = [
-{
+animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_Sword_000_png")
@@ -189,11 +188,10 @@ animations = [
 "duration": 2.0,
 "texture": ExtResource("2_Sword_001_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"sword",
 "speed": 60.0
-},
-{
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_Sword_000_png")
@@ -414,296 +412,10 @@ animations = [
 "duration": 2.0,
 "texture": ExtResource("2_Sword_001_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"sword_crit",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_Sword_000_png")
 }, {
-"duration": 3.0,
-"texture": ExtResource("33_Sword_032_png")
-}, {
-"duration": 30.0,
-"texture": ExtResource("34_Sword_033_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("33_Sword_032_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("34_Sword_033_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("33_Sword_032_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("34_Sword_033_png")
-}, {
-"duration": 15.0,
-"texture": ExtResource("35_Sword_034_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("36_Sword_035_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("37_Sword_036_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("38_Sword_037_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("39_Sword_038_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("40_Sword_039_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("41_Sword_040_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("42_Sword_041_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_Sword_042_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("44_Sword_043_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_Sword_044_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("46_Sword_045_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_Sword_046_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("48_Sword_047_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_Sword_048_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("50_Sword_049_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_Sword_050_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("52_Sword_051_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_Sword_052_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("54_Sword_053_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("55_Sword_054_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("56_Sword_055_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_Sword_055_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("57_Sword_056_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_Sword_057_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("59_Sword_058_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("60_Sword_059_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_Sword_059_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("61_Sword_060_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_Sword_061_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("63_Sword_062_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("64_Sword_063_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_Sword_064_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("66_Sword_065_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_Sword_066_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("68_Sword_067_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_Sword_068_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("70_Sword_069_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_Sword_070_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("72_Sword_071_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("73_Sword_072_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("74_Sword_073_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75_Sword_074_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("76_Sword_075_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("77_Sword_076_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_Sword_077_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("14_Sword_013_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_Sword_014_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_Sword_015_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("17_Sword_016_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("18_Sword_017_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("19_Sword_018_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_Sword_019_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("21_Sword_020_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("22_Sword_021_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("23_Sword_022_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("24_Sword_023_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("25_Sword_024_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("26_Sword_025_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("27_Sword_026_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("28_Sword_027_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("29_Sword_028_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("30_Sword_029_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_Sword_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_Sword_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("2_Sword_001_png")
-}],
-"loop": false,
-"name": &"sword_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 50.0,
-"texture": ExtResource("1_Sword_000_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("79_Sword_078_png")
-}, {
-"duration": 50.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("79_Sword_078_png")
-}],
-"loop": false,
-"name": &"sword_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 50.0,
-"texture": ExtResource("1_Sword_000_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("79_Sword_078_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("81_Sword_080_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("81_Sword_080_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("81_Sword_080_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("81_Sword_080_png")
-}, {
-"duration": 50.0,
-"texture": ExtResource("80_Sword_079_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("79_Sword_078_png")
-}],
-"loop": false,
-"name": &"sword_ranged_crit",
-"speed": 60.0
-},
-{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_Sword_000_png")
@@ -717,56 +429,18 @@ animations = [
 "duration": 3.0,
 "texture": ExtResource("82_Sword_081_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"sword_dodge",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_Sword_000_png")
 }, {
-"duration": 3.0,
-"texture": ExtResource("82_Sword_081_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83_Sword_082_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("82_Sword_081_png")
-}],
-"loop": false,
-"name": &"sword_dodge_ranged",
-"speed": 60.0
-},
-{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_Sword_000_png")
 }],
-"loop": false,
-"name": &"sword_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_Sword_000_png")
-}],
-"loop": false,
+"loop": 1,
 "name": &"sword_idle",
 "speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_mode_11",
-"speed": 60.0
-},
-{
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_Sword_000_png")
@@ -867,8 +541,78 @@ animations = [
 "duration": 2.0,
 "texture": ExtResource("2_Sword_001_png")
 }],
-"loop": false,
+"loop": 0,
 "name": &"sword_miss",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 50.0,
+"texture": ExtResource("1_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("79_Sword_078_png")
+}, {
+"duration": 50.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("79_Sword_078_png")
+}],
+"loop": 0,
+"name": &"sword_ranged",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 50.0,
+"texture": ExtResource("1_Sword_000_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("79_Sword_078_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("81_Sword_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("81_Sword_080_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("81_Sword_080_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 2.0,
+"texture": ExtResource("81_Sword_080_png")
+}, {
+"duration": 50.0,
+"texture": ExtResource("80_Sword_079_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("79_Sword_078_png")
+}],
+"loop": 0,
+"name": &"sword_ranged_crit",
+"speed": 60.0
+}]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {
+"sword_critical": "sword_crit",
+"sword_dodge_ranged": "sword_dodge",
+"sword_idle_ranged": "sword_idle",
+"sword_mode_11": "sword_idle",
+"sword_stand": "sword_idle"
 }
-]
+metadata/battle_animation_impacts = {
+"sword": 0.7333333333333333,
+"sword_crit": 2.9166666666666665,
+"sword_miss": 0.7333333333333333
+}

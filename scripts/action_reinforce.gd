@@ -6,12 +6,14 @@ class_name ActionReinforce extends MapAction
 ##  2. unit_scene —— 直接实例化的单位场景（适合敌军增援批量刷兵）
 ##登场后可选走位到 walk_to（Vector2i.MIN = 原地不动）"""
 
+@export_group("增援来源")
 ## 预摆单位节点名（Units 下的名字，空 = 不用此来源）
 @export var placed_node_name := ""
 ## 实例化的单位场景（与 placed_node_name 互斥，优先用预摆节点）
 @export var unit_scene: PackedScene
 ## 实例化时的出生格（预摆节点忽略此值，用编辑器位置；MIN = 场景自带位置）
 @export var spawn_cell := Vector2i.MIN
+@export_group("登场演出")
 ## 登场后走到的格子（MIN = 不走）
 @export var walk_to := Vector2i.MIN
 ## 淡入时长（秒，0 = 无登场动画）

@@ -1,0 +1,22 @@
+# 惊鸿图标制作记录
+
+- 技能：`surge` / 惊鸿；描述：豪迈突进，自身力量+6。
+- 生成方式：内置 image_gen，透明背景；`source.png` 为原始生成稿。
+- 调整：内置 image_gen 编辑原稿，填满不透明深红褐背景并添加少量暗红速度纹理，输出为 `source_opaque.png`；原始 `source.png` 保留。
+- 成品：`assets/graphics/skill/惊鸿.png`，真实 16×16 RGBA，完全不透明，无留边，底图量化后覆盖原始 `技能框.png`。
+- `preview.png` 为成品最近邻放大至 256×256 的检查图，不用于游戏显示。
+- 原稿供复核与衍生设计，游戏仅引用最终小图。
+
+## 初版生成提示词（透明要求已被后续编辑替代）
+
+```text
+Use case: stylized-concept. Asset type: single GBA tactical RPG skill inventory icon, skill '惊鸿' / Surge, passive strength +6, heroic forceful charge. Create ONE tiny pixel-art icon represented as an enlarged EXACT 16 by 16 logical pixel matrix, each logical pixel a flat uniform square, perfectly aligned to the canvas. Subject: a bold gold armored clenched fist punching diagonally toward upper right, with two short red-orange speed/impact trails extending lower left and a tiny ivory impact spark near upper right. Broad readable silhouette, simple recognisable fist and knuckles, powerful explosive physical strength. Style: authentic low-resolution handheld tactical RPG item pixel art, dark plum outline, burnt red shadow, orange and gold midtone, pale cream highlight; maximum 12 opaque colors, hard stair-step contours, no gradients, no antialiasing, no soft glow, no fine detail. Composition: subject occupies roughly 14 by 14 of the logical 16 by 16 canvas, one transparent logical pixel margin. Transparent background, no badge, no frame, no text, no lettering, no mockup, no grid lines. Square canvas. The whole artwork MUST look like an enlarged sprite of only 256 possible logical pixel positions, NOT a high resolution illustration.
+```
+
+## 处理命令
+
+从项目根目录运行（输出已存在时需使用新文件名）：
+
+```powershell
+python tools/scripts/prepare_skill_icon.py tools/raw_assets/skill/surge/source_opaque.png assets/graphics/skill/惊鸿.png --colors 12 --padding 0 --preview tools/raw_assets/skill/surge/preview.png --force
+```

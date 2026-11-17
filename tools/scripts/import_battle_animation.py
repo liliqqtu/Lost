@@ -16,6 +16,8 @@ import re
 import argparse
 from typing import Dict, List, Tuple
 from PIL import Image
+from pathlib import Path
+from normalize_battle_animations import normalize_paths
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
@@ -251,6 +253,8 @@ def import_battle_animation(src_dir: str,
     dest_tres_path = os.path.join(project_root, "data", "battle_animation_tres", tres_name)
     generate_sprite_frames_tres(anims, dest_asset_subpath, dest_tres_path)
     print(f"已生成动画资源: {dest_tres_path}")
+
+    normalize_paths([Path(dest_tres_path)], Path(txt_path))
 
     # 4. 自动触发 Godot 引擎扫描与资产导入（如已配置 Godot 可执行路径）
     godot_bin = r"E:\Godot\Godot_v4.7-stable_mono_win64\Godot_v4.7-stable_mono_win64_console.exe"

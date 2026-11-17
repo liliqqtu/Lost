@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Skill" format=3]
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://comdjilwdtm76"]
 
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="1_skill"]
+[ext_resource type="Texture2D" uid="uid://don1dm1j5kair" path="res://assets/graphics/skill/守望.png" id="2_icon"]
 
 [resource]
 script = ExtResource("1_skill")
 skill_id = &"vigilance"
 display_name = "守望"
+icon = ExtResource("2_icon")
 description = "默默守护同伴，自身魔防+3，幸运+5"
 bonus_res = 3
 bonus_luk = 5

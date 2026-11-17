@@ -1,4 +1,8 @@
 extends Node2D
+
+const Actions = preload("res://scripts/battle_animation_actions.gd")
+const Playback = preload("res://scene/ui/battle_animation_playback.gd")
+
 ##"""战斗动画场景脚本（阶段五 5A）：地图 -> 战斗画面切换的演出"""
 ##"""读取 BattleManager 传入的战斗序列数据渲染（与预览同源，禁止重新计算数值）"""
 
@@ -20,7 +24,7 @@ const TERRAIN_BG := {}
 ##"""地形名 -> 双方脚下地形小图"""
 const TERRAIN_SPRITE := {}
 
-##"""武器类型 -> 攻击动画名，帧资源里没有对应动画时退回第一个动画"""
+## 兼容旧模块的武器名映射；实际动作选择集中在 BattleAnimationActions。
 const WEAPON_ANIM := {
 	Weapon.WeaponType.SWORD: "sword",
 	Weapon.WeaponType.LANCE: "lance",
@@ -65,7 +69,7 @@ var fx := BattleAnimationFX.new()
 ##交战双方（右侧恒为我方/友军视角，与场景节点布局一致）
 var player_unit: Unit = null
 var enemy_unit: Unit = null
-##"""画面上显示的血量：动画播放结束后才更新（用户要求，伤害时机未在动画里标注）"""
+## 画面血量由命中事件更新；真实 HP 仍由 BattleCombat 提交。
 var player_display_hp := 0
 var enemy_display_hp := 0
 
@@ -107,6 +111,8 @@ var _strike_is_crit := false
 var _strike_damage := 0
 ##该击是否已结算过（命中回调先触发；没配函数轨道时由 play_strike 播完动画后兜底）
 var _impact_done := false
+var _strike_serial := 0
+var _reaction_tween: Tween
 
 func _ready() -> void:
 	##tscn 里 PlayTreamAnimation 开了 autoplay，进场先停住等 play() 安排
@@ -202,9 +208,8 @@ func _fill_side(unit: Unit, sequence: Array, is_player: bool) -> void:
 		return
 	sprite.visible = true
 	sprite.sprite_frames = unit.battle_frames
-	sprite.animation = _pick_anim_name(unit.battle_frames, unit)
-	sprite.stop()
-	sprite.frame = 0
+	Actions.restore_idle(sprite, unit,
+		Actions.distance_is_ranged(player_unit, enemy_unit))
 	sprite.flip_h = not is_player
 
 ##"""武器名 + 当前耐久（如 铁弓 40/40），无武器显示 ——"""
@@ -221,27 +226,18 @@ func _find_strike(sequence: Array, unit: Unit) -> Dictionary:
 			return strike
 	return {}
 
-##"""武器类型对应的动画名，资源里没有时退回第一个动画"""
-##"""魔法单位待机/收场姿态用 magic_start 第 0 帧（站立姿势），与三段演出的起手帧无缝衔接"""
+## 兼容旧调用：返回该武器的基础攻击名；待机统一由 Actions.restore_idle 处理。
 func _pick_anim_name(frames: SpriteFrames, unit: Unit) -> StringName:
-	var anim_name := ""
-	var weapon := unit.current_weapon
-	if weapon:
-		if MAGIC_WEAPON_TYPES.has(weapon.weapon_type):
-			if frames.has_animation(&"magic_start"):
-				return &"magic_start"
-			if frames.has_animation(&"magic_loop"):
-				return &"magic_loop"
-		anim_name = WEAPON_ANIM.get(weapon.weapon_type, "")
-	if frames.has_animation(anim_name):
-		return StringName(anim_name)
-	return frames.get_animation_names()[0]
+	return Actions.attack(frames, unit)
 
 ##"""单次打击演出：物理武器播放攻击动画 + AnimationPlayer 同名函数轨道；"""
 ##"""魔法武器走三段流程（起手 -> 循环施法 + 特效/命中轨道 -> 收手），见 _play_magic_strike"""
 ##"""命中/未命中的结算由 AnimationPlayer 在命中帧回调 on_impact() 触发（闪白+扣血 / MISS）；"""
 ##"""没配对应函数轨道（或命中帧晚于动画播完）时，播完动画后兜底结算一次"""
 func play_strike(attacker: Unit, is_hit: bool, is_crit: bool, damage: int) -> void:
+	_strike_serial += 1
+	anim_player.stop()
+	_reaction_tween = null
 	##先记录本击上下文，供 on_impact() 命中回调读取
 	_strike_attacker = attacker
 	_strike_def_unit = enemy_unit if attacker == player_unit else player_unit
@@ -254,15 +250,14 @@ func play_strike(attacker: Unit, is_hit: bool, is_crit: bool, damage: int) -> vo
 	if _is_magic_strike(attacker, atk_sprite):
 		await _play_magic_strike(atk_sprite, is_crit)
 	elif atk_sprite.sprite_frames != null:
-		atk_sprite.frame = 0
-		if is_crit:
-			var base = str(atk_sprite.animation)
-			var crit_anim = base + "_crit"               
-			if atk_sprite.sprite_frames.has_animation(crit_anim):
-				atk_sprite.animation = crit_anim
-		atk_sprite.play()
-		_play_impact_timeline(atk_sprite)
-		await atk_sprite.animation_finished
+		var action := Actions.attack(atk_sprite.sprite_frames, attacker,
+			is_crit, is_hit, Actions.distance_is_ranged(player_unit, enemy_unit))
+		if action != &"":
+			atk_sprite.stop()
+			atk_sprite.play(action)
+			_play_impact_timeline(atk_sprite)
+			await atk_sprite.animation_finished
+
 	else:
 		##无动画资源占位：固定等待
 		await get_tree().create_timer(NO_ANIM_STRIKE_DELAY).timeout
@@ -270,6 +265,14 @@ func play_strike(attacker: Unit, is_hit: bool, is_crit: bool, damage: int) -> vo
 	##动画播完还没被命中回调结算（无函数轨道/命中帧晚于播完）则兜底一次
 	if not _impact_done:
 		on_impact()
+
+	anim_player.stop()
+	await Playback.finish_reaction(self)
+	if _reaction_tween != null and _reaction_tween.is_running():
+		await _reaction_tween.finished
+	Actions.restore_idle(atk_sprite, attacker,
+		Actions.distance_is_ranged(player_unit, enemy_unit))
+	_strike_serial += 1
 
 	##被打方血量归零：整击动画结束后淡出（非 Boss 立即淡出，Boss 留给临终台词与专属击破动画）
 	if _strike_is_hit and _strike_def_sprite != null and _get_display_hp(_strike_def_unit) <= 0:
@@ -284,60 +287,28 @@ func play_strike(attacker: Unit, is_hit: bool, is_crit: bool, damage: int) -> vo
 	_strike_def_unit = null
 	await get_tree().create_timer(STRIKE_GAP).timeout
 
-##"""是否走魔法三段演出：魔法武器类型 + 施法者帧资源里有 magic_start 动画（缺任一则退回物理流程）"""
+## 魔法三段演出必须具备完整 start/loop/end，旧的完整动作可走单段流程。
 func _is_magic_strike(attacker: Unit, atk_sprite: AnimatedSprite2D) -> bool:
 	var weapon := attacker.current_weapon
 	if weapon == null or atk_sprite.sprite_frames == null:
 		return false
 	if not MAGIC_WEAPON_TYPES.has(weapon.weapon_type):
 		return false
-	return atk_sprite.sprite_frames.has_animation(&"magic_start")
+	return (atk_sprite.sprite_frames.has_animation(&"magic_start")
+		and atk_sprite.sprite_frames.has_animation(&"magic_loop")
+		and atk_sprite.sprite_frames.has_animation(&"magic_end"))
 
 ##"""魔法三段演出：起手 -> 循环施法 + 魔法特效/命中轨道 -> 收手"""
 ##"""施法者 PlayTreamAnimation：magic_start 播完进 magic_loop 循环，特效播完切 magic_end 收手"""
 ##"""MagicAnimation 播放武器对应特效（火炎 -> fire），AnimationPlayer 同名函数轨道在命中帧回调 on_impact"""
-func _play_magic_strike(atk_sprite: AnimatedSprite2D,is_crit: bool) -> void:
-	##1 起手：magic_start 播完才进入施法循环
-	if is_crit:
-		atk_sprite.animation = &"magic_start_crit"
-	else:
-		atk_sprite.animation = &"magic_start"
-	atk_sprite.frame = 0
-	atk_sprite.play()
-	await atk_sprite.animation_finished
-
-	##2 循环施法：magic_loop 循环播放（不等它结束，等特效）
-	atk_sprite.animation = &"magic_loop"
-	atk_sprite.frame = 0
-	atk_sprite.play()
-
-	##3 魔法特效：按武器选取特效动画，特效随攻击方向镜像
-	var effect_name := _magic_effect_name()
-	if magic_anim.sprite_frames != null and magic_anim.sprite_frames.has_animation(effect_name):
-		magic_anim.animation = effect_name
-		magic_anim.frame = 0
-		magic_anim.flip_h = atk_sprite.flip_h
-		magic_anim.visible = true
-		magic_anim.play()
-		##命中轨道：Magic 库下与特效同名的函数轨道（Magic/fire 在 0.45s 回调 on_impact）
-		_play_magic_timeline(effect_name)
-		await magic_anim.animation_finished
-		magic_anim.visible = false
-
-	##4 收手：magic_end 播完本击演出结束
-	atk_sprite.animation = &"magic_end"
-	atk_sprite.frame = 0
-	atk_sprite.play()
-	await atk_sprite.animation_finished
-	##收手播完回到待机姿态：切回 magic_start 第 0 帧（站立）
-	##不能只 stop()：Godot 4 的 stop() 会把当前动画复位到第 0 帧（= magic_end 起手姿势），造成"闪现"
-	atk_sprite.animation = &"magic_start"
-	atk_sprite.stop()
-	atk_sprite.frame = 0
+func _play_magic_strike(atk_sprite: AnimatedSprite2D, is_crit: bool) -> void:
+	await Playback.magic_strike(self, atk_sprite, is_crit)
 
 ##"""武器 -> 魔法特效动画名：MAGIC_EFFECT_ANIM 表 -> 与武器同名的特效动画 -> 特效帧第一个动画"""
 func _magic_effect_name() -> StringName:
 	var frames := magic_anim.sprite_frames
+	if frames == null or frames.get_animation_names().is_empty():
+		return &""
 	if _strike_attacker != null:
 		var weapon: Weapon = _strike_attacker.current_weapon
 		if weapon != null:
@@ -351,37 +322,12 @@ func _magic_effect_name() -> StringName:
 
 ##"""启动魔法命中的 AnimationPlayer 函数轨道：Magic 库下与特效同名的动画"""
 func _play_magic_timeline(effect_name: StringName) -> void:
-	if anim_player != null:
-		var full_name := "Magic/%s" % effect_name
-		if anim_player.has_animation(full_name):
-			anim_player.play(full_name)
-			return
-		##兜底：按动画名匹配任意库
-		for anim_name in anim_player.get_animation_list():
-			if String(anim_name).ends_with("/" + String(effect_name)):
-				anim_player.play(anim_name)
-				return
-	##无专属轨道时的定时命中（在法术爆发高潮帧自动触发受击闪白与扣血）
-	var delay: float = SPELL_IMPACT_TIMINGS.get(str(effect_name), 0.45)
-	get_tree().create_timer(delay).timeout.connect(func():
-		if not _impact_done:
-			on_impact())
+	Playback.magic_timeline(self, effect_name)
 
 ##"""启动与攻击帧动画同步的 AnimationPlayer 函数轨道（命中帧回调 on_impact）"""
 ##"""动画库名取帧资源文件名去 _frames 后缀：Ranger_M_frames -> Ranger_M"""
 func _play_impact_timeline(atk_sprite: AnimatedSprite2D) -> void:
-	if anim_player == null or atk_sprite.sprite_frames == null:
-		return
-	var frames: SpriteFrames = atk_sprite.sprite_frames
-	var full_name := "%s/%s" % [_frames_library_name(frames), atk_sprite.animation]
-	if anim_player.has_animation(full_name):
-		anim_player.play(full_name)
-		return
-	##库里没有同名动画时退回：按动画名匹配任意库（动画名=武器名时最可靠）
-	for anim_name in anim_player.get_animation_list():
-		if String(anim_name).ends_with("/" + String(atk_sprite.animation)):
-			anim_player.play(anim_name)
-			return
+	Playback.impact_timeline(self, atk_sprite)
 
 ##"""由帧资源路径推导 AnimationPlayer 动画库名"""
 func _frames_library_name(frames: SpriteFrames) -> String:
@@ -397,24 +343,30 @@ func on_impact() -> void:
 		var new_hp := maxi(_get_display_hp(_strike_def_unit) - _strike_damage, 0)
 		_set_display_hp(_strike_def_unit, new_hp)
 		##受击闪白：必杀闪更多次
-		_flash_white(_strike_def_sprite, 2)
+		_reaction_tween = _flash_white(_strike_def_sprite, 2)
 	else:
-		_show_miss(_strike_attacker)
+		var dodge := Actions.dodge(_strike_def_sprite.sprite_frames, _strike_def_unit,
+			Actions.distance_is_ranged(player_unit, enemy_unit))
+		if dodge != &"":
+			_strike_def_sprite.stop()
+			_strike_def_sprite.play(dodge)
+		_reaction_tween = _show_miss(_strike_attacker)
 
 ##"""受击闪白：Tween 驱动材质 flash_amount 明灭，times 为明灭次数（非阻塞）"""
-func _flash_white(sprite: AnimatedSprite2D, times: int) -> void:
+func _flash_white(sprite: AnimatedSprite2D, times: int) -> Tween:
 	var mat := sprite.material as ShaderMaterial
 	if mat == null:
-		return
+		return null
 	var tween := create_tween()
 	for i in range(times):
 		tween.tween_callback(mat.set_shader_parameter.bind("flash_amount", 1.0))
 		tween.tween_interval(FLASH_INTERVAL)
 		tween.tween_callback(mat.set_shader_parameter.bind("flash_amount", 0.0))
 		tween.tween_interval(FLASH_INTERVAL)
+	return tween
 
 ##"""未命中演出：显示攻击方对应的 MISS 标签（玩家攻击 miss 显示 PlayerMISS），短暂停留并轻微晃动"""
-func _show_miss(attacker: Unit) -> void:
+func _show_miss(attacker: Unit) -> Tween:
 	var label := player_miss_label if attacker == player_unit else enemy_miss_label
 	var base_x := label.position.x
 	label.visible = true
@@ -430,9 +382,12 @@ func _show_miss(attacker: Unit) -> void:
 	tween.tween_callback(func():
 		label.visible = false
 		label.modulate.a = 1.0)
+	return tween
 
 ##"""收尾：整场淡出隐藏，复位到下一场可用状态"""
 func close() -> void:
+	_strike_serial += 1
+	anim_player.stop()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, CLOSE_FADE)
 	await tween.finished

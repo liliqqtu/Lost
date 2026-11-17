@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/metis_s_tome.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"metis_s_tome"
+display_name = "梅缇斯之书"
+description = "原版提高使用者的能力成长率。（使用或持有效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"consumable"
+effect_id = &"metisstome"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 137
+original_data = {"useDescTextId": "0x4df", "weaponType": "ITYPE_ITEM", "maxUses": "1", "encodedRange": "0x11", "useEffectId": "46"}

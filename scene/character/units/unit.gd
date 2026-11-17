@@ -1,63 +1,102 @@
 extends Node2D
-##所有单位父类
 class_name Unit
-
-##背包上限（FE 规则 5 槽；ItemMenu/TradeMenu/ConvoyPanel 共用此值，避免散落常量）
 const BAG_LIMIT := 5
-
-## 移动动画映射
 const move_animation := {
 	Vector2i.UP:    "move_up",
 	Vector2i.DOWN:  "move_down",
 	Vector2i.LEFT:  "move_left",
 	Vector2i.RIGHT: "move_left"
 }
-
-##"""血条颜色阈值：血量比例 <= 0.5 变黄，<= 0.25 变红"""
 const HP_BAR_YELLOW := 0.5
 const HP_BAR_RED := 0.25
 
-@export var move := 5
-##武器类引用
-@export var current_weapon: Weapon
-##背包（上限 5，FE 规则）；Item 基类持有，具体类型（Weapon/Consumable/Key）由 is_*() 分流
-@export var inventory: Array[Item] = []
-##职业数据（人物面板读取：职业名/职业卡/能力上限/技能）
-@export var class_data: ClassData
-##个人技能（区别于职业技能——例如"仿徨"是"忒"独有，不属于弓骑/游牧民职业）
-@export var personal_skills: Array[Skill] = []
-
-## 人物名字
+@export_group("身份与阵营")
+## 角色显示名：用于人物面板、对话匹配和支援表。
 @export var unit_name := ""
-## 人物描述
+## 跨章节存档的稳定角色 ID；主角团应填写唯一值，勿随显示名一起修改。
+@export var unit_id: StringName = &""
+## 角色简介：人物面板的信息查看文字。
 @export var info := ""
-## 队伍 0是玩家 1是敌方 2是友军
+## 阵营编号：0＝玩家蓝军，1＝敌方红军，2＝友方绿军；同步地图精灵配色。
 @export var team := 0:
 	set(value):
 		team = value
 		update_team_palette()
-## 是否为本关Boss（交战台词与击破专属演出）
+## 是否为 Boss：用于专属交战台词及死亡演出。
 @export var is_boss := false
-## 是否携带运输队（主角忒等特定角色）
+## 是否可提供运输队入口；当前由该单位的行动菜单开放运输队。
 @export var has_convoy := false
-## 等级
+## 职业资源：职业名、成长率、属性上限、职业技能和骑乘类型。
+@export var class_data: ClassData
+@export_group("等级与基础能力")
+## 当前等级；等级上限为 20，上位职业结算经验时另计等效等级。
 @export var lv := 5
-## 经验值 只有玩家队伍拥有 每100经验升一级
+## 当前升级经验：每满 100 点升一级；与武器熟练经验分开计算。
 @export var exp := 0
-##"""等级上限（升级系统，GBA 未转职上限 20）：满级不再获得经验"""
 const LEVEL_CAP := 20
-##"""武器类型等级（升级系统）：决定职业可用的武器类型与等级上限（E..S）
-##单位实际等级 = min(武器经验等级, 职业上限)，UNUSABLE=不可用该类型"""
+## 移动力：本次行动可消耗的地形移动点；技能可另加修正，并非固定走几格。
+@export var move := 5
+## 最大生命值：满血上限，升级增加 HP 时增长此值。
+@export var max_hp := 20
+## 当前生命值：受伤/治疗改变此值；初始配置通常与 Max Hp 一致。
+@export var hp := 20
+## 力量（STR）：物理武器的攻击力基础值；不含武器威力和技能加成。
+@export var str := 5
+## 魔力（MAG）：魔法武器攻击力及治疗杖恢复量的基础值。
+@export var mag := 0
+## 技术（SKL）：参与命中和必杀计算；基础命中加技术×2，必杀加技术÷2。
+@export var skl := 5
+## 速度（SPD）：攻速基础值；攻速影响回避，攻速领先 4 点可追击。
+@export var spd := 5
+## 守备（DEF）：抵消物理伤害；在技能加成字典中也使用 def_h 这个键。
+@export var def_h := 5
+## 魔防（RES）：抵消魔法伤害。
+@export var res := 2
+## 幸运（LUK）：参与命中、回避和必杀回避计算。
+@export var luk := 0
+## 体格（CON）：抵消武器重量造成的攻速惩罚，也影响救援能力及能否被救援。
+@export var con := 5
+@export_group("装备与个人技能")
+## 初始背包：最多 5 件，运行时会复制物品以隔离耐久；代码改包请使用 Unit 接口。
+@export var inventory: Array[Item] = []
+## 初始装备：应引用背包中的同一武器；留空时入场自动选择可装备武器。
+@export var current_weapon: Weapon
+## 角色固有技能：与职业技能、当前装备武器技能共同生效。
+@export var personal_skills: Array[Skill] = []
+@export_group("武器等级上限")
+## 剑的可成长等级上限；UNUSABLE＝不可用。当前等级由 Weapon Xp 决定。
 @export var rank_sword: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 枪的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_lance: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 斧的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_axe: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 弓的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_bow: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 理魔法的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_anima: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 暗魔法的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_dark: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 光魔法的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_light: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
+## 杖的可成长等级上限；UNUSABLE＝不可用，并非当前熟练等级。
 @export var rank_staff: Weapon.WeaponRank = Weapon.WeaponRank.UNUSABLE
-
-##"""武器类型 -> 人物等级上限（Weapon.WeaponRank，UNUSABLE=不可用）"""
+@export_group("当前武器熟练度")
+## 键为整数武器类型（0剑/1枪/2斧/3弓/4理/5暗/6光/7杖），值为累计经验。
+## E/D/C/B/A/S 门槛依次为 1/31/71/121/181/251；未填写的可用类型从 E 开始。
+@export var weapon_xp: Dictionary = {}
+@export_group("对话与战斗演出")
+## 可说得/对话的对象名字，需与目标 Unit Name 完全一致；空字符串表示无对象。
+@export var talk := ""
+## 指挥星数量：目前仅供人物面板显示，尚未提供全军战斗加成。
+@export var cmd := 0
+## 战斗特写使用的 SpriteFrames；地图精灵动画另在 MapSprite2D 节点配置。
+@export var battle_frames: SpriteFrames
+@export_group("运行状态与预留字段")
+## 是否正被救援携带的运行标记；由救援流程维护，初始通常保持 false。
+@export var rescue := false
+## 异常状态预留编号：当前没有对应效果结算，初始保持 0。
+@export var status := 0
+@export_group("")
 func get_weapon_rank(type: int) -> int:
 	match type:
 		Weapon.WeaponType.SWORD: return rank_sword
@@ -70,46 +109,16 @@ func get_weapon_rank(type: int) -> int:
 		Weapon.WeaponType.STAFF: return rank_staff
 	return Weapon.WeaponRank.UNUSABLE
 
-##"""职业是否可用该武器类型"""
 func can_use_weapon(type: int) -> bool:
 	return get_weapon_rank(type) >= Weapon.WeaponRank.E
-
-##"""武器经验（升级系统）：{武器类型(int): 累计经验}，惰性初始化到职业等级阈值"""
-@export var weapon_xp: Dictionary = {}
-## 最大hp
-@export var max_hp := 20
-## 当前hp
-@export var hp := 20
-## 力量 / 魔力 / 技巧 / 速度 / 守备 / 魔防 / 幸运 / 体格
-@export var str := 5
-@export var mag := 0
-@export var skl := 5
-@export var spd := 5
-@export var def_h := 5
-@export var res := 2
-@export var luk := 0
-@export var con := 5
-
-## 救出 / 状态 / 对话 / 指挥 / 战斗动画帧
-@export var rescue := false
-@export var status := 0
-@export var talk := ""
-@export var cmd := 0
-@export var battle_frames: SpriteFrames
-
-## 瓦片坐标与行动状态
 var cell: Vector2i = Vector2i.ZERO
 var has_acted := false
 var canto_remaining: int = 0
-## 本回合是否已经触发过“笃行”（攻击后再次行动，每回合限一次）
 var relentless_advance_triggered_this_turn := false
-
-##被救援时脱离地图用的哨兵坐标（5F）
 const OFF_MAP_CELL := Vector2i(9999, 9999)
 var carried_unit: Unit = null
 var carried_by: Unit = null
 
-##救援力 Aid（5F，FE8 公式）：步行=体格-1，骑乘·男=25-体格，骑乘·女=20-体格
 func get_aid() -> int:
 	var mt := ClassData.MountType.FOOT
 	if class_data != null:
@@ -119,12 +128,9 @@ func get_aid() -> int:
 		ClassData.MountType.MOUNTED_FEMALE: return 20 - con
 		_: return con - 1
 
-##能否救起 other（5F，FE8 规则）
 func can_rescue(other: Unit) -> bool:
 	return carried_unit == null and other.carried_by == null \
 		and other.carried_unit == null and get_aid() >= other.con
-
-## 职业移动力消耗表（键与瓦片集自定义属性 Name 一致）
 var move_table := {
 	"道路": 1, "平原": 1, "桥": 1, "宝箱": 1, "森林": 2, "山": 3,
 	"河": -1, "湖": -1, "民居": 1, "道具店": 1, "武器店": 1, "斗技场": 1, "要塞": 1
@@ -133,7 +139,6 @@ var move_table := {
 func get_min_attack_range() -> int: return get_effective_min_range()
 func get_max_attack_range() -> int: return get_effective_max_range()
 
-## 技能修正后的有效最小/最大射程
 func get_effective_min_range() -> int:
 	var base: int = current_weapon.min_range if current_weapon else 1
 	for s in _all_skills():
@@ -146,51 +151,39 @@ func get_effective_max_range() -> int:
 		base += s.max_range_delta
 	return maxi(base, 1)
 
-## 遍历背包中所有可用武器的射程区间（P0-1）
 func get_weapon_ranges() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	if inventory.is_empty():
 		return result
-	var min_delta := 0
-	var max_delta := 0
-	for s in _all_skills():
-		min_delta += s.min_range_delta
-		max_delta += s.max_range_delta
 	for item in inventory:
-		var w := item as Weapon
-		if w == null or w.durability <= 0:
-			continue
-		result.append({
-			"min": maxi(1, w.min_range + min_delta),
-			"max": maxi(1, w.max_range + max_delta),
-			"weapon": w,
-		})
+		var weapon := item as Weapon
+		if BattleCalculator.can_attack_with(self, weapon):
+			var ranges := get_range_for_weapon(weapon)
+			ranges["weapon"] = weapon
+			result.append(ranges)
 	return result
 
-## 计算单位在 cells 上的并集攻击范围
+func get_range_for_weapon(weapon: Weapon) -> Dictionary:
+	var min_r := weapon.min_range
+	var max_r := weapon.max_range
+	for skill in get_skills_with_weapon(weapon):
+		min_r += skill.min_range_delta
+		max_r += skill.max_range_delta
+	return {"min": maxi(1, min_r), "max": maxi(1, max_r)}
+
 func get_attack_range(tile_map: TileMapLayer, cells: Array) -> Array:
 	return Pathfinder.get_attack_range_union(cells, get_weapon_ranges(), tile_map)
 
-## 计算单位装备指定武器时在 cells 上的攻击范围
 func get_attack_range_for_weapon(tile_map: TileMapLayer, cells: Array, weapon: Weapon) -> Array:
-	if weapon == null or weapon.durability <= 0:
+	if not BattleCalculator.can_attack_with(self, weapon):
 		return []
-	var min_delta := 0
-	var max_delta := 0
-	for s in _all_skills():
-		min_delta += s.min_range_delta
-		max_delta += s.max_range_delta
-	var range_dict: Array[Dictionary] = [{
-		"min": maxi(1, weapon.min_range + min_delta),
-		"max": maxi(1, weapon.max_range + max_delta),
-		"weapon": weapon,
-	}]
-	return Pathfinder.get_attack_range_union(cells, range_dict, tile_map)
+	var ranges := get_range_for_weapon(weapon)
+	return Pathfinder.get_attack_range_union(cells, [ranges] as Array[Dictionary], tile_map)
 
-##==================== 统一技能体系与属性计算管道 ====================
-
-## 合并查询当前生效的所有技能（职业技能 + 个人技能 + 装备武器附加技能）
 func get_all_active_skills() -> Array[Skill]:
+	return get_skills_with_weapon(current_weapon)
+
+func get_skills_with_weapon(weapon: Weapon) -> Array[Skill]:
 	var all: Array[Skill] = []
 	if class_data:
 		for s in class_data.skills:
@@ -199,29 +192,26 @@ func get_all_active_skills() -> Array[Skill]:
 	for s in personal_skills:
 		if s != null and not all.has(s):
 			all.append(s)
-	if current_weapon != null:
-		if current_weapon.has_method("get_skills"):
-			for s in current_weapon.get_skills():
+	if weapon != null:
+		if weapon.has_method("get_skills"):
+			for s in weapon.get_skills():
 				if s != null and not all.has(s):
 					all.append(s)
-		elif "skills" in current_weapon:
-			for s in current_weapon.skills:
+		elif "skills" in weapon:
+			for s in weapon.skills:
 				if s != null and not all.has(s):
 					all.append(s)
 	return all
 
-## 兼容旧 _all_skills 调用
 func _all_skills() -> Array[Skill]:
 	return get_all_active_skills()
 
-## 是否拥有“笃行”（攻击后再次行动）特技
 func has_act_again_skill() -> bool:
 	for s in get_all_active_skills():
 		if s != null and s.is_act_again():
 			return true
 	return false
 
-## 计算属性有效值（基础值 + 装备武器加成 + 被动技能加成 + 战场光环加成）
 func get_effective_stat(stat_name: String, all_units: Array = []) -> int:
 	var val: int = get(stat_name) if stat_name in self else 0
 	if current_weapon != null and current_weapon.has_method("get_stat_bonus"):
@@ -232,7 +222,6 @@ func get_effective_stat(stat_name: String, all_units: Array = []) -> int:
 	val += get_aura_bonus(stat_name, all_units)
 	return val
 
-## 战场友军光环加成（如“公在”临近2格友军双防+2）
 func get_aura_bonus(stat_name: String, all_units: Array) -> int:
 	if all_units.is_empty():
 		return 0
@@ -256,13 +245,11 @@ func get_effective_luk(all_units: Array = []) -> int: return get_effective_stat(
 func get_effective_con(all_units: Array = []) -> int: return get_effective_stat("con", all_units)
 func get_effective_move(all_units: Array = []) -> int: return get_effective_stat("move", all_units)
 
-## 重置回合行动状态
 func reset_turn_state() -> void:
 	has_acted = false
 	relentless_advance_triggered_this_turn = false
 	remove_grayscale()
 
-## 获取单位最强的再移动触发等级（ALL > NO_ATTACK > PASSIVE）
 func get_canto_trigger() -> Skill.SkillTrigger:
 	for s in _all_skills():
 		if s.trigger == Skill.SkillTrigger.POST_ACTION_ALL:
@@ -277,7 +264,6 @@ func can_canto_after_non_attack() -> bool:
 	var t := get_canto_trigger()
 	return t == Skill.SkillTrigger.POST_ACTION_NO_ATTACK or t == Skill.SkillTrigger.POST_ACTION_ALL
 
-## 灰度与阵营着色器操作
 func apply_grayscale() -> void:
 	if not has_node("MapSprite2D"): return
 	_ensure_unique_material()
@@ -294,15 +280,12 @@ func update_team_palette() -> void:
 	var mat := $MapSprite2D.material as ShaderMaterial
 	if mat != null:
 		mat.set_shader_parameter("team", team)
-
 var _material_duplicated := false
 func _ensure_unique_material() -> void:
 	if not has_node("MapSprite2D"): return
 	if not _material_duplicated and $MapSprite2D.material:
 		$MapSprite2D.material = $MapSprite2D.material.duplicate()
 		_material_duplicated = true
-
-## 移动动画与步进
 signal _end_move()
 
 func _animate_step(path: Array, index: int) -> void:
@@ -327,7 +310,6 @@ func play_move_animation(direction: Vector2i) -> void:
 
 func play_idle_animation() -> void: $MapSprite2D.play("idle")
 func play_selected_animation() -> void: $MapSprite2D.play("idle_selected")
-
 @onready var hp_bar: ProgressBar = get_node_or_null("hp")
 var _hp_fill_style: StyleBoxFlat
 
@@ -337,9 +319,8 @@ func _ready() -> void:
 	update_hp_bar()
 	update_team_palette()
 
-## 背包实例唯一化与默认装备
 func _own_inventory() -> void:
-	var equipped_in_bag := current_weapon != null and inventory.has(current_weapon)
+	var equipped_index := inventory.find(current_weapon)
 	for i in inventory.size():
 		if inventory[i] != null:
 			inventory[i] = (inventory[i] as Item).duplicate() as Item
@@ -348,11 +329,23 @@ func _own_inventory() -> void:
 			if item is Weapon and can_equip(item):
 				current_weapon = item
 				break
-	elif not equipped_in_bag and not inventory.has(current_weapon):
-		current_weapon = current_weapon.duplicate() as Weapon
-		inventory.append(current_weapon)
+	elif equipped_index >= 0:
+		current_weapon = inventory[equipped_index] as Weapon
+	elif not inventory.has(current_weapon):
+		if inventory.size() < BAG_LIMIT:
+			current_weapon = current_weapon.duplicate() as Weapon
+			inventory.append(current_weapon)
+		else:
+			current_weapon = null
 
-## 使用消耗品
+func restore_inventory(items: Array, equipped_index: int) -> void:
+	for item in inventory.duplicate():
+		remove_item(item)
+	for item in items:
+		add_item(item)
+	# 恢复原顺序，不能调用会移到首位的手动换装接口。
+	current_weapon = inventory[equipped_index] as Weapon if equipped_index >= 0 and equipped_index < inventory.size() else null
+
 func use_item(item: Item) -> bool:
 	var c := item as Consumable
 	if c == null or not inventory.has(item):
@@ -363,7 +356,6 @@ func use_item(item: Item) -> bool:
 		inventory.erase(item)
 	return true
 
-## 物品转移统一接口（P0-2）
 func add_item(item: Item) -> bool:
 	if item == null or inventory.size() >= BAG_LIMIT:
 		return false
@@ -423,12 +415,11 @@ func break_current_weapon() -> bool:
 	current_weapon = null
 	return true
 
-## 经验与武器等级（升级系统）
 func get_weapon_xp(type: int) -> int:
 	if not can_use_weapon(type):
 		return 0
 	if not weapon_xp.has(type):
-		weapon_xp[type] = Weapon.WEXP_THRESHOLDS[get_weapon_rank(type)]
+		weapon_xp[type] = Weapon.WEXP_THRESHOLDS[Weapon.WeaponRank.E]
 	return weapon_xp[type]
 
 func get_weapon_ex(type: int) -> int:
@@ -450,6 +441,18 @@ func can_equip(weapon: Weapon) -> bool:
 	if class_data == null: return true
 	if not can_use_weapon(weapon.weapon_type): return false
 	return get_weapon_ex(weapon.weapon_type) >= weapon.required_rank
+
+func preview_with_weapon(weapon: Weapon) -> Unit:
+	var preview := Unit.new()
+	for property in get_property_list():
+		if property.usage & PROPERTY_USAGE_SCRIPT_VARIABLE and property.usage & PROPERTY_USAGE_STORAGE and property.name not in ["inventory", "current_weapon"]:
+			var value: Variant = get(property.name)
+			preview.set(property.name, value.duplicate() if value is Array or value is Dictionary else value)
+	for item in inventory:
+		preview.add_item(item)
+	preview.equip_item(weapon)
+	preview.cell = cell
+	return preview
 
 func gain_exp(amount: int) -> void:
 	if lv < LEVEL_CAP:

@@ -2,7 +2,7 @@ class_name BattlePhases
 extends RefCounted
 
 ##回合系统（自 battle_manager.gd 分包，阶段四 + 5E 地图事件）：
-##玩家/敌方回合切换、回合横幅信号广播、敌方 AI 行动调度、回合开始地图事件检查。
+## 玩家→敌方→绿色友军→玩家，统一 AI 行动调度；地图事件在玩家回合开始检查。
 ##事件执行器为关卡侧注入的 async 回调（run_map_event）。
 
 var bm: BattleManager
@@ -19,13 +19,20 @@ func set_map_events(events: Array[MapEvent], runner: Callable) -> void:
 
 ##战斗开始：广播玩家回合（播放开局横幅），横幅后检查回合事件（阶段五 5E）
 func begin_battle() -> void:
+	bm.state = BattleManager.State.EVENT
+	bm.cursor.set_process(false)
 	bm.turn_started.emit(0)
 	await bm.get_tree().create_timer(1.35).timeout
 	await _run_map_events()
+	if not bm.battle_over:
+		bm.state = BattleManager.State.CURSOR
+		bm.cursor.set_process(true)
 
 
 ##我方全部行动完毕则进入敌方回合
 func check_player_phase_end() -> void:
+	if bm.phase != 0 or bm.battle_over:
+		return
 	for unit in bm.units:
 		##被救起脱离地图的单位当回合不可行动，不算"未行动"（全队被救/行动完时回合才能正确结束）
 		if unit.team == 0 and not unit.has_acted and unit.carried_by == null:
@@ -35,6 +42,8 @@ func check_player_phase_end() -> void:
 
 ##玩家主动结束回合（地图菜单“结束”）
 func end_player_phase() -> void:
+	if bm.phase != 0 or bm.battle_over:
+		return
 	for unit in bm.units:
 		if unit.team == 0 and not unit.has_acted:
 			unit.has_acted = true
@@ -51,19 +60,44 @@ func start_enemy_phase() -> void:
 		bm.cursor.visible = false
 	bm.turn_started.emit(1)
 	if bm.get_tree() != null:
-		await bm.get_tree().create_timer(0.9).timeout
+		await bm.get_tree().create_timer(1.35).timeout
 	##遍历快照：循环中敌人可能死于我方反击被移除
 	for enemy in bm.units.duplicate():
 		if bm.battle_over:
 			break
 		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion():
 			continue
-		if enemy.team != 1 or enemy.has_acted:
+		if enemy.team != 1 or enemy.has_acted or enemy.carried_by != null or enemy.hp <= 0:
 			continue
 		await _execute_enemy_action(enemy)
 	bm.current_ai_unit = null
 	if not bm.battle_over:
-		start_player_phase()
+		await start_ally_phase()
+
+
+## 绿色友军独立行动；无存活且未被携带的友军时直接跳过横幅。
+func start_ally_phase() -> void:
+	var allies: Array[Unit] = []
+	for unit in bm.units:
+		if unit.team == 2 and unit.hp > 0 and unit.carried_by == null:
+			allies.append(unit)
+	if not allies.is_empty():
+		bm.phase = 2
+		bm.state = BattleManager.State.ENEMY_TURN
+		bm.cursor.set_process(false)
+		bm.cursor.visible = false
+		for unit in allies:
+			unit.reset_turn_state()
+		bm.turn_started.emit(2)
+		await bm.get_tree().create_timer(1.35).timeout
+		for unit in allies:
+			if bm.battle_over:
+				break
+			if is_instance_valid(unit) and not unit.is_queued_for_deletion() and unit.team == 2 and unit.carried_by == null:
+				await _execute_enemy_action(unit)
+		bm.current_ai_unit = null
+	if not bm.battle_over:
+		await start_player_phase()
 
 
 ##开始玩家回合：回合数+1，重置全部单位的行动状态与灰度
@@ -71,6 +105,8 @@ func start_enemy_phase() -> void:
 func start_player_phase() -> void:
 	bm.turn += 1
 	bm.phase = 0
+	bm.state = BattleManager.State.EVENT
+	bm.cursor.set_process(false)
 	for unit in bm.units:
 		if unit.has_method("reset_turn_state"):
 			unit.reset_turn_state()
@@ -81,8 +117,9 @@ func start_player_phase() -> void:
 	bm.turn_started.emit(0)
 	await bm.get_tree().create_timer(1.35).timeout
 	await _run_map_events()
-	bm.state = BattleManager.State.CURSOR
-	bm.cursor.set_process(true)
+	if not bm.battle_over:
+		bm.state = BattleManager.State.CURSOR
+		bm.cursor.set_process(true)
 
 
 ##检查并依次执行本回合触发的地图事件（5E）：EVENT 状态阻塞输入，执行器为关卡侧回调
@@ -115,7 +152,11 @@ func _execute_enemy_action(enemy: Unit) -> void:
 		return
 	var target = plan["target"]
 	if target != null and is_instance_valid(target) and not target.is_queued_for_deletion() and bm.units.has(target):
-		await bm.combat.execute_attack(enemy, target)
+		var weapon: Weapon = plan.get("weapon")
+		if plan.get("action", "attack") == "heal":
+			await bm.staff_mgr.execute_heal(enemy, target, weapon)
+		elif enemy.equip_item(weapon) and BattleCalculator.can_attack(enemy, target):
+			await bm.combat.execute_attack(enemy, target)
 		await bm.get_tree().create_timer(0.3).timeout
 		bm.check_battle_end()
 	##敌人可能死于我方反击，标记已行动前需判存活

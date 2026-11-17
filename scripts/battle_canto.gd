@@ -6,10 +6,12 @@ extends RefCounted
 ##再移动不能攻击，移动流程与正常移动一致（寻路 + 步进动画 + 按地形消耗扣剩余力）。
 
 var bm: BattleManager
+var _moving := false
 
 
 ##进入再移动阶段：用剩余力重算移动范围，攻击范围置空（再移动不能攻击）
 func enter_phase() -> void:
+	_moving = false
 	bm.state = BattleManager.State.CANTO_MOVING
 	var blocked := bm.get_blocked_cells(bm.selected_unit)
 	bm.move_range = Pathfinder.get_move_range(bm.tile_map, bm.selected_unit.cell,
@@ -27,9 +29,11 @@ func enter_phase() -> void:
 
 ##CANTO_MOVING 状态输入：yes 移动到目标格，no 原地结束再移动
 func handle_input(event: InputEvent) -> void:
+	if _moving:
+		return
 	if event.is_action_pressed("yes"):
 		var cursor_cell: Vector2i = bm.cursor.cell
-		if not bm.move_range.has(cursor_cell):
+		if not bm.move_range.has(cursor_cell) or not Pathfinder.can_stop_at(bm.selected_unit, cursor_cell, bm.units):
 			return
 		if cursor_cell == bm.selected_unit.cell:
 			_finish_canto(cursor_cell)
@@ -41,19 +45,22 @@ func handle_input(event: InputEvent) -> void:
 
 ##开始再移动（与正常移动一致，只是状态不同）
 func _start_canto_move(destination: Vector2i) -> void:
+	if _moving:
+		return
+	_moving = true
 	bm.cursor.restrict_to = {}
 	bm.cursor.set_process(false)
 	var blocked := bm.get_blocked_cells(bm.selected_unit)
 	bm.current_path = Pathfinder.find_path(bm.tile_map, bm.selected_unit.cell, destination,
 		bm.selected_unit.move_table, blocked)
 	bm.range_drawer.clear_all(bm.high_light_layer)
+	bm.selected_unit._end_move.connect(_on_canto_move_complete, CONNECT_ONE_SHOT)
 	bm.selected_unit._animate_step(bm.current_path, 0)
-	bm.selected_unit._end_move.connect(_on_canto_move_complete)
 
 
 ##再移动动画结束 → 更新坐标 + 扣剩余力 → 收尾
 func _on_canto_move_complete() -> void:
-	bm.selected_unit._end_move.disconnect(_on_canto_move_complete)
+	_moving = false
 	var destination := bm.selected_unit.cell
 	if not bm.current_path.is_empty():
 		destination = bm.current_path[-1]
@@ -68,6 +75,8 @@ func _on_canto_move_complete() -> void:
 ##再移动收尾：标记已行动 + 灰度 → 交 BM 统一收尾出口
 ##（P2：不再重复实现 _end_action 的清理尾巴与胜负/回合检查）
 func _finish_canto(_destination: Vector2i) -> void:
+	if _moving:
+		return
 	if bm.selected_unit != null and is_instance_valid(bm.selected_unit) and not bm.selected_unit.is_queued_for_deletion():
 		bm.selected_unit.cell = _destination
 		bm.selected_unit.has_acted = true

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ClassData" format=3 uid="uid://b8f1nomad0001"]
 
 [ext_resource type="Script" uid="uid://b7tgj14glu46f" path="res://scripts/class_data.gd" id="1_class"]
-[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="1_ydai7"]
+[ext_resource type="Texture2D" uid="uid://cpgiprf8hee02" path="res://assets/graphics/Class Card/忒_v1.png" id="1_ydai7"]
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="3_nkukt"]
 [ext_resource type="Resource" uid="uid://bp3mkp8hwdl41" path="res://data/skills/flourish.tres" id="4_wki4m"]
 [ext_resource type="Resource" uid="uid://caffireaff001" path="res://data/affinity/fire.tres" id="6_aff"]
@@ -10,7 +10,6 @@
 script = ExtResource("1_class")
 job_name = "游牧民"
 job_info = "在草原上驰骋弓的牧民，移动力优秀"
-info = "迷茫之人，心处仿徨"
 class_card = ExtResource("1_ydai7")
 affinity = ExtResource("6_aff")
 growths_spd = 40

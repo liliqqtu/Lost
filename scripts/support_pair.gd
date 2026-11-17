@@ -6,25 +6,35 @@ class_name SupportPair
 ##数据资源在 data/support/（如 te_isar.tres 忒×伊萨尔）
 ##SupportStore（autoload）持有全部支援表，新增支援对 = 复制一份 .tres 改数据 + 在 SupportStore.PAIRS 追加"""
 
-##支援双方名字（须与 Unit.unit_name 一致）
+@export_group("支援双方")
+## A 方名字：须与对应 Unit.unit_name 完全一致。
 @export var unit_a := ""
+## B 方名字：须与对应 Unit.unit_name 完全一致。
 @export var unit_b := ""
-##双方属性（支援加成与支援列表图标来源；应与各自 ClassData.affinity 保持一致）
+## A 方属性：用于支援加成与图标，应与 A 方 ClassData.affinity 一致。
 @export var affinity_a: Affinity
+## B 方属性：用于支援加成与图标，应与 B 方 ClassData.affinity 一致。
 @export var affinity_b: Affinity
 
-##升 C/B/A 所需支援值（每共同出战一章 +1 点；门槛按支援对自定义）
+@export_group("支援升级门槛")
+## 升 C 所需累计支援值：双方共同出战且本章胜利加 1；达标后需相邻触发支援。
 @export var threshold_c := 1
+## 升 B 所需累计支援值；请设为不低于 C 门槛。
 @export var threshold_b := 2
+## 升 A 所需累计支援值；请设为不低于 B 门槛。
 @export var threshold_a := 3
 
-##双方肖像（支援对话用，同人物对话的 Class Card）
+@export_group("肖像与对话")
+## A 方对话肖像（Class Card 纹理）。
 @export var card_a: Texture2D
+## B 方对话肖像（Class Card 纹理）。
 @export var card_b: Texture2D
 
-##各等级支援对话：[{"speaker","text","side"}...]（格式同 talk 系统，空数组=跳过对话直接升级）
+## C 级对话：[{"speaker": "名字", "text": "台词", "side": "left1"}]；side 可用 left1/left2/right1/right2，空数组直接升级。
 @export var c_lines: Array = []
+## B 级对话：格式同 C Lines；空数组跳过对话并直接升级。
 @export var b_lines: Array = []
+## A 级对话：格式同 C Lines；空数组跳过对话并直接升级。
 @export var a_lines: Array = []
 
 

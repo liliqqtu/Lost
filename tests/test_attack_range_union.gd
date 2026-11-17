@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P0-1 验证：Unit 统一攻击范围接口（get_weapon_ranges + get_attack_range）
 ##覆盖：
@@ -9,9 +9,9 @@ extends SceneTree
 ##  5. 损坏武器（耐久 0）不计入
 ##  6. 技能"仿徨"（-1 射程）对背包所有武器生效
 ##  7. 站位列表剔除（移动范围与攻击范围不重叠显示）
-##运行：godot --headless --path . -s res://tests/test_attack_range_union.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
-func _init() -> void:
+func _ready() -> void:
 	var tile_map := _build_test_tile_map()
 
 	# ===== 场景一：单剑（1-1）=====
@@ -47,7 +47,7 @@ func _init() -> void:
 	var ranges3 := mixed.get_weapon_ranges()
 	_assert_eq(ranges3.size(), 2, "剑弓手 get_weapon_ranges 数量")
 	var atk3 := mixed.get_attack_range(tile_map, [Vector2i(5, 5)])
-	var expected3: Array = {}
+	var expected3: Dictionary = {}
 	for c in _cells_at_dist(5, 5, 1):
 		expected3[c] = true
 	for c in _cells_at_dist(5, 5, 2):
@@ -63,7 +63,7 @@ func _init() -> void:
 	gap.inventory = [gap_sword, gap_bow]
 	gap.current_weapon = gap_sword
 	var atk4 := gap.get_attack_range(tile_map, [Vector2i(5, 5)])
-	var expected4: Array = {}
+	var expected4: Dictionary = {}
 	for c in _cells_at_dist(5, 5, 1):
 		expected4[c] = true
 	for c in _cells_at_dist(5, 5, 3):
@@ -97,7 +97,7 @@ func _init() -> void:
 	var lost_bow := _make_weapon("铁弓", Weapon.WeaponType.BOW, 2, 2)
 	lost_unit.inventory = [lost_sword, lost_bow]
 	lost_unit.current_weapon = lost_sword
-	lost_unit.personal_skills = [preload("res://scene/skill/lost.tres")]
+	lost_unit.personal_skills = [preload("res://data/skills/lost.tres")]
 	var ranges7 := lost_unit.get_weapon_ranges()
 	_assert_eq(ranges7.size(), 2, "仿徨后 ranges 数量")
 	_assert_eq(int(ranges7[0]["min"]), 1, "仿徨后剑 min（1-1 兜底为 1）")
@@ -139,6 +139,7 @@ func _init() -> void:
 ##"""构造测试单位（占位 Vector2i.cell + 默认 move_table）"""
 func _make_unit(p_name: String, p_cell: Vector2i) -> Unit:
 	var unit := Unit.new()
+	add_child(unit)
 	unit.unit_name = p_name
 	unit.cell = p_cell
 	unit.team = 0
@@ -205,6 +206,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(0, 0))
 	source.get_tile_data(Vector2i(0, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	for x in range(20):
 		for y in range(20):

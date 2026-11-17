@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P1 验证：救援/放下/交接（BattleRescue + Unit.can_rescue + Aid）
 ##覆盖：
@@ -9,10 +9,10 @@ extends SceneTree
 ##  5. BattleRescue._execute_give：救援关系从 giver 转移到 receiver
 ##  6. BattleRescue._rescue_candidates：仅邻接 + 同队 + Aid 足够
 ##  7. BattleRescue._trade_candidates：邻接同队 + 未被救
-##运行：godot --headless --path . -s res://tests/test_rescue.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -69,6 +69,7 @@ func _run() -> void:
 
 	# ===== 场景四：_execute_drop =====
 	##(7,5) 是道路地形，放下后回到地图
+	bm.selected_unit = rescuer
 	bm.rescue._execute_drop(Vector2i(7, 5))
 	assert(rescuer.carried_unit == null, "[场景四] 救援关系解除")
 	assert(target.carried_by == null, "[场景四] target 不再被携带")
@@ -135,18 +136,25 @@ func _run() -> void:
 ##"""构造最小 BattleManager（带 cursor/tile_map 让 _end_action 不崩）"""
 func _make_minimal_bm(p_units: Array[Unit]) -> BattleManager:
 	var bm := BattleManager.new()
-	bm.units = p_units
+	bm.units = p_units.duplicate()
+	var idle := Unit.new()
+	add_child(idle)
+	var enemy := Unit.new()
+	add_child(enemy)
+	enemy.team = 1
+	bm.units.append_array([idle, enemy])
 	bm.tile_map = _build_test_tile_map()
 	bm.high_light_layer = _build_test_tile_map()
-	bm.cursor = Node2D.new()
-	root.add_child(bm)
-	root.add_child(bm.cursor)
+	bm.cursor = load("res://scene/ui/cursor.gd").new()
+	add_child(bm)
+	add_child(bm.cursor)
 	return bm
 
 
 ##"""构造测试 Unit（用 unit.tscn 提供完整节点结构，apply_grayscale 等需要）"""
 func _make_unit(p_name: String, p_con: int, p_team: int = 0, p_cell: Vector2i = Vector2i.ZERO) -> Unit:
 	var u := preload("res://scene/character/unit.tscn").instantiate() as Unit
+	add_child(u)
 	u.unit_name = p_name
 	u.con = p_con
 	u.max_hp = 20
@@ -176,6 +184,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(0, 0))
 	source.get_tile_data(Vector2i(0, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	for x in range(8):
 		for y in range(8):

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/slim_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"slim_lance"
+display_name = "细枪"
+description = "轻巧、容易命中的枪。"
+buy_price = 450
+can_sell = true
+item_kind = &"lance"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 30
+max_uses = 30
+original_id = 21
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON", "maxUses": "30", "might": "4", "hit": "85", "weight": "4", "crit": "5", "encodedRange": "0x11", "costPerUse": "15", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 0
+weapon_exp = 1
+might = 4
+hit = 85
+crit = 5
+weight = 4
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = false

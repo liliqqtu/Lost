@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/torch_item.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"torch_item"
+display_name = "火把"
+description = "原版提高迷雾中的视野，逐回合衰减。（使用或持有效果待实现）"
+buy_price = 500
+can_sell = true
+item_kind = &"consumable"
+effect_id = &"torch"
+effect_implemented = false
+remaining_uses = 5
+max_uses = 5
+original_id = 112
+original_data = {"useDescTextId": "0x4d6", "weaponType": "ITYPE_ITEM", "maxUses": "5", "encodedRange": "0x11", "costPerUse": "100", "useEffectId": "37"}

@@ -86,6 +86,14 @@ animations = [{
 "speed": 60.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_k72mu")
+}],
+"loop": 1,
+"name": &"magic_idle",
+"speed": 60.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("1_xa7vu")
 }, {
@@ -220,3 +228,6 @@ animations = [{
 "name": &"magic_start_crit",
 "speed": 60.0
 }]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {}
+metadata/battle_animation_impacts = {}

@@ -120,6 +120,8 @@ func handle_action_menu_input(event: InputEvent) -> void:
 ##菜单选项确认：0..N-1 动态附加项（攻击/访问/开启/对话/支援/救援/放下/交接/交换，顺序同 _extra_actions），其后为固定项
 ##动态项顺序由 show_action_menu 决定；固定项顺序：物品 / 待机 / 运输队
 func _on_menu_confirmed(index: int) -> void:
+	if index < 0:
+		return
 	##动态附加项（索引 0..N-1）
 	if index < _extra_actions.size():
 		match _extra_actions[index]:
@@ -235,7 +237,7 @@ func _enter_target_select() -> void:
 	_target_list.clear()
 	for cell in bm.attack_range:
 		var unit := bm.get_unit_at(cell)
-		if unit and unit.team != bm.selected_unit.team:
+		if unit and BattleCalculator.is_hostile(bm.selected_unit, unit):
 			_target_list.append(unit)
 	_target_list.sort_custom(func(a: Unit, b: Unit): return a.cell < b.cell)
 	_target_index = 0
@@ -261,7 +263,7 @@ func handle_target_select_input(event: InputEvent) -> void:
 		if not bm.attack_range.has(cursor_cell):
 			return
 		var target := bm.get_unit_at(cursor_cell)
-		if target and target.team != bm.selected_unit.team:
+		if target and BattleCalculator.can_attack(bm.selected_unit, target):
 			hide_forecast()
 			bm.mark_attack_action()
 			await bm.combat.execute_attack(bm.selected_unit, target)
@@ -285,11 +287,11 @@ func _cycle_target(dir: int) -> void:
 
 ##攻击范围内是否存在敌方单位（无武器时永远不可攻击——装备武器可能被寄存进运输队）
 func _has_enemy_in_attack_range() -> bool:
-	if bm.selected_unit == null or bm.selected_unit.current_weapon == null:
+	if bm.selected_unit == null:
 		return false
 	for cell in bm.attack_range:
 		var unit := bm.get_unit_at(cell)
-		if unit and unit.team != bm.selected_unit.team:
+		if unit and BattleCalculator.is_hostile(bm.selected_unit, unit):
 			return true
 	return false
 
@@ -360,7 +362,7 @@ func update_forecast() -> void:
 		hide_forecast()
 		return
 	var target := bm.get_unit_at(cursor_cell)
-	if target == null or target.team == bm.selected_unit.team:
+	if target == null or not BattleCalculator.is_hostile(bm.selected_unit, target):
 		hide_forecast()
 		return
 	##units 传入以结算支援加成（支援对象 3 格内，5G）

@@ -22,6 +22,7 @@ var _confirm_index: int = 1
 var _confirm_cursor: Control = null
 var _confirm_btn_yes: Label = null
 var _confirm_btn_no: Label = null
+var _defeat_dialog := false
 
 
 func _init(level: Node2D, bm: BattleManager, canvas: CanvasLayer, cam: Camera2D, cursor: Node2D, font: LabelSettings) -> void:
@@ -65,28 +66,17 @@ func _on_map_menu_end_turn() -> void:
 
 
 func save_game() -> bool:
-	var slot_id := SaveManager.current_slot
-	var meta := SaveManager.get_slot_meta(slot_id)
-	var play_seconds: int = meta.get("play_time_seconds", 0)
-
-	var data: Dictionary = {
-		"version": 1,
-		"slot_id": slot_id,
-		"is_empty": false,
-		"chapter_id": _level.name,
-		"chapter_scene": _level.scene_file_path if _level.scene_file_path != "" else "res://scene/level/level_0/level_0.tscn",
-		"chapter_name": "序章 一寸之遥的呼吸",
-		"protagonist_name": "忒",
-		"protagonist_level": 1,
-		"play_time_seconds": play_seconds,
-		"turn_count": _bm.turn,
-		"timestamp": Time.get_datetime_string_from_system()
-	}
-
-	var ok := SaveManager.save_to_slot(slot_id, data)
-	if ok:
-		_show_save_toast("进度已保存！")
+	var ok := SaveManager.save_level(_level)
+	_show_save_toast("进度已保存！" if ok else "保存失败")
+	_restore_menu_context()
 	return ok
+
+
+func _restore_menu_context() -> void:
+	if _bm.state == BattleManager.State.ACTION_MENU and is_instance_valid(_bm.selected_unit):
+		_bm.commands.show_action_menu()
+	else:
+		_cursor_node.set_process(_bm.state == BattleManager.State.CURSOR)
 
 
 func _show_save_toast(text: String) -> void:
@@ -111,12 +101,28 @@ func _show_save_toast(text: String) -> void:
 
 
 func prompt_return_to_title() -> void:
+	_defeat_dialog = false
 	if _confirm_dialog == null:
 		_build_confirm_dialog()
 	_confirm_index = 1
 	_confirm_dialog.visible = true
 	_cursor_node.set_process(false)
 	_update_confirm_cursor()
+
+func prompt_defeat() -> void:
+	prompt_return_to_title()
+	_defeat_dialog = true
+	_confirm_dialog.get_child(0).text = "我方败北，重新挑战？"
+	_confirm_btn_yes.text = "重试"
+	_confirm_btn_no.text = "主菜单"
+
+func _retry_battle() -> void:
+	var data := SaveManager.load_from_slot(SaveManager.current_slot)
+	var path: String = data.get("chapter_scene", "")
+	if path == "" or not ResourceLoader.exists(path):
+		path = _level.scene_file_path
+		SaveManager.activate_game_data({})
+	SceneTransition.change_scene(path, 0.35, 0.35)
 
 
 func _build_confirm_dialog() -> void:
@@ -190,13 +196,22 @@ func _handle_confirm_dialog_input(event: InputEvent) -> void:
 		_level.get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("no") or event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.keycode == KEY_X):
 		_confirm_dialog.visible = false
-		_cursor_node.set_process(true)
+		if _defeat_dialog:
+			SceneTransition.change_scene("res://scene/ui/title_screen.tscn", 0.35, 0.35)
+		else:
+			_restore_menu_context()
 		_level.get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("yes") or event.is_action_pressed("start") or event.is_action_pressed("ui_accept") or (event is InputEventKey and (event.keycode == KEY_Z or event.keycode == KEY_ENTER)):
 		_level.get_viewport().set_input_as_handled()
 		if _confirm_index == 0:
 			_confirm_dialog.visible = false
-			SceneTransition.change_scene("res://scene/ui/title_screen.tscn", 0.35, 0.35)
+			if _defeat_dialog:
+				_retry_battle()
+			else:
+				SceneTransition.change_scene("res://scene/ui/title_screen.tscn", 0.35, 0.35)
 		else:
 			_confirm_dialog.visible = false
-			_cursor_node.set_process(true)
+			if _defeat_dialog:
+				SceneTransition.change_scene("res://scene/ui/title_screen.tscn", 0.35, 0.35)
+			else:
+				_restore_menu_context()

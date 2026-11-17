@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Axes/swordslayer.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"swordslayer"
+display_name = "剑杀斧"
+description = "原版对剑士系特效并逆转武器相克。（特殊效果待实现）"
+buy_price = 2000
+can_sell = true
+item_kind = &"axe"
+effect_id = &"axe_swordslayer"
+effect_implemented = false
+remaining_uses = 20
+max_uses = 20
+original_id = 43
+original_data = {"weaponType": "ITYPE_AXE", "attributes": "IA_WEAPON | IA_REVERTTRIANGLE", "pEffectiveness": "ItemEffectiveness_Swordsman", "maxUses": "20", "might": "11", "hit": "80", "weight": "13", "crit": "5", "encodedRange": "0x11", "costPerUse": "100", "weaponRank": "WPN_EXP_C", "weaponExp": "1"}
+weapon_type = 2
+required_rank = 2
+weapon_exp = 1
+might = 11
+hit = 80
+crit = 5
+weight = 13
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

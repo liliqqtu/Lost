@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/antitoxin.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"antitoxin"
+display_name = "解毒药"
+description = "原版解除中毒状态。（使用或持有效果待实现）"
+buy_price = 450
+can_sell = true
+item_kind = &"consumable"
+effect_id = &"antitoxin"
+effect_implemented = false
+remaining_uses = 3
+max_uses = 3
+original_id = 111
+original_data = {"useDescTextId": "0x4d5", "weaponType": "ITYPE_ITEM", "maxUses": "3", "encodedRange": "0x11", "costPerUse": "150", "useEffectId": "36"}

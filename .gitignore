@@ -2,6 +2,7 @@
 .vscode/
 .workbuddy/
 .godot/
+tests/.runtime_saves/
 *.md
 !README.md
 !gemini.md

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/iron_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"iron_lance"
+display_name = "铁枪"
+description = "基础铁枪。"
+buy_price = 360
+can_sell = true
+item_kind = &"lance"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 45
+max_uses = 45
+original_id = 20
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON", "maxUses": "45", "might": "7", "hit": "80", "weight": "8", "encodedRange": "0x11", "costPerUse": "8", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 0
+weapon_exp = 1
+might = 7
+hit = 80
+crit = 0
+weight = 8
+durability = 45
+max_durability = 45
+min_range = 1
+max_range = 1
+is_brave = false

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/siegmund.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"siegmund"
+display_name = "炎枪·吉克穆德"
+description = "伊弗列姆专用圣器；原版力量+5，对魔物特效。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"lance"
+effect_id = &"lance_siegmund"
+effect_implemented = false
+remaining_uses = 30
+max_uses = 30
+original_id = 146
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON | IA_UNSELLABLE | IA_LOCK_5", "pStatBonuses": "&ItemBonus_Siegmund", "pEffectiveness": "ItemEffectiveness_Monsters", "maxUses": "30", "might": "17", "hit": "80", "weight": "11", "encodedRange": "0x11", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 0
+weapon_exp = 1
+might = 17
+hit = 80
+crit = 0
+weight = 11
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = false
+bonus_str = 5

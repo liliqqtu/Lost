@@ -248,102 +248,6 @@ animations = [
 "duration": 1.0,
 "texture": ExtResource("1_sword_Sword_000_png")
 }, {
-"duration": 2.0,
-"texture": ExtResource("15_sword_Sword_014_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_sword_Sword_015_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("17_sword_Sword_016_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("18_sword_Sword_017_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("19_sword_Sword_018_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("20_sword_Sword_019_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("21_sword_Sword_020_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("22_sword_Sword_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("23_sword_Sword_022_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_sword_Sword_023_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("25_sword_Sword_024_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("26_sword_Sword_025_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("27_sword_Sword_026_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("28_sword_Sword_027_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("29_sword_Sword_028_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("2_sword_Sword_001_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("3_sword_Sword_002_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("4_sword_Sword_003_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("5_sword_Sword_004_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("6_sword_Sword_005_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_sword_Sword_006_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("8_sword_Sword_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_sword_Sword_008_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("10_sword_Sword_009_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("11_sword_Sword_010_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("12_sword_Sword_011_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("13_sword_Sword_012_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("14_sword_Sword_013_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}, {
 "duration": 4.0,
 "texture": ExtResource("24_sword_Sword_023_png")
 }, {
@@ -436,48 +340,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_sword_Sword_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("31_sword_Sword_030_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("32_sword_Sword_031_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("31_sword_Sword_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
 }],
-"loop": false,
-"name": &"sword_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"sword_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_mode_11",
 "speed": 60.0
 },
 {
@@ -852,114 +717,6 @@ animations = [
 "texture": ExtResource("35_bow_Bow_000_png")
 }],
 "loop": false,
-"name": &"bow_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("36_bow_Bow_001_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("37_bow_Bow_002_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("38_bow_Bow_003_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("39_bow_Bow_004_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("40_bow_Bow_005_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_bow_Bow_006_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("42_bow_Bow_007_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_bow_Bow_008_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("44_bow_Bow_009_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("45_bow_Bow_010_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("46_bow_Bow_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("47_bow_Bow_012_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_bow_Bow_013_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_bow_Bow_014_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("50_bow_Bow_015_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("51_bow_Bow_016_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("52_bow_Bow_017_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("53_bow_Bow_018_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_bow_Bow_019_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("55_bow_Bow_020_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("56_bow_Bow_021_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("57_bow_Bow_022_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_bow_Bow_023_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("59_bow_Bow_024_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("60_bow_Bow_025_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("61_bow_Bow_026_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("62_bow_Bow_027_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("63_bow_Bow_028_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("64_bow_Bow_029_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("65_bow_Bow_030_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("66_bow_Bow_031_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("67_bow_Bow_032_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
-}],
-"loop": false,
 "name": &"bow_ranged",
 "speed": 60.0
 },
@@ -1132,48 +889,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("35_bow_Bow_000_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("92_bow_Bow_057_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_bow_Bow_058_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("92_bow_Bow_057_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
 }],
-"loop": false,
-"name": &"bow_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
-}],
-"loop": false,
-"name": &"bow_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"bow_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("35_bow_Bow_000_png")
-}],
-"loop": false,
-"name": &"bow_mode_11",
 "speed": 60.0
 },
 {
@@ -1285,3 +1003,6 @@ animations = [
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"sword_critical": "sword_crit", "sword_stand": "sword_idle", "sword_mode_11": "sword_idle", "sword_idle_ranged": "sword_idle", "bow_critical": "bow_crit", "bow_stand": "bow_idle", "bow_mode_11": "bow_idle", "bow_idle_ranged": "bow_idle", "sword_dodge_ranged": "sword_dodge", "bow_dodge_ranged": "bow_dodge"}
+metadata/battle_animation_impacts = {"sword": 0.6666666666666666, "sword_crit": 1.8333333333333333, "sword_miss": 0.6166666666666667}

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/slim_sword.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"slim_sword"
+display_name = "细剑"
+description = "轻巧、容易命中的剑。"
+buy_price = 480
+can_sell = true
+item_kind = &"sword"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 30
+max_uses = 30
+original_id = 2
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON", "maxUses": "30", "might": "3", "hit": "100", "weight": "2", "crit": "5", "encodedRange": "0x11", "costPerUse": "16", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 0
+required_rank = 0
+weapon_exp = 1
+might = 3
+hit = 100
+crit = 5
+weight = 2
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = false

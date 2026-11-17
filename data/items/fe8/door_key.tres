@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/door_key.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"door_key"
+display_name = "门钥匙"
+description = "原版打开门，使用一次后耗尽。（使用或持有效果待实现）"
+buy_price = 50
+can_sell = true
+item_kind = &"key"
+effect_id = &"doorkey"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 106
+original_data = {"useDescTextId": "0x4d0", "weaponType": "ITYPE_ITEM", "maxUses": "1", "encodedRange": "0x11", "costPerUse": "50", "useEffectId": "31"}

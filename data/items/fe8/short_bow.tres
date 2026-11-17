@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Bows/short_bow.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"short_bow"
+display_name = "短弓"
+description = "轻型高必杀弓；原版对飞行系特效。（特殊效果待实现）"
+buy_price = 1760
+can_sell = true
+item_kind = &"bow"
+effect_id = &"bow_shortbow"
+effect_implemented = false
+remaining_uses = 22
+max_uses = 22
+original_id = 51
+original_data = {"weaponType": "ITYPE_BOW", "attributes": "IA_WEAPON", "pEffectiveness": "ItemEffectiveness_Flier", "maxUses": "22", "might": "5", "hit": "85", "weight": "3", "crit": "10", "encodedRange": "0x22", "costPerUse": "80", "weaponRank": "WPN_EXP_D", "weaponExp": "2"}
+weapon_type = 3
+required_rank = 1
+weapon_exp = 2
+might = 5
+hit = 85
+crit = 10
+weight = 3
+durability = 22
+max_durability = 22
+min_range = 2
+max_range = 2
+is_brave = false

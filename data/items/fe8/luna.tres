@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Dark/luna.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"luna"
+display_name = "月光"
+description = "原版无视目标魔防。"
+buy_price = 4200
+can_sell = true
+item_kind = &"dark"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 30
+max_uses = 30
+original_id = 70
+original_data = {"weaponType": "ITYPE_DARK", "attributes": "IA_WEAPON | IA_MAGIC | IA_NEGATE_DEFENSE", "maxUses": "30", "hit": "50", "weight": "12", "crit": "10", "encodedRange": "0x12", "costPerUse": "140", "weaponRank": "WPN_EXP_C", "weaponExp": "1"}
+weapon_type = 5
+required_rank = 2
+weapon_exp = 1
+might = 0
+hit = 50
+crit = 10
+weight = 12
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 2
+is_brave = false

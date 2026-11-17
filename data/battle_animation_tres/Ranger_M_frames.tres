@@ -16,7 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cvfouh02pkllw" path="res://assets/battle_animations/Ranger-Base[M]/Sword/Sword_013.png" id="14_62jtq"]
 
 [resource]
-animations = [{
+animations = [
+{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_5vx4p")
@@ -63,7 +64,20 @@ animations = [{
 "duration": 5.0,
 "texture": ExtResource("1_5vx4p")
 }],
-"loop": 0,
+"loop": false,
 "name": &"sword",
 "speed": 60.0
-}]
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5vx4p")
+}],
+"loop": true,
+"name": &"sword_idle",
+"speed": 60.0
+}
+]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {}
+metadata/battle_animation_impacts = {}

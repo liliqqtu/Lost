@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Bows/beacon_bow.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"beacon_bow"
+display_name = "破魔弓"
+description = "原版对魔物、飞行系特效。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"bow"
+effect_id = &"bow_beaconbow"
+effect_implemented = false
+remaining_uses = 60
+max_uses = 60
+original_id = 132
+original_data = {"weaponType": "ITYPE_BOW", "attributes": "IA_WEAPON", "pEffectiveness": "ItemEffectiveness_FlierAndMonsters", "maxUses": "60", "might": "6", "hit": "85", "weight": "5", "crit": "5", "encodedRange": "0x22", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 3
+required_rank = 0
+weapon_exp = 1
+might = 6
+hit = 85
+crit = 5
+weight = 5
+durability = 60
+max_durability = 60
+min_range = 2
+max_range = 2
+is_brave = false

@@ -36,13 +36,13 @@ func toggle_all() -> void:
 		if ranges.is_empty():
 			continue
 		var blocked := bm.get_blocked_cells(enemy)
-		var mv := Pathfinder.get_move_range(bm.tile_map, enemy.cell, enemy.move,
+		var mv := Pathfinder.get_move_range(bm.tile_map, enemy.cell, enemy.get_effective_move(bm.units),
 			enemy.move_table, blocked)
 		##GBA 的敌人威胁区显示：移动范围 ∪ 攻击范围整片标红（不显示蓝色）
 		for cell in mv.keys():
 			cells[cell] = true
 		##P0-1：统一接口——每个敌人用其背包所有可用武器射程并集
-		for cell in enemy.get_attack_range(bm.tile_map, mv.keys()):
+		for cell in enemy.get_attack_range(bm.tile_map, Pathfinder.get_stopping_cells(enemy, mv.keys(), bm.units)):
 			cells[cell] = true
 	bm.range_drawer.clear_all(bm.high_light_layer)
 	bm.range_drawer.draw_attack_range(cells.keys(), bm.high_light_layer)
@@ -53,9 +53,9 @@ func _show_enemy_range(enemy: Unit) -> void:
 	_inspect_enemy = enemy
 	_all_range_shown = false
 	var blocked := bm.get_blocked_cells(enemy)
-	var mv := Pathfinder.get_move_range(bm.tile_map, enemy.cell, enemy.move, enemy.move_table, blocked)
+	var mv := Pathfinder.get_move_range(bm.tile_map, enemy.cell, enemy.get_effective_move(bm.units), enemy.move_table, blocked)
 	##P0-1：统一接口——背包所有可用武器射程并集
-	var atk := enemy.get_attack_range(bm.tile_map, mv.keys())
+	var atk := enemy.get_attack_range(bm.tile_map, Pathfinder.get_stopping_cells(enemy, mv.keys(), bm.units))
 	bm.range_drawer.clear_all(bm.high_light_layer)
 	bm.range_drawer.draw_move_range(mv, bm.high_light_layer)
 	bm.range_drawer.draw_attack_range(atk, bm.high_light_layer)

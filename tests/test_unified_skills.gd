@@ -1,16 +1,17 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 ## 统一技能与武器技能体系测试：
 ## 1. 勇者之弓（连续攻击：普通2击，追击4击）
 ## 2. 断弦（S级弓：+10技 +10速，附加特技【笃行】）
 ## 3. 笃行（攻击后再次行动，每回合限1次）
 ## 4. 公在（光环：2格内友军双防+2）
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 func _run() -> void:
 	print("=== 测试1：断弦属性加成 (+10技 +10速) ===")
 	var unit := Unit.new()
+	add_child(unit)
 	unit.unit_name = "忒"
 	unit.skl = 12
 	unit.spd = 12
@@ -35,6 +36,7 @@ func _run() -> void:
 
 	print("=== 测试3：光环技能【公在】(2格内友军双防+2) ===")
 	var ally := Unit.new()
+	add_child(ally)
 	ally.unit_name = "友军"
 	ally.team = 0
 	ally.cell = Vector2i(0, 0)
@@ -42,6 +44,7 @@ func _run() -> void:
 	ally.res = 2
 
 	var aura_unit := Unit.new()
+	add_child(aura_unit)
 	aura_unit.unit_name = "持公在者"
 	aura_unit.team = 0
 	aura_unit.cell = Vector2i(1, 1) # 距离 (1-0)+(1-0)=2格
@@ -66,14 +69,19 @@ func _run() -> void:
 	assert(brave_bow.is_brave_weapon(), "勇者之弓应具备勇者武器特性")
 
 	var brave_user := Unit.new()
+	add_child(brave_user)
 	brave_user.unit_name = "勇者使用者"
 	brave_user.spd = 15
 	brave_user.con = 10
-	brave_user.current_weapon = brave_bow
+	brave_user.add_item(brave_bow)
+	brave_user.equip_item(brave_bow)
+	brave_user.cell = Vector2i(0, 0)
 
 	var enemy := Unit.new()
+	add_child(enemy)
 	enemy.unit_name = "山贼"
 	enemy.team = 1
+	enemy.cell = Vector2i(2, 0)
 	enemy.spd = 5 # 攻速差 15 - 5 = 10 >= 4，可追击
 	enemy.con = 10
 

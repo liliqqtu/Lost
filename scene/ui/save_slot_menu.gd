@@ -142,6 +142,8 @@ func _on_slot_confirmed() -> void:
 func _open_action_menu() -> void:
 	current_state = State.ACTION_MENU
 	action_menu_index = 0
+	var meta := SaveManager.get_slot_meta(selected_slot_index + 1)
+	action_items[0].text = "已通关" if meta.get("chapter_id") == "cleared" else "继续"
 	action_panel.visible = true
 	var base_y: float = CURSOR_SLOT_Y[selected_slot_index] - 12.0
 	action_panel.position = Vector2(170.0, clampf(base_y, 16.0, 85.0))
@@ -252,13 +254,18 @@ func _execute_confirm_choice() -> void:
 
 func _start_new_game_flow(slot_id: int) -> void:
 	_is_transitioning = true
-	SaveManager.start_new_game(slot_id)
+	if SaveManager.start_new_game(slot_id).is_empty():
+		_is_transitioning = false
+		return
 	SceneTransition.change_scene(INTRO_CUTSCENE_PATH, 0.35, 0.35)
 
 
 func _load_and_start_game(slot_id: int) -> void:
 	_is_transitioning = true
 	var data := SaveManager.load_from_slot(slot_id)
+	if data.is_empty() or data.get("save_kind") == "cleared" or data.get("chapter_id") == "cleared":
+		_is_transitioning = false
+		return
 	var scene_path: String = data.get("chapter_scene", "res://scene/level/level_0/level_0.tscn")
 	if not ResourceLoader.exists(scene_path):
 		scene_path = "res://scene/level/level_0/level_0.tscn"

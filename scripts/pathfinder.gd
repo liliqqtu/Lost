@@ -1,6 +1,24 @@
 extends RefCounted
 class_name Pathfinder
 
+## 通行与落点分开：蓝/绿互为友方，可穿过；敌对单位阻路，任何其他单位都不能重叠落点。
+static func get_unit_blockers(actor: Unit, units: Array) -> Array:
+	var result: Array = []
+	for other in units:
+		if is_instance_valid(other) and other != actor and other.hp > 0 and other.carried_by == null \
+				and (actor == null or BattleCalculator.is_hostile(actor, other)):
+			result.append(other.cell)
+	return result
+
+static func can_stop_at(actor: Unit, cell: Vector2i, units: Array) -> bool:
+	for other in units:
+		if is_instance_valid(other) and other != actor and other.hp > 0 and other.carried_by == null and other.cell == cell:
+			return false
+	return true
+
+static func get_stopping_cells(actor: Unit, cells: Array, units: Array) -> Array:
+	return cells.filter(func(cell): return can_stop_at(actor, cell, units))
+
 ## Dijkstra算法 — 计算所有可到达的格子
 ## 返回 Dictionary[Vector2i, {remain_move: int, parent: Vector2i}]
 ## 参数说明：

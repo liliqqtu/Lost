@@ -1,9 +1,9 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##阶段四验证脚本：EnemyAI 决策优先级（击杀 > 移动后可攻击 > 向最近我方移动）
-##运行：godot --headless --path . -s res://tests/test_enemy_ai.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
-func _init() -> void:
+func _ready() -> void:
 	var tile_map := _build_test_tile_map()
 
 	##场景一：低血我方单位可被击杀，高血单位同样在射程内，应优先选择击杀目标
@@ -43,7 +43,7 @@ func _init() -> void:
 
 	##场景四：无武器敌人不产生攻击方案，直接接近最近的我方单位（忒 1,1）
 	##移动力 2 内距 (1,1) 最近的格：(2,2)/(3,1)/(1,3) 并列，任一即可
-	enemy.current_weapon = null
+	enemy.break_current_weapon()
 	weak_player.cell = Vector2i(1, 1)
 	plan = EnemyAI.decide(enemy, units, tile_map)
 	print("--- 场景四：无武器接近 ---")
@@ -61,6 +61,7 @@ func _init() -> void:
 ##"""构造测试单位"""
 func _make_unit(p_name: String, p_team: int, p_cell: Vector2i) -> Unit:
 	var unit := Unit.new()
+	add_child(unit)
 	unit.unit_name = p_name
 	unit.team = p_team
 	unit.cell = p_cell
@@ -76,7 +77,8 @@ func _make_unit(p_name: String, p_team: int, p_cell: Vector2i) -> Unit:
 	axe.might = 8
 	axe.hit = 70
 	axe.weight = 10
-	unit.current_weapon = axe
+	unit.add_item(axe)
+	unit.equip_item(axe)
 	return unit
 
 
@@ -93,6 +95,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(0, 0))
 	source.get_tile_data(Vector2i(0, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	for x in range(10):
 		for y in range(10):

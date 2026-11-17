@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/white_gem.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"white_gem"
+display_name = "白宝玉"
+description = "可高价出售的白色宝石。"
+buy_price = 20000
+can_sell = true
+item_kind = &"valuable"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 1
+max_uses = 1
+original_id = 116
+original_data = {"weaponType": "ITYPE_ITEM", "maxUses": "1", "encodedRange": "0x11", "costPerUse": "20000"}

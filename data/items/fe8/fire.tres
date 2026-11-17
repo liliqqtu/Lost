@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Anima/fire.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"fire"
+display_name = "火炎"
+description = "基础理魔法。"
+buy_price = 560
+can_sell = true
+item_kind = &"anima"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 40
+max_uses = 40
+original_id = 56
+original_data = {"weaponType": "ITYPE_ANIMA", "attributes": "IA_WEAPON | IA_MAGIC", "maxUses": "40", "might": "5", "hit": "90", "weight": "4", "encodedRange": "0x12", "costPerUse": "14", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 4
+required_rank = 0
+weapon_exp = 1
+might = 5
+hit = 90
+crit = 0
+weight = 4
+durability = 40
+max_durability = 40
+min_range = 1
+max_range = 2
+is_brave = false

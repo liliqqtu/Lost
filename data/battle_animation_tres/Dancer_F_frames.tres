@@ -181,181 +181,7 @@ animations = [
 "texture": ExtResource("23_refresh_Refresh_022_png")
 }],
 "loop": false,
-"name": &"dance",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("2_refresh_Refresh_001_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("3_refresh_Refresh_002_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("4_refresh_Refresh_003_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("5_refresh_Refresh_004_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("3_refresh_Refresh_002_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_refresh_Refresh_005_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("7_refresh_Refresh_006_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("8_refresh_Refresh_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_refresh_Refresh_008_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("10_refresh_Refresh_009_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_refresh_Refresh_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_refresh_Refresh_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_refresh_Refresh_012_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("14_refresh_Refresh_013_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_refresh_Refresh_014_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("16_refresh_Refresh_015_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_refresh_Refresh_016_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("18_refresh_Refresh_017_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("19_refresh_Refresh_018_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("20_refresh_Refresh_019_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("21_refresh_Refresh_020_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("22_refresh_Refresh_021_png")
-}, {
-"duration": 40.0,
-"texture": ExtResource("23_refresh_Refresh_022_png")
-}],
-"loop": false,
-"name": &"play",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("2_refresh_Refresh_001_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("3_refresh_Refresh_002_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("4_refresh_Refresh_003_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("5_refresh_Refresh_004_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("3_refresh_Refresh_002_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_refresh_Refresh_005_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("7_refresh_Refresh_006_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("8_refresh_Refresh_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_refresh_Refresh_008_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("10_refresh_Refresh_009_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_refresh_Refresh_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_refresh_Refresh_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_refresh_Refresh_012_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("14_refresh_Refresh_013_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("15_refresh_Refresh_014_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("16_refresh_Refresh_015_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_refresh_Refresh_016_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("18_refresh_Refresh_017_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("19_refresh_Refresh_018_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("20_refresh_Refresh_019_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("21_refresh_Refresh_020_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("22_refresh_Refresh_021_png")
-}, {
-"duration": 40.0,
-"texture": ExtResource("23_refresh_Refresh_022_png")
-}],
-"loop": false,
 "name": &"refresh_crit",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 4.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}],
-"loop": false,
-"name": &"refresh_mode_5",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 4.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}],
-"loop": false,
-"name": &"refresh_mode_6",
 "speed": 60.0
 },
 {
@@ -380,63 +206,27 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_refresh_Refresh_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_refresh_Refresh_023_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_refresh_Refresh_024_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_refresh_Refresh_023_png")
 }],
-"loop": false,
-"name": &"dance_dodge",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_refresh_Refresh_023_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_refresh_Refresh_024_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_refresh_Refresh_023_png")
-}],
-"loop": false,
-"name": &"refresh_mode_8",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}],
-"loop": false,
-"name": &"refresh_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_refresh_Refresh_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"refresh_idle",
 "speed": 60.0
 },
 {
 "frames": [{
-"duration": 1.0,
+"duration": 4.0,
 "texture": ExtResource("1_refresh_Refresh_000_png")
 }],
 "loop": false,
-"name": &"refresh_mode_11",
+"name": &"refresh_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_refresh_Refresh_000_png")
+}],
+"loop": false,
+"name": &"refresh_ranged_crit",
 "speed": 60.0
 },
 {
@@ -514,7 +304,10 @@ animations = [
 "texture": ExtResource("23_refresh_Refresh_022_png")
 }],
 "loop": false,
-"name": &"refresh_mode_12",
+"name": &"refresh_miss",
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"refresh_stand": "refresh_idle", "refresh_mode_11": "refresh_idle", "refresh_mode_5": "refresh_ranged", "refresh_mode_6": "refresh_ranged_crit", "refresh_mode_8": "refresh_dodge", "refresh_mode_12": "refresh_miss", "refresh_idle_ranged": "refresh_idle", "dance": "refresh", "play": "refresh", "dance_dodge": "refresh_dodge", "refresh_dodge_ranged": "refresh_dodge"}
+metadata/battle_animation_impacts = {}

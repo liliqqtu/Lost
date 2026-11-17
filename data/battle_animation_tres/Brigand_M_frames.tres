@@ -241,7 +241,7 @@ animations = [{
 "texture": ExtResource("25_6ukt8")
 }],
 "loop": 0,
-"name": &"axe_critical",
+"name": &"axe_crit",
 "speed": 60.0
 }, {
 "frames": [{
@@ -260,4 +260,17 @@ animations = [{
 "loop": 0,
 "name": &"axe_dodge",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_50sal")
+}],
+"loop": 1,
+"name": &"axe_idle",
+"speed": 60.0
 }]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {
+"axe_critical": "axe_crit"
+}
+metadata/battle_animation_impacts = {}

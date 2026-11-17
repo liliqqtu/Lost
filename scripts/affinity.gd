@@ -6,13 +6,15 @@ class_name Affinity
 ##数据资源在 data/affinity/（fire/dark/anim/thunder/ice/light/wind）
 ##ClassData.affinity 选择对应资源（人物面板 BaseInfo/AffinityIcon 显示其图标）"""
 
-##属性名（炎/暗/理…，检查器可改）
+@export_group("属性信息")
+## 属性名（炎/暗/理…），这里是支援属性，不等同于武器类型。
 @export var affinity_name := ""
 ##属性图标（人物面板属性位 + 支援列表行图标，res://assets/graphics/UI/AffinityIcon/）
 @export var icon: Texture2D
-##命中贡献（参与支援加成计算）
+@export_group("每级支援贡献")
+## 命中贡献（百分点）：与支援对象的贡献相加后，再乘支援等级倍率。
 @export var hit_bonus := 0
-##回避贡献
+## 回避贡献（百分点）：与支援对象的贡献相加后，再乘支援等级倍率。
 @export var avoid_bonus := 0
-##必杀贡献
+## 必杀贡献（百分点）：与支援对象的贡献相加后，再乘支援等级倍率。
 @export var crit_bonus := 0

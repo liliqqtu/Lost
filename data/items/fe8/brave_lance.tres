@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/brave_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"brave_lance"
+display_name = "勇者枪"
+description = "每次攻击连续进行两次打击。"
+buy_price = 7500
+can_sell = true
+item_kind = &"lance"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 30
+max_uses = 30
+original_id = 25
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON | IA_BRAVE", "maxUses": "30", "might": "10", "hit": "70", "weight": "14", "encodedRange": "0x11", "costPerUse": "250", "weaponRank": "WPN_EXP_B", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 3
+weapon_exp = 1
+might = 10
+hit = 70
+crit = 0
+weight = 14
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = true

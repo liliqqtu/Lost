@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/delphi_shield.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"delphi_shield"
+display_name = "菲利之盾"
+description = "原版持有时取消针对飞行系的特效。（使用或持有效果待实现）"
+buy_price = 10000
+can_sell = true
+item_kind = &"accessory"
+effect_id = &"delphishield"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 113
+original_data = {"useDescTextId": "0x4d7", "weaponType": "ITYPE_ITEM", "attributes": "IA_UNBREAKABLE | IA_NEGATE_FLYING", "encodedRange": "0x11", "costPerUse": "10000"}

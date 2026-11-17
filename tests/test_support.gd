@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##5G 验证：支援系统（SupportStore / SupportPair / Affinity）
 ##覆盖：
@@ -6,9 +6,9 @@ extends SceneTree
 ##  2. 门槛与升级：支援值不足不可升；达 C 门槛升 C 后，未达 B 门槛不能再升
 ##  3. 加成结算：属性贡献之和 × 等级倍率；3 格内生效、超 3 格 / 异队 / 未建立支援为 0
 ##  4. 章节积累：双方登场且胜利 +1 点；只有一方登场不加；封顶 A 级门槛
-##运行：godot --headless --path . -s res://tests/test_support.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -104,6 +104,7 @@ func _run() -> void:
 ##纯逻辑单位（headless 惯例：Unit.new() 手填字段，不挂场景树）
 func _make_unit(name: String, cell: Vector2i) -> Unit:
 	var u := Unit.new()
+	add_child(u)
 	u.unit_name = name
 	u.cell = cell
 	u.team = 0

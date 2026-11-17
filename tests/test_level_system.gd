@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##升级系统验证：经验公式 / 武器经验与等级 / 装备限制 / 升级掷骰 / 等级上限
 ##覆盖：
@@ -8,9 +8,9 @@ extends SceneTree
 ##  4. 装备限制：类型不可用/等级不足不能装备，无职业数据不限制（敌人兜底）
 ##  5. 升级掷骰：成长率 100 必加、0 不加、到职业上限不加；level_up 应用与经验扣除
 ##  6. 满级（20）不再获得经验
-##运行：godot --headless --path . -s res://tests/test_level_system.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -176,6 +176,7 @@ func _run() -> void:
 ##纯逻辑单位（headless 惯例：Unit.new() 手填字段，不挂场景树）
 func _make_unit(name: String, level: int) -> Unit:
 	var u := Unit.new()
+	add_child(u)
 	u.unit_name = name
 	u.lv = level
 	u.team = 0

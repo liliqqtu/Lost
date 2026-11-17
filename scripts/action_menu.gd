@@ -146,7 +146,17 @@ func get_selected_text() -> String:
 
 ##当前选中项索引
 func get_selected() -> int:
-	return _selected
+	var labels := _visible_labels()
+	if _selected < 0 or _selected >= labels.size():
+		return -1
+	var selected := labels[_selected]
+	if _labels.has(selected):
+		var extras_count := 0
+		for label in _extra_labels:
+			if label.visible:
+				extras_count += 1
+		return extras_count + _labels.find(selected)
+	return _extra_labels.find(selected)
 
 
 ##左右换位：单位在屏幕左半边时菜单放右侧，右半边时放左侧，避免遮挡单位

@@ -1,0 +1,19 @@
+Godot Engine v4.7.stable.mono.official.5b4e0cb0f - https://godotengine.org
+
+ERROR: .NET: Assemblies not found
+   at: initialize (modules/mono/mono_gd/gd_mono.cpp:650)
+
+================================================================
+CrashHandlerException: Program crashed with signal 11
+Engine version: Godot Engine v4.7.stable.mono.official (5b4e0cb0fd279832bbdd69fed5354d4e5ad26f88)
+Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
+Load address: 7ff59d940000
+
+[1] 7ff6e1a65ca1 (main+4125ca1) - no debug info in PE/COFF executable
+[2] 7ffedf8f7732 (ntdll.dll+127732) - no debug info in PE/COFF executable
+[3] 7ffedf93ab3e (ntdll.dll+16ab3e) - no debug info in PE/COFF executable
+[4] 7ffedf896984 (ntdll.dll+c6984) - no debug info in PE/COFF executable
+[5] 7ffedf93a47d (ntdll.dll+16a47d) - no debug info in PE/COFF executable
+[6] -1 (main+-7ff6dd940001) - no debug info in PE/COFF executable
+-- END OF C++ BACKTRACE --
+================================================================

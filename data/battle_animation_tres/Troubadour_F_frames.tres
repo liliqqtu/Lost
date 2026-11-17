@@ -117,211 +117,7 @@ animations = [
 "texture": ExtResource("13_staff_Staff_012_png")
 }],
 "loop": false,
-"name": &"staff_start",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_staff_Staff_008_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("10_staff_Staff_009_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("11_staff_Staff_010_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_staff_Staff_012_png")
-}],
-"loop": false,
 "name": &"staff_crit",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_staff_Staff_008_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("10_staff_Staff_009_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("11_staff_Staff_010_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_staff_Staff_012_png")
-}],
-"loop": false,
-"name": &"staff_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_staff_Staff_008_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("10_staff_Staff_009_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("11_staff_Staff_010_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_staff_Staff_012_png")
-}],
-"loop": false,
-"name": &"staff_mode_5",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_staff_Staff_001_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("3_staff_Staff_002_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("4_staff_Staff_003_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("5_staff_Staff_004_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 10.0,
-"texture": ExtResource("7_staff_Staff_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_staff_Staff_007_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("6_staff_Staff_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("9_staff_Staff_008_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("10_staff_Staff_009_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("11_staff_Staff_010_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_staff_Staff_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_staff_Staff_012_png")
-}],
-"loop": false,
-"name": &"staff_mode_6",
 "speed": 60.0
 },
 {
@@ -346,45 +142,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_staff_Staff_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("14_staff_Staff_013_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_staff_Staff_014_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("14_staff_Staff_013_png")
 }],
-"loop": false,
-"name": &"staff_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}],
-"loop": false,
-"name": &"staff_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"staff_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_staff_Staff_000_png")
-}],
-"loop": false,
-"name": &"staff_mode_11",
 "speed": 60.0
 },
 {
@@ -437,5 +197,110 @@ animations = [
 "loop": false,
 "name": &"staff_miss",
 "speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_staff_Staff_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_staff_Staff_001_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_staff_Staff_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_staff_Staff_003_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_staff_Staff_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("7_staff_Staff_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_staff_Staff_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_staff_Staff_008_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("10_staff_Staff_009_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("11_staff_Staff_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_staff_Staff_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_staff_Staff_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_staff_Staff_012_png")
+}],
+"loop": false,
+"name": &"staff_ranged",
+"speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_staff_Staff_000_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("2_staff_Staff_001_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_staff_Staff_002_png")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_staff_Staff_003_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_staff_Staff_004_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 10.0,
+"texture": ExtResource("7_staff_Staff_006_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_staff_Staff_007_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_staff_Staff_005_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_staff_Staff_008_png")
+}, {
+"duration": 4.0,
+"texture": ExtResource("10_staff_Staff_009_png")
+}, {
+"duration": 7.0,
+"texture": ExtResource("11_staff_Staff_010_png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_staff_Staff_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_staff_Staff_011_png")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_staff_Staff_012_png")
+}],
+"loop": false,
+"name": &"staff_ranged_crit",
+"speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"staff_critical": "staff_crit", "staff_stand": "staff_idle", "staff_mode_11": "staff_idle", "staff_mode_5": "staff_ranged", "staff_mode_6": "staff_ranged_crit", "staff_idle_ranged": "staff_idle", "staff_start": "staff", "staff_dodge_ranged": "staff_dodge"}
+metadata/battle_animation_impacts = {}

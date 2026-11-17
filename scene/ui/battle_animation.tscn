@@ -16,13 +16,17 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3bg2x"]
 shader = ExtResource("4_jt41f")
+shader_parameter/team = 0
 shader_parameter/enemy_palette = false
+shader_parameter/ally_palette = false
 shader_parameter/flash_amount = 0.0
 shader_parameter/remove_background = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h10f2"]
 shader = ExtResource("4_jt41f")
+shader_parameter/team = 0
 shader_parameter/enemy_palette = false
+shader_parameter/ally_palette = false
 shader_parameter/flash_amount = 0.0
 shader_parameter/remove_background = true
 
@@ -182,25 +186,21 @@ metadata/_edit_lock_ = true
 [node name="PlayTreamAnimation" type="AnimatedSprite2D" parent="." unique_id=815879019]
 material = SubResource("ShaderMaterial_3bg2x")
 sprite_frames = ExtResource("5_y0ncb")
-animation = &"sword_critical"
-frame = 72
-frame_progress = 1.0
+animation = &"sword_idle"
 metadata/_edit_lock_ = true
 
 [node name="EnemyTreamAnimation" type="AnimatedSprite2D" parent="." unique_id=133287141]
 material = SubResource("ShaderMaterial_h10f2")
 sprite_frames = ExtResource("6_l1lng")
-animation = &"axe_critical"
-frame = 35
-frame_progress = 1.0
+animation = &"axe_idle"
 flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="MagicAnimation" type="AnimatedSprite2D" parent="." unique_id=1255692894]
 material = SubResource("ShaderMaterial_85uid")
 sprite_frames = ExtResource("8_05pam")
-animation = &"fire"
-frame = 24
+animation = &"wind"
+frame = 26
 frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1272396142]

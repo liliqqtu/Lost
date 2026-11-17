@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Axes/hammer.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"hammer"
+display_name = "战锤"
+description = "原版对重甲特效。（特殊效果待实现）"
+buy_price = 800
+can_sell = true
+item_kind = &"axe"
+effect_id = &"axe_hammer"
+effect_implemented = false
+remaining_uses = 20
+max_uses = 20
+original_id = 38
+original_data = {"weaponType": "ITYPE_AXE", "attributes": "IA_WEAPON", "pEffectiveness": "ItemEffectiveness_Armor", "maxUses": "20", "might": "10", "hit": "55", "weight": "15", "encodedRange": "0x11", "costPerUse": "40", "weaponRank": "WPN_EXP_D", "weaponExp": "2"}
+weapon_type = 2
+required_rank = 1
+weapon_exp = 2
+might = 10
+hit = 55
+crit = 0
+weight = 15
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

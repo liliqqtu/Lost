@@ -151,7 +151,7 @@ func open(p_unit: Unit, p_tile_map: TileMapLayer, p_units: Array) -> void:
 	all_units = p_units
 	weapons.clear()
 	for it in unit.inventory:
-		if it is Weapon:
+		if it is Weapon and BattleCalculator.can_attack_with(unit, it):
 			weapons.append(it)
 
 	if unit.current_weapon != null and weapons.has(unit.current_weapon):
@@ -236,15 +236,13 @@ func get_targets_for_weapon(w: Weapon) -> Array[Unit]:
 	var result: Array[Unit] = []
 	if w == null or unit == null:
 		return result
-	var min_delta := 0
-	var max_delta := 0
-	for s in unit._all_skills():
-		min_delta += s.min_range_delta
-		max_delta += s.max_range_delta
-	var r_min: int = maxi(1, w.min_range + min_delta)
-	var r_max: int = maxi(1, w.max_range + max_delta)
+	if not BattleCalculator.can_attack_with(unit, w):
+		return result
+	var ranges := unit.get_range_for_weapon(w)
+	var r_min: int = ranges.min
+	var r_max: int = ranges.max
 	for u in all_units:
-		if u != null and u is Unit and u.team != unit.team and u.carried_by == null:
+		if u != null and u is Unit and BattleCalculator.is_hostile(unit, u) and u.carried_by == null:
 			var d: int = absi(unit.cell.x - u.cell.x) + absi(unit.cell.y - u.cell.y)
 			if d >= r_min and d <= r_max:
 				result.append(u)
@@ -273,36 +271,19 @@ func _update_preview_stats() -> void:
 func _calc_stats_for_weapon(w: Weapon) -> Dictionary:
 	if w == null or unit == null:
 		return {"atk": 0, "crit": 0, "hit": 0, "avoid": 0}
-	var is_magic := w.weapon_type == Weapon.WeaponType.ANIMA or w.weapon_type == Weapon.WeaponType.DARK or w.weapon_type == Weapon.WeaponType.LIGHT
-
-	var cur_w := unit.current_weapon
-	var cur_stat_bonus := func(stat_k: String) -> int:
-		return cur_w.get_stat_bonus(stat_k) if (cur_w != null and cur_w != w) else 0
-	var new_stat_bonus := func(stat_k: String) -> int:
-		return w.get_stat_bonus(stat_k) if (cur_w != w) else 0
-
-	var str_val: int = (unit.get_effective_mag(all_units) if is_magic else unit.get_effective_str(all_units)) - cur_stat_bonus.call("mag" if is_magic else "str") + new_stat_bonus.call("mag" if is_magic else "str")
-	var atk: int = str_val + w.might
-
-	var skl_val: int = unit.get_effective_skl(all_units) - cur_stat_bonus.call("skl") + new_stat_bonus.call("skl")
-	var luk_val: int = unit.get_effective_luk(all_units) - cur_stat_bonus.call("luk") + new_stat_bonus.call("luk")
-	var spd_val: int = unit.get_effective_spd(all_units) - cur_stat_bonus.call("spd") + new_stat_bonus.call("spd")
-	var con_val: int = unit.get_effective_con(all_units) - cur_stat_bonus.call("con") + new_stat_bonus.call("con")
-
-	var support: Dictionary = SupportStore.get_support_bonus(unit, all_units)
-	var crit: int = w.crit + skl_val / 2 + (support.get("crit", 0) as int)
-	var hit: int = w.hit + skl_val * 2 + luk_val / 2 + (support.get("hit", 0) as int)
-
-	var as_val: int = spd_val - maxi(0, w.weight - con_val)
-	var terrain_avoid: int = 0
-	if tile_map != null and unit != null:
-		var t_name: String = Pathfinder.get_terrain_name(tile_map, unit.cell)
-		terrain_avoid = Global.get_terrain_bonus(t_name)["avoid"]
-	var avoid: int = as_val * 2 + luk_val + terrain_avoid + (support.get("avoid", 0) as int)
-
-	return {
-		"atk": atk,
-		"crit": max(0, crit),
-		"hit": hit,
-		"avoid": max(0, avoid),
+	var preview := unit.preview_with_weapon(w)
+	var context: Array = all_units.duplicate()
+	var index := context.find(unit)
+	if index >= 0:
+		context[index] = preview
+	var magic := w.weapon_type in [Weapon.WeaponType.ANIMA, Weapon.WeaponType.LIGHT, Weapon.WeaponType.DARK]
+	var support := SupportStore.get_support_bonus(preview, context)
+	var terrain_avoid := Global.get_terrain_bonus(Pathfinder.get_terrain_name(tile_map, unit.cell))["avoid"] as int if tile_map != null else 0
+	var stats := {
+		"atk": (preview.get_effective_mag(context) if magic else preview.get_effective_str(context)) + w.might,
+		"crit": maxi(0, w.crit + int(preview.get_effective_skl(context) / 2) + int(support.crit)),
+		"hit": w.hit + preview.get_effective_skl(context) * 2 + int(preview.get_effective_luk(context) / 2) + int(support.hit),
+		"avoid": maxi(0, BattleCalculator.get_attack_speed(preview, context) * 2 + preview.get_effective_luk(context) + terrain_avoid + int(support.avoid)),
 	}
+	preview.free()
+	return stats

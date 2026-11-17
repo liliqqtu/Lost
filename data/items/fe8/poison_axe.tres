@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Axes/poison_axe.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"poison_axe"
+display_name = "毒斧"
+description = "原版命中后使目标中毒。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"axe"
+effect_id = &"axe_venin"
+effect_implemented = false
+remaining_uses = 40
+max_uses = 40
+original_id = 34
+original_data = {"weaponType": "ITYPE_AXE", "attributes": "IA_WEAPON", "maxUses": "40", "might": "4", "hit": "60", "weight": "10", "encodedRange": "0x11", "weaponRank": "WPN_EXP_D", "weaponEffectId": "WPN_EFFECT_POISON", "weaponExp": "1"}
+weapon_type = 2
+required_rank = 1
+weapon_exp = 1
+might = 4
+hit = 60
+crit = 0
+weight = 10
+durability = 40
+max_durability = 40
+min_range = 1
+max_range = 1
+is_brave = false

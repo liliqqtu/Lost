@@ -453,150 +453,6 @@ animations = [
 "duration": 1.0,
 "texture": ExtResource("1_sword_Sword_000_png")
 }, {
-"duration": 4.0,
-"texture": ExtResource("31_sword_Sword_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_sword_Sword_031_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("33_sword_Sword_032_png")
-}, {
-"duration": 16.0,
-"texture": ExtResource("34_sword_Sword_033_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("35_sword_Sword_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("36_sword_Sword_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("37_sword_Sword_036_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("34_sword_Sword_033_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("35_sword_Sword_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("36_sword_Sword_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("37_sword_Sword_036_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("34_sword_Sword_033_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("38_sword_Sword_037_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("39_sword_Sword_038_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("40_sword_Sword_039_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("41_sword_Sword_040_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("42_sword_Sword_041_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("43_sword_Sword_042_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("44_sword_Sword_043_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("10_sword_Sword_009_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_sword_Sword_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("45_sword_Sword_044_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_sword_Sword_012_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("46_sword_Sword_045_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("47_sword_Sword_046_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("48_sword_Sword_047_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("49_sword_Sword_048_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("50_sword_Sword_049_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("50_sword_Sword_049_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("51_sword_Sword_050_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("18_sword_Sword_017_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("19_sword_Sword_018_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_sword_Sword_019_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("18_sword_Sword_017_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("21_sword_Sword_020_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("22_sword_Sword_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("23_sword_Sword_022_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("24_sword_Sword_023_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("25_sword_Sword_024_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("26_sword_Sword_025_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("27_sword_Sword_026_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("28_sword_Sword_027_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("29_sword_Sword_028_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("30_sword_Sword_029_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}, {
 "duration": 3.0,
 "texture": ExtResource("52_sword_Sword_051_png")
 }, {
@@ -680,48 +536,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_sword_Sword_000_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("58_sword_Sword_057_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_sword_Sword_058_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("58_sword_Sword_057_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
 }],
-"loop": false,
-"name": &"sword_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"sword_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sword_Sword_000_png")
-}],
-"loop": false,
-"name": &"sword_mode_11",
 "speed": 60.0
 },
 {
@@ -1078,147 +895,6 @@ animations = [
 {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("63_lance_Lance_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("94_lance_Lance_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("95_lance_Lance_032_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("96_lance_Lance_033_png")
-}, {
-"duration": 16.0,
-"texture": ExtResource("97_lance_Lance_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("98_lance_Lance_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("99_lance_Lance_036_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("100_lance_Lance_037_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("97_lance_Lance_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("98_lance_Lance_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("99_lance_Lance_036_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("100_lance_Lance_037_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("97_lance_Lance_034_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("101_lance_Lance_038_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("102_lance_Lance_039_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("103_lance_Lance_040_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("104_lance_Lance_041_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("105_lance_Lance_042_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("70_lance_Lance_007_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("71_lance_Lance_008_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("106_lance_Lance_043_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("73_lance_Lance_010_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("107_lance_Lance_044_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("108_lance_Lance_045_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("109_lance_Lance_046_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("110_lance_Lance_047_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("111_lance_Lance_048_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("112_lance_Lance_049_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("113_lance_Lance_050_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("114_lance_Lance_051_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("79_lance_Lance_016_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("80_lance_Lance_017_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_lance_Lance_018_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("82_lance_Lance_019_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("84_lance_Lance_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("85_lance_Lance_022_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("86_lance_Lance_023_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("87_lance_Lance_024_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("88_lance_Lance_025_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("89_lance_Lance_026_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("90_lance_Lance_027_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("91_lance_Lance_028_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("92_lance_Lance_029_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("93_lance_Lance_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_lance_Lance_000_png")
-}],
-"loop": false,
-"name": &"lance_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("115_lance_Lance_052_png")
 }, {
 "duration": 3.0,
@@ -1353,26 +1029,8 @@ animations = [
 "duration": 1.0,
 "texture": ExtResource("63_lance_Lance_000_png")
 }],
-"loop": false,
-"name": &"lance_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("63_lance_Lance_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"lance_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("115_lance_Lance_052_png")
-}],
-"loop": false,
-"name": &"lance_mode_11",
 "speed": 60.0
 },
 {
@@ -1733,150 +1391,6 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("137_axe_Axe_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("168_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("169_axe_Axe_032_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("170_axe_Axe_033_png")
-}, {
-"duration": 16.0,
-"texture": ExtResource("171_axe_Axe_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("172_axe_Axe_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("173_axe_Axe_036_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("174_axe_Axe_037_png")
-}, {
-"duration": 12.0,
-"texture": ExtResource("171_axe_Axe_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("172_axe_Axe_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("173_axe_Axe_036_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("174_axe_Axe_037_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("171_axe_Axe_034_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("175_axe_Axe_038_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("176_axe_Axe_039_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("177_axe_Axe_040_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("178_axe_Axe_041_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("179_axe_Axe_042_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("180_axe_Axe_043_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("181_axe_Axe_044_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("182_axe_Axe_045_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("183_axe_Axe_046_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("183_axe_Axe_046_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("184_axe_Axe_047_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("185_axe_Axe_048_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("186_axe_Axe_049_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("187_axe_Axe_050_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("188_axe_Axe_051_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("189_axe_Axe_052_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("190_axe_Axe_053_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("191_axe_Axe_054_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("154_axe_Axe_017_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("155_axe_Axe_018_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("156_axe_Axe_019_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("157_axe_Axe_020_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("158_axe_Axe_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("159_axe_Axe_022_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("160_axe_Axe_023_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("161_axe_Axe_024_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("162_axe_Axe_025_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("163_axe_Axe_026_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("164_axe_Axe_027_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("165_axe_Axe_028_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("166_axe_Axe_029_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("167_axe_Axe_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
 }],
 "loop": false,
 "name": &"axe_ranged",
@@ -1916,48 +1430,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("137_axe_Axe_000_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("192_axe_Axe_055_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("193_axe_Axe_056_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("192_axe_Axe_055_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
 }],
-"loop": false,
-"name": &"axe_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"axe_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("137_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_mode_11",
 "speed": 60.0
 },
 {
@@ -2064,5 +1539,17 @@ animations = [
 "loop": false,
 "name": &"axe_miss",
 "speed": 60.0
+},
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("115_lance_Lance_052_png")
+}],
+"loop": true,
+"name": &"lance_idle_ranged",
+"speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"sword_critical": "sword_crit", "sword_stand": "sword_idle", "sword_mode_11": "sword_idle", "sword_idle_ranged": "sword_idle", "lance_critical": "lance_crit", "lance_stand": "lance_idle", "lance_mode_11": "lance_idle_ranged", "axe_critical": "axe_crit", "axe_stand": "axe_idle", "axe_mode_11": "axe_idle", "axe_idle_ranged": "axe_idle", "sword_dodge_ranged": "sword_dodge", "axe_dodge_ranged": "axe_dodge"}
+metadata/battle_animation_impacts = {"sword": 0.7666666666666667, "sword_crit": 1.7833333333333334, "lance": 0.7666666666666667, "lance_crit": 1.7333333333333334, "axe": 0.7666666666666667, "axe_crit": 1.7833333333333334, "axe_ranged": 0.016666666666666666, "axe_ranged_crit": 0.016666666666666666, "axe_idle": 0.016666666666666666, "sword_miss": 0.75, "lance_miss": 0.75, "axe_miss": 0.75}

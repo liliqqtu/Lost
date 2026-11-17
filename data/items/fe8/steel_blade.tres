@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/steel_blade.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"steel_blade"
+display_name = "钢大剑"
+description = "重型钢制大剑。"
+buy_price = 1250
+can_sell = true
+item_kind = &"sword"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 25
+max_uses = 25
+original_id = 6
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON", "maxUses": "25", "might": "11", "hit": "65", "weight": "14", "encodedRange": "0x11", "costPerUse": "50", "weaponRank": "WPN_EXP_C", "weaponExp": "2"}
+weapon_type = 0
+required_rank = 2
+weapon_exp = 2
+might = 11
+hit = 65
+crit = 0
+weight = 14
+durability = 25
+max_durability = 25
+min_range = 1
+max_range = 1
+is_brave = false

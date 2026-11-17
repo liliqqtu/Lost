@@ -217,4 +217,15 @@ animations = [{
 "loop": 0,
 "name": &"bow_dodge",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgb8m")
+}],
+"loop": 1,
+"name": &"bow_idle",
+"speed": 60.0
 }]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {}
+metadata/battle_animation_impacts = {}

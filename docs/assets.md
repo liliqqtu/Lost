@@ -108,6 +108,45 @@
 * 画幅尺寸：**$80 \times 72$ px**。
 * 用于状态面板、转职预览与剧情兵种说明。
 
+### 3. 角色静态肖像制作范式（80×72，Te 首例）
+
+当前角色以独立 `ClassData.class_card` 展示人物肖像，因此角色静态头像同样使用 **80×72 px**，存放于 `assets/graphics/Class Card/`。这与上方 128×112 的对话动画图集是两种交付物；静态头像不能直接替换含嘴型、眨眼切片的图集。
+
+* **先读角色再设计**：阅读角色剧情、单位场景及其独立 `ClassData`，确定故事阶段、身份、性格与参考人物。保留明确要求的发色和辨识特征，用眉眼、嘴角及服装表达人物，避免提前加入觉醒后或后期剧情的象征物。
+* **画面标准**：单人头肩像，三分之四侧脸；头顶约留 1～2 像素透明空间，肩胸自然截断于底边。真实 80×72 RGBA PNG，透明处 Alpha=0、人物 Alpha=255，深色像素轮廓、少量分层色块，无柔光、抗锯齿、文字和边框。建议 16～24 种不透明颜色；本项目静态头像不强制兼容 GBA ROM 的硬件色板限制。
+* **采样与导入**：无损压缩、关闭 mipmaps、Nearest 最近邻，使用原尺寸或整数倍显示。模型生成的大图必须规范化后入库，不能仅靠 UI 缩放冒充原生像素素材。
+* **保留过程**：原稿、提示词、处理命令及放大预览放在 `tools/raw_assets/portrait/{unit_id}/`，其父目录用 `.gdignore` 排除 Godot 导入；最终文件采用 `{角色名}_v1.png` 等版本名，保留旧素材。
+* **接入与验收**：更新独立 `data/class_data/{unit_id}.tres` 的 `class_card`，同步场景中已有的 `ClassCard.texture` 引用。换成新 PNG 时删除旧资源 UID，交由 Godot 为新图生成 UID。检查原生尺寸、最近邻放大图、深浅底可读性及两处引用；对话图集需单独设计与验收。
+
+**Te / 忒 v1（前期·彷徨）**：基于当前鲁斯参考，保留绿发、修长脸型、锈褐头巾与游牧服饰，年轻俊秀的脸搭配略低垂、疏离的眉眼，旧斗篷和皮革肩带表现漂泊身份。此版本尚未经历后期的觉醒，不加入断弦或艾莲遗物。
+
+* 成品：`assets/graphics/Class Card/忒_v1.png`，20 种不透明颜色加透明背景。
+* 原稿与完整最终提示词：`tools/raw_assets/portrait/te/source_v1.png`、`prompt_v1.txt`；六倍预览：`preview_v1.png`。
+* 生成方式：内置 `image_gen`，以上述鲁斯静态头像与对话图集作为形象参考。
+
+后续角色可沿用提示词结构：
+
+```text
+Asset: ONE GBA FE7/FE8-style character portrait, 80x72 logical pixels, 10:9.
+Reference: {参考图及需要继承的脸型、朝向、服饰特征}.
+Character: {姓名、剧情阶段、年龄感、身份、固定发色与辨识特征}.
+Expression: {用眉、眼神、嘴角具体描述性格；不要只写情绪标签}.
+Clothing: {符合身份的服装、材质与简洁配色}.
+Style: hard pixel outlines, compact color clusters, limited palette,
+no gradients or antialiasing; readable at actual 80x72 resolution.
+Composition: one three-quarter head-and-shoulders bust, slight top clearance,
+shoulders cropped at bottom; actual transparent background.
+No text, border, watermark, alternate views, animation patches or sprite sheet.
+```
+
+处理命令（从项目根目录运行，Windows PowerShell + System.Drawing，无额外依赖）：
+
+```powershell
+powershell -NoProfile -File tools/scripts/prepare_character_portrait.ps1 -Source tools/raw_assets/portrait/te/source_v1.png -Output "assets/graphics/Class Card/忒_v1.png" -Preview tools/raw_assets/portrait/te/preview_v1.png -Colors 20
+```
+
+工具对约 10:9 的透明生成稿执行最近邻缩图、确定性色板归并与二值 Alpha 清理，默认拒绝覆盖。后续版本需改用新文件名；采样不能代替美术验收，若眉眼或轮廓失真，应调整生成稿后再处理。
+
 ---
 
 ## 四、图标与UI系统 (Icons & UI)
@@ -116,9 +155,66 @@
 | :--- | :--- | :--- | :--- |
 | **武器图标** | `assets/graphics/Item Icons/{Swords,Axes,Lances,Bows,Staff,Anima,Dark,Light}/` | **$16 \times 16$ px** | 武器与法术书小图标 |
 | **消耗道具** | `assets/graphics/Item Icons/Item/` | **$16 \times 16$ px** | 伤药、宝箱钥匙、转职道具 |
-| **个人特技图标** | `assets/graphics/skill/` | **$16 \times 16$ px** | 角色技能图标 |
+| **技能图标** | `assets/graphics/skill/` | **$16 \times 16$ px** | 个人、职业及武器附加技能统一管理 |,所有技能图标被技能框("E:\Dream\Lost\assets\graphics\skill\技能框.png")覆盖,并且不透明
 | **支援属性图标** | `assets/graphics/UI/AffinityIcon/` | **$13 \times 13$ px** | 炎、雷、风、冰、暗、光、理 |
 | **兵种克制图标** | `assets/graphics/UI/ItemIconClass/` | **$16 \times 16$ px** | 骑兵特效、重装特效、飞行特效等 |
+
+FE8 原版可携带物品的独立模板见 `data/items/fe8/`，图标在 `assets/graphics/Item Icons/fe8/{类别}/` 下独立归档，保留既有图标。资源清单、来源与效果登记见 `docs/fe8_item_catalog.md`。本轮仅整理原版图标与物品资料；特殊物品使用效果按清单标注，后续单独实现。
+
+---
+
+### 技能图标规范与可复用设计范式
+
+#### 资源与显示约定
+* **统一分类**：个人技能、职业技能、武器附加技能均属于“技能”，共用 `Skill` 资源与图标目录，不按来源另建图标体系。
+* **最终文件**：`res://assets/graphics/skill/{技能显示名}.png`，真实尺寸必须为 **16×16 px**，RGBA PNG。英文 `skill_id` 保持稳定，沿用现有中文图标文件命名；显示名变更时同步更新引用。
+* **资源绑定**：`res://data/skills/{skill_id}.tres` 的 **`icon`**（Inspector 中的 Icon）引用对应 `Texture2D`，不把 PNG 放进 `data/skills/`，也不在 UI 中硬编码技能名称与图片的映射。
+* **角色信息面板**：沿用 `Unit.get_all_active_skills()` → `Skill.icon` → 技能栏的显示路径，统一展示职业、个人和装备武器提供的生效技能；现有面板最多显示 6 项。
+* **导入与采样**：保持无损压缩、关闭 mipmaps，使用 Nearest 最近邻过滤。项目默认已配置最近邻；控件保持继承，局部覆盖时同样设为 Nearest。图标以原生尺寸或整数倍显示，避免非整数位置、线性插值和拉伸变形。
+
+#### 像素美术约束
+* 先在 **16×16 的逻辑像素网格**内设计，底图满幅填充，**不留白边或透明边距**；主体关键细节放在中间约 12×12 区域，避免被统一边框遮住，动势与背景可延伸至画布边缘。
+* 每枚图标只表现 **一个主体 + 一个辅助动势/效果**，不添加技能名称、数字、文字或水印。属性数值由面板说明承担。模型不绘制边框，入库时统一叠加 `res://assets/graphics/skill/技能框.png`，以 `焕发.png` 为既有范例。
+* 底图建议使用 **8～12 种不透明颜色，最多 16 种**，用深色轮廓、中间色块和少量亮色高光建立体积。统一技能框的颜色不计入底图色数，叠框后不得再次量化色板。避免柔光、渐变、抗锯齿和缩小后消失的细碎线条。
+* **技能图标最终完全不透明，所有像素 Alpha = 255**。背景采用与主题协调的暗色，可适量填充像素纹理，不得留白或绘制棋盘格。先填满不透明底图，再将技能框以原尺寸、原位置进行 Alpha 合成；即使框本身带透明区域，最终成品也必须全不透明。
+* 颜色服务技能语义：力量可用赤橙/金色与爆发形，守备可用厚重盾形，速度可用简洁方向线；这些是设计建议，不按技能来源强制染色。
+* **验收必须看原生 16×16 和最近邻放大预览**：主体清晰、动作方向明确、暗色与浅色面板上均能辨认，不能只验收大尺寸生成稿。
+
+#### 生成、处理与入库范式
+1. 阅读技能 `.tres` 的 `display_name`、`description` 和实际效果，用一句话确定视觉语义，避免图标暗示未实现的机制。
+2. 使用下面的提示词模板生成满幅不透明大图，明确“16×16 逻辑像素的整数倍放大”，周围用主题背景填充。模型输出尺寸及像素对齐不可靠，生成稿不能直接当最终图标。
+3. 原始生成稿、最终提示词与处理命令保存在 `tools/raw_assets/skill/{skill_id}/`；最终游戏素材只保留在 `assets/graphics/skill/`。
+4. 用 `tools/scripts/prepare_skill_icon.py` 转为真实 16×16，默认 `--padding 0` 不加边距；缩图、合成不透明底色、量化底图颜色后，最后叠加原始技能框。默认最近邻适合网格对齐的像素稿；不规则大图可尝试 `--sample box` 面积采样，再检查轮廓。脚本接受正方形透明或不透明输入，透明部分用 `--background` 指定的底色填满；`--frame` 默认指向统一技能框。默认拒绝覆盖，确认替换已有成品时使用 `--force`。
+5. 复查原生大小与放大预览；若拳头、武器等主体无法辨认，应简化构图、修像素或重新生成，不能靠模糊缩图掩盖问题。少量星光或心焰高光被默认色板合并时，可使用 `--palette maximum` 保留对比色，并重新检查整体色彩。
+6. 给 `.tres` 添加 `Texture2D` 外部资源并设置 `icon`，在 Godot 导入后检查角色技能栏与原有说明焦点。美术接入不修改技能效果。
+
+提示词模板（替换花括号字段，保留像素与透明约束）：
+
+```text
+Asset: one GBA tactical RPG skill icon, {skill_id / 显示名}.
+Meaning: {已实现的技能效果}; visual metaphor: {一个主体 + 一个辅助效果}.
+Style: exact 16 by 16 logical pixel art enlarged as uniform square blocks,
+hard stair-step edges, dark outline, 8-12 opaque colors, no antialiasing.
+Composition: full-bleed background, no blank or transparent margin;
+keep key subject details in the central 12 by 12 area for a separate frame.
+Palette: {主色 / 阴影 / 高光}; motion: {动势方向或静态构图}.
+Background: fully opaque {主题暗色}, a few subdued pixel motion accents.
+Fill the whole square edge to edge. No text, numbers, frame or watermark.
+```
+
+处理命令（在项目根目录运行，需要 Pillow）：
+
+```powershell
+python tools/scripts/prepare_skill_icon.py tools/raw_assets/skill/surge/source_opaque.png assets/graphics/skill/惊鸿.png --colors 12 --padding 0 --preview tools/raw_assets/skill/surge/preview.png
+```
+
+**首个范例：惊鸿（`surge`）**
+* 资源效果：`豪迈突进，自身力量+6`，属于力量被动加成，不额外暗示移动力或概率触发。
+* 视觉意象：向右上挥出的金色铁拳、赤橙爆发尾迹、少量象牙白冲击高光；深紫褐轮廓保证小尺寸对比。
+* 背景与边框：深红褐色满幅背景、少量暗红动势纹理，完全不透明，最上层覆盖统一 `技能框.png`。
+* 成品：`res://assets/graphics/skill/惊鸿.png`，绑定 `res://data/skills/surge.tres` 的 `icon`。
+
+**其他范例**：`守望.png`（`vigilance`）使用青蓝盾牌和象牙白星光表达魔防与幸运；`热血重燃.png`（`blood_boil`）使用赤红心形和金橙火焰表达低血量下的战意重燃。两者均为 16×16 不透明成品，覆盖同一技能框，原稿、提示词与转换命令分别保存在对应的 `tools/raw_assets/skill/{skill_id}/` 目录。
 
 ---
 
@@ -136,6 +232,7 @@
 
 1. **透明背景约定**：
    * 所有导出的 PNG 素材统一使用 RGBA 8-bit（32位带有 Alpha 通道），透明区域 Alpha 值必须为 0。
+   * **技能图标例外**：底图满幅不透明并覆盖统一技能框，最终所有像素 Alpha = 255，详见第四节；不得沿用精灵的透明留边规则。
 2. **阵营变色与灰阶着色 (Shader)**：
    * 引擎内通过 `res://data/shader/UnitShader.gdshader` 统一动态处理阵营配色：
      * **玩家方（蓝方）**：默认原版色调。

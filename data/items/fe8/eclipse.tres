@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Dark/eclipse.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"eclipse"
+display_name = "月蚀"
+description = "原版将目标生命减半的远程暗魔法。（特殊效果待实现）"
+buy_price = 4000
+can_sell = true
+item_kind = &"dark"
+effect_id = &"dark_eclipse"
+effect_implemented = false
+remaining_uses = 5
+max_uses = 5
+original_id = 72
+original_data = {"weaponType": "ITYPE_DARK", "attributes": "IA_WEAPON | IA_MAGIC | IA_UNCOUNTERABLE", "maxUses": "5", "might": "255", "hit": "30", "weight": "12", "encodedRange": "0x3A", "costPerUse": "800", "weaponRank": "WPN_EXP_B", "weaponEffectId": "WPN_EFFECT_HPHALVE", "weaponExp": "8"}
+weapon_type = 5
+required_rank = 3
+weapon_exp = 8
+might = 255
+hit = 30
+crit = 0
+weight = 12
+durability = 5
+max_durability = 5
+min_range = 3
+max_range = 10
+is_brave = false

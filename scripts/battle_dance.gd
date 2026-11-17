@@ -143,15 +143,7 @@ func _confirm_dance() -> void:
 	# 3. 舞者/诗人获得固定 10 点经验值（FE8 原版规则）
 	if dancer.team == 0 and dancer.lv < Unit.LEVEL_CAP:
 		var exp_gain := 10
-		var old_exp := dancer.exp as int
-		dancer.gain_exp(exp_gain)
-		print("%s 获得 %d 激励经验 (当前 EXP: %d)" % [dancer.unit_name, exp_gain, dancer.exp])
-		if bm.combat.battle_scene != null:
-			await bm.combat.battle_scene.show_exp(old_exp, dancer.exp)
-			if dancer.exp >= 100:
-				var gains := BattleCalculator.roll_level_up(dancer)
-				dancer.level_up(gains)
-				await bm.combat.battle_scene.show_level_up(dancer, gains)
+		await bm.combat.award_exp(dancer, exp_gain)
 
 	# 4. 关闭特写并收尾行动
 	if bm.combat.battle_scene != null and bm.combat.battle_scene.visible:

@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P1 验证：Canto 技能等级与行动收尾决策
 ##覆盖：
@@ -11,10 +11,10 @@ extends SceneTree
 ##  7. end_action 决策：allow_canto=false 跳过 Canto（待机主动放弃）
 ##  8. end_action：selected_unit 被反击击杀 → 不崩
 ##  9. finalize_action 统一收尾：清空选中上下文并回 CURSOR（P2 单一收尾入口）
-##运行：godot --headless --path . -s res://tests/test_canto.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -128,7 +128,7 @@ func _run() -> void:
 
 	print("===== P1/P2 Canto 与行动收尾测试全部通过 =====")
 	for u in [u1, u2, u3, u4, u5, u6, dying_unit, class_data, cd6]:
-		if is_instance_valid(u):
+		if is_instance_valid(u) and u is Node:
 			u.free()
 	if is_instance_valid(bm):
 		bm.queue_free()
@@ -139,18 +139,25 @@ func _run() -> void:
 ##enter_phase 会调 cursor.set_cell/restrict_to，裸 Node2D 没有这些成员会崩）"""
 func _make_minimal_bm(p_units: Array[Unit]) -> BattleManager:
 	var bm := BattleManager.new()
-	bm.units = p_units
+	bm.units = p_units.duplicate()
+	var idle := Unit.new()
+	add_child(idle)
+	var enemy := Unit.new()
+	add_child(enemy)
+	enemy.team = 1
+	bm.units.append_array([idle, enemy])
 	bm.tile_map = _build_test_tile_map()
 	bm.high_light_layer = _build_test_tile_map()
 	bm.cursor = load("res://scene/ui/cursor.gd").new()
-	root.add_child(bm)
-	root.add_child(bm.cursor)
+	add_child(bm)
+	add_child(bm.cursor)
 	return bm
 
 
 ##"""构造测试 Unit（用 unit.tscn 提供完整节点，apply_grayscale 需要）"""
 func _make_unit(p_name: String) -> Unit:
 	var u := preload("res://scene/character/unit.tscn").instantiate() as Unit
+	add_child(u)
 	u.unit_name = p_name
 	u.con = 5
 	u.max_hp = 20
@@ -180,6 +187,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(0, 0))
 	source.get_tile_data(Vector2i(0, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	for x in range(4):
 		for y in range(4):

@@ -87,45 +87,6 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 15.0,
-"texture": ExtResource("8_axe_Axe_007_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("9_axe_Axe_008_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("10_axe_Axe_009_png")
-}, {
-"duration": 30.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("2_axe_Axe_001_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("3_axe_Axe_002_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("4_axe_Axe_003_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_axe_Axe_004_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("6_axe_Axe_005_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("7_axe_Axe_006_png")
-}],
-"loop": false,
-"name": &"axe_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
 }],
 "loop": false,
 "name": &"axe_ranged",
@@ -162,45 +123,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("11_axe_Axe_010_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_axe_Axe_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("11_axe_Axe_010_png")
 }],
-"loop": false,
-"name": &"axe_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"axe_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_mode_11",
 "speed": 60.0
 },
 {
@@ -231,3 +156,6 @@ animations = [
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"axe_critical": "axe_crit", "axe_stand": "axe_idle", "axe_mode_11": "axe_idle", "axe_idle_ranged": "axe_idle", "axe_dodge_ranged": "axe_dodge"}
+metadata/battle_animation_impacts = {"axe": 0.45, "axe_crit": 1.2833333333333334, "axe_miss": 0.4}

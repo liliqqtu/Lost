@@ -1,0 +1,138 @@
+SWORD_IRON|铁剑|Iron Sword|基础铁剑。
+SWORD_SLIM|细剑|Slim Sword|轻巧、容易命中的剑。
+SWORD_STEEL|钢剑|Steel Sword|威力较高，重量也较大的剑。
+SWORD_SILVER|银剑|Silver Sword|高威力的银制剑。
+BLADE_IRON|铁大剑|Iron Blade|威力较高、较重的铁制大剑。
+BLADE_STEEL|钢大剑|Steel Blade|重型钢制大剑。
+BLADE_SILVER|银大剑|Silver Blade|威力很高的银制大剑。
+SWORD_VENIN|毒剑|Poison Sword|原版命中后使目标中毒。
+SWORD_RAPIER|突刺剑|Rapier|艾瑞珂专用；原版对骑兵、重甲特效。
+SWORD_BRAVE|勇者剑|Brave Sword|每次攻击连续进行两次打击。
+SWORD_SHAMSIR|新月刃|Shamshir|剑士系使用的高必杀剑。
+SWORD_KILLER|必杀剑|Killing Edge|容易打出必杀的剑。
+SWORD_ARMORSLAYER|破甲剑|Armorslayer|原版对重甲特效。
+SWORD_WYRMSLAYER|斩龙剑|Wyrmslayer|原版对龙系特效。
+SWORD_LIGHTBRAND|光之剑|Light Brand|原版可进行远距离魔法攻击。
+SWORD_RUNESWORD|符文剑|Runesword|原版以魔法伤害吸收目标生命。
+SWORD_LANCEREAVER|破枪剑|Lancereaver|原版逆转与枪、斧的武器相克。
+SWORD_ZANBATO|斩马刀|Zanbato|原版对骑兵特效。
+LANCE_IRON|铁枪|Iron Lance|基础铁枪。
+LANCE_SLIM|细枪|Slim Lance|轻巧、容易命中的枪。
+LANCE_STEEL|钢枪|Steel Lance|威力较高的重型钢枪。
+LANCE_SILVER|银枪|Silver Lance|高威力的银制枪。
+LANCE_VENIN|毒枪|Poison Lance|原版命中后使目标中毒。
+LANCE_BRAVE|勇者枪|Brave Lance|每次攻击连续进行两次打击。
+LANCE_KILLER|必杀枪|Killer Lance|容易打出必杀的枪。
+LANCE_HORSESLAYER|刺马枪|Horseslayer|原版对骑兵特效。
+LANCE_JAVELIN|投枪|Javelin|可用于近距离或远距离攻击。
+LANCE_SPEAR|穿刺枪|Spear|威力较高的远近两用枪。
+LANCE_AXEREAVER|破斧枪|Axereaver|原版逆转与剑、斧的武器相克。
+AXE_IRON|铁斧|Iron Axe|基础铁斧。
+AXE_STEEL|钢斧|Steel Axe|威力较高的重型钢斧。
+AXE_SILVER|银斧|Silver Axe|高威力的银制斧。
+AXE_VENIN|毒斧|Poison Axe|原版命中后使目标中毒。
+AXE_BRAVE|勇者斧|Brave Axe|每次攻击连续进行两次打击。
+AXE_KILLER|必杀斧|Killer Axe|容易打出必杀的斧。
+AXE_HALBERD|斩马斧|Halberd|原版对骑兵特效。
+AXE_HAMMER|战锤|Hammer|原版对重甲特效。
+AXE_DEVIL|恶魔之斧|Devil Axe|原版可能反噬使用者。
+AXE_HANDAXE|手斧|Hand Axe|可用于近距离或远距离攻击。
+AXE_TOMAHAWK|战斧|Tomahawk|威力较高的远近两用斧。
+AXE_SWORDREAVER|破剑斧|Swordreaver|原版逆转与剑、枪的武器相克。
+AXE_SWORDSLAYER|剑杀斧|Swordslayer|原版对剑士系特效并逆转武器相克。
+AXE_HATCHET|轻斧|Hatchet|见习战士也容易使用的轻斧。
+BOW_IRON|铁弓|Iron Bow|基础铁弓；原版对飞行系特效。
+BOW_STEEL|钢弓|Steel Bow|重型钢弓；原版对飞行系特效。
+BOW_SILVER|银弓|Silver Bow|银制强弓；原版对飞行系特效。
+BOW_VENIN|毒弓|Poison Bow|原版使命中目标中毒，对飞行系特效。
+BOW_KILLER|必杀弓|Killer Bow|高必杀弓；原版对飞行系特效。
+BOW_BRAVE|勇者弓|Brave Bow|每次攻击连续打击两次；原版对飞行系特效。
+BOW_SHORTBOW|短弓|Short Bow|轻型高必杀弓；原版对飞行系特效。
+BOW_LONGBOW|长弓|Longbow|射程可达三格；原版对飞行系特效。
+ANIMA_FIRE|火炎|Fire|基础理魔法。
+ANIMA_THUNDER|雷电|Thunder|容易打出必杀的雷魔法。
+ANIMA_ELFIRE|业火|Elfire|威力较高的火魔法。
+ANIMA_BOLTING|雷暴|Bolting|用于超远距离攻击的雷魔法。
+ANIMA_FIMBULVETR|冰雪|Fimbulvetr|强力冰雪魔法。
+ANIMA_EXCALIBUR|风刃·埃克斯卡利伯|Excalibur|圣器风魔法；原版速度+5，对飞行系及魔物特效。
+LIGHT_LIGHTNING|闪光|Lightning|基础光魔法。
+LIGHT_SHINE|光耀|Shine|威力较高的光魔法。
+LIGHT_DIVINE|神圣|Divine|高阶光魔法。
+LIGHT_PURGE|净化|Purge|用于超远距离攻击的光魔法。
+LIGHT_AURA|光轮|Aura|强力光魔法。
+DARK_FLUX|熔流|Flux|基础暗魔法。
+DARK_LUNA|月光|Luna|原版无视目标魔防。
+DARK_NOSFERATU|吸星|Nosferatu|原版吸收目标生命。
+DARK_ECLIPSE|月蚀|Eclipse|原版将目标生命减半的远程暗魔法。
+DARK_FENRIR|芬布尔|Fenrir|强力暗魔法。
+DARK_GLEIPNIR|魔典·格莱普尼尔|Gleipnir|圣器暗魔法；原版技术+5。
+STAFF_HEAL|治疗之杖|Heal|恢复友军生命，原版恢复量为10+魔力。
+STAFF_MEND|回复之杖|Mend|恢复友军生命，原版恢复量为20+魔力。
+STAFF_RECOVER|痊愈之杖|Recover|原版完全恢复一名友军的生命。
+STAFF_PHYSIC|远疗之杖|Physic|原版从远处恢复一名友军的生命。
+STAFF_FORTIFY|圣愈之杖|Fortify|原版恢复范围内全体友军的生命。
+STAFF_RESTORE|复原之杖|Restore|原版解除一名友军的异常状态。
+STAFF_SILENCE|沉默之杖|Silence|原版使敌人暂时无法使用魔法。
+STAFF_SLEEP|睡眠之杖|Sleep|原版使敌人陷入睡眠。
+STAFF_BERSERK|狂乱之杖|Berserk|原版使敌人陷入狂乱。
+STAFF_WARP|传送之杖|Warp|原版将邻接友军传送至远处。
+STAFF_RESCUE|救援之杖|Rescue|原版将远处友军拉至身边。
+STAFF_TORCH|照明之杖|Torch Staff|原版照亮战争迷雾中的区域。
+STAFF_REPAIR|修理之杖|Hammerne|原版恢复一件武器的耐久。
+STAFF_UNLOCK|开锁之杖|Unlock|原版从远处打开门。
+STAFF_BARRIER|屏障之杖|Barrier|原版暂时提高一名友军的魔防。
+BOOSTER_HP|天使之衣|Angelic Robe|原版永久提高生命上限7点。
+BOOSTER_POW|力量之环|Energy Ring|原版永久提高力量或魔力2点。
+BOOSTER_SKL|秘传之书|Secret Book|原版永久提高技术2点。
+BOOSTER_SPD|疾风之羽|Speedwing|原版永久提高速度2点。
+BOOSTER_LCK|女神像|Goddess Icon|原版永久提高幸运2点。
+BOOSTER_DEF|龙盾|Dracoshield|原版永久提高守备2点。
+BOOSTER_RES|护身符|Talisman|原版永久提高魔防2点。
+BOOSTER_MOV|靴子|Boots|原版永久提高移动力2点。
+BOOSTER_CON|体格戒指|Body Ring|原版永久提高体格2点。
+HEROCREST|英雄之证|Hero Crest|原版供指定步兵职业转职。
+KNIGHTCREST|骑士勋章|Knight s Crest|原版供骑士、轻骑兵等职业转职。
+ORIONSBOLT|猎户座之箭|Orion s Bolt|原版供弓箭手等职业转职。
+ELYSIANWHIP|天空之鞭|Elysian Whip|原版供飞行职业转职。
+GUIDINGRING|指引之戒|Guiding Ring|原版供魔法、神职职业转职。
+CHESTKEY|宝箱钥匙|Chest Key|原版打开宝箱，使用一次后耗尽。
+DOORKEY|门钥匙|Door Key|原版打开门，使用一次后耗尽。
+LOCKPICK|盗贼钥匙|Lockpick|原版盗贼使用的多次开锁工具。
+VULNERARY|伤药|Vulnerary|原版恢复10点生命，共3次。
+ELIXIR|特效药|Elixir|原版完全恢复生命，共3次。
+PUREWATER|圣水|Pure Water|原版暂时提高魔防7点，逐回合衰减。
+ANTITOXIN|解毒药|Antitoxin|原版解除中毒状态。
+TORCH|火把|Torch Item|原版提高迷雾中的视野，逐回合衰减。
+DELPHISHIELD|菲利之盾|Delphi Shield|原版持有时取消针对飞行系的特效。
+MEMBERCARD|会员卡|Member Card|原版持有时可进入神秘商店。
+SILVERCARD|银卡|Silver Card|原版持有时商店买价减半。
+WHITEGEM|白宝玉|White Gem|可高价出售的白色宝石。
+BLUEGEM|青宝玉|Blue Gem|可高价出售的蓝色宝石。
+REDGEM|赤宝玉|Red Gem|可高价出售的红色宝石。
+LANCE_REGINLEIF|雷金勒夫|Reginleif|伊弗列姆专用；原版对骑兵、重甲特效。
+CHESTKEY_BUNDLE|宝箱钥匙串|Chest Key|原版打开宝箱，可使用5次。
+HOPLON_SHIELD|必杀护符|Hoplon Guard|原版持有时防止受到必杀。
+SWORD_SHADOWKILLR|斩魔剑|Shadowkiller|原版对魔物特效。
+LANCE_BRIGHTLANCE|光辉之枪|Bright Lance|原版对魔物特效。
+AXE_FIENDCLEAVER|斩魔斧|Fiendcleaver|原版对魔物特效。
+BOW_BEACONBOW|破魔弓|Beacon Bow|原版对魔物、飞行系特效。
+SWORD_SIEGLINDE|雷剑·吉克林迪|Sieglinde|艾瑞珂专用圣器；原版力量+5，对魔物特效。
+AXE_BATTLEAXE|斗斧|Battle Axe|高必杀的重型斧。
+LIGHT_IVALDI|光辉·伊瓦尔迪|Ivaldi|圣器光魔法；原版守备+5，对魔物特效。
+MASTERSEAL|统领之证|Master Seal|原版供多数下级职业转职。
+METISSTOME|梅缇斯之书|Metis s Tome|原版提高使用者的能力成长率。
+STAFF_LATONA|圣杖·拉特娜|Latona|原版恢复全体友军的生命并解除异常状态。
+LANCE_DRAGON|龙枪|Dragonspear|原版对龙系特效。
+LANCE_VIDOFNIR|翼枪·维德弗尼尔|Vidofnir|圣器枪；原版守备+5，对魔物特效。
+SWORD_AUDHULMA|冰剑·奥德修拉|Audhulma|圣器剑；原版魔防+5，对魔物特效。
+LANCE_SIEGMUND|炎枪·吉克穆德|Siegmund|伊弗列姆专用圣器；原版力量+5，对魔物特效。
+AXE_GARM|黑斧·加尔姆|Garm|圣器斧；原版速度+5，对魔物特效。
+BOW_NIDHOGG|蛇弓·尼德霍格|Nidhogg|圣器弓；原版幸运+5，对魔物及飞行系特效。
+LANCE_HEAVYSPEAR|重枪|Heavy Spear|原版对重甲特效。
+LANCE_SHORTSPEAR|短枪|Short Spear|威力与命中均衡的远近两用枪。
+OCEANSEAL|海之霸者|Ocean Seal|原版供海贼、盗贼等职业转职。
+LUNARBRACE|月之腕轮|Lunar Brace|艾瑞珂专用转职道具。
+SOLARBRACE|日之腕轮|Solar Brace|伊弗列姆专用转职道具。
+SWORD_WINDSWORD|风之剑|Wind Sword|原版可进行远距离魔法攻击。
+DIVINESTONE|龙石|Divinestone|梅尔专用龙石；原版变身战斗与能力修正。
+JUNAFRUIT|尤娜果实|Juna Fruit|原版降低当前等级，保留能力以继续成长。

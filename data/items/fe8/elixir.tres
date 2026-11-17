@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/elixir.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"elixir"
+display_name = "特效药"
+description = "原版完全恢复生命，共3次。（使用或持有效果待实现）"
+buy_price = 3000
+can_sell = true
+item_kind = &"consumable"
+effect_id = &"elixir"
+effect_implemented = false
+remaining_uses = 3
+max_uses = 3
+original_id = 109
+original_data = {"useDescTextId": "0x4d3", "weaponType": "ITYPE_ITEM", "maxUses": "3", "encodedRange": "0x11", "costPerUse": "1000", "useEffectId": "34"}

@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="2_wff78"]
 [ext_resource type="SpriteFrames" uid="uid://kaxa75drxet5" path="res://data/map_sprite_frames/Nomad_map_sprite.tres" id="3_fusbd"]
 [ext_resource type="Texture2D" uid="uid://c4o2gbtitd5ig" path="res://assets/graphics/Character Portrait/忒.png" id="4_gkwco"]
-[ext_resource type="Texture2D" uid="uid://b0vgjgg3adqhj" path="res://assets/graphics/Class Card/忒.png" id="5_3bg2x"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Class Card/忒_v1.png" id="5_3bg2x"]
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="6_i81gk"]
 [ext_resource type="Resource" uid="uid://b8f1lost00001" path="res://data/skills/lost.tres" id="6_lost"]
 [ext_resource type="Resource" uid="uid://b8f1nomad0001" path="res://data/class_data/te.tres" id="6_nomad"]
@@ -76,6 +76,8 @@ move = 7
 inventory = Array[ExtResource("2_t1lsn")]([ExtResource("7_bow"), ExtResource("8_potion")])
 class_data = ExtResource("6_nomad")
 personal_skills = Array[ExtResource("6_i81gk")]([ExtResource("6_lost")])
+weapon_xp = {3: 251}
+unit_id = &"te"
 unit_name = "忒"
 info = "迷茫之人，心处仿徨"
 has_convoy = true

@@ -1,9 +1,10 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##阶段一/三验证脚本：godot --headless -s res://tests/test_battle_sequence.gd
-func _init() -> void:
+func _ready() -> void:
 	##攻击方：忒 剑士 高速
 	var attacker := Unit.new()
+	add_child(attacker)
 	attacker.unit_name = "忒"
 	attacker.str = 8
 	attacker.skl = 10
@@ -23,6 +24,7 @@ func _init() -> void:
 
 	##防御方：山贼 高伤低速 重斧
 	var defender := Unit.new()
+	add_child(defender)
 	defender.unit_name = "山贼"
 	defender.team = 1
 	defender.str = 7
@@ -94,6 +96,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(1, 0))
 	source.get_tile_data(Vector2i(1, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	tile_map.set_cell(Vector2i(5, 5), 0, Vector2i(1, 0))
 	tile_map.set_cell(Vector2i(5, 6), 0, Vector2i(0, 0))

@@ -1,6 +1,9 @@
 class_name BattleAnimationFX
 extends RefCounted
 
+const Actions = preload("res://scripts/battle_animation_actions.gd")
+
+
 ## 战斗画面附加特效与辅助特写（自 battle_animation.gd 分包，严格保持单文件 500 行以内）：
 ## 负责 Boss 击破消灭震颤/光芒消散、战后经验条缓动填充、升级面板加点、法杖治愈与跳舞再动特写。
 
@@ -132,9 +135,9 @@ func play_staff_heal(ba: Node2D, caster: Unit, target: Unit, _staff: Weapon, hea
 		await ba.magic_anim.animation_finished
 	ba.magic_anim.visible = false
 
-	if ba.player_anim.is_playing():
+	if ba.player_anim.is_playing() and not ba.player_anim.sprite_frames.get_animation_loop(ba.player_anim.animation):
 		await ba.player_anim.animation_finished
-	ba.player_anim.stop()
+	Actions.restore_idle(ba.player_anim, caster)
 	await ba.get_tree().create_timer(0.2).timeout
 
 
@@ -170,7 +173,7 @@ func play_dance_refresh(ba: Node2D, dancer: Unit, target: Unit, _action_label: S
 
 	ba._flash_white(ba.enemy_anim, 2)
 
-	if ba.player_anim.is_playing():
+	if ba.player_anim.is_playing() and not ba.player_anim.sprite_frames.get_animation_loop(ba.player_anim.animation):
 		await ba.player_anim.animation_finished
-	ba.player_anim.stop()
+	Actions.restore_idle(ba.player_anim, dancer)
 	await ba.get_tree().create_timer(0.2).timeout

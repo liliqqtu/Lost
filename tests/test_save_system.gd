@@ -1,6 +1,7 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
-func _init() -> void:
+func _ready() -> void:
+	SaveManagerClass.storage_directory = "res://tests/.runtime_saves/legacy"
 	print("--- Running SaveManager Integration Tests ---")
 
 	var sm := SaveManagerClass.new()

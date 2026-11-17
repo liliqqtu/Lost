@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Axes/devil_axe.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"devil_axe"
+display_name = "恶魔之斧"
+description = "原版可能反噬使用者。（特殊效果待实现）"
+buy_price = 900
+can_sell = true
+item_kind = &"axe"
+effect_id = &"axe_devil"
+effect_implemented = false
+remaining_uses = 20
+max_uses = 20
+original_id = 39
+original_data = {"weaponType": "ITYPE_AXE", "attributes": "IA_WEAPON", "maxUses": "20", "might": "18", "hit": "55", "weight": "18", "encodedRange": "0x11", "costPerUse": "45", "weaponRank": "WPN_EXP_E", "weaponEffectId": "WPN_EFFECT_DEVIL", "weaponExp": "8"}
+weapon_type = 2
+required_rank = 0
+weapon_exp = 8
+might = 18
+hit = 55
+crit = 0
+weight = 18
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

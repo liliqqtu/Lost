@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/reginleif.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"reginleif"
+display_name = "雷金勒夫"
+description = "伊弗列姆专用；原版对骑兵、重甲特效。（特殊效果待实现）"
+buy_price = 7200
+can_sell = false
+item_kind = &"lance"
+effect_id = &"lance_reginleif"
+effect_implemented = false
+remaining_uses = 45
+max_uses = 45
+original_id = 120
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON | IA_UNSELLABLE | IA_LOCK_5", "pEffectiveness": "ItemEffectiveness_ArmorAndHorse", "maxUses": "45", "might": "10", "hit": "80", "weight": "8", "crit": "10", "encodedRange": "0x11", "costPerUse": "160", "weaponExp": "2"}
+weapon_type = 1
+required_rank = 0
+weapon_exp = 2
+might = 10
+hit = 80
+crit = 10
+weight = 8
+durability = 45
+max_durability = 45
+min_range = 1
+max_range = 1
+is_brave = false

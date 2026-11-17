@@ -40,6 +40,7 @@ const IRON_SWORD_ICON := preload("res://assets/graphics/Item Icons/Swords/铁剑
 ##回合横幅图（阶段四）
 const PLAYER_PHASE_TEXTURE := preload("res://assets/graphics/UI/{Lukiroh} Player Phase.png")
 const ENEMY_PHASE_TEXTURE := preload("res://assets/graphics/UI/{Lukiroh} Enemy Phase.png")
+const ALLY_PHASE_TEXTURE := preload("res://assets/graphics/UI/{Lukiroh} Other Phase.png")
 
 ##字体资源
 const LABEL_SETTING_TRES := preload("res://assets/graphics/UI/label_settings.tres")
@@ -81,8 +82,10 @@ func _ready() -> void:
 	_on_level_ready()
 	battle_manager.turn_started.connect(_on_turn_started)
 	battle_manager.victory_achieved.connect(_on_battle_victory)
+	battle_manager.defeat_occurred.connect(system_ui.prompt_defeat)
 	add_child(battle_manager)
-	_start_level_flow()
+	if not SaveManager.restore_level(self):
+		_start_level_flow()
 
 
 func _start_level_flow() -> void:
@@ -104,7 +107,8 @@ func _on_battle_victory() -> void:
 		talk_scene.open(ending["lines"], ending.get("portraits", {}), ending.get("bg", null))
 		await talk_scene.closed
 		battle_manager.state = BattleManager.State.CURSOR
-	_auto_save_chapter_clear()
+	if not _auto_save_chapter_clear():
+		await battle_manager.open_dialogue("系统", ["存档写入失败，未覆盖原存档。"] as Array[String])
 	var next_path := get_next_chapter_path()
 	if next_path != "" and ResourceLoader.exists(next_path):
 		await get_tree().create_timer(0.5).timeout
@@ -113,31 +117,11 @@ func _on_battle_victory() -> void:
 		else:
 			get_tree().change_scene_to_file(next_path)
 	else:
-		print("--- 本阶段全部章节完成 ---")
+		SceneTransition.change_scene("res://scene/ui/title_screen.tscn", 0.5, 0.5)
 
 
-func _auto_save_chapter_clear() -> void:
-	if SaveManager.current_slot > 0:
-		var slot_id := SaveManager.current_slot
-		var old_data := SaveManager.load_from_slot(slot_id)
-		var next_path := get_next_chapter_path()
-		var next_id := next_path.get_file().get_basename()
-		var save_data := {
-			"version": 1,
-			"slot_id": slot_id,
-			"is_empty": false,
-			"chapter_id": next_id if next_id != "" else "cleared",
-			"chapter_name": get_next_chapter_title() if get_next_chapter_title() != "" else old_data.get("chapter_name", "已通关"),
-			"protagonist_name": "忒",
-			"protagonist_level": 1,
-			"protagonist_class": "游牧民",
-			"play_time_seconds": old_data.get("play_time_seconds", 0) + int(Time.get_ticks_msec() / 1000.0),
-			"turn_count": battle_manager.turn,
-			"timestamp": Time.get_datetime_string_from_system(false, true).substr(0, 16),
-			"difficulty": "普通"
-		}
-		SaveManager.save_to_slot(slot_id, save_data)
-		print("[Level] Chapter clear auto-saved to slot %d" % slot_id)
+func _auto_save_chapter_clear() -> bool:
+	return SaveManager.advance_chapter(self)
 
 
 ##虚钩子：本关单位摆放（默认空关卡）
@@ -404,6 +388,8 @@ const PHASE_SWITCH_MARGIN := 32.0
 
 func _on_turn_started(team: int) -> void:
 	var texture: Texture2D = PLAYER_PHASE_TEXTURE if team == 0 else ENEMY_PHASE_TEXTURE
+	if team == 2:
+		texture = ALLY_PHASE_TEXTURE
 	var view_size: Vector2 = get_viewport().get_visible_rect().size
 	var tex_size: Vector2 = texture.get_size()
 

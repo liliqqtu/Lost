@@ -1,4 +1,4 @@
-extends Node
+extends "res://tests/test_case.gd"
 
 const BATTLE_CALC = preload("res://scripts/battle_calculator.gd")
 
@@ -19,11 +19,12 @@ func _ready() -> void:
 	test_talk_dynamic_portraits()
 	test_ally_green_palette()
 	print("--- ALL INTEGRATION TESTS PASSED CLEANLY ---")
-	get_tree().quit(0)
+	quit(0)
 
 func test_promoted_exp() -> void:
 	print("[TEST] Testing Promoted Class EXP Formula...")
 	var te = Unit.new()
+	add_child(te)
 	te.unit_name = "Te"
 	te.lv = 1
 	var te_cd = ClassData.new()
@@ -32,6 +33,7 @@ func test_promoted_exp() -> void:
 	te.class_data = te_cd
 
 	var isar = Unit.new()
+	add_child(isar)
 	isar.unit_name = "Isar"
 	isar.lv = 1
 	var isar_cd = ClassData.new()
@@ -40,6 +42,7 @@ func test_promoted_exp() -> void:
 	isar.class_data = isar_cd
 
 	var bandit = Unit.new()
+	add_child(bandit)
 	bandit.unit_name = "Bandit"
 	bandit.lv = 1
 	var bandit_cd = ClassData.new()
@@ -118,6 +121,7 @@ func test_battle_end_guard() -> void:
 
 	bm.state = BattleManager.State.CURSOR
 	var p = Unit.new()
+	add_child(p)
 	p.team = 0
 	bm.units.clear()
 	bm.units.append(p)
@@ -141,10 +145,16 @@ func test_battle_end_guard() -> void:
 
 	# Test end_player_phase
 	var u = Unit.new()
+	add_child(u)
 	u.team = 0
 	u.has_acted = false
 	bm.units.append(u)
 	add_child(bm)
+	# 终局不能再结束回合；开启新的行动场景后才允许切入敌方阶段。
+	bm.phases.end_player_phase()
+	assert(not u.has_acted, "finished battle must reject phase transitions")
+	bm.battle_over = false
+	bm.state = BattleManager.State.CURSOR
 	bm.phases.end_player_phase()
 	assert(u.has_acted == true, "end_player_phase should mark player units as acted")
 	print("[PASS] end_player_phase executed without error and marked units acted.")
@@ -160,6 +170,7 @@ func test_staff_logic() -> void:
 	print("[TEST] Testing Staff Healing Logic...")
 	var bm = BattleManager.new()
 	var cleric = Unit.new()
+	add_child(cleric)
 	cleric.unit_name = "Vera"
 	cleric.team = 0
 	cleric.cell = Vector2i(2, 2)
@@ -171,6 +182,7 @@ func test_staff_logic() -> void:
 	cleric.current_weapon = staff
 
 	var ally = Unit.new()
+	add_child(ally)
 	ally.unit_name = "Te"
 	ally.team = 0
 	ally.cell = Vector2i(2, 3)
@@ -209,6 +221,7 @@ func test_dancer_logic() -> void:
 	print("[TEST] Testing Dancer & Bard Refresh Logic...")
 	var bm = BattleManager.new()
 	var dancer = Unit.new()
+	add_child(dancer)
 	dancer.unit_name = "Lalum"
 	dancer.team = 0
 	dancer.cell = Vector2i(3, 3)
@@ -217,6 +230,7 @@ func test_dancer_logic() -> void:
 	dancer.class_data = cd
 
 	var ally = Unit.new()
+	add_child(ally)
 	ally.unit_name = "Isar"
 	ally.team = 0
 	ally.cell = Vector2i(3, 4)
@@ -231,6 +245,7 @@ func test_dancer_logic() -> void:
 
 	# 2. 验证吟游诗人动词切换
 	var bard = Unit.new()
+	add_child(bard)
 	bard.unit_name = "Elphin"
 	bard.team = 0
 	bard.cell = Vector2i(4, 4)

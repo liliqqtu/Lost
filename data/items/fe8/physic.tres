@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/physic.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"physic"
+display_name = "远疗之杖"
+description = "原版从远处恢复一名友军的生命。（特殊效果待实现）"
+buy_price = 3750
+can_sell = true
+item_kind = &"staff"
+effect_id = &"staff_physic"
+effect_implemented = false
+remaining_uses = 15
+max_uses = 15
+original_id = 78
+original_data = {"useDescTextId": "0x4b2", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF", "maxUses": "15", "hit": "100", "weight": "5", "encodedRange": "0x10", "costPerUse": "250", "weaponRank": "WPN_EXP_B", "useEffectId": "4", "weaponExp": "3"}
+weapon_type = 7
+required_rank = 3
+weapon_exp = 3
+might = 0
+hit = 100
+crit = 0
+weight = 5
+durability = 15
+max_durability = 15
+min_range = 1
+max_range = 1
+is_brave = false

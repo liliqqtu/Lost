@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Light/purge.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"purge"
+display_name = "净化"
+description = "用于超远距离攻击的光魔法。"
+buy_price = 3000
+can_sell = true
+item_kind = &"light"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 5
+max_uses = 5
+original_id = 66
+original_data = {"weaponType": "ITYPE_LIGHT", "attributes": "IA_WEAPON | IA_MAGIC | IA_UNCOUNTERABLE", "maxUses": "5", "might": "10", "hit": "75", "weight": "20", "crit": "5", "encodedRange": "0x3A", "costPerUse": "600", "weaponRank": "WPN_EXP_B", "weaponExp": "3"}
+weapon_type = 6
+required_rank = 3
+weapon_exp = 3
+might = 10
+hit = 75
+crit = 5
+weight = 20
+durability = 5
+max_durability = 5
+min_range = 3
+max_range = 10
+is_brave = false

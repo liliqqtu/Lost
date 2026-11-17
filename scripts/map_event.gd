@@ -6,12 +6,14 @@ class_name MapEvent extends Resource
 
 enum Trigger { TURN_START }
 
+@export_group("触发条件")
 ## 触发类型（目前仅回合开始）
 @export var trigger: Trigger = Trigger.TURN_START
 ## 触发回合（玩家方回合数，与 BattleManager.turn 一致）
 @export var trigger_turn := 1
 ## 是否只触发一次
 @export var once := true
+@export_group("执行动作")
 ## 动作序列（按顺序执行，可含异步等待）
 @export var actions: Array[MapAction] = []
 

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/master_seal.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"master_seal"
+display_name = "统领之证"
+description = "原版供多数下级职业转职。（使用或持有效果待实现）"
+buy_price = 20000
+can_sell = true
+item_kind = &"promotion"
+effect_id = &"masterseal"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 136
+original_data = {"useDescTextId": "0x4de", "weaponType": "ITYPE_ITEM", "maxUses": "1", "encodedRange": "0x11", "costPerUse": "20000", "useEffectId": "45"}

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ya11tcahbnio" path="res://scripts/skill.gd" id="6_skill"]
 [ext_resource type="Resource" path="res://data/skills/surge.tres" id="7_surge"]
 [ext_resource type="Resource" path="res://data/skills/blood_boil.tres" id="8_blood"]
-[ext_resource type="SpriteFrames" path="res://data/battle_animation_tres/Myrmidon_M_frames.tres" id="9_a8x56"]
+[ext_resource type="SpriteFrames" path="res://data/battle_animation_tres/Mercenary_M_frames.tres" id="9_a8x56"]
 [ext_resource type="SpriteFrames" uid="uid://dl85oryubaged" path="res://data/map_sprite_frames/Mercenary_map_sprite.tres" id="9_anim"]
 [ext_resource type="Shader" uid="uid://ki7745dtojgg" path="res://data/shader/UnitShader.gdshader" id="10_shader"]
 
@@ -25,10 +25,14 @@ inventory = Array[ExtResource("2_item")]([ExtResource("3_sword"), ExtResource("4
 class_data = ExtResource("5_class")
 personal_skills = Array[ExtResource("6_skill")]([ExtResource("7_surge"), ExtResource("8_blood")])
 unit_name = "雷恩"
+unit_id = &"reyn"
 info = "满脑子英雄童话的热血少年佣兵"
 team = 2
 lv = 2
 rank_sword = 0
+weapon_xp = {
+0: 1
+}
 max_hp = 24
 hp = 12
 str = 8

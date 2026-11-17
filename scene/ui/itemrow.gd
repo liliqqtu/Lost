@@ -39,8 +39,8 @@ func set_item(item: Item) -> void:
 		_durability_label.text = "%d/%d" % [c.durability, c.max_durability]
 		_durability_label.visible = true
 	else:
-		_durability_label.text = ""
-		_durability_label.visible = false
+		_durability_label.text = "%d/%d" % [item.remaining_uses, item.max_uses]
+		_durability_label.visible = item.original_id > 0 and item.max_uses > 0
 
 ## 清空行内容并隐藏（用于背包空槽位）
 func clear() -> void:

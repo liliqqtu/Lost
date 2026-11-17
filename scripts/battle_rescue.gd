@@ -13,6 +13,22 @@ var _mode: int = Mode.RESCUE
 var _list: Array = []
 var _index := 0
 
+## 死亡收尾先解除双向引用；被携带者在死亡格落地，当回合不可行动。
+func on_unit_removed(unit: Unit) -> void:
+	if is_instance_valid(unit.carried_by):
+		unit.carried_by.carried_unit = null
+	unit.carried_by = null
+	var carried := unit.carried_unit
+	unit.carried_unit = null
+	if is_instance_valid(carried):
+		carried.carried_by = null
+		carried.rescue = false
+		carried.cell = unit.cell
+		carried.global_position = Vector2(unit.cell) * Global.TILE_SIZE
+		carried.visible = true
+		carried.has_acted = true
+		carried.apply_grayscale()
+
 
 ##行动菜单附加项探测：救援 → 放下 → 交接 → 交换（顺序与原实现一致）
 func gather_menu_extras(unit: Unit) -> Array[String]:

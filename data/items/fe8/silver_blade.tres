@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/silver_blade.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"silver_blade"
+display_name = "银大剑"
+description = "威力很高的银制大剑。"
+buy_price = 1800
+can_sell = true
+item_kind = &"sword"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 15
+max_uses = 15
+original_id = 7
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON", "maxUses": "15", "might": "14", "hit": "60", "weight": "13", "encodedRange": "0x11", "costPerUse": "120", "weaponRank": "WPN_EXP_A", "weaponExp": "2"}
+weapon_type = 0
+required_rank = 4
+weapon_exp = 2
+might = 14
+hit = 60
+crit = 0
+weight = 13
+durability = 15
+max_durability = 15
+min_range = 1
+max_range = 1
+is_brave = false

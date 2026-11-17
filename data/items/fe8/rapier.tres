@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/rapier.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"rapier"
+display_name = "突刺剑"
+description = "艾瑞珂专用；原版对骑兵、重甲特效。（特殊效果待实现）"
+buy_price = 6000
+can_sell = false
+item_kind = &"sword"
+effect_id = &"sword_rapier"
+effect_implemented = false
+remaining_uses = 40
+max_uses = 40
+original_id = 9
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON | IA_UNSELLABLE | IA_LOCK_4", "pEffectiveness": "ItemEffectiveness_ArmorAndHorse", "maxUses": "40", "might": "7", "hit": "95", "weight": "5", "crit": "10", "encodedRange": "0x11", "costPerUse": "150", "weaponExp": "2"}
+weapon_type = 0
+required_rank = 0
+weapon_exp = 2
+might = 7
+hit = 95
+crit = 10
+weight = 5
+durability = 40
+max_durability = 40
+min_range = 1
+max_range = 1
+is_brave = false

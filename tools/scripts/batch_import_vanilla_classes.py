@@ -14,11 +14,13 @@ GBA 火焰纹章全原版职业战斗动画批量导入工具
 """
 
 import os
+from pathlib import Path
 import sys
 import re
 import subprocess
 from typing import Dict, List, Tuple
 from PIL import Image
+from normalize_battle_animations import normalize_paths
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
@@ -249,6 +251,7 @@ def batch_import_all() -> None:
     print(f"源库路径: {REPO_BASE}")
     print(f"工程路径: {PROJECT_ROOT}\n")
 
+    normalized_paths = []
     imported_classes = 0
     total_pierce_frames = 0
     total_frames = 0
@@ -384,12 +387,15 @@ def batch_import_all() -> None:
             with open(tres_path, 'w', encoding='utf-8') as f:
                 f.write(tres_content)
 
+            normalized_paths.append(Path(tres_path))
             imported_classes += 1
 
     print("\n==========================================================")
     print(f"所有动画文件导出完成！")
     print(f"共导入 {imported_classes} 个原版职业动画，总计处理 {total_frames} 帧，合成 {total_pierce_frames} 个穿刺帧。")
     print("==========================================================")
+
+    normalize_paths(normalized_paths, Path(REPO_BASE))
 
     # 调用 Godot 引擎自动批量编译导入全部新增素材
     if os.path.exists(GODOT_BIN):

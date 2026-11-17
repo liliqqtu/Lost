@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://cr0cqbudhu3hp"]
+
+[ext_resource type="Script" uid="uid://b4bed3p3f55pd" path="res://scene/ui/shop.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://crx8mf5688a4j" path="res://assets/graphics/UI/物品栏.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b2gbqsuf0adep" path="res://assets/graphics/UI/shops/backgrounds/shop_interior_cg_240x160.png" id="2_ry37v"]
+[ext_resource type="PackedScene" uid="uid://cp43dv5l3pq8m" path="res://scene/ui/talk.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dlffleayrw2ev" path="res://assets/graphics/UI/shops/secret_shop/secret_shop_clerk_48x48_4x.png" id="3_ccgmj"]
+[ext_resource type="Script" uid="uid://i7y2s0ot1tg2" path="res://scripts/shop_dialogue.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://hkvgn16en2gw" path="res://scene/ui/cursorhand.tscn" id="5"]
+
+[sub_resource type="Theme" id="Theme_shop"]
+default_font_size = 10
+
+[node name="Shop" type="Control" unique_id=1493221251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_shop")
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=645892914]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 160.0
+mouse_filter = 2
+texture = ExtResource("2_ry37v")
+expand_mode = 1
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=97488335]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 56.0
+mouse_filter = 2
+texture = ExtResource("3_ccgmj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ShopTitle" type="Label" parent="." unique_id=1330984441]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 53.0
+offset_right = 80.0
+offset_bottom = 65.0
+text = "武器店"
+
+[node name="Gold" type="Label" parent="." unique_id=758339028]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 53.0
+offset_right = 230.0
+offset_bottom = 65.0
+text = "0 G"
+horizontal_alignment = 2
+
+[node name="ListPanel" type="NinePatchRect" parent="." unique_id=1249325228]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 232.0
+offset_bottom = 148.0
+texture = ExtResource("2")
+patch_margin_left = 16
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Page" type="Label" parent="." unique_id=1234850420]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 149.0
+offset_right = 240.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 8
+text = "Z确定 X返回 R说明"
+
+[node name="Talk" parent="." unique_id=1277321112 instance=ExtResource("3")]
+layout_mode = 0
+script = ExtResource("4")
+
+[node name="Choices" type="Control" parent="." unique_id=884687935]
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 42.0
+offset_right = 232.0
+offset_bottom = 55.0
+
+[node name="First" type="Label" parent="Choices" unique_id=1905837288]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0.16, 0.16, 0.16, 1)
+text = "买入"
+
+[node name="Second" type="Label" parent="Choices" unique_id=1017231705]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 86.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0.16, 0.16, 0.16, 1)
+text = "卖出"
+
+[node name="Third" type="Label" parent="Choices" unique_id=1054052815]
+layout_mode = 0
+offset_left = 92.0
+offset_right = 132.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0.16, 0.16, 0.16, 1)
+text = "离开"
+
+[node name="Cursor" parent="." unique_id=457539451 instance=ExtResource("5")]
+layout_mode = 0
+offset_top = 0.0
+offset_bottom = 16.0

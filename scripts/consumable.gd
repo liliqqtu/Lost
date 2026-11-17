@@ -2,7 +2,8 @@
 ##耐久=剩余使用次数，每次使用扣 1，归零道具耗尽从背包移除（与武器耐久同构）"""
 class_name Consumable extends Item
 
-## 恢复 HP 量
+@export_group("消耗品效果与次数")
+## 每次使用恢复的固定 HP 量：不会超过目标最大生命。
 @export var heal_hp: int = 0
 ## 使用次数（剩余）
 @export var durability := 5

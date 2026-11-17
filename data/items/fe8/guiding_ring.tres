@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/guiding_ring.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"guiding_ring"
+display_name = "指引之戒"
+description = "原版供魔法、神职职业转职。（使用或持有效果待实现）"
+buy_price = 10000
+can_sell = true
+item_kind = &"promotion"
+effect_id = &"guidingring"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 104
+original_data = {"useDescTextId": "0x4ce", "weaponType": "ITYPE_ITEM", "maxUses": "1", "encodedRange": "0x11", "costPerUse": "10000", "useEffectId": "29"}

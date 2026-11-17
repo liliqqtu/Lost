@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/divinestone.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"divinestone"
+display_name = "龙石"
+description = "梅尔专用龙石；原版变身战斗与能力修正。（使用或持有效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"dragonstone"
+effect_id = &"divinestone"
+effect_implemented = false
+remaining_uses = 50
+max_uses = 50
+original_id = 170
+original_data = {"useDescTextId": "0x4ad", "weaponType": "ITYPE_MONSTER", "attributes": "IA_WEAPON | IA_UNSELLABLE | IA_LOCK_3", "pStatBonuses": "&ItemBonus_DivineStone", "pEffectiveness": "ItemEffectiveness_Monsters", "maxUses": "50", "might": "16", "hit": "100", "crit": "15", "encodedRange": "0x11"}

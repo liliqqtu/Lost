@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/chest_key_bundle.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"chest_key_bundle"
+display_name = "宝箱钥匙串"
+description = "原版打开宝箱，可使用5次。（使用或持有效果待实现）"
+buy_price = 1500
+can_sell = true
+item_kind = &"key"
+effect_id = &"chestkey_bundle"
+effect_implemented = false
+remaining_uses = 5
+max_uses = 5
+original_id = 121
+original_data = {"useDescTextId": "0x4cf", "weaponType": "ITYPE_ITEM", "maxUses": "5", "encodedRange": "0x11", "costPerUse": "300", "useEffectId": "38"}

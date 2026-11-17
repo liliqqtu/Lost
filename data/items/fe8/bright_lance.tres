@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Lances/bright_lance.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"bright_lance"
+display_name = "光辉之枪"
+description = "原版对魔物特效。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"lance"
+effect_id = &"lance_brightlance"
+effect_implemented = false
+remaining_uses = 60
+max_uses = 60
+original_id = 130
+original_data = {"weaponType": "ITYPE_LANCE", "attributes": "IA_WEAPON", "pEffectiveness": "ItemEffectiveness_Monsters", "maxUses": "60", "might": "7", "hit": "80", "weight": "8", "crit": "5", "encodedRange": "0x11", "weaponRank": "WPN_EXP_E", "weaponExp": "1"}
+weapon_type = 1
+required_rank = 0
+weapon_exp = 1
+might = 7
+hit = 80
+crit = 5
+weight = 8
+durability = 60
+max_durability = 60
+min_range = 1
+max_range = 1
+is_brave = false

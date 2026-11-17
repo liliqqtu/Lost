@@ -93,90 +93,6 @@ animations = [
 "duration": 6.0,
 "texture": ExtResource("3_dragonstone_Dragonstone_002_png")
 }, {
-"duration": 3.0,
-"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
-"name": &"transform",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
-"name": &"breath",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
-}, {
 "duration": 2.0,
 "texture": ExtResource("11_dragonstone_Dragonstone_010_png")
 }, {
@@ -230,72 +146,6 @@ animations = [
 }],
 "loop": false,
 "name": &"dragonstone_crit",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}, {
-"duration": 8.0,
-"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("11_dragonstone_Dragonstone_010_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("12_dragonstone_Dragonstone_011_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("4_dragonstone_Dragonstone_003_png")
-}, {
-"duration": 20.0,
-"texture": ExtResource("5_dragonstone_Dragonstone_004_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("6_dragonstone_Dragonstone_005_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("7_dragonstone_Dragonstone_006_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_dragonstone_Dragonstone_007_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("9_dragonstone_Dragonstone_008_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
-"name": &"transform_crit",
 "speed": 60.0
 },
 {
@@ -434,51 +284,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("2_dragonstone_Dragonstone_001_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("3_dragonstone_Dragonstone_002_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_dragonstone_Dragonstone_012_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("10_dragonstone_Dragonstone_009_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
 }],
-"loop": false,
-"name": &"dragonstone_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
-"name": &"dragonstone_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"dragonstone_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dragonstone_Dragonstone_000_png")
-}],
-"loop": false,
-"name": &"dragonstone_mode_11",
 "speed": 60.0
 },
 {
@@ -524,3 +332,6 @@ animations = [
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"dragonstone_stand": "dragonstone_idle", "dragonstone_mode_11": "dragonstone_idle", "dragonstone_idle_ranged": "dragonstone_idle", "dragonstone_dodge_ranged": "dragonstone_dodge", "transform": "dragonstone", "breath": "dragonstone", "transform_crit": "dragonstone_crit"}
+metadata/battle_animation_impacts = {}

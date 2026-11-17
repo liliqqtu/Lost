@@ -404,228 +404,6 @@ animations = [
 "texture": ExtResource("1_axe_Axe_000_png")
 }, {
 "duration": 2.0,
-"texture": ExtResource("22_axe_Axe_021_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("23_axe_Axe_022_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("24_axe_Axe_023_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("25_axe_Axe_024_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("26_axe_Axe_025_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("27_axe_Axe_026_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("28_axe_Axe_027_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("29_axe_Axe_028_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("30_axe_Axe_029_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("9_axe_Axe_008_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_axe_Axe_009_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("34_axe_Axe_033_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("35_axe_Axe_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_axe_Axe_012_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("36_axe_Axe_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("37_axe_Axe_036_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_axe_Axe_037_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_axe_Axe_038_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_axe_Axe_039_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_axe_Axe_040_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_axe_Axe_041_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_axe_Axe_042_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_axe_Axe_043_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_axe_Axe_044_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_axe_Axe_045_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_axe_Axe_046_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_axe_Axe_047_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_axe_Axe_048_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_axe_Axe_049_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_axe_Axe_050_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_axe_Axe_051_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_axe_Axe_052_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_axe_Axe_053_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_axe_Axe_054_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_axe_Axe_055_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_axe_Axe_056_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_axe_Axe_057_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_axe_Axe_058_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("60_axe_Axe_059_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("61_axe_Axe_060_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("62_axe_Axe_061_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_axe_Axe_015_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("17_axe_Axe_016_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("18_axe_Axe_017_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("19_axe_Axe_018_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("20_axe_Axe_019_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("21_axe_Axe_020_png")
-}],
-"loop": false,
-"name": &"axe_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 2.0,
 "texture": ExtResource("2_axe_Axe_001_png")
 }, {
 "duration": 1.0,
@@ -744,45 +522,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("64_axe_Axe_063_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_axe_Axe_064_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("66_axe_Axe_065_png")
 }],
-"loop": false,
-"name": &"axe_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"axe_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_mode_11",
 "speed": 60.0
 },
 {
@@ -971,75 +713,6 @@ animations = [
 "texture": ExtResource("72_bow_Bow_000_png")
 }, {
 "duration": 3.0,
-"texture": ExtResource("83_bow_Bow_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("84_bow_Bow_012_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("85_bow_Bow_013_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("86_bow_Bow_014_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_bow_Bow_015_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_bow_Bow_016_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_bow_Bow_017_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_bow_Bow_018_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("91_bow_Bow_019_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_bow_Bow_020_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("93_bow_Bow_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("94_bow_Bow_022_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("95_bow_Bow_023_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("96_bow_Bow_024_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("97_bow_Bow_025_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("98_bow_Bow_026_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("99_bow_Bow_027_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("100_bow_Bow_028_png")
-}, {
-"duration": 25.0,
-"texture": ExtResource("101_bow_Bow_029_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_bow_Bow_010_png")
-}],
-"loop": false,
-"name": &"bow_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("72_bow_Bow_000_png")
-}, {
-"duration": 3.0,
 "texture": ExtResource("73_bow_Bow_001_png")
 }, {
 "duration": 2.0,
@@ -1164,45 +837,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("72_bow_Bow_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("102_bow_Bow_030_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("103_bow_Bow_031_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("104_bow_Bow_032_png")
 }],
-"loop": false,
-"name": &"bow_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("72_bow_Bow_000_png")
-}],
-"loop": false,
-"name": &"bow_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("72_bow_Bow_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"bow_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("72_bow_Bow_000_png")
-}],
-"loop": false,
-"name": &"bow_mode_11",
 "speed": 60.0
 },
 {
@@ -1245,3 +882,6 @@ animations = [
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"axe_critical": "axe_crit", "axe_stand": "axe_idle", "axe_mode_11": "axe_idle", "axe_idle_ranged": "axe_idle", "bow_critical": "bow_crit", "bow_stand": "bow_idle", "bow_mode_11": "bow_idle", "bow_idle_ranged": "bow_idle", "axe_dodge_ranged": "axe_dodge", "bow_dodge_ranged": "bow_dodge"}
+metadata/battle_animation_impacts = {"axe": 0.35, "axe_crit": 0.9666666666666667, "axe_idle": 0.016666666666666666, "axe_miss": 0.31666666666666665}

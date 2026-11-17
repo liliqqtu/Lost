@@ -17,6 +17,9 @@ var battle_scene: Node = null
 func execute_attack(attacker: Unit, defender: Unit) -> void:
 	var sequence := BattleCalculator.generate_battle_sequence(attacker, defender, bm.tile_map, bm.units)
 
+	if sequence.is_empty():
+		return
+
 	print("=== 战斗开始 ===")
 	print("攻击方: %s, 防御方: %s" % [attacker.unit_name, defender.unit_name])
 
@@ -45,6 +48,8 @@ func execute_attack(attacker: Unit, defender: Unit) -> void:
 	for strike in sequence:
 		var a: Unit = strike["attacker"]
 		var d: Unit = strike["defender"]
+		if not BattleCalculator.can_attack(a, d) or a.current_weapon != strike.weapon:
+			continue
 		var label := "追击" if strike["is_double"] else ("反击" if strike["is_counter"] else "攻击")
 		##本击使用的武器（可能中途损坏，先取引用供武器经验结算）
 		var strike_weapon: Weapon = a.current_weapon
@@ -119,20 +124,24 @@ func _settle_exp(attacker: Unit, defender: Unit, stats: Dictionary) -> void:
 		if gain <= 0:
 			continue
 		print("%s 获得 %d 经验" % [unit.unit_name, gain])
-		var remaining := gain
-		while remaining > 0 and unit.lv < Unit.LEVEL_CAP:
-			var old_exp := unit.exp as int
-			var step := mini(100 - old_exp, remaining)
-			unit.gain_exp(step)
-			remaining -= step
+		await award_exp(unit, gain)
+
+
+func award_exp(unit: Unit, gain: int) -> void:
+	var remaining := gain
+	while remaining > 0 and unit.lv < Unit.LEVEL_CAP:
+		var old_exp := unit.exp as int
+		var step := mini(100 - old_exp, remaining)
+		unit.gain_exp(step)
+		remaining -= step
+		if battle_scene != null:
+			await battle_scene.show_exp(old_exp, unit.exp)
+		if unit.exp >= 100:
+			var gains := BattleCalculator.roll_level_up(unit)
+			unit.level_up(gains)
+			print("%s 升级！Lv%d 加点：%s" % [unit.unit_name, unit.lv, str(gains)])
 			if battle_scene != null:
-				await battle_scene.show_exp(old_exp, unit.exp)
-			if unit.exp >= 100:
-				var gains := BattleCalculator.roll_level_up(unit)
-				unit.level_up(gains)
-				print("%s 升级！Lv%d 加点：%s" % [unit.unit_name, unit.lv, str(gains)])
-				if battle_scene != null:
-					await battle_scene.show_level_up(unit, gains)
+				await battle_scene.show_level_up(unit, gains)
 
 
 ##消耗攻击方武器耐久（每次打击后调）；归零由 Unit.consume_weapon_durability 内部负责移除背包并卸装

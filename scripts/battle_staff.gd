@@ -33,20 +33,26 @@ func gather_menu_extras(unit: Unit) -> Array[String]:
 func get_first_usable_staff(unit: Unit) -> Weapon:
 	if unit == null:
 		return null
-	if unit.current_weapon != null and unit.current_weapon.weapon_type == Weapon.WeaponType.STAFF \
-			and unit.current_weapon.durability > 0 and unit.can_equip(unit.current_weapon):
+	if _is_healing_staff(unit.current_weapon) and unit.can_equip(unit.current_weapon):
 		return unit.current_weapon
 	for item in unit.inventory:
 		var w := item as Weapon
-		if w != null and w.weapon_type == Weapon.WeaponType.STAFF and w.durability > 0 and unit.can_equip(w):
+		if _is_healing_staff(w) and unit.can_equip(w):
 			return w
 	return null
+
+
+## 未接入效果的传送/状态杖仅作为物品持有，不能误入治疗流程。
+## 旧资源没有 effect_id 时维持原有治疗行为。
+func _is_healing_staff(staff: Weapon) -> bool:
+	return staff != null and staff.weapon_type == Weapon.WeaponType.STAFF \
+		and staff.durability > 0 and (staff.effect_id == &"" or staff.effect_implemented)
 
 
 ## 获取法杖射程内所有需救治的友方单位（hp < max_hp）
 func get_heal_targets(unit: Unit, staff: Weapon) -> Array[Unit]:
 	var targets: Array[Unit] = []
-	if unit == null or staff == null:
+	if unit == null or not _is_healing_staff(staff):
 		return targets
 	var min_r := staff.min_range
 	var max_r := staff.max_range
@@ -136,7 +142,7 @@ func _update_heal_forecast() -> void:
 	var caster := bm.selected_unit
 	var heal_val := calculate_heal_amount(caster, current_staff)
 	# 构造虚拟单一结算序列用于展示
-	var dummy_sequence: Array = [{
+	var dummy_sequence: Array[Dictionary] = [{
 		"attacker": caster,
 		"defender": target,
 		"hit": 100,
@@ -165,13 +171,19 @@ func _confirm_heal() -> void:
 	_is_staff_selecting = false
 	bm.commands.hide_forecast()
 	bm.range_drawer.clear_all(bm.high_light_layer)
+	await execute_heal(caster, target, current_staff)
+	bm.end_action(false)
 
-	var heal_val := calculate_heal_amount(caster, current_staff)
+## 玩家与 AI 共用治疗结算，AI 不进入玩家的行动菜单或再移动输入。
+func execute_heal(caster: Unit, target: Unit, staff: Weapon) -> void:
+	if staff == null or staff.durability <= 0 or not caster.equip_item(staff):
+		return
+	var heal_val := calculate_heal_amount(caster, staff)
 	var actual_heal := mini(target.max_hp - target.hp, heal_val)
 
 	print("=== 法杖发动 ===")
 	print("%s 对 %s 使用 %s，预估治愈 %d (实际 +%d HP)" % [
-		caster.unit_name, target.unit_name, current_staff.display_name, heal_val, actual_heal
+		caster.unit_name, target.unit_name, staff.display_name, heal_val, actual_heal
 	])
 
 	var prev_state := bm.state
@@ -179,37 +191,29 @@ func _confirm_heal() -> void:
 
 	# 1. 播放战斗特写或治愈特效
 	if bm.combat.battle_scene != null and bm.combat.battle_scene.has_method("play_staff_heal"):
-		await bm.combat.battle_scene.play_staff_heal(caster, target, current_staff, actual_heal)
+		await bm.combat.battle_scene.play_staff_heal(caster, target, staff, actual_heal)
 	else:
 		# 无战斗特写兜底：短暂停留并刷新血量
-		target.hp += actual_heal
-		target.update_hp_bar()
 		await bm.get_tree().create_timer(0.4).timeout
+
+	# 真实血量统一结算，演出只负责显示。
+	target.hp += actual_heal
+	target.update_hp_bar()
 
 	# 2. 扣除法杖耐久并增加武器熟练度
 	caster.consume_weapon_durability()
-	if current_staff != null:
-		caster.gain_weapon_exp(current_staff)
+	caster.gain_weapon_exp(staff)
 
 	# 3. 施法者获得经验值（FE 经验公式：基础 10 + 治愈量的一半，单次 10~35 经验）
 	if caster.team == 0 and caster.lv < Unit.LEVEL_CAP:
 		var exp_gain := clampi(10 + int(actual_heal * 0.5), 10, 35)
-		var old_exp := caster.exp as int
-		caster.gain_exp(exp_gain)
-		print("%s 获得 %d 施法经验 (当前 EXP: %d)" % [caster.unit_name, exp_gain, caster.exp])
-		if bm.combat.battle_scene != null:
-			await bm.combat.battle_scene.show_exp(old_exp, caster.exp)
-			if caster.exp >= 100:
-				var gains := BattleCalculator.roll_level_up(caster)
-				caster.level_up(gains)
-				await bm.combat.battle_scene.show_level_up(caster, gains)
+		await bm.combat.award_exp(caster, exp_gain)
 
 	# 4. 关闭特写并收尾行动
 	if bm.combat.battle_scene != null and bm.combat.battle_scene.visible:
 		await bm.combat.battle_scene.close()
 
 	bm.state = prev_state
-	bm.end_action(false)
 
 
 ## 取消目标选择：返回行动菜单

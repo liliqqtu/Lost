@@ -224,96 +224,6 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("27_axe_Axe_026_png")
-}, {
-"duration": 17.0,
-"texture": ExtResource("28_axe_Axe_027_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("29_axe_Axe_028_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("30_axe_Axe_029_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("31_axe_Axe_030_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("32_axe_Axe_031_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("33_axe_Axe_032_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("34_axe_Axe_033_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("35_axe_Axe_034_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("36_axe_Axe_035_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("37_axe_Axe_036_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("38_axe_Axe_037_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_axe_Axe_011_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("13_axe_Axe_012_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_axe_Axe_013_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("15_axe_Axe_014_png")
-}, {
-"duration": 2.0,
-"texture": ExtResource("16_axe_Axe_015_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_axe_Axe_016_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_axe_Axe_017_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_axe_Axe_018_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("20_axe_Axe_019_png")
-}, {
-"duration": 15.0,
-"texture": ExtResource("21_axe_Axe_020_png")
-}, {
-"duration": 7.0,
-"texture": ExtResource("22_axe_Axe_021_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("23_axe_Axe_022_png")
-}, {
-"duration": 6.0,
-"texture": ExtResource("24_axe_Axe_023_png")
-}, {
-"duration": 4.0,
-"texture": ExtResource("25_axe_Axe_024_png")
-}, {
-"duration": 5.0,
-"texture": ExtResource("26_axe_Axe_025_png")
-}],
-"loop": false,
-"name": &"axe_critical",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
 }],
 "loop": false,
 "name": &"axe_ranged",
@@ -350,45 +260,9 @@ animations = [
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axe_Axe_000_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("39_axe_Axe_038_png")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_axe_Axe_039_png")
-}, {
-"duration": 3.0,
-"texture": ExtResource("39_axe_Axe_038_png")
 }],
-"loop": false,
-"name": &"axe_dodge_ranged",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_stand",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
+"loop": true,
 "name": &"axe_idle",
-"speed": 60.0
-},
-{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_axe_Axe_000_png")
-}],
-"loop": false,
-"name": &"axe_mode_11",
 "speed": 60.0
 },
 {
@@ -464,3 +338,6 @@ animations = [
 "speed": 60.0
 }
 ]
+metadata/battle_animation_version = 1
+metadata/battle_animation_aliases = {"axe_critical": "axe_crit", "axe_stand": "axe_idle", "axe_mode_11": "axe_idle", "axe_idle_ranged": "axe_idle", "axe_dodge_ranged": "axe_dodge"}
+metadata/battle_animation_impacts = {"axe": 0.5333333333333333, "axe_crit": 0.8166666666666667, "axe_ranged": 0.016666666666666666, "axe_ranged_crit": 0.016666666666666666, "axe_idle": 0.016666666666666666, "axe_miss": 0.48333333333333334}

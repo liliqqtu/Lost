@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Anima/excalibur.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"excalibur"
+display_name = "风刃·埃克斯卡利伯"
+description = "圣器风魔法；原版速度+5，对飞行系及魔物特效。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"anima"
+effect_id = &"anima_excalibur"
+effect_implemented = false
+remaining_uses = 30
+max_uses = 30
+original_id = 62
+original_data = {"weaponType": "ITYPE_ANIMA", "attributes": "IA_WEAPON | IA_MAGIC | IA_UNSELLABLE", "pStatBonuses": "&ItemBonus_Excalibur", "pEffectiveness": "ItemEffectiveness_Monsters", "maxUses": "30", "might": "18", "hit": "90", "weight": "13", "crit": "10", "encodedRange": "0x12", "weaponRank": "WPN_EXP_S", "weaponExp": "1"}
+weapon_type = 4
+required_rank = 5
+weapon_exp = 1
+might = 18
+hit = 90
+crit = 10
+weight = 13
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 2
+is_brave = false
+bonus_spd = 5

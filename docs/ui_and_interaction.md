@@ -2,6 +2,8 @@
 
 本项目所有 UI 均严格基于 GBA 原始分辨率（$240 \times 160$）像素基准进行排版与适配。
 
+行动菜单的 `get_selected()` 返回逻辑命令索引：隐藏“运输队”等固定项不会改变后续命令映射。保存及取消返回标题确认后，由 `LevelSystemUI` 恢复原菜单上下文。败北确认由系统 UI 继续接收输入，提供重试/主菜单。再移动选点和动画执行通过忙碌标记区分，移动完成前不接受重复确认或取消。
+
 ---
 
 ## 一、信息查看系统（InfoViewer）
@@ -272,3 +274,19 @@ Autoload 单例：`SceneTransition`（`scripts/scene_transition.gd`）。
 
 
 
+
+## 友方通行与三阵营回合补充
+
+移动范围保留可穿过的友军格，光标可以经过这些格子；确认落点时必须通过 `Pathfinder.can_stop_at`，禁止重叠停留。普通移动、再移动、AI 寻路共用阵营通行规则：蓝/绿互为友方，红军与红军同属友方，敌对单位阻路。攻击预览仅从可停留格计算，不能借友军占用格虚增射程。
+
+回合顺序为玩家（phase 0）→敌方（phase 1）→绿色友军（phase 2）→玩家。每轮只在返回玩家时增加一次回合数，并执行玩家回合事件。两个 AI 阶段共用 `ENEMY_TURN` 输入锁定和相机跟随流程；绿色阶段使用现有 Other Phase 横幅。绿色单位按当前地图状态自动移动、攻击，持杖单位优先治疗可达范围内受伤的蓝/绿同伴。无存活且未被携带的绿色单位时跳过绿色阶段。
+
+## 共用商店场景
+
+`scene/ui/shop.tscn`（`ShopPanel`）统一承载武器店、道具店与神秘商店。店铺类型选择货单与台词，不复制交易实现。左上肖像槽和背景贴图保持空置，可后续填写 `merchant_portrait`、`background_texture`；物品列表以 `物品栏.png` 的 `NinePatchRect` 平铺，复用 `ItemRow`、`talk.tscn` 与 `cursorhand.tscn`。
+
+公开入口：`open(unit, stock: Array[Item], shop_type, wallet = {}, convoy = null)`；`closed` 表示离店，`transaction_completed` 表示成功交易。空钱包默认使用 `SaveManager.party_funds`，空运输队参数默认全局运输队；测试需显式传入独立钱包和仓库。货单为只读模板，普通商店库存不因购买而减少。
+
+流程为欢迎对话 → 买入/卖出/离开 → 可滚动物品列表 → 确认交易 → 继续购物。背包满时询问是否寄送运输队；资金不足、仓库满和不可出售均保持资金与物品不变。按剩余使用次数折算半价出售。方向键选择，Z 确认、X 返回，S（`R` 动作）查看说明；对话沿用原有逐字显示与 Start 跳过。
+
+面板可自行接收输入，也可设置 `capture_input = false`，由宿主在相应状态下转发 `handle_input(event)`。当前交付为独立场景及 `tests/shop_demo.tscn` 演示；地图进入商店、神秘商店会员卡门禁及金卡效果后续接入。

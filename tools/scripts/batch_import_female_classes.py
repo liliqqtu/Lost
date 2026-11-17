@@ -13,11 +13,13 @@ GBA 火焰纹章全原版女性职业战斗动画批量导入工具
 """
 
 import os
+from pathlib import Path
 import sys
 import re
 import subprocess
 from typing import Dict, List, Tuple
 from PIL import Image
+from normalize_battle_animations import normalize_paths
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
@@ -244,6 +246,7 @@ def batch_import_females() -> None:
     print(f"源库路径: {REPO_BASE}")
     print(f"工程路径: {PROJECT_ROOT}\n")
 
+    normalized_paths = []
     imported_classes = 0
     total_pierce_frames = 0
     total_frames = 0
@@ -370,12 +373,15 @@ def batch_import_females() -> None:
             with open(tres_path, 'w', encoding='utf-8') as f:
                 f.write(tres_content)
 
+            normalized_paths.append(Path(tres_path))
             imported_classes += 1
 
     print("\n==========================================================")
     print(f"女性职业动画文件导出完成！")
     print(f"共导入 {imported_classes} 个女性职业动画，总计处理 {total_frames} 帧，合成 {total_pierce_frames} 个穿刺帧。")
     print("==========================================================")
+
+    normalize_paths(normalized_paths, Path(REPO_BASE))
 
     if os.path.exists(GODOT_BIN):
         print("\n正在启动 Godot 引擎静默批量编译导入所有新增女性资产...")

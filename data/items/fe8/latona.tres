@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/latona.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"latona"
+display_name = "圣杖·拉特娜"
+description = "原版恢复全体友军的生命并解除异常状态。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"staff"
+effect_id = &"staff_latona"
+effect_implemented = false
+remaining_uses = 3
+max_uses = 3
+original_id = 140
+original_data = {"useDescTextId": "0x4be", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF | IA_UNSELLABLE", "maxUses": "3", "hit": "100", "weight": "5", "encodedRange": "0xFF", "weaponRank": "WPN_EXP_S", "weaponExp": "1"}
+weapon_type = 7
+required_rank = 5
+weapon_exp = 1
+might = 0
+hit = 100
+crit = 0
+weight = 5
+durability = 3
+max_durability = 3
+min_range = 15
+max_range = 15
+is_brave = false

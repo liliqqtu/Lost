@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P1 验证：回合切换与胜负判定（BattlePhases + _check_battle_end）
 ##覆盖：
@@ -9,10 +9,10 @@ extends SceneTree
 ##  5. check_player_phase_end：未行动玩家存在 → 不进入敌方回合
 ##  6. check_player_phase_end：全部玩家已行动 → 进入敌方回合
 ##  7. check_player_phase_end：被救起的玩家不计入"未行动"
-##运行：godot --headless --path . -s res://tests/test_phase_end.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -114,14 +114,15 @@ func _make_minimal_bm(p_units: Array[Unit]) -> BattleManager:
 	var bm := BattleManager.new()
 	bm.units = p_units
 	bm.cursor = Node2D.new()
-	root.add_child(bm)
-	root.add_child(bm.cursor)
+	add_child(bm)
+	add_child(bm.cursor)
 	return bm
 
 
 ##"""构造测试 Unit（不入树，绕过 _ready）"""
 func _make_unit(p_name: String, p_con: int, p_team: int = 0, p_has_acted: bool = false) -> Unit:
 	var u := Unit.new()
+	add_child(u)
 	u.unit_name = p_name
 	u.con = p_con
 	u.max_hp = 20

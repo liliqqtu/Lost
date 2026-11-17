@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P1 验证：运输队仓库（ConvoyStore）与地图事件（MapEvent）
 ##覆盖：
@@ -12,10 +12,10 @@ extends SceneTree
 ##  MapEvent:
 ##  7. once=false 时多次触发仍不重置 done
 ##  8. once=true 时已 done 不会被再次执行（BattlePhases._run_map_events 过滤）
-##运行：godot --headless --path . -s res://tests/test_convoy_event.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -66,7 +66,7 @@ func _run() -> void:
 	var s2 := _make_weapon("剑2", Weapon.WeaponType.SWORD)
 	var a1 := _make_weapon("斧1", Weapon.WeaponType.AXE)
 	var b1 := _make_weapon("弓1", Weapon.WeaponType.BOW)
-	var potion: Item = preload("res://scene/item/consumable_potion.tres").duplicate()
+	var potion: Item = preload("res://data/items/consumable_potion.tres").duplicate()
 	ConvoyStore.add(s1); ConvoyStore.add(s2); ConvoyStore.add(a1); ConvoyStore.add(b1); ConvoyStore.add(potion)
 	var swords := ConvoyStore.items_in(ConvoyStore.Category.SWORD)
 	assert(swords.size() == 2, "[场景四] 剑类 2 件")
@@ -155,9 +155,7 @@ func _run() -> void:
 	print("场景八 通过：MapEvent done=true 锁定不再执行")
 
 	print("===== P1 运输队/地图事件测试全部通过 =====")
-	for w in [sword, overflow, axe, fake, s1, s2, a1, b1, potion, l1, b2, st1, an1, li1, dk1]:
-		if is_instance_valid(w):
-			w.free()
+	ConvoyStore.reset_state()
 	if is_instance_valid(bm):
 		bm.queue_free()
 	quit()

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/recover.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"recover"
+display_name = "痊愈之杖"
+description = "原版完全恢复一名友军的生命。（特殊效果待实现）"
+buy_price = 2250
+can_sell = true
+item_kind = &"staff"
+effect_id = &"staff_recover"
+effect_implemented = false
+remaining_uses = 15
+max_uses = 15
+original_id = 77
+original_data = {"useDescTextId": "0x4b1", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF", "maxUses": "15", "hit": "100", "weight": "6", "encodedRange": "0x11", "costPerUse": "150", "weaponRank": "WPN_EXP_C", "useEffectId": "3", "weaponExp": "3"}
+weapon_type = 7
+required_rank = 2
+weapon_exp = 3
+might = 0
+hit = 100
+crit = 0
+weight = 6
+durability = 15
+max_durability = 15
+min_range = 1
+max_range = 1
+is_brave = false

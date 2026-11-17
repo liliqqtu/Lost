@@ -1,10 +1,11 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 const BattleForecastRef := preload("res://scripts/battle_forecast.gd")
 
 ##阶段二验证脚本：测试 BattleForecast 读取战斗序列后是否渲染出正确文字/——
-func _init() -> void:
+func _ready() -> void:
 	var attacker := Unit.new()
+	add_child(attacker)
 	attacker.unit_name = "忒"
 	attacker.lv = 5
 	attacker.max_hp = 26
@@ -23,6 +24,7 @@ func _init() -> void:
 	attacker.current_weapon = sword
 
 	var defender := Unit.new()
+	add_child(defender)
 	defender.unit_name = "山贼"
 	defender.team = 1
 	defender.lv = 1
@@ -41,9 +43,11 @@ func _init() -> void:
 	axe.weight = 10
 	defender.current_weapon = axe
 
-	var forecast := BattleForecastRef.new()
 	var panel := _build_panel()
-	forecast.setup(panel)
+	panel.set_script(BattleForecastRef)
+	add_child(panel)
+	var forecast = panel
+	forecast.setup()
 
 	var sequence := BattleCalculator.generate_battle_sequence(attacker, defender)
 	forecast.show_forecast(attacker, sequence)
@@ -59,9 +63,11 @@ func _init() -> void:
 	print("敌方 武器名字:", forecast._enemy_weapon_name.text)
 
 	# 无法反击场景：山贼距离 2，斧头射程 1
+	sword.max_range = 2
 	defender.cell = Vector2i(7, 5)
 	var sequence2 := BattleCalculator.generate_battle_sequence(attacker, defender)
 	forecast.show_forecast(attacker, sequence2)
+	assert(forecast._enemy_dph.text == "24\n——\n——\n——")
 	print("敌方 无法反击时数值(后三行应为 ——):")
 	print(forecast._enemy_dph.text)
 

@@ -19,6 +19,10 @@ metadata/_edit_lock_ = true
 
 [node name="Dialogue" parent="." unique_id=480522078 instance=ExtResource("2_1dua1")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 224.0
+offset_bottom = 64.0
 
 [node name="Right2" type="TextureRect" parent="." unique_id=1817390558]
 visible = false

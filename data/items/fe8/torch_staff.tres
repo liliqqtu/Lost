@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/torch_staff.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"torch_staff"
+display_name = "照明之杖"
+description = "原版照亮战争迷雾中的区域。（特殊效果待实现）"
+buy_price = 1000
+can_sell = true
+item_kind = &"staff"
+effect_id = &"staff_torch"
+effect_implemented = false
+remaining_uses = 10
+max_uses = 10
+original_id = 86
+original_data = {"useDescTextId": "0x4ba", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF", "maxUses": "10", "hit": "100", "weight": "5", "encodedRange": "0x10", "costPerUse": "100", "weaponRank": "WPN_EXP_D", "useEffectId": "12", "weaponExp": "5"}
+weapon_type = 7
+required_rank = 1
+weapon_exp = 5
+might = 0
+hit = 100
+crit = 0
+weight = 5
+durability = 10
+max_durability = 10
+min_range = 1
+max_range = 1
+is_brave = false

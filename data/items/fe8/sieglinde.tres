@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/sieglinde.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"sieglinde"
+display_name = "雷剑·吉克林迪"
+description = "艾瑞珂专用圣器；原版力量+5，对魔物特效。（特殊效果待实现）"
+buy_price = 0
+can_sell = false
+item_kind = &"sword"
+effect_id = &"sword_sieglinde"
+effect_implemented = false
+remaining_uses = 30
+max_uses = 30
+original_id = 133
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON | IA_UNSELLABLE | IA_LOCK_4", "pStatBonuses": "&ItemBonus_Sieglinde", "pEffectiveness": "ItemEffectiveness_Monsters", "maxUses": "30", "might": "16", "hit": "90", "weight": "9", "encodedRange": "0x11", "weaponExp": "1"}
+weapon_type = 0
+required_rank = 0
+weapon_exp = 1
+might = 16
+hit = 90
+crit = 0
+weight = 9
+durability = 30
+max_durability = 30
+min_range = 1
+max_range = 1
+is_brave = false
+bonus_str = 5

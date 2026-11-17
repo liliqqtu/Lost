@@ -24,6 +24,14 @@ var levels := {}
 ##本关登场过的我方单位名（章节结算"共同出战"用）
 var _deployed := {}
 
+func export_state() -> Dictionary:
+	return {"points": points.duplicate(), "levels": levels.duplicate(), "deployed": _deployed.duplicate()}
+
+func reset_state(data: Dictionary = {}) -> void:
+	points = data.get("points", {}).duplicate()
+	levels = data.get("levels", {}).duplicate()
+	_deployed = data.get("deployed", {}).duplicate()
+
 
 ##支援对的字典键（名字排序后拼接，与传参顺序无关）
 func _pair_key(a: String, b: String) -> String:

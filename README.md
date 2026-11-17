@@ -30,7 +30,7 @@
 
 ### 1. 开发环境
 - **引擎版本**：Godot Engine v4.7.stable.mono (64-bit)
-- **主场景**：`res://scene/level/level_0/level_0.tscn`
+- **主场景**：`res://scene/ui/title_screen.tscn`
 
 ### 2. 默认键盘键位映射
 | 键位 | 映射操作 | 说明 |
@@ -68,3 +68,6 @@ Lost/
 - **战斗公式与计算流**：参见 [`docs/combat_system.md`](./docs/combat_system.md)
 - **单位模型与背包生命周期**：参见 [`docs/unit_and_items.md`](./docs/unit_and_items.md)
 - **UI 焦点与排版规范**：参见 [`docs/ui_and_interaction.md`](./docs/ui_and_interaction.md)
+
+- **审查修复与存档格式**：参见 [docs/fixes_and_save_format.md](./docs/fixes_and_save_format.md)。
+- **完整测试入口**：参见 [tests/README.md](./tests/README.md)。

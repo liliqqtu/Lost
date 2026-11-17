@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Axes/battle_axe.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"battle_axe"
+display_name = "斗斧"
+description = "高必杀的重型斧。"
+buy_price = 1000
+can_sell = true
+item_kind = &"axe"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 20
+max_uses = 20
+original_id = 134
+original_data = {"weaponType": "ITYPE_AXE", "attributes": "IA_WEAPON", "maxUses": "20", "might": "13", "hit": "60", "weight": "15", "crit": "5", "encodedRange": "0x11", "costPerUse": "50", "weaponRank": "WPN_EXP_B", "weaponExp": "1"}
+weapon_type = 2
+required_rank = 3
+weapon_exp = 1
+might = 13
+hit = 60
+crit = 5
+weight = 15
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

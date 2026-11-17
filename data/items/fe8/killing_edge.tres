@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Swords/killing_edge.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"killing_edge"
+display_name = "必杀剑"
+description = "容易打出必杀的剑。"
+buy_price = 1300
+can_sell = true
+item_kind = &"sword"
+effect_id = &""
+effect_implemented = true
+remaining_uses = 20
+max_uses = 20
+original_id = 13
+original_data = {"weaponType": "ITYPE_SWORD", "attributes": "IA_WEAPON", "maxUses": "20", "might": "9", "hit": "75", "weight": "7", "crit": "30", "encodedRange": "0x11", "costPerUse": "65", "weaponRank": "WPN_EXP_C", "weaponExp": "1"}
+weapon_type = 0
+required_rank = 2
+weapon_exp = 1
+might = 9
+hit = 75
+crit = 30
+weight = 7
+durability = 20
+max_durability = 20
+min_range = 1
+max_range = 1
+is_brave = false

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Weapon" format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Staff/unlock.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"unlock"
+display_name = "开锁之杖"
+description = "原版从远处打开门。（特殊效果待实现）"
+buy_price = 1500
+can_sell = true
+item_kind = &"staff"
+effect_id = &"staff_unlock"
+effect_implemented = false
+remaining_uses = 10
+max_uses = 10
+original_id = 88
+original_data = {"useDescTextId": "0x4bc", "weaponType": "ITYPE_STAFF", "attributes": "IA_STAFF", "maxUses": "10", "hit": "100", "weight": "7", "encodedRange": "0x12", "costPerUse": "150", "weaponRank": "WPN_EXP_D", "useEffectId": "14", "weaponExp": "5"}
+weapon_type = 7
+required_rank = 1
+weapon_exp = 5
+might = 0
+hit = 100
+crit = 0
+weight = 7
+durability = 10
+max_durability = 10
+min_range = 1
+max_range = 2
+is_brave = false

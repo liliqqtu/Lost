@@ -1,92 +1,78 @@
 extends RefCounted
 class_name EnemyAI
 
-##"""敌方 AI 决策器（纯数据、无状态），只负责"决定做什么"，不负责执行
-##移动/攻击/回合流程由 BattleManager 执行，符合 Unit 不负责 AI 的职责划分
-##优先级：
-##1. 移动后可击杀的目标（单次打击伤害 >= 目标HP），选剩余移动力最高的站位
-##2. 移动后可攻击的目标，选期望伤害最高的
-##3. 向最近的我方单位移动，选离其最近的可达格"""
-
-##"""决策入口：actor 当前要行动的敌人，units 全部存活单位，tile_map 地形图
-##返回 {move_to: Vector2i, target: Unit 或 null}"""
+## 返回站位、目标和实际使用的武器；候选计算不改动真实单位。
 static func decide(actor: Unit, units: Array[Unit], tile_map: TileMapLayer) -> Dictionary:
-	var plan := {"move_to": actor.cell, "target": null}
-
-	##其他单位占位视为障碍
-	var blocked: Array = []
-	for u in units:
-		if u != actor:
-			blocked.append(u.cell)
-	var move_range: Dictionary = Pathfinder.get_move_range(tile_map, actor.cell, actor.move, actor.move_table, blocked)
-
-	##敌方阵营的打击目标（不同 team 即敌对，含友军）
+	var plan := {"move_to": actor.cell, "target": null, "weapon": null}
+	var blocked := Pathfinder.get_unit_blockers(actor, units)
 	var foes: Array[Unit] = []
-	for u in units:
-		if u.team != actor.team:
-			foes.append(u)
+	for unit in units:
+		if unit.carried_by != null or unit.hp <= 0:
+			continue
+		if BattleCalculator.is_hostile(actor, unit):
+			foes.append(unit)
 	if foes.is_empty():
 		return plan
-
-	##有可用武器才考虑攻击方案（P0-1：遍历背包所有可用武器射程并集）
-	var ranges := actor.get_weapon_ranges()
-	if not ranges.is_empty():
-		var best_kill: Dictionary = {}
-		var best_kill_remain := -1
-		var best_attack: Dictionary = {}
-		var best_attack_damage := -1
-
-		##遍历所有可站位，找射程内的目标（任一武器射程即可）
-		for stand_cell in move_range.keys():
-			var remain: int = move_range[stand_cell]["remain_move"]
-			for foe in foes:
-				var dist: int = _manhattan(stand_cell, foe.cell)
-				var in_any := false
-				for r in ranges:
-					if dist >= int(r["min"]) and dist <= int(r["max"]):
-						in_any = true
-						break
-				if not in_any:
+	var moves := Pathfinder.get_move_range(tile_map, actor.cell, actor.get_effective_move(units), actor.move_table, blocked)
+	for cell in moves.keys():
+		if not Pathfinder.can_stop_at(actor, cell, units):
+			moves.erase(cell)
+	if actor.team == 2:
+		var healing := _healing_plan(actor, units, moves)
+		if not healing.is_empty():
+			return healing
+	var best_score := -INF
+	for ranges in actor.get_weapon_ranges():
+		var weapon: Weapon = ranges.weapon
+		var preview := actor.preview_with_weapon(weapon)
+		var context: Array = units.duplicate()
+		context[context.find(actor)] = preview
+		for cell in moves:
+			preview.cell = cell
+			for target in foes:
+				if not BattleCalculator.can_attack(preview, target):
 					continue
-				##攻击方站位不影响伤害（伤害只与防御方地形有关），可直接计算
-				var damage := BattleCalculator.calculate_damage(actor, foe, tile_map)
-				if damage >= foe.hp:
-					if remain > best_kill_remain:
-						best_kill = {"stand": stand_cell, "target": foe}
-						best_kill_remain = remain
-				elif damage > best_attack_damage:
-					best_attack = {"stand": stand_cell, "target": foe}
-					best_attack_damage = damage
-
-		if not best_kill.is_empty():
-			plan["move_to"] = best_kill["stand"]
-			plan["target"] = best_kill["target"]
-			return plan
-		if not best_attack.is_empty():
-			plan["move_to"] = best_attack["stand"]
-			plan["target"] = best_attack["target"]
-			return plan
-
-	##无法攻击：向最近的我方单位移动
+				var damage := BattleCalculator.calculate_damage(preview, target, tile_map, context)
+				var hit := BattleCalculator.calculate_hit_rate(preview, target, tile_map, context)
+				var score: float = 10000.0 + moves[cell].remain_move if damage >= target.hp and hit > 0 else damage * hit / 100.0
+				if score > best_score:
+					best_score = score
+					plan = {"move_to": cell, "target": target, "weapon": weapon}
+		preview.free()
+	if plan.target != null:
+		return plan
 	var nearest := foes[0]
-	var nearest_dist := _manhattan(actor.cell, foes[0].cell)
-	for foe in foes:
-		var d := _manhattan(actor.cell, foe.cell)
-		if d < nearest_dist:
-			nearest_dist = d
-			nearest = foe
-
-	var best_cell: Vector2i = actor.cell
-	var best_dist := _manhattan(actor.cell, nearest.cell)
-	for stand_cell in move_range.keys():
-		var d := _manhattan(stand_cell, nearest.cell)
-		if d < best_dist:
-			best_dist = d
-			best_cell = stand_cell
-	plan["move_to"] = best_cell
+	for target in foes:
+		if _manhattan(actor.cell, target.cell) < _manhattan(actor.cell, nearest.cell):
+			nearest = target
+	var distance := _manhattan(actor.cell, nearest.cell)
+	for cell in moves:
+		var next_distance := _manhattan(cell, nearest.cell)
+		if next_distance < distance:
+			distance = next_distance
+			plan.move_to = cell
 	return plan
 
-
-##"""曼哈顿距离（与武器射程判定一致）"""
 static func _manhattan(a: Vector2i, b: Vector2i) -> int:
-	return abs(a.x - b.x) + abs(a.y - b.y)
+	return absi(a.x - b.x) + absi(a.y - b.y)
+
+## 绿色持杖单位优先选择可达范围内能恢复最多 HP 的蓝/绿同伴。
+static func _healing_plan(actor: Unit, units: Array[Unit], moves: Dictionary) -> Dictionary:
+	var result := {}
+	var best_heal := 0
+	for item in actor.inventory:
+		var staff := item as Weapon
+		if staff == null or staff.weapon_type != Weapon.WeaponType.STAFF or staff.durability <= 0 or not actor.can_equip(staff):
+			continue
+		for target in units:
+			if target == actor or target.carried_by != null or target.hp <= 0 or target.hp >= target.max_hp or BattleCalculator.is_hostile(actor, target):
+				continue
+			for cell in moves:
+				var distance := _manhattan(cell, target.cell)
+				if distance < staff.min_range or distance > staff.max_range:
+					continue
+				var heal := mini(target.max_hp - target.hp, staff.might + actor.get_effective_mag(units))
+				if heal > best_heal:
+					best_heal = heal
+					result = {"move_to": cell, "target": target, "weapon": staff, "action": "heal"}
+	return result

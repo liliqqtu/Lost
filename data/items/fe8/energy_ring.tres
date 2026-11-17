@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/graphics/Item Icons/fe8/Item/energy_ring.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+icon = ExtResource("2_icon")
+item_id = &"energy_ring"
+display_name = "力量之环"
+description = "原版永久提高力量或魔力2点。（使用或持有效果待实现）"
+buy_price = 8000
+can_sell = true
+item_kind = &"stat_booster"
+effect_id = &"booster_pow"
+effect_implemented = false
+remaining_uses = 1
+max_uses = 1
+original_id = 92
+original_data = {"useDescTextId": "0x4c2", "weaponType": "ITYPE_ITEM", "pStatBonuses": "&ItemBonus_BoosterPow", "maxUses": "1", "encodedRange": "0x11", "costPerUse": "8000", "useEffectId": "17"}

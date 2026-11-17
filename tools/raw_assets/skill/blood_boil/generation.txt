@@ -1,0 +1,11 @@
+# 热血重燃技能图标
+
+生成方式：内置 image_gen，不透明底图，无额外留边；原稿 source.png。
+成品：assets/graphics/skill/热血重燃.png，16×16 RGBA、不透明，最后叠加统一技能框。
+预览：preview.png，成品最近邻放大 256×256。
+
+提示词：
+Use case: stylized-concept. Asset type: ONE GBA tactical RPG skill inventory icon. Square canvas. Extremely coarse authentic pixel art: draw on an EXACT 16 by 16 logical pixel grid enlarged uniformly, each logical pixel one flat square color. NO high resolution illustration or tiny detail. Hard stair step edges, no antialiasing, no gradients, no blur, 8-12 colors. Full bleed completely OPAQUE dark colored background edge to edge, NO transparency or white/empty margin. Central subject must fit in the middle 12 by 12 logical pixels, with background extending to every canvas edge, because an external standard inventory frame will cover the outer two pixels later. Do NOT draw any border or frame. No text, no letters, no numbers, no watermark. Skill: 热血重燃 / Blood Boil, fighting spirit reignites when HP is low, skill and speed surge. Single bold red heart whose top rises into THREE compact golden-orange flame tongues, heart lower tip bright crimson. The heart shape with two lobes should be visibly distinct from the flame rising above it, simple readable silhouette, deep wine-red outlines and very few ivory highlights. Only one central flaming heart symbol; no shield, fist, weapon or extra objects. Dark burgundy full background with one or two subdued ember blocks near the lower corners. Strong upward energetic motion, courageous resurgence, not gore.
+
+处理命令（项目根目录）：
+python tools/scripts/prepare_skill_icon.py tools/raw_assets/skill/blood_boil/source.png assets/graphics/skill/热血重燃.png --colors 8 --palette maximum --padding 0 --preview tools/raw_assets/skill/blood_boil/preview.png

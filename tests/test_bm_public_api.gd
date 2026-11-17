@@ -1,4 +1,4 @@
-extends SceneTree
+extends "res://tests/test_case.gd"
 
 ##P2 批次2 验证：BattleManager 公开查询/操作接口
 ##覆盖：
@@ -9,10 +9,10 @@ extends SceneTree
 ##  5. undo_move：坐标还原到移动前 + 重新选中（UNIT_SELECTED + move_range 重算 + 子行动标记重置）
 ##  6. undo_move：selected_unit 为空 → 安全返回
 ##  7. undo_move：selected_unit 已失效（queue_free）→ 安全返回
-##运行：godot --headless --path . -s res://tests/test_bm_public_api.gd
+##运行：通过 tests/test_suite.tscn；见 tests/README.md。
 
 
-func _initialize() -> void:
+func _ready() -> void:
 	_run()
 
 
@@ -107,14 +107,15 @@ func _make_minimal_bm(p_units: Array[Unit]) -> BattleManager:
 	bm.tile_map = _build_test_tile_map()
 	bm.high_light_layer = _build_test_tile_map()
 	bm.cursor = load("res://scene/ui/cursor.gd").new()
-	root.add_child(bm)
-	root.add_child(bm.cursor)
+	add_child(bm)
+	add_child(bm.cursor)
 	return bm
 
 
 ##"""构造测试 Unit（用 unit.tscn 提供完整节点，play_selected_animation 需要）"""
 func _make_unit(p_name: String, p_team: int = 0, p_cell: Vector2i = Vector2i.ZERO) -> Unit:
 	var u := preload("res://scene/character/unit.tscn").instantiate() as Unit
+	add_child(u)
 	u.unit_name = p_name
 	u.team = p_team
 	u.cell = p_cell
@@ -136,6 +137,7 @@ func _build_test_tile_map() -> TileMapLayer:
 	source.create_tile(Vector2i(0, 0))
 	source.get_tile_data(Vector2i(0, 0), 0).set_custom_data("Name", "道路")
 	var tile_map := TileMapLayer.new()
+	add_child(tile_map)
 	tile_map.tile_set = tile_set
 	for x in range(4):
 		for y in range(4):
